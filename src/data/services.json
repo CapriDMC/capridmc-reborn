@@ -1,0 +1,26 @@
+[
+  {
+    "id": "private-boat-tours",
+    "title": "Capri Private Boat Tours",
+    "description": "Plan the best private boat tours in Capri and the best exclusive experiences in Capri.",
+    "category": "Private Tours"
+  },
+  {
+    "id": "taxi-luggages",
+    "title": "Capri Taxi & Luggages",
+    "description": "From the airport to your 5* Hotel suite: we provide your customers with the best private transfers, boats, taxis, and experiences.",
+    "category": "Logistics"
+  },
+  {
+    "id": "events",
+    "title": "Wedding & Bar Mitzvah in Capri",
+    "description": "Bespoke event management combining local heritage with high-end luxury.",
+    "category": "Events"
+  },
+  {
+    "id": "blue-grotto",
+    "title": "Blue Grotto Private Tour",
+    "description": "Exclusive access and private tours to the iconic Blue Grotto.",
+    "category": "Exclusive Tours"
+  }
+]
