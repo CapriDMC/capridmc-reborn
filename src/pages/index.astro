@@ -1,17 +1,48 @@
 ---
-
+// src/pages/index.astro
 ---
-
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Capri DMC | Your Destination Management Company in Capri</title>
+    <!-- Importazione dei font ufficiali -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Proza+Libre:wght@400;600&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-brand-white text-brand-navy font-sans antialiased">
+    
+    <!-- Barra di navigazione -->
+    <header class="bg-brand-navy text-brand-white py-6 px-8 flex justify-between items-center">
+      <div class="flex items-center gap-4">
+        <!-- Placeholder per il tuo logo circolare -->
+        <div class="w-12 h-12 bg-brand-gold rounded-full flex items-center justify-center text-brand-navy font-bold text-[10px]">LOGO</div>
+        <div class="font-serif text-2xl tracking-wide text-brand-gold">Capri DMC</div>
+      </div>
+      <nav class="hidden md:flex gap-6 text-sm uppercase tracking-widest font-sans">
+        <a href="#" class="hover:text-brand-gold transition-colors">Services</a>
+        <!-- Bottone Appointment per contatti B2B e B2C -->
+        <a href="#" class="hover:text-brand-gold transition-colors">Appointment</a>
+      </nav>
+    </header>
+
+    <!-- Sezione Principale (Hero) -->
+    <main class="max-w-5xl mx-auto px-8 py-24 text-center">
+      <h2 class="font-sans text-brand-gold tracking-[0.2em] uppercase text-sm mb-4">
+        Your Roots in Capri
+      </h2>
+      
+      <h1 class="font-serif text-5xl md:text-6xl text-brand-navy mb-6 leading-tight">
+        Your Destination Management Company in Capri
+      </h1>
+      
+      <p class="font-sans text-lg text-brand-navy/80 max-w-2xl mx-auto leading-relaxed mb-12">
+        A boutique Destination Management Company providing bespoke travel solutions, exclusive experiences, and local hospitality management on the island of Capri.
+      </p>
+      
+      <a href="#" class="inline-block bg-brand-navy text-brand-white font-sans uppercase tracking-widest text-sm px-8 py-4 border border-brand-navy hover:bg-brand-white hover:text-brand-navy transition-colors">
+        From Capri for Capri
+      </a>
+    </main>
+
+  </body>
 </html>
