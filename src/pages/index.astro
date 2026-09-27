@@ -1,6 +1,5 @@
-  GNU nano 7.2                                             src/pages/index.astro                                                      
 ---
-// src/pages/index.astro
+import '../styles/global.css';
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -10,40 +9,26 @@
     <title>Capri DMC | Your Destination Management Company in Capri</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Proza+Libre:wght@400;600&display=>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Proza+Libre:wght@400;600&display=swap" rel="stylesheet">
   </head>
   <body class="bg-[#10285D] text-[#FFFFFF] min-h-screen flex flex-col m-0" style="font-family: 'Proza Libre', sans-serif;">
-    
-    <!-- Navigation Header -->
-    <header class="py-6 px-8 flex justify-between items-center border-b border-[#D4AF37]/30">
+    <!-- Navbar Reale -->
+    <header class="py-4 px-8 flex justify-between items-center border-b border-[#D4AF37]/20 bg-[#10285D] sticky top-0 z-50">
       <div class="flex items-center gap-4">
-        <!-- Logo temporaneo con i colori ufficiali -->
-        <div class="w-14 h-14 bg-[#D4AF37] rounded-full flex items-center justify-center text-[#10285D] font-bold text-[10px]">LOGO</>
-        <div class="text-2xl tracking-wide text-[#D4AF37]" style="font-family: 'Cormorant Garamond', serif;">Capri DMC</div>
+        <img src="https://www.capridmc.com/wp-content/uploads/go-x/u/8a15cc76-c507-4b09-84aa-821eaefde7fa/image.png" alt="Capri DMC Logo" class="h-16 w-auto" />
       </div>
-      <nav class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
-        <a href="#" class="hover:text-[#D4AF37] transition-colors">Services</a>
-        <a href="https://www.capridmc.com/contact-us-capri-destination-management-company/" class="hover:text-[#D4AF37] transition-co>
+      <nav class="hidden md:flex gap-8 text-sm uppercase tracking-[0.15em]">
+        <a href="#services" class="hover:text-[#D4AF37] transition-colors duration-300">Services</a>
+        <a href="https://www.capridmc.com/contact-us-capri-destination-management-company/" class="border border-[#D4AF37] px-6 py-2 hover:bg-[#D4AF37] hover:text-[#10285D] transition-all duration-300">Appointment</a>
       </nav>
     </header>
 
-    <!-- Main Hero Section -->
-    <main class="flex-grow flex flex-col items-center justify-center text-center px-6 py-24 max-w-4xl mx-auto">
-      <h2 class="text-[#D4AF37] tracking-[0.2em] uppercase text-sm mb-6 font-semibold">
-        Your Roots in Capri
-      </h2>
-
-      <h1 class="text-5xl md:text-7xl text-[#FFFFFF] mb-8 leading-tight" style="font-family: 'Cormorant Garamond', serif;">
-        Your Destination Management Company in Capri
-      </h1>
-
-      <p class="text-lg text-[#FFFFFF]/80 max-w-2xl mx-auto leading-relaxed mb-12">
-        A boutique Destination Management Company providing bespoke travel solutions, exclusive experiences, and local hospitality ma>
-      </p>
-
-      <a href="https://www.capridmc.com/contact-us-capri-destination-management-company/" class="inline-block bg-[#D4AF37] text-[#102>
-        From Capri for Capri
-      </a>
+    <!-- Hero Section -->
+    <main class="flex-grow flex flex-col items-center justify-center text-center px-6 py-32 max-w-5xl mx-auto">
+      <h2 class="text-[#D4AF37] tracking-[0.25em] uppercase text-sm mb-8 font-semibold">Your Roots in Capri</h2>
+      <h1 class="text-6xl md:text-8xl text-[#FFFFFF] mb-8 leading-tight" style="font-family: 'Cormorant Garamond', serif;">Your Destination Management Company in Capri</h1>
+      <p class="text-lg md:text-xl text-[#FFFFFF]/80 max-w-3xl mx-auto leading-relaxed mb-12 font-light">A boutique Destination Management Company providing bespoke travel solutions, exclusive experiences, and local hospitality management on the island of Capri.</p>
+      <a href="https://www.capridmc.com/contact-us-capri-destination-management-company/" class="inline-block bg-[#D4AF37] text-[#10285D] uppercase tracking-[0.2em] text-sm px-10 py-5 font-bold hover:bg-[#FFFFFF] transition-colors duration-300">From Capri for Capri</a>
     </main>
   </body>
 </html>
