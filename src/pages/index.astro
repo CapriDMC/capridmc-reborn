@@ -1,34 +1,139 @@
----
-import '../styles/global.css';
----
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Capri DMC | Your Destination Management Company in Capri</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Proza+Libre:wght@400;600&display=swap" rel="stylesheet">
-  </head>
-  <body class="bg-[#10285D] text-[#FFFFFF] min-h-screen flex flex-col m-0" style="font-family: 'Proza Libre', sans-serif;">
-    <!-- Navbar Reale -->
-    <header class="py-4 px-8 flex justify-between items-center border-b border-[#D4AF37]/20 bg-[#10285D] sticky top-0 z-50">
-      <div class="flex items-center gap-4">
-        <img src="https://www.capridmc.com/wp-content/uploads/go-x/u/8a15cc76-c507-4b09-84aa-821eaefde7fa/image.png" alt="Capri DMC Logo" class="h-16 w-auto" />
-      </div>
-      <nav class="hidden md:flex gap-8 text-sm uppercase tracking-[0.15em]">
-        <a href="#services" class="hover:text-[#D4AF37] transition-colors duration-300">Services</a>
-        <a href="https://www.capridmc.com/contact-us-capri-destination-management-company/" class="border border-[#D4AF37] px-6 py-2 hover:bg-[#D4AF37] hover:text-[#10285D] transition-all duration-300">Appointment</a>
-      </nav>
-    </header>
+<!-- Header -->
+<header class="py-4 px-6 md:px-12 flex justify-between items-center bg-[#10285D] sticky top-0 z-50 border-b border-[#D4AF37]/30">
+  <a href="/" class="flex items-center gap-4">
+    <img src="https://www.capridmc.com/wp-content/uploads/go-x/u/8a15cc76-c507-4b09-84aa-821eaefde7fa/image.png" alt="Capri DMC Logo" class="h-14 md:h-16 w-auto" />
+  </a>
+  <nav class="hidden lg:flex gap-8 text-sm uppercase tracking-[0.15em] text-[#FFFFFF]">
+    <a href="#about" class="hover:text-[#D4AF37] transition-colors duration-300 flex items-center">About Us</a>
+    <a href="#services" class="hover:text-[#D4AF37] transition-colors duration-300 flex items-center">Services</a>
+    <a href="https://www.capridmc.com/contact-us-capri-destination-management-company/" class="border border-[#D4AF37] px-6 py-2.5 hover:bg-[#D4AF37] hover:text-[#10285D] transition-all duration-300 font-semibold ml-4">Appointment</a>
+  </nav>
+</header>
 
-    <!-- Hero Section -->
-    <main class="flex-grow flex flex-col items-center justify-center text-center px-6 py-32 max-w-5xl mx-auto">
-      <h2 class="text-[#D4AF37] tracking-[0.25em] uppercase text-sm mb-8 font-semibold">Your Roots in Capri</h2>
-      <h1 class="text-6xl md:text-8xl text-[#FFFFFF] mb-8 leading-tight" style="font-family: 'Cormorant Garamond', serif;">Your Destination Management Company in Capri</h1>
-      <p class="text-lg md:text-xl text-[#FFFFFF]/80 max-w-3xl mx-auto leading-relaxed mb-12 font-light">A boutique Destination Management Company providing bespoke travel solutions, exclusive experiences, and local hospitality management on the island of Capri.</p>
-      <a href="https://www.capridmc.com/contact-us-capri-destination-management-company/" class="inline-block bg-[#D4AF37] text-[#10285D] uppercase tracking-[0.2em] text-sm px-10 py-5 font-bold hover:bg-[#FFFFFF] transition-colors duration-300">From Capri for Capri</a>
-    </main>
-  </body>
-</html>
+<!-- Hero Section -->
+<section class="relative bg-[#10285D] text-[#FFFFFF] py-32 md:py-48 px-6 overflow-hidden">
+  <!-- Sfondo pattern temporaneo -->
+  <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
+  
+  <div class="relative max-w-5xl mx-auto text-center z-10">
+    <h2 class="text-[#D4AF37] tracking-[0.25em] uppercase text-xs md:text-sm mb-6 font-semibold">Your Roots in Capri</h2>
+    <h1 class="text-5xl md:text-7xl lg:text-8xl mb-8 leading-tight font-medium" style="font-family: 'Cormorant Garamond', serif;">
+      Your Destination Management Company in Capri
+    </h1>
+    <p class="text-lg md:text-xl text-[#FFFFFF]/80 max-w-3xl mx-auto leading-relaxed mb-12 font-light">
+      A boutique DMC providing bespoke travel solutions, exclusive experiences, and local hospitality management on the island of Capri.
+    </p>
+    <a href="#services" class="inline-block bg-[#D4AF37] text-[#10285D] uppercase tracking-[0.2em] text-sm px-10 py-5 font-bold hover:bg-[#FFFFFF] transition-colors duration-300 shadow-lg">
+      Discover Our Services
+    </a>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-24 px-6 md:px-12 bg-white">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <div>
+      <h3 class="text-[#D4AF37] tracking-[0.2em] uppercase text-sm mb-4 font-semibold">From Capri for Capri</h3>
+      <h2 class="text-4xl md:text-5xl mb-8 text-[#10285D] leading-snug" style="font-family: 'Cormorant Garamond', serif;">The best partner you can find to plan your trip.</h2>
+      <p class="text-gray-600 leading-relaxed mb-6">
+        Capri Destination Management Company is the Business to Business spin off from Nesea Capri Tours & Events. From the airport to your 5* Hotel suite, we provide your customers with the best private transfers, boats, taxis, and experiences.
+      </p>
+      <p class="text-gray-600 leading-relaxed mb-8">
+        By pairing local heritage with refined European hospitality standards, Capri DMC serves as an indispensable local partner for travelers seeking authentic, high-end island access.
+      </p>
+      <a href="https://www.capridmc.com/contact-us-capri-destination-management-company/" class="inline-block border-b-2 border-[#D4AF37] text-[#10285D] uppercase tracking-widest text-sm pb-1 font-semibold hover:text-[#D4AF37] transition-colors">Partner with us &rarr;</a>
+    </div>
+    <div class="relative h-[500px] bg-[#10285D]/5 rounded-sm overflow-hidden border border-gray-100 shadow-md">
+       <!-- Placeholder per la tua immagine editoriale (es. Faraglioni) -->
+       <div class="absolute inset-0 flex items-center justify-center text-[#10285D]/40 italic text-lg px-8 text-center" style="font-family: 'Cormorant Garamond', serif;">
+         [Inserire qui l'immagine editoriale con l'orizzonte di Capri]
+       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Grid -->
+<section id="services" class="py-24 px-6 md:px-12 bg-[#F8F9FA]">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h3 class="text-[#D4AF37] tracking-[0.2em] uppercase text-sm mb-4 font-semibold">Bespoke Travel Solutions</h3>
+      <h2 class="text-4xl md:text-5xl text-[#10285D]" style="font-family: 'Cormorant Garamond', serif;">Exclusive Experiences</h2>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Service Card 1 -->
+      <div class="bg-white p-10 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer">
+        <h4 class="text-2xl text-[#10285D] mb-4 group-hover:text-[#D4AF37] transition-colors" style="font-family: 'Cormorant Garamond', serif;">Private Boat Tours</h4>
+        <p class="text-gray-600 text-sm leading-relaxed mb-8">Explore the Blue Grotto and the Amalfi Coast with our premium fleet. Tailored itineraries for the ultimate maritime luxury.</p>
+        <span class="text-[#D4AF37] text-xs font-semibold tracking-wider uppercase">Discover &rarr;</span>
+      </div>
+
+      <!-- Service Card 2 -->
+      <div class="bg-white p-10 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer">
+        <h4 class="text-2xl text-[#10285D] mb-4 group-hover:text-[#D4AF37] transition-colors" style="font-family: 'Cormorant Garamond', serif;">Exclusive Tours</h4>
+        <p class="text-gray-600 text-sm leading-relaxed mb-8">Immerse yourself in the timeless romance of Capri. City tours, historical insights, and access to hidden gems.</p>
+        <span class="text-[#D4AF37] text-xs font-semibold tracking-wider uppercase">Discover &rarr;</span>
+      </div>
+
+      <!-- Service Card 3 -->
+      <div class="bg-white p-10 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer">
+        <h4 class="text-2xl text-[#10285D] mb-4 group-hover:text-[#D4AF37] transition-colors" style="font-family: 'Cormorant Garamond', serif;">Capri Weddings</h4>
+        <p class="text-gray-600 text-sm leading-relaxed mb-8">Full-service event management for your special day. From classic ceremonies to Bar Mitzvahs and Kiddushin.</p>
+        <span class="text-[#D4AF37] text-xs font-semibold tracking-wider uppercase">Discover &rarr;</span>
+      </div>
+
+      <!-- Service Card 4 -->
+      <div class="bg-white p-10 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer">
+        <h4 class="text-2xl text-[#10285D] mb-4 group-hover:text-[#D4AF37] transition-colors" style="font-family: 'Cormorant Garamond', serif;">Transfers & Taxi</h4>
+        <p class="text-gray-600 text-sm leading-relaxed mb-8">Seamless execution from the airport to your 5* Hotel suite. Reliable Capri Taxi and luggage management services.</p>
+        <span class="text-[#D4AF37] text-xs font-semibold tracking-wider uppercase">Discover &rarr;</span>
+      </div>
+      
+       <!-- Service Card 5 -->
+      <div class="bg-white p-10 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer">
+        <h4 class="text-2xl text-[#10285D] mb-4 group-hover:text-[#D4AF37] transition-colors" style="font-family: 'Cormorant Garamond', serif;">Group & Bus Tours</h4>
+        <p class="text-gray-600 text-sm leading-relaxed mb-8">Perfectly organized excursions for larger parties. Dedicated Bus Tours navigating the island's unique logistics.</p>
+        <span class="text-[#D4AF37] text-xs font-semibold tracking-wider uppercase">Discover &rarr;</span>
+      </div>
+      
+       <!-- Service Card 6 (CTA) -->
+      <div class="bg-[#10285D] p-10 border border-[#D4AF37]/30 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-center items-center text-center">
+        <h4 class="text-3xl text-[#D4AF37] mb-4" style="font-family: 'Cormorant Garamond', serif;">Custom Itinerary?</h4>
+        <p class="text-white/80 text-sm leading-relaxed mb-8">Contact us to design a bespoke experience tailored to your exact luxury needs.</p>
+        <a href="https://www.capridmc.com/contact-us-capri-destination-management-company/" class="border border-[#D4AF37] px-8 py-3 hover:bg-[#D4AF37] hover:text-[#10285D] transition-all duration-300 text-xs font-bold uppercase tracking-widest text-white">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#10285D] text-white pt-20 pb-8 px-6 md:px-12 border-t border-[#D4AF37]/20">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+    <div>
+      <img src="https://www.capridmc.com/wp-content/uploads/go-x/u/8a15cc76-c507-4b09-84aa-821eaefde7fa/image.png" alt="Capri DMC Logo" class="h-16 w-auto mb-6 opacity-90" />
+      <p class="text-white/70 text-sm leading-relaxed max-w-sm">
+        A boutique Destination Management Company providing bespoke travel solutions and exclusive experiences on the island of Capri.
+      </p>
+    </div>
+    <div>
+      <h4 class="text-[#D4AF37] text-xl mb-6" style="font-family: 'Cormorant Garamond', serif;">Contact Information</h4>
+      <ul class="text-white/80 text-sm space-y-3 font-light">
+        <li>80076 Capri</li>
+        <li>Metropolitan City of Naples, Italy</li>
+        <li class="pt-2">Phone: +39 333 594 3947</li>
+        <li>Hours: Open 24 Hours (Mon-Sun)</li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-[#D4AF37] text-xl mb-6" style="font-family: 'Cormorant Garamond', serif;">Quick Links</h4>
+      <ul class="text-white/80 text-sm space-y-4 font-light uppercase tracking-widest text-xs">
+        <li><a href="#about" class="hover:text-[#D4AF37] transition-colors">About Us</a></li>
+        <li><a href="#services" class="hover:text-[#D4AF37] transition-colors">Our Services</a></li>
+        <li><a href="https://www.capridmc.com/contact-us-capri-destination-management-company/" class="hover:text-[#D4AF37] transition-colors">Book an Appointment</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto text-center text-white/30 text-xs border-t border-white/10 pt-8 tracking-wide">
+    &copy; 2026 Capri Destination Management Company. All rights reserved.
+  </div>
+</footer>
