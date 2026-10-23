@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build:llm": "node scripts/generate-llm-text.mjs",
+    "build": "node scripts/generate-llm-text.mjs && astro build",
     "preview": "astro preview"
   },
   "dependencies": {
@@ -15,6 +16,8 @@
   },
   "devDependencies": {
     "lighthouse": "^13.5.0",
-    "playwright": "^1.64.1"
+    "pixelmatch": "^8.0.0",
+    "playwright": "^1.64.1",
+    "pngjs": "^7.0.0"
   }
 }
