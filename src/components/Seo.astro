@@ -1,0 +1,87 @@
+---
+// Componente SEO tecnico unificato per gestione dell'<head>
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
+  canonical?: string;
+  lang?: string;
+}
+
+const {
+  title = "Capri DMC | Luxury Destination Management Company & B2B Tour Operator",
+  description = "Capri Destination Management Company is the luxury B2B spin-off from Nesea Capri Tours & Events. Bespoke private boat tours, weddings, Bar Mitzvah, VIP logistics, and 24/7 on-island operations.",
+  ogImage = "https://www.capridmc.com/images/capri/faraglioni-rocks-guided-tour-private-boat.jpg",
+  ogImageAlt = "Capri Faraglioni Coastline and Mediterranean Sea",
+  canonical,
+  lang = "en"
+} = Astro.props;
+
+// Determine production canonical
+const siteUrl = "https://www.capridmc.com";
+const canonicalURL = canonical || new URL(Astro.url.pathname.replace(/\/$/, ""), siteUrl).href || siteUrl;
+
+// Preview environment check: workers.dev or explicit preview env must remain noindex
+const isPreview = import.meta.env.PUBLIC_ENV === 'preview' || Astro.url.hostname.includes('workers.dev');
+const robotsContent = isPreview
+  ? "noindex, nofollow"
+  : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
+
+// Verification tokens from env
+const gscToken = import.meta.env.PUBLIC_GSC_TOKEN;
+const bingToken = import.meta.env.PUBLIC_BING_TOKEN;
+---
+
+<!-- Essential Encoding & Viewport -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<!-- Canonical & Robots Directives -->
+<link rel="canonical" href={canonicalURL} />
+<meta name="robots" content={robotsContent} />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<meta name="author" content="Capri Destination Management Company" />
+
+<!-- Favicon & PWA App Manifest -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/logo.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#10285D" />
+<meta name="msapplication-TileColor" content="#10285D" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:alt" content={ogImageAlt} />
+<meta property="og:image:width" content="3648" />
+<meta property="og:image:height" content="2736" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="Capri DMC" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonicalURL} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+<meta name="twitter:image:alt" content={ogImageAlt} />
+
+<!-- Verification Tokens (Search Console & Bing Webmaster) -->
+{gscToken && <meta name="google-site-verification" content={gscToken} />}
+{bingToken && <meta name="msvalidate.01" content={bingToken} />}
+
+<!-- Discovery: Sitemap, AI Context & LLM Mirrors -->
+<link rel="sitemap" href="/sitemap-index.xml" />
+<link rel="ai-context" href="/ai-context.txt" title="AI Context Dossier" />
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Summary" />
+<link rel="alternate" type="text/markdown" href="/index.md" title="Markdown Mirror" />

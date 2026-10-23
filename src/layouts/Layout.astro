@@ -1,58 +1,40 @@
 ---
 import '../styles/global.css';
-import GeoSchema from '../components/GeoSchema.astro';
+import Seo from '../components/Seo.astro';
+import JsonLd from '../components/JsonLd.astro';
 
 interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
+  lang?: string;
 }
 
 const {
-  title = "Capri DMC | Luxury Destination Management Company & B2B Tour Operator",
-  description = "Capri Destination Management Company is the luxury B2B spin-off from Nesea Capri Tours & Events. Bespoke private boat tours, weddings, Bar Mitzvah, VIP logistics, and 24/7 on-island operations.",
-  ogImage = "https://www.capridmc.com/images/capri/faraglioni-rocks-guided-tour-private-boat.jpg"
+  title,
+  description,
+  ogImage,
+  lang = "en"
 } = Astro.props;
-
-const canonicalURL = new URL(Astro.url.pathname, "https://www.capridmc.com");
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang={lang} class="scroll-smooth">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/logo.png" />
-    <link rel="apple-touch-icon" href="/logo.png" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="canonical" href={canonicalURL} />
-    
-    <!-- Primary Meta Tags -->
-    <title>{title}</title>
-    <meta name="title" content={title} />
-    <meta name="description" content={description} />
-    <meta name="author" content="Capri Destination Management Company" />
-    <meta name="keywords" content="Capri DMC, Destination Management Company Capri, Capri Private Boat Tours, Capri Weddings, Bar Mitzvah Capri, Luxury Capri Transfers, Nesea Capri, B2B Travel Advisor Capri" />
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Capri DMC" />
+    <Seo
+      title={title}
+      description={description}
+      ogImage={ogImage}
+      lang={lang}
+    />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={ogImage} />
-
-    <!-- AI & GEO Discovery Directives -->
-    <link rel="ai-context" href="/ai-context.txt" />
-    <meta name="generator" content={Astro.generator} />
+    <!-- Preload LCP Hero Image for Core Web Vitals -->
+    <link
+      rel="preload"
+      as="image"
+      href="/images/capri/faraglioni-rocks-guided-tour-private-boat.jpg"
+      fetchpriority="high"
+    />
 
     <!-- Editorial Google Fonts (Cormorant Garamond & Proza Libre) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -62,8 +44,8 @@ const canonicalURL = new URL(Astro.url.pathname, "https://www.capridmc.com");
       rel="stylesheet"
     />
 
-    <!-- Structured Data (JSON-LD) for GEO & SEO -->
-    <GeoSchema />
+    <!-- Structured Data (JSON-LD) for Schema.org, Search & GEO -->
+    <JsonLd />
 
     <!-- GSAP Animation Engine -->
     <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>

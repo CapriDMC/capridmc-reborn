@@ -1,0 +1,181 @@
+---
+// Componente JSON-LD conforme a Schema.org, GEO (Generative Engine Optimization) e vincoli non negoziabili
+import servicesData from '../data/services.json';
+
+interface Props {
+  siteUrl?: string;
+}
+
+const { siteUrl = "https://www.capridmc.com" } = Astro.props;
+
+const founders = [
+  {
+    "@type": "Person",
+    "@id": `${siteUrl}/#person-giusy-perrotta`,
+    "name": "Giusy Perrotta",
+    "jobTitle": "Co-Founder & Director of Operations",
+    "gender": "Female",
+    "worksFor": { "@id": `${siteUrl}/#organization` }
+  },
+  {
+    "@type": "Person",
+    "@id": `${siteUrl}/#person-melania-esposito`,
+    "name": "Melania Esposito",
+    "jobTitle": "Co-Founder & Head of Event Production",
+    "gender": "Female",
+    "worksFor": { "@id": `${siteUrl}/#organization` }
+  },
+  {
+    "@type": "Person",
+    "@id": `${siteUrl}/#person-roberta-de-martino`,
+    "name": "Roberta De Martino",
+    "jobTitle": "Co-Founder & Lead Cultural Curator",
+    "gender": "Female",
+    "worksFor": { "@id": `${siteUrl}/#organization` }
+  }
+];
+
+const catalogItems = servicesData.map((s, index) => ({
+  "@type": "Offer",
+  "@id": `${siteUrl}/#offer-${s.id}`,
+  "itemOffered": {
+    "@type": "Service",
+    "@id": `${siteUrl}/#service-${s.id}`,
+    "name": s.title,
+    "description": s.description,
+    "serviceType": s.cluster,
+    "provider": { "@id": `${siteUrl}/#organization` },
+    "areaServed": [
+      { "@type": "Place", "name": "Capri" },
+      { "@type": "AdministrativeArea", "name": "Anacapri" },
+      { "@type": "AdministrativeArea", "name": "Campania" },
+      { "@type": "AdministrativeArea", "name": "Amalfi Coast" }
+    ],
+    "audience": {
+      "@type": "BusinessAudience",
+      "audienceType": "Travel advisors, tour operators, luxury travel designers"
+    }
+  }
+}));
+
+const schemaGraph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "TravelAgency"],
+      "@id": `${siteUrl}/#organization`,
+      "name": "Capri DMC",
+      "alternateName": [
+        "Capri Destination Management Company",
+        "Capri DMC Luxury Tour Operator"
+      ],
+      "url": `${siteUrl}/`,
+      "logo": {
+        "@type": "ImageObject",
+        "@id": `${siteUrl}/#logo`,
+        "url": `${siteUrl}/logo.png`,
+        "caption": "Capri DMC Crest Medallion"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "@id": `${siteUrl}/#main-image`,
+        "url": `${siteUrl}/images/capri/faraglioni-rocks-guided-tour-private-boat.jpg`,
+        "caption": "Faraglioni Capri Private Boat Tour"
+      },
+      "description": "Capri Destination Management Company is the elite B2B luxury spin-off from Nesea Capri Tours & Events, providing private yacht charters, bespoke island tours, milestone celebrations, and seamless VIP airport-to-suite transfers.",
+      "email": "partnerships@capridmc.com",
+      "telephone": "+39 333 594 3947",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Isola di Capri",
+        "addressLocality": "Capri",
+        "addressRegion": "Metropolitan City of Naples",
+        "postalCode": "80076",
+        "addressCountry": "IT"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.5507,
+        "longitude": 14.2426
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Nesea Capri Tours & Events",
+        "url": "https://www.neseacapritours.com"
+      },
+      "founder": founders.map(f => ({ "@id": f["@id"] })),
+      "areaServed": [
+        { "@type": "Place", "name": "Capri" },
+        { "@type": "AdministrativeArea", "name": "Anacapri" },
+        { "@type": "AdministrativeArea", "name": "Campania" },
+        { "@type": "AdministrativeArea", "name": "Amalfi Coast" }
+      ],
+      "knowsAbout": [
+        "Capri Destination Management Company",
+        "B2B Luxury Travel Advisor Services",
+        "Capri Private Boat Tours & Gozzo Charters",
+        "Blue Grotto Dawn Access & Faraglioni Navigation",
+        "Airport-to-5-Star Hotel Suite Transfers in Capri",
+        "Dedicated 24/7 Island Conciergerie",
+        "Capri Weddings & Historic Villa Buyouts",
+        "Bar Mitzvah and Bat Mitzvah in Capri",
+        "Exclusive Guided Island Cultural Tours",
+        "Caprese Artisanal Sandals, Knitwear & Bespoke Textiles",
+        "Private Cooking Classes in Authentic Caprese Homes",
+        "Personal Shopper Service & Global Shipping from Capri",
+        "Hidden Hiking in Capri & Sentiero dei Fortini Excursions",
+        "Personal Trainer & Private Sport Activities in Capri",
+        "Bespoke Babysitting and Pet Sitting for Luxury Clients"
+      ],
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Travel advisors, tour operators, luxury travel designers, VIP concierges"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "partnerships",
+          "email": "partnerships@capridmc.com",
+          "telephone": "+39 333 594 3947",
+          "availableLanguage": ["English", "Italian"],
+          "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+          }
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "@id": `${siteUrl}/#catalog`,
+        "name": "Capri DMC Luxury B2B Services Catalog",
+        "itemListElement": catalogItems
+      }
+    },
+    ...founders,
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      "url": `${siteUrl}/`,
+      "name": "Capri DMC",
+      "description": "Luxury B2B Destination Management Company & Tour Operator on Capri",
+      "publisher": { "@id": `${siteUrl}/#organization` },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${siteUrl}/#webpage`,
+      "url": `${siteUrl}/`,
+      "name": "Capri DMC | Luxury Destination Management Company & B2B Tour Operator",
+      "isPartOf": { "@id": `${siteUrl}/#website` },
+      "about": { "@id": `${siteUrl}/#organization` },
+      "inLanguage": "en"
+    }
+  ]
+};
+
+const jsonLdString = JSON.stringify(schemaGraph);
+---
+
+<script type="application/ld+json" is:inline set:html={jsonLdString} />

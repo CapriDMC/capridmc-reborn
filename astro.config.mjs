@@ -5,6 +5,9 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://www.capridmc.com',
   trailingSlash: 'never',
+  devToolbar: {
+    enabled: false
+  },
   integrations: [
     sitemap({
       lastmod: new Date(),
