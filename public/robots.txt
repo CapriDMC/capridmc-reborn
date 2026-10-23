@@ -1,22 +1,42 @@
-# Capri DMC - Robots & AI Engine Directives
 User-agent: *
 Allow: /
-Allow: /ai-context.txt
 
-# Generative AI Engines
-User-agent: GPTBot
+# --- AI search / assistant retrieval (necessari per citazioni) ---
+User-agent: OAI-SearchBot
 Allow: /
-
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
 User-agent: PerplexityBot
 Allow: /
-
-User-agent: Google-Extended
+User-agent: Perplexity-User
+Allow: /
+User-agent: DuckAssistBot
+Allow: /
+User-agent: Applebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: Googlebot
 Allow: /
 
+# --- Training / grounding crawlers (decisione di Pep; default: consentiti) ---
+User-agent: GPTBot
+Allow: /
 User-agent: ClaudeBot
 Allow: /
-
+User-agent: Google-Extended
+Allow: /
 User-agent: Applebot-Extended
+Allow: /
+User-agent: Meta-ExternalAgent
+Allow: /
+User-agent: CCBot
+Allow: /
+User-agent: Amazonbot
 Allow: /
 
 Sitemap: https://www.capridmc.com/sitemap-index.xml

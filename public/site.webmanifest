@@ -1,0 +1,16 @@
+{
+  "name": "Capri Destination Management Company",
+  "short_name": "Capri DMC",
+  "description": "Luxury B2B Destination Management Company & Tour Operator on Capri",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#10285D",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "start_url": "/"
+}
