@@ -1,0 +1,16 @@
+{
+  "url": "http://localhost:4322",
+  "timestamp": "2026-10-23T22:09:19.543Z",
+  "desktop": {
+    "performance": 74,
+    "accessibility": 93,
+    "bestPractices": 100,
+    "seo": 100
+  },
+  "mobile": {
+    "performance": 74,
+    "accessibility": 93,
+    "bestPractices": 100,
+    "seo": 100
+  }
+}
