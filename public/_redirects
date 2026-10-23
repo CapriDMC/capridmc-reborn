@@ -35,3 +35,65 @@
 /images/capri/villa-lysis-tour-private-tour-capri.jpeg.jpg /images/capri/capri-villa-lysis-private-tour.jpg 301
 /images/capri/wedding-in-capri.jpeg.jpg /images/capri/capri-luxury-wedding-celebration.jpg 301
 /images/capri/wedding.jpg /images/capri/capri-historic-villa-wedding.jpg 301
+
+# ==============================================================================
+# Legacy Site (IONOS / MyWebsite) 301 Redirects to Preserve SEO Link Equity
+# All 18 legacy URLs crawled from live www.capridmc.com sitemap
+# ==============================================================================
+
+# 1. Home (no redirect needed, serves /)
+
+# 2. Team & Nesea Authority
+/your-team-in-capri /#story 301
+/your-team-in-capri/ /#story 301
+/destination-management-company-capri-nesea /#story 301
+/destination-management-company-capri-nesea/ /#story 301
+
+# 3. Logistics & Airport Transfers
+/transfers-check-in-and-ticketing-services /#logistics 301
+/transfers-check-in-and-ticketing-services/ /#logistics 301
+
+# 4. Contact & Headquarters Dispatch
+/contact-us-capri-destination-management-company /#contact 301
+/contact-us-capri-destination-management-company/ /#contact 301
+
+# 5. Curated B2B Services (Weddings, Conciergerie, Tours, Experiences)
+/events-capri-destination-management-company /#services 301
+/events-capri-destination-management-company/ /#services 301
+/conciergerie-capri-destination-management-company /#services 301
+/conciergerie-capri-destination-management-company/ /#services 301
+/cooking-classes-capri-destination-management-company /#services 301
+/cooking-classes-capri-destination-management-company/ /#services 301
+/custom-experiences-capri-destination-management-company /#services 301
+/custom-experiences-capri-destination-management-company/ /#services 301
+/exclusive-solutions-capri-destination-management-company /#services 301
+/exclusive-solutions-capri-destination-management-company/ /#services 301
+/let-us-show-you-capri-destination-management-company-capri /#services 301
+/let-us-show-you-capri-destination-management-company-capri/ /#services 301
+/personal-shopper-service-capri-destination-management-company /#services 301
+/personal-shopper-service-capri-destination-management-company/ /#services 301
+/capri-private-boat-tours-capri-destination-management-company /#services 301
+/capri-private-boat-tours-capri-destination-management-company/ /#services 301
+/exclusive-guided-tours-with-capri-destination-management-company /#services 301
+/exclusive-guided-tours-with-capri-destination-management-company/ /#services 301
+/babysitting-and-dogsitting-in-capri-capri-destination-management-company /#services 301
+/babysitting-and-dogsitting-in-capri-capri-destination-management-company/ /#services 301
+/personal-trainer-and-sport-activities-capri-destination-management-company /#services 301
+/personal-trainer-and-sport-activities-capri-destination-management-company/ /#services 301
+/artisanal-sandals-knitwear-and-textiless-capri-destination-management-company /#services 301
+/artisanal-sandals-knitwear-and-textiless-capri-destination-management-company/ /#services 301
+/capri-destination-management-company-hiking-in-capri-hidden-routes-of-excursion /#services 301
+/capri-destination-management-company-hiking-in-capri-hidden-routes-of-excursion/ /#services 301
+
+# ==============================================================================
+# Legacy WordPress Sitemaps
+# ==============================================================================
+/wp-sitemap.xml /sitemap-index.xml 301
+/wp-sitemap-posts-page-1.xml /sitemap-index.xml 301
+
+# ==============================================================================
+# Legacy WordPress Media Uploads
+# ==============================================================================
+/wp-content/uploads/go-x/u/8a15cc76-c507-4b09-84aa-821eaefde7fa/* /logo.png 301
+/wp-content/uploads/* /logo.png 301
+

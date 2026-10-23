@@ -1,6 +1,6 @@
 # Visual Regression (Pixel-Diff) Report — Gate §9
 
-**Data di esecuzione:** 2026-10-23T22:08:03.319Z
+**Data di esecuzione:** 2026-10-23T22:17:28.632Z
 **Strumento:** Playwright + Pixelmatch (threshold: 0.1)
 
 | Viewport | File | Risoluzione | Pixel Differenti | % Differenza | Esito Gate V1 |

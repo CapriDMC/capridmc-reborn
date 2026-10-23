@@ -51,3 +51,16 @@ In ossequio al **Vincolo V6** (*"Ogni dato in JSON-LD / llms.txt deve essere pre
 ### 7. Token di Verifica Motori di Ricerca (Variabili d'Ambiente)
 - **Stato attuale:** `Seo.astro` è già configurato per leggere `PUBLIC_GSC_TOKEN` e `PUBLIC_BING_TOKEN`.
 - **Azione per Pep:** Inserire le due chiavi nelle variabili d'ambiente di Cloudflare Pages (o fornircele) una volta creati gli account Search Console e Bing Webmaster.
+
+---
+
+### 8. Gestione Modulo di Contatto Legacy vs Contatto Diretto B2B
+- **Stato attuale:** Il vecchio sito IONOS aveva un form contatti MailPoet su `/contact-us-capri-destination-management-company/`. Nel nuovo sito ad altissime prestazioni statiche, i bottoni "B2B Appointment" puntano a quell'URL (che ora reindirizza via 301 a `/#contact`, dove sono visibili la linea diretta 24/7 `+39 333 594 3947`, la sede e i riferimenti aziendali).
+- **Domanda per Pep:** Desidera che il bottone "B2B Appointment" apra direttamente il client email verso `partnerships@capridmc.com` con oggetto preimpostato (es. `mailto:partnerships@capridmc.com?subject=Capri%20DMC%20-%20B2B%20Advisor%20Inquiry`), oppure preferisce integrare un modal o form B2B serverless dedicato (es. Formspree / Cloudflare Turnstile)?
+
+---
+
+### 9. Cookie Banner e Conformità Privacy GDPR
+- **Stato attuale:** Il nuovo sito su Cloudflare Pages è al 100% privo di cookie di profilazione e di terze parti (zero script esterni invasivi, zero cookie traccianti). In conformità alle linee guida del Garante Privacy e GDPR/ePrivacy, **nessun cookie banner è attualmente obbligatorio**.
+- **Domanda per Pep:** Prevede di installare strumenti di terze parti (come Google Analytics 4, Meta Pixel o LinkedIn Insight Tag)? In caso affermativo, andrà predisposto un banner di consenso preventivo bloccante conforme GDPR prima dell'attivazione dei relativi script.
+
