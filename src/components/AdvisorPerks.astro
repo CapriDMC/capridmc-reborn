@@ -1,0 +1,142 @@
+---
+// Section highlighting B2B Travel Advisor Advantages
+const contactUrl = "https://www.capridmc.com/contact-us-capri-destination-management-company/";
+
+const advisorPerks = [
+  {
+    icon: "shield",
+    title: "Commission Integrity & Net Rates",
+    description: "Transparent B2B net pricing and protected commissions. We respect your client relationships as absolute and unassailable."
+  },
+  {
+    icon: "clock",
+    title: "24/7 Island Command",
+    description: "Whether you operate from New York, London, Dubai, or Tokyo, our on-island coordinators provide instantaneous response times with zero time-zone lag."
+  },
+  {
+    icon: "briefcase",
+    title: "White-Label Client Representation",
+    description: "Upon request, our chauffeurs, skippers, and private concierges represent your luxury agency seamlessly, providing a flawless branded client touchpoint."
+  },
+  {
+    icon: "anchor",
+    title: "Direct Maritime & Port Access",
+    description: "As native Capresi, we hold direct municipal permits for restricted harbor zones, private tender drop-offs, and priority grotto access that mainland agencies cannot secure."
+  },
+  {
+    icon: "sun",
+    title: "Dynamic Weather Contingency",
+    description: "If coastal swells affect sea departures, our team initiates immediate luxury inland alternatives: historic villa access, private cellar tastings, or helicopter transfers without missing a beat."
+  },
+  {
+    icon: "sparkles",
+    title: "VIP Bespoke Customization",
+    description: "From Kosher dining coordination for Bar Mitzvahs to after-hours boutique openings along Via Camerelle, no request is beyond our local reach."
+  }
+];
+---
+
+<section id="advisors" class="py-28 lg:py-36 px-6 lg:px-12 bg-brand-cream text-brand-navy border-b border-gray-200/60">
+  <div class="max-w-7xl mx-auto">
+    
+    <!-- Section Header -->
+    <div class="max-w-3xl mx-auto text-center mb-20 advisor-header gsap-reveal">
+      <div class="inline-flex items-center gap-2 mb-4">
+        <span class="w-2.5 h-[1px] bg-brand-gold"></span>
+        <span class="text-brand-gold uppercase tracking-[0.3em] text-xs font-semibold">
+          The B2B Advantage
+        </span>
+        <span class="w-2.5 h-[1px] bg-brand-gold"></span>
+      </div>
+      <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-brand-navy font-normal mb-6">
+        Why Global Luxury Advisors <br />
+        <span class="italic text-brand-gold">Trust Capri DMC</span>
+      </h2>
+      <p class="text-gray-600 font-light text-base lg:text-lg leading-relaxed">
+        We serve as your dedicated, on-the-ground extension in Capri. Eliminate operational blind spots with verified local mastery.
+      </p>
+    </div>
+
+    <!-- Perks Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      {advisorPerks.map((perk, index) => (
+        <div class="advisor-card gsap-reveal p-8 bg-white border border-gray-200/80 hover:border-brand-gold/50 rounded-sm shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-sm bg-brand-navy/5 flex items-center justify-center text-brand-gold mb-6">
+              <span class="font-serif text-xl font-medium">0{index + 1}</span>
+            </div>
+            <h3 class="font-serif text-2xl text-brand-navy mb-3">
+              {perk.title}
+            </h3>
+            <p class="text-gray-600 font-light text-sm leading-relaxed">
+              {perk.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Call to Action Banner -->
+    <div class="advisor-card gsap-reveal bg-brand-navy text-white p-10 lg:p-14 rounded-sm flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl">
+      <div class="max-w-2xl text-center lg:text-left">
+        <span class="text-brand-gold uppercase tracking-[0.25em] text-xs font-semibold block mb-2">
+          New Agency Onboarding
+        </span>
+        <h3 class="font-serif text-3xl sm:text-4xl text-white mb-3 font-normal">
+          Register Your Travel Agency for Direct Rates
+        </h3>
+        <p class="text-white/70 text-sm font-light leading-relaxed">
+          Connect directly with our founding team to receive our 2026/2027 confidential B2B Tariff Sheet and direct advisor WhatsApp dispatch line.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 shrink-0">
+        <a
+          href={contactUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-8 py-4 bg-brand-gold text-brand-navy hover:bg-white text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300 shadow-lg text-center"
+        >
+          Book Advisor Intake Call
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- GSAP Animation for Advisor Section -->
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+      gsap.fromTo(".advisor-header",
+        { y: 30, autoAlpha: 0 },
+        {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.9,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: "#advisors",
+            start: "top 80%"
+          }
+        }
+      );
+
+      gsap.fromTo(".advisor-card",
+        { y: 35, autoAlpha: 0 },
+        {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.8,
+          stagger: 0.12,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: "#advisors",
+            start: "top 75%"
+          }
+        }
+      );
+    }
+  });
+</script>

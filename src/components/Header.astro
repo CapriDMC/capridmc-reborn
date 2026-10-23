@@ -1,0 +1,141 @@
+---
+// Luxury Floating Navigation Header with Official Capri DMC Medallion Logo
+const navLinks = [
+  { name: "The Authority", href: "#story" },
+  { name: "Curated Services", href: "#services" },
+  { name: "Logistics Map", href: "#logistics" },
+  { name: "Advisor Perks", href: "#advisors" }
+];
+
+const contactUrl = "https://www.capridmc.com/contact-us-capri-destination-management-company/";
+---
+
+<header
+  id="navbar"
+  class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-brand-navy/80 backdrop-blur-md border-b border-white/10 px-6 lg:px-12 py-4 flex justify-between items-center"
+>
+  <!-- Brand Logo & Identity -->
+  <a href="#" class="flex items-center gap-3.5 group focus:outline-none" aria-label="Capri DMC Home">
+    <div class="relative">
+      <img
+        src="/logo.png"
+        alt="Capri DMC - Destination Management Company"
+        class="h-12 w-12 md:h-14 md:w-14 rounded-full object-contain shadow-md ring-1 ring-brand-gold/60 transition-transform duration-500 group-hover:scale-105 group-hover:ring-brand-gold"
+        loading="eager"
+      />
+      <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-brand-navy rounded-full border border-brand-gold flex items-center justify-center">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse"></span>
+      </span>
+    </div>
+    
+    <div class="flex flex-col text-left">
+      <div class="flex items-center gap-2">
+        <span class="font-serif text-xl md:text-2xl font-normal tracking-wide text-white leading-none">Capri DMC</span>
+        <span class="text-[9px] uppercase tracking-widest text-brand-gold font-semibold bg-brand-gold/15 px-1.5 py-0.5 rounded border border-brand-gold/30">B2B</span>
+      </div>
+      <span class="text-[8px] md:text-[9px] uppercase tracking-[0.25em] text-white/70 font-light mt-1">Your Roots in Capri</span>
+    </div>
+  </a>
+
+  <!-- Desktop Navigation -->
+  <nav class="hidden lg:flex items-center gap-8 xl:gap-10 text-[11px] uppercase tracking-[0.25em] font-medium text-white/90">
+    {navLinks.map((link) => (
+      <a
+        href={link.href}
+        class="relative py-1 hover:text-brand-gold transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-brand-gold after:transition-all after:duration-300 hover:after:w-full"
+      >
+        {link.name}
+      </a>
+    ))}
+  </nav>
+
+  <!-- CTA Action & Phone -->
+  <div class="hidden md:flex items-center gap-6">
+    <a
+      href="tel:+393335943947"
+      class="text-xs text-white/80 hover:text-brand-gold flex items-center gap-2 tracking-wider transition-colors duration-300"
+      title="24/7 Island Dispatch"
+    >
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span class="font-mono text-[11px]">+39 333 594 3947</span>
+    </a>
+
+    <a
+      href={contactUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="relative group px-6 py-2.5 text-[11px] uppercase tracking-[0.2em] font-semibold text-brand-gold border border-brand-gold overflow-hidden transition-all duration-500 hover:text-brand-navy shadow-sm"
+    >
+      <span class="absolute inset-0 w-full h-full bg-brand-gold -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out -z-10"></span>
+      <span>B2B Appointment</span>
+    </a>
+  </div>
+
+  <!-- Mobile Hamburger Button -->
+  <button
+    id="mobile-menu-btn"
+    class="lg:hidden p-2 text-white/90 hover:text-brand-gold focus:outline-none"
+    aria-label="Open mobile menu"
+  >
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+    </svg>
+  </button>
+</header>
+
+<!-- Mobile Drawer Overlay -->
+<div
+  id="mobile-drawer"
+  class="fixed inset-0 z-50 bg-brand-dark/95 backdrop-blur-xl opacity-0 pointer-events-none transition-opacity duration-300 flex flex-col justify-between p-8 text-white lg:hidden"
+>
+  <div class="flex justify-between items-center border-b border-white/10 pb-6">
+    <div class="flex items-center gap-3">
+      <img
+        src="/logo.png"
+        alt="Capri DMC Logo"
+        class="h-12 w-12 rounded-full object-contain ring-1 ring-brand-gold/60"
+      />
+      <div>
+        <span class="font-serif text-xl block leading-none">Capri DMC</span>
+        <span class="text-[8px] uppercase tracking-widest text-brand-gold">Your Roots in Capri</span>
+      </div>
+    </div>
+    <button
+      id="close-drawer-btn"
+      class="p-2 text-white/70 hover:text-brand-gold focus:outline-none"
+      aria-label="Close mobile menu"
+    >
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Links -->
+  <nav class="flex flex-col gap-6 py-8">
+    <span class="text-[10px] uppercase tracking-[0.3em] text-brand-gold font-semibold">Navigation</span>
+    {navLinks.map((link) => (
+      <a
+        href={link.href}
+        class="drawer-link font-serif text-3xl hover:text-brand-gold transition-colors duration-200"
+      >
+        {link.name}
+      </a>
+    ))}
+    <div class="pt-4 border-t border-white/10">
+      <a
+        href={contactUrl}
+        class="drawer-link block text-center bg-brand-gold text-brand-navy font-semibold uppercase tracking-[0.2em] text-xs py-4 hover:bg-white transition-colors duration-300"
+      >
+        Schedule B2B Appointment
+      </a>
+    </div>
+  </nav>
+
+  <!-- Mobile Footer / Operations -->
+  <div class="border-t border-white/10 pt-6 space-y-2 text-xs text-white/60 font-light">
+    <p class="text-brand-gold uppercase tracking-widest font-semibold text-[10px]">24/7 Operations · Capri, Italy</p>
+    <p>Direct B2B Hotline: <a href="tel:+393335943947" class="text-white hover:underline">+39 333 594 3947</a></p>
+    <p class="text-[10px] text-white/40">Women-owned · Spin-off from Nesea Capri Tours & Events</p>
+  </div>
+</div>

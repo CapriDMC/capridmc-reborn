@@ -1,0 +1,406 @@
+---
+import servicesData from '../data/services.json';
+
+const contactUrl = "https://www.capridmc.com/contact-us-capri-destination-management-company/";
+
+const exclusiveSolutions = servicesData.filter(s => s.cluster === "Exclusive Solutions");
+const customExperiences = servicesData.filter(s => s.cluster === "Custom Experiences");
+---
+
+<section id="services" class="py-28 lg:py-36 px-6 lg:px-12 bg-brand-navy text-white relative overflow-hidden">
+  
+  <!-- Subtle Mediterranean Decorative Watermarks -->
+  <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-brand-gold/5 blur-3xl pointer-events-none"></div>
+  <div class="absolute top-1/2 -left-40 w-96 h-96 rounded-full bg-brand-azure/10 blur-3xl pointer-events-none"></div>
+
+  <!-- Main Section Header -->
+  <div class="max-w-4xl mx-auto mb-20 text-center bento-header gsap-reveal">
+    <div class="inline-flex items-center gap-2 mb-4">
+      <span class="w-2.5 h-[1px] bg-brand-gold"></span>
+      <span class="text-brand-gold uppercase tracking-[0.3em] text-xs font-semibold">
+        Full Portfolio · www.capridmc.com
+      </span>
+      <span class="w-2.5 h-[1px] bg-brand-gold"></span>
+    </div>
+    <h2 class="font-serif text-4xl sm:text-5xl md:text-6xl text-white font-normal mb-6">
+      Our Curated B2B Services
+    </h2>
+    <p class="text-white/70 font-light text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+      Every offering presented across <strong class="text-white font-medium">Capri DMC</strong> is engineered exclusively for luxury travel agencies, Virtuoso advisors, and discerning VIP clients.
+    </p>
+  </div>
+
+  <div class="max-w-7xl mx-auto space-y-28">
+
+    <!-- ========================================== -->
+    <!-- CLUSTER 1: EXCLUSIVE SOLUTIONS -->
+    <!-- ========================================== -->
+    <div class="exclusive-cluster">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-white/10 gap-4">
+        <div>
+          <span class="text-brand-gold uppercase tracking-[0.25em] text-[10px] font-semibold block mb-1">
+            Core Operations & Transit
+          </span>
+          <h3 class="font-serif text-3xl sm:text-4xl text-white">
+            Exclusive Solutions
+          </h3>
+        </div>
+        <p class="text-white/60 font-light text-xs sm:text-sm max-w-md">
+          Uncompromised logistical execution, guaranteed peak-season private fleet access, and round-the-clock ground dispatch.
+        </p>
+      </div>
+
+      <!-- Bento Grid for Exclusive Solutions -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-auto">
+        
+        <!-- Service 1: Capri Private Boat Tours (Wide 2-col) -->
+        <div class="exclusive-card gsap-reveal img-zoom-container group relative md:col-span-2 min-h-[460px] lg:min-h-[500px] bg-brand-dark rounded-sm overflow-hidden border border-white/10 hover:border-brand-gold/40 transition-all duration-700 flex flex-col justify-end p-8 lg:p-12 shadow-2xl">
+          <img
+            src={exclusiveSolutions[0].image}
+            alt={exclusiveSolutions[0].title}
+            class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-45 transition-opacity duration-700"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/60 to-transparent"></div>
+          
+          <div class="relative z-10">
+            <div class="inline-block px-3 py-1 bg-brand-gold/20 backdrop-blur-md border border-brand-gold/40 text-brand-gold uppercase tracking-[0.25em] text-[10px] font-semibold mb-4">
+              {exclusiveSolutions[0].badge} · {exclusiveSolutions[0].b2b_tag}
+            </div>
+            <h4 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-white mb-4 group-hover:-translate-y-1 transition-transform duration-500">
+              {exclusiveSolutions[0].title}
+            </h4>
+            <p class="text-white/80 font-light text-sm sm:text-base max-w-xl mb-6 leading-relaxed">
+              {exclusiveSolutions[0].description}
+            </p>
+
+            <div class="flex flex-wrap gap-2 sm:gap-3 mb-6">
+              {exclusiveSolutions[0].b2b_features.map((feat) => (
+                <span class="text-[11px] bg-white/10 px-3 py-1 rounded-sm border border-white/10 text-white/90">
+                  {feat}
+                </span>
+              ))}
+            </div>
+
+            <a
+              href={contactUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-brand-gold uppercase tracking-[0.2em] text-xs font-semibold group-hover:text-white transition-colors duration-300"
+            >
+              <span>Reserve Private Vessel</span>
+              <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Service 4: Weddings, Bar Mitzvahs & Milestone Events (Tall 1-col) -->
+        <div class="exclusive-card gsap-reveal img-zoom-container group relative md:col-span-1 md:row-span-2 min-h-[480px] bg-brand-dark rounded-sm overflow-hidden border border-white/10 hover:border-brand-gold/40 transition-all duration-700 flex flex-col justify-end p-8 lg:p-10 shadow-2xl">
+          <img
+            src={exclusiveSolutions[3].image}
+            alt={exclusiveSolutions[3].title}
+            class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-45 transition-opacity duration-700"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/60 to-transparent"></div>
+
+          <div class="relative z-10">
+            <div class="inline-block px-3 py-1 bg-brand-gold/20 backdrop-blur-md border border-brand-gold/40 text-brand-gold uppercase tracking-[0.25em] text-[10px] font-semibold mb-4">
+              {exclusiveSolutions[3].badge}
+            </div>
+            <h4 class="font-serif text-3xl sm:text-4xl text-white mb-3 group-hover:-translate-y-1 transition-transform duration-500">
+              {exclusiveSolutions[3].title}
+            </h4>
+            <p class="text-white/80 font-light text-xs sm:text-sm mb-6 leading-relaxed">
+              {exclusiveSolutions[3].description}
+            </p>
+
+            <ul class="space-y-2.5 mb-8 text-xs text-white/70 font-light">
+              {exclusiveSolutions[3].b2b_features.map((feat) => (
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 bg-brand-gold rounded-full"></span>
+                  {feat}
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href={contactUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-brand-gold uppercase tracking-[0.2em] text-xs font-semibold group-hover:text-white transition-colors duration-300"
+            >
+              <span>Plan Celebration</span>
+              <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Service 2: Transfers, Check-In & Ticketing (1-col) -->
+        <div class="exclusive-card gsap-reveal group bg-white text-brand-navy p-8 lg:p-10 rounded-sm border border-transparent hover:border-brand-gold/40 transition-all duration-500 flex flex-col justify-between shadow-xl">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-brand-gold text-[10px] uppercase tracking-[0.25em] font-semibold">
+                {exclusiveSolutions[1].badge}
+              </span>
+              <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+              </svg>
+            </div>
+            <h4 class="font-serif text-2xl lg:text-3xl mb-3 text-brand-navy">
+              {exclusiveSolutions[1].title}
+            </h4>
+            <p class="text-gray-600 font-light text-xs sm:text-sm leading-relaxed mb-6">
+              {exclusiveSolutions[1].description}
+            </p>
+          </div>
+          <a
+            href="#logistics"
+            class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-semibold text-brand-navy group-hover:text-brand-gold transition-colors duration-300"
+          >
+            <span>Explore Route Logistics &rarr;</span>
+          </a>
+        </div>
+
+        <!-- Service 3: Dedicated 24/7 Conciergerie (1-col) -->
+        <div class="exclusive-card gsap-reveal img-zoom-container group relative min-h-[300px] bg-brand-dark rounded-sm overflow-hidden border border-white/10 hover:border-brand-gold/40 transition-all duration-500 flex flex-col justify-end p-8 shadow-xl">
+          <img
+            src={exclusiveSolutions[2].image}
+            alt={exclusiveSolutions[2].title}
+            class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-40 transition-opacity duration-700"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/60 to-transparent"></div>
+          
+          <div class="relative z-10">
+            <span class="text-brand-gold text-[10px] uppercase tracking-[0.25em] font-semibold block mb-2">
+              {exclusiveSolutions[2].badge}
+            </span>
+            <h4 class="font-serif text-2xl lg:text-3xl text-white mb-2">
+              {exclusiveSolutions[2].title}
+            </h4>
+            <p class="text-white/70 text-xs font-light leading-relaxed mb-4">
+              {exclusiveSolutions[2].description}
+            </p>
+            <a
+              href="tel:+393335943947"
+              class="text-brand-gold text-[11px] uppercase tracking-wider font-semibold hover:text-white transition-colors"
+            >
+              Direct Advisor Desk: +39 333 594 3947 &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- CLUSTER 2: CUSTOM EXPERIENCES -->
+    <!-- ========================================== -->
+    <div class="custom-cluster">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-white/10 gap-4">
+        <div>
+          <span class="text-brand-gold uppercase tracking-[0.25em] text-[10px] font-semibold block mb-1">
+            Artisan, Gastronomy, Nature & Lifestyle
+          </span>
+          <h3 class="font-serif text-3xl sm:text-4xl text-white">
+            Custom Experiences
+          </h3>
+        </div>
+        <p class="text-white/60 font-light text-xs sm:text-sm max-w-md">
+          Unpublished island privileges tailored to VIP personal tastes, culinary immersions, sartorial commissions, and secret nature expeditions.
+        </p>
+      </div>
+
+      <!-- 3-Column Grid for Custom Experiences -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {customExperiences.map((service) => (
+          <div class="custom-card gsap-reveal bg-brand-dark/80 rounded-sm overflow-hidden border border-white/10 hover:border-brand-gold/40 transition-all duration-500 flex flex-col justify-between group shadow-xl">
+            <!-- Image Thumbnail -->
+            <div class="img-zoom-container aspect-[16/10] w-full relative bg-gray-900">
+              <img
+                src={service.image}
+                alt={service.title}
+                class="w-full h-full object-cover opacity-75 group-hover:opacity-95 transition-all duration-700"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-dark to-transparent"></div>
+              <div class="absolute top-4 left-4">
+                <span class="px-2.5 py-1 bg-brand-navy/90 backdrop-blur-md text-brand-gold border border-brand-gold/30 text-[9px] uppercase tracking-widest font-semibold rounded-sm">
+                  {service.badge}
+                </span>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-6 lg:p-8 flex-1 flex flex-col justify-between">
+              <div>
+                <span class="text-[9px] uppercase tracking-wider text-brand-gold/80 font-medium block mb-1">
+                  {service.subtitle}
+                </span>
+                <h4 class="font-serif text-2xl text-white mb-3 group-hover:text-brand-gold transition-colors">
+                  {service.title}
+                </h4>
+                <p class="text-white/70 font-light text-xs sm:text-sm leading-relaxed mb-6">
+                  {service.description}
+                </p>
+
+                <!-- Key B2B Bullets -->
+                <ul class="space-y-2 mb-6 border-t border-white/10 pt-4">
+                  {service.b2b_features.slice(0, 2).map((feat) => (
+                    <li class="flex items-start gap-2 text-xs text-white/60 font-light">
+                      <span class="w-1.5 h-1.5 bg-brand-gold rounded-full mt-1 shrink-0"></span>
+                      <span>{feat}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <!-- Card Action -->
+              <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                <span class="text-[10px] uppercase tracking-widest text-brand-gold font-semibold">
+                  {service.b2b_tag}
+                </span>
+                <a
+                  href={contactUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-xs uppercase tracking-wider text-white hover:text-brand-gold transition-colors flex items-center gap-1.5"
+                >
+                  <span>Inquire</span>
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- B2B Concierge Dispatch Banner -->
+    <!-- ========================================== -->
+    <div class="dispatch-banner gsap-reveal bg-gradient-to-r from-brand-dark via-brand-navy to-brand-dark p-8 lg:p-12 rounded-sm border border-brand-gold/30 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden">
+      <img
+        src="/images/capri/concierge-service.jpg"
+        alt="Capri Infinity Pool Luxury Concierge"
+        class="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-navy/90 to-brand-dark pointer-events-none"></div>
+
+      <div class="relative z-10 lg:w-2/3">
+        <div class="inline-flex items-center gap-2 mb-3">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="text-brand-gold uppercase tracking-[0.25em] text-[10px] font-semibold">
+            24/7 Dedicated Ground Dispatch
+          </span>
+        </div>
+        <h3 class="font-serif text-3xl sm:text-4xl text-white mb-3">
+          Your On-Island Eyes and Ears Across All Offerings
+        </h3>
+        <p class="text-white/75 font-light text-sm sm:text-base leading-relaxed">
+          From last-minute yacht charters and VIP luggage porterage to private in-villa cooking classes and trusted childcare, our native Capri dispatchers coordinate every detail with zero time-zone delay.
+        </p>
+      </div>
+
+      <div class="relative z-10 lg:w-1/3 flex flex-col sm:flex-row lg:flex-col gap-4 w-full">
+        <a
+          href="tel:+393335943947"
+          class="flex items-center justify-center gap-3 px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white text-xs uppercase tracking-[0.2em] font-medium border border-white/20 transition-all duration-300"
+        >
+          <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+          <span>Hotline: +39 333 594 3947</span>
+        </a>
+
+        <a
+          href={contactUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center justify-center gap-3 px-6 py-3.5 bg-brand-gold text-brand-navy hover:bg-white text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300 shadow-lg text-center"
+        >
+          <span>Schedule B2B Appointment</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- GSAP Staggered Reveal Script with Section-Aware ScrollTriggers -->
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+      // Header reveal
+      gsap.fromTo(".bento-header",
+        { y: 30, autoAlpha: 0 },
+        {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.9,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".bento-header",
+            start: "top 85%"
+          }
+        }
+      );
+
+      // Exclusive Solutions reveal
+      gsap.fromTo(".exclusive-card",
+        { y: 35, autoAlpha: 0 },
+        {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.8,
+          stagger: 0.12,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".exclusive-cluster",
+            start: "top 80%"
+          }
+        }
+      );
+
+      // Custom Experiences reveal
+      gsap.fromTo(".custom-card",
+        { y: 35, autoAlpha: 0 },
+        {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.7,
+          stagger: 0.08,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".custom-cluster",
+            start: "top 80%"
+          }
+        }
+      );
+
+      // Concierge Dispatch Banner reveal
+      gsap.fromTo(".dispatch-banner",
+        { y: 30, autoAlpha: 0 },
+        {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".dispatch-banner",
+            start: "top 85%"
+          }
+        }
+      );
+    }
+  });
+</script>

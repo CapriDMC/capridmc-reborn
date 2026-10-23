@@ -1,0 +1,22 @@
+# Capri DMC - Robots & AI Engine Directives
+User-agent: *
+Allow: /
+Allow: /ai-context.txt
+
+# Generative AI Engines
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://www.capridmc.com/sitemap-index.xml

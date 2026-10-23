@@ -1,0 +1,233 @@
+---
+// Custom Logistics Map Component - "From Airport to 5★ Suite"
+const contactUrl = "https://www.capridmc.com/contact-us-capri-destination-management-company/";
+
+const logisticsSteps = [
+  {
+    step: "01",
+    title: "Tarmac VIP Meet & Greet",
+    location: "Naples Capodichino (NAP) or Rome (FCO)",
+    description: "Personal hostess waits at the aircraft gate. Fast-track baggage retrieval and direct escort to a private Mercedes-Maybach limousine.",
+    badge: "Air-to-Ground"
+  },
+  {
+    step: "02",
+    title: "Private Maritime Crossing",
+    location: "Molo Beverello / Mergellina or Helipad",
+    description: "Skip public hydrofoil queues. Board a private Riva yacht or helicopter directly to Capri, enjoying chilled Prosecco and Mediterranean breezes.",
+    badge: "Sea or Air Passage"
+  },
+  {
+    step: "03",
+    title: "Luggage Porterage & Island Taxi",
+    location: "Marina Grande, Capri",
+    description: "Dedicated porters take charge of all luggage at the dock. Guests are escorted into an iconic open-top Capri convertible taxi.",
+    badge: "Capri Heritage"
+  },
+  {
+    step: "04",
+    title: "Direct-to-Suite Room Placement",
+    location: "5★ Grand Hotel Suite (Quisisana, Punta Tragara, Caesar Augustus)",
+    description: "Luggage arrives in the suite prior to or immediately alongside guest check-in. Zero waiting in hotel lobbies.",
+    badge: "Turnkey Luxury"
+  }
+];
+---
+
+<section id="logistics" class="py-28 lg:py-36 px-6 lg:px-12 bg-white text-brand-navy relative overflow-hidden border-b border-gray-100">
+  
+  <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
+    
+    <!-- Left Column: Narrative & Step Breakdown -->
+    <div class="lg:w-1/2 map-text gsap-reveal">
+      <div class="inline-flex items-center gap-2 mb-4">
+        <span class="w-2.5 h-[1px] bg-brand-gold"></span>
+        <span class="text-brand-gold uppercase tracking-[0.3em] text-xs font-semibold">
+          Frictionless Transitions
+        </span>
+      </div>
+
+      <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-brand-navy font-normal mb-6 leading-[1.1]">
+        From the airport to your <br />
+        <span class="italic text-brand-gold">5★ Hotel suite.</span>
+      </h2>
+
+      <p class="text-gray-600 font-light text-base lg:text-lg leading-relaxed mb-10">
+        The Mediterranean's most picturesque island presents formidable logistical obstacles — restricted pedestrian zones, steep cliffsides, and sea-crossing schedules. We turn those obstacles into seamless moments of effortless indulgence.
+      </p>
+
+      <!-- Step Cards -->
+      <div class="space-y-6 mb-10">
+        {logisticsSteps.map((step) => (
+          <div class="flex items-start gap-4 p-4 rounded-sm bg-brand-offwhite border border-gray-200/70 hover:border-brand-gold/40 transition-colors duration-300">
+            <span class="font-serif text-2xl text-brand-gold font-light shrink-0 mt-0.5">
+              {step.step}
+            </span>
+            <div class="grow">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <h4 class="font-serif text-xl text-brand-navy font-medium">
+                  {step.title}
+                </h4>
+                <span class="text-[9px] uppercase tracking-wider text-brand-navy/60 font-semibold bg-white px-2 py-0.5 rounded border border-gray-200">
+                  {step.badge}
+                </span>
+              </div>
+              <p class="text-xs text-brand-gold font-semibold uppercase tracking-wider mb-1">
+                {step.location}
+              </p>
+              <p class="text-xs text-gray-500 font-light leading-relaxed">
+                {step.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <a
+        href={contactUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-3 px-8 py-4 bg-brand-navy text-white text-xs uppercase tracking-[0.2em] font-semibold hover:bg-brand-gold hover:text-brand-navy transition-all duration-300 shadow-lg"
+      >
+        <span>Request Bespoke Logistics Brief</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Right Column: Animated Custom Vector Map -->
+    <div class="lg:w-1/2 w-full flex flex-col items-center">
+      <div class="w-full aspect-square max-w-[540px] bg-gradient-to-br from-brand-offwhite via-slate-50 to-amber-50/20 rounded-full relative border border-brand-navy/15 map-visual gsap-reveal flex items-center justify-center p-6 shadow-2xl overflow-hidden">
+        
+        <!-- Subtle Radar / Circular Navigation Lines -->
+        <div class="absolute inset-8 rounded-full border border-brand-navy/5 pointer-events-none"></div>
+        <div class="absolute inset-24 rounded-full border border-brand-navy/5 pointer-events-none"></div>
+        <div class="absolute inset-40 rounded-full border border-brand-navy/5 pointer-events-none"></div>
+
+        <!-- Compass Rose Accent -->
+        <div class="absolute top-8 right-12 text-brand-gold/60 font-serif text-sm tracking-widest pointer-events-none flex flex-col items-center">
+          <span>N</span>
+          <span class="w-[1px] h-4 bg-brand-gold/40 mt-1"></span>
+        </div>
+
+        <!-- SVG Map Container with Route Paths -->
+        <svg
+          class="absolute inset-0 w-full h-full pointer-events-none"
+          viewBox="0 0 400 400"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <!-- Stylized Bay of Naples Coastline -->
+          <path
+            d="M80,60 Q180,40 280,70 T340,160 Q320,230 260,260 T180,310"
+            stroke="#10285D"
+            stroke-width="1.2"
+            stroke-opacity="0.12"
+            fill="none"
+          />
+
+          <!-- Sorrento Peninsula -->
+          <path
+            d="M260,260 C230,280 200,300 170,305"
+            stroke="#10285D"
+            stroke-width="1.5"
+            stroke-opacity="0.15"
+            fill="none"
+          />
+
+          <!-- Animated Golden Sea Route Line -->
+          <path
+            id="route-path"
+            d="M230,105 C180,160 160,240 130,295"
+            stroke="#D4AF37"
+            stroke-width="2.5"
+            stroke-dasharray="4 3"
+            class="path-line"
+          />
+        </svg>
+
+        <!-- Pin 1: Naples Capodichino & Port (Molo Beverello) -->
+        <div class="absolute top-[26%] left-[58%] -translate-x-1/2 -translate-y-1/2 pin-naples opacity-0 z-20 flex flex-col items-center">
+          <div class="w-4 h-4 bg-brand-navy rounded-full border-2 border-white shadow-lg relative flex items-center justify-center">
+            <span class="w-1.5 h-1.5 bg-brand-gold rounded-full"></span>
+          </div>
+          <div class="mt-2 text-center bg-white/95 backdrop-blur-md px-3 py-1.5 rounded shadow-lg border border-gray-200">
+            <span class="text-[9px] uppercase tracking-widest font-bold text-brand-navy block">Naples (NAP)</span>
+            <span class="text-[8px] text-gray-500 font-light">Tarmac & Yacht Harbor</span>
+          </div>
+        </div>
+
+        <!-- Pin 2: Sorrento Coast Reference -->
+        <div class="absolute top-[68%] left-[58%] -translate-x-1/2 -translate-y-1/2 z-10 hidden sm:flex flex-col items-center opacity-60">
+          <div class="w-2 h-2 bg-brand-navy/40 rounded-full"></div>
+          <span class="text-[8px] uppercase tracking-widest text-brand-navy/60 mt-1 font-serif">Sorrento Coast</span>
+        </div>
+
+        <!-- Pin 3: Capri Island & 5★ Grand Hotels -->
+        <div class="absolute bottom-[24%] left-[32%] -translate-x-1/2 translate-y-1/2 pin-capri opacity-0 z-20 flex flex-col items-center">
+          <!-- Radar Pulse Effect -->
+          <div class="relative w-6 h-6 flex items-center justify-center">
+            <span class="absolute inset-0 rounded-full bg-brand-gold/40 animate-ping"></span>
+            <span class="w-3.5 h-3.5 rounded-full bg-brand-gold border-2 border-white shadow-xl relative z-10"></span>
+          </div>
+          <div class="mt-2 text-center bg-brand-navy text-white px-3.5 py-1.5 rounded shadow-2xl border border-brand-gold/50">
+            <span class="font-serif italic text-lg text-brand-gold block leading-tight">Capri</span>
+            <span class="text-[8px] uppercase tracking-[0.2em] text-white/80 font-semibold block">Marina & 5★ Suites</span>
+          </div>
+        </div>
+
+        <!-- Maritime Transit Duration Pill -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full border border-gray-200 text-[10px] text-brand-navy font-semibold uppercase tracking-widest shadow-md">
+          Private Crossing: ~35-45 min
+        </div>
+
+      </div>
+
+      <!-- Quick Island Access Highlights -->
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-6 text-xs text-gray-600 font-light">
+        <span class="flex items-center gap-2">
+          <span class="w-2 h-2 bg-brand-gold rounded-full"></span>
+          Helicopter Charters (~18 min)
+        </span>
+        <span class="flex items-center gap-2">
+          <span class="w-2 h-2 bg-brand-gold rounded-full"></span>
+          Custom Open-Top Taxis
+        </span>
+        <span class="flex items-center gap-2">
+          <span class="w-2 h-2 bg-brand-gold rounded-full"></span>
+          Suite-Direct Luggage
+        </span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Animated Route Line GSAP Script -->
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+      const mapTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#logistics",
+          start: "top 70%"
+        }
+      });
+
+      mapTl
+        .fromTo(".map-text",
+          { x: -40, autoAlpha: 0 },
+          { x: 0, autoAlpha: 1, duration: 1, ease: "power3.out" }
+        )
+        .fromTo(".map-visual",
+          { scale: 0.92, autoAlpha: 0 },
+          { scale: 1, autoAlpha: 1, duration: 1, ease: "power3.out" },
+          "-=0.6"
+        )
+        .to(".pin-naples", { autoAlpha: 1, y: 0, duration: 0.6 }, "-=0.2")
+        .to("#route-path", { strokeDashoffset: 0, duration: 1.8, ease: "power1.inOut" })
+        .to(".pin-capri", { autoAlpha: 1, y: 0, duration: 0.6 }, "-=0.4");
+    }
+  });
+</script>
