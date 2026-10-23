@@ -3,15 +3,19 @@
 const contactUrl = "https://www.capridmc.com/contact-us-capri-destination-management-company/";
 ---
 
-<section class="relative min-h-screen flex items-center justify-center text-center overflow-hidden bg-brand-dark pt-28 pb-20">
+<section aria-label="Hero Introduction" class="relative min-h-screen flex items-center justify-center text-center overflow-hidden bg-brand-dark pt-28 pb-20">
   <!-- Authentic Capri Faraglioni & Mediterranean Coastal Background -->
   <div class="absolute inset-0 z-0">
     <img
       id="hero-bg"
       src="/images/capri/faraglioni-rocks-guided-tour-private-boat.jpg"
       alt="Capri Faraglioni Coastline and Mediterranean Sea"
+      width="3648"
+      height="2736"
       class="w-full h-full object-cover object-center opacity-45 scale-110 filter brightness-95"
       loading="eager"
+      fetchpriority="high"
+      decoding="async"
     />
     <!-- Editorial Vignette & Gradient Overlays -->
     <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/60 to-brand-dark/85"></div>
@@ -27,8 +31,11 @@ const contactUrl = "https://www.capridmc.com/contact-us-capri-destination-manage
         <img
           src="/logo.png"
           alt="Capri DMC Official Crest"
+          width="96"
+          height="96"
           class="w-20 h-20 md:w-24 md:h-24 rounded-full object-contain shadow-2xl ring-2 ring-brand-gold/80"
           loading="eager"
+          decoding="async"
         />
       </div>
     </div>

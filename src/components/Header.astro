@@ -20,8 +20,11 @@ const contactUrl = "https://www.capridmc.com/contact-us-capri-destination-manage
       <img
         src="/logo.png"
         alt="Capri DMC - Destination Management Company"
+        width="56"
+        height="56"
         class="h-12 w-12 md:h-14 md:w-14 rounded-full object-contain shadow-md ring-1 ring-brand-gold/60 transition-transform duration-500 group-hover:scale-105 group-hover:ring-brand-gold"
         loading="eager"
+        decoding="async"
       />
       <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-brand-navy rounded-full border border-brand-gold flex items-center justify-center">
         <span class="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse"></span>
@@ -38,7 +41,7 @@ const contactUrl = "https://www.capridmc.com/contact-us-capri-destination-manage
   </a>
 
   <!-- Desktop Navigation -->
-  <nav class="hidden lg:flex items-center gap-8 xl:gap-10 text-[11px] uppercase tracking-[0.25em] font-medium text-white/90">
+  <nav aria-label="Main Navigation" class="hidden lg:flex items-center gap-8 xl:gap-10 text-[11px] uppercase tracking-[0.25em] font-medium text-white/90">
     {navLinks.map((link) => (
       <a
         href={link.href}
@@ -93,7 +96,11 @@ const contactUrl = "https://www.capridmc.com/contact-us-capri-destination-manage
       <img
         src="/logo.png"
         alt="Capri DMC Logo"
+        width="48"
+        height="48"
         class="h-12 w-12 rounded-full object-contain ring-1 ring-brand-gold/60"
+        loading="lazy"
+        decoding="async"
       />
       <div>
         <span class="font-serif text-xl block leading-none">Capri DMC</span>
@@ -112,7 +119,7 @@ const contactUrl = "https://www.capridmc.com/contact-us-capri-destination-manage
   </div>
 
   <!-- Mobile Links -->
-  <nav class="flex flex-col gap-6 py-8">
+  <nav aria-label="Mobile Navigation" class="flex flex-col gap-6 py-8">
     <span class="text-[10px] uppercase tracking-[0.3em] text-brand-gold font-semibold">Navigation</span>
     {navLinks.map((link) => (
       <a
