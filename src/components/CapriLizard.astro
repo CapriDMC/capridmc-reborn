@@ -5,7 +5,7 @@
 
 <div
   id="capri-lizard-container"
-  class="fixed right-2 sm:right-3 md:right-4 lg:right-6 top-0 z-40 pointer-events-none select-none transition-opacity duration-700 opacity-0 w-20 h-44 sm:w-24 sm:h-52 md:w-28 md:h-60 lg:w-32 lg:h-64"
+  class="fixed right-2 sm:right-3 md:right-4 lg:right-6 top-0 z-40 pointer-events-none select-none transition-opacity duration-700 opacity-0 w-20 h-44 sm:w-24 sm:h-52 md:w-28 md:h-60 lg:w-48 lg:h-96"
   aria-hidden="true"
 >
   <canvas
@@ -310,6 +310,8 @@
     }
 
     function drawLizardLayers(originX, originY, destW, destH, scale, withTongue) {
+      const sizeRatio = destH / 190;
+
       // 1. Draw 4 articulated legs under the body
       function drawLeg(img, bbox, angle) {
         ctx.save();
@@ -333,18 +335,18 @@
       drawLeg(rrImg, rig.rr, rrAngle);
 
       // 2. Draw central body on top (with spine/tail undulation & head turn)
-      renderDeformedBody(originX, originY, destW, destH, scale);
+      renderDeformedBody(originX, originY, destW, destH, scale, sizeRatio);
 
       // 3. Delicate, Whisper-Thin Realistic Forked Tongue
       if (withTongue && tongueProgress > 0.03) {
-        const headOffset = (headAngle !== 0) ? headAngle * 36 : 0;
+        const headOffset = (headAngle !== 0) ? headAngle * 36 * sizeRatio : 0;
         const snoutX = originX + headOffset;
         const snoutY = originY + destH - 1;
-        renderRealisticTongue(snoutX, snoutY);
+        renderRealisticTongue(snoutX, snoutY, sizeRatio);
       }
     }
 
-    function renderDeformedBody(originX, originY, destW, destH, scale) {
+    function renderDeformedBody(originX, originY, destW, destH, scale, sizeRatio) {
       const numStrips = 80;
       const sliceH_src = rig.H / numStrips;
       const sliceH_dest = destH / numStrips;
@@ -358,14 +360,14 @@
         // Spinal wave rhythmically synchronized with locomotion
         let wave = 0;
         if (!isIdle || walkSpeed > 0.05) {
-          wave = Math.sin(walkPhase + normY * 4.5) * (1 - normY) * 6 * Math.min(1, walkSpeed + 0.3);
+          wave = Math.sin(walkPhase + normY * 4.5) * (1 - normY) * 6 * sizeRatio * Math.min(1, walkSpeed + 0.3);
         }
 
         // Head flexion towards left content on idle
         let headOffset = 0;
         if (headAngle !== 0 && normY > 0.80) {
           const t = (normY - 0.80) / 0.20;
-          headOffset = headAngle * 36 * t * t;
+          headOffset = headAngle * 36 * sizeRatio * t * t;
         }
 
         const dx = startX + wave + headOffset;
@@ -378,10 +380,10 @@
       }
     }
 
-    function renderRealisticTongue(snoutX, snoutY) {
-      // Proportional, slender & vivid: ~28px reach, delicate 1.6px shaft & 1.1px tines
-      const reach = 28 * tongueProgress;
-      const spread = 6.5 * tongueProgress;
+    function renderRealisticTongue(snoutX, snoutY, sizeRatio) {
+      // Proportional, slender & vivid: reach & width scale with lizard size
+      const reach = 28 * sizeRatio * tongueProgress;
+      const spread = 6.5 * sizeRatio * tongueProgress;
 
       ctx.save();
       ctx.translate(snoutX, snoutY);
@@ -396,23 +398,23 @@
       tongueGrad.addColorStop(1, "#FFFFFF");    // Brilliant light-catching tip
 
       ctx.shadowColor = "#F43F5E";
-      ctx.shadowBlur = 4;
+      ctx.shadowBlur = 4 * sizeRatio;
 
-      // 1. Slender main shaft (1.6px)
+      // 1. Slender main shaft
       ctx.beginPath();
       ctx.moveTo(0, 0);
       ctx.lineTo(0, reach * 0.65);
       ctx.strokeStyle = tongueGrad;
-      ctx.lineWidth = 1.6;
+      ctx.lineWidth = 1.6 * sizeRatio;
       ctx.lineCap = "round";
       ctx.stroke();
 
-      // 2. Left tine (delicate, acute curve 1.1px)
+      // 2. Left tine (delicate, acute curve)
       ctx.beginPath();
       ctx.moveTo(0, reach * 0.65);
       ctx.quadraticCurveTo(-spread * 0.35, reach * 0.82, -spread, reach);
       ctx.strokeStyle = tongueGrad;
-      ctx.lineWidth = 1.1;
+      ctx.lineWidth = 1.1 * sizeRatio;
       ctx.lineCap = "round";
       ctx.stroke();
 
@@ -421,14 +423,14 @@
       ctx.moveTo(0, reach * 0.65);
       ctx.quadraticCurveTo(spread * 0.35, reach * 0.82, spread, reach);
       ctx.strokeStyle = tongueGrad;
-      ctx.lineWidth = 1.1;
+      ctx.lineWidth = 1.1 * sizeRatio;
       ctx.lineCap = "round";
       ctx.stroke();
 
       // 4. Subtle micro glint at tine tips
       ctx.beginPath();
-      ctx.arc(-spread, reach, 0.7, 0, Math.PI * 2);
-      ctx.arc(spread, reach, 0.7, 0, Math.PI * 2);
+      ctx.arc(-spread, reach, 0.8 * sizeRatio, 0, Math.PI * 2);
+      ctx.arc(spread, reach, 0.8 * sizeRatio, 0, Math.PI * 2);
       ctx.fillStyle = "#FFFFFF";
       ctx.fill();
 
