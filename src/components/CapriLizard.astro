@@ -1,0 +1,593 @@
+---
+// Capri DMC - Faraglioni Azure Lizard (Podarcis siculus coeruleus)
+// Interactive Cartier-style Luxury Mascot
+---
+
+<div
+  id="capri-lizard-container"
+  class="fixed right-2 sm:right-3 md:right-5 lg:right-6 top-0 z-40 pointer-events-none select-none transition-opacity duration-700 opacity-0 w-12 h-28 sm:w-16 sm:h-36 md:w-20 md:h-44 lg:w-24 lg:h-52"
+  aria-hidden="true"
+>
+  <svg
+    id="capri-lizard-svg"
+    viewBox="-10 -5 160 290"
+    class="w-full h-full drop-shadow-2xl overflow-visible"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      <!-- Deep Navy Body Gradient -->
+      <linearGradient id="lizardNavy" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#051228" />
+        <stop offset="25%" stop-color="#0C2356" />
+        <stop offset="50%" stop-color="#14397F" />
+        <stop offset="75%" stop-color="#0E2863" />
+        <stop offset="100%" stop-color="#051228" />
+      </linearGradient>
+
+      <!-- Limb Depth Gradient -->
+      <linearGradient id="lizardLimbNavy" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#143A82" />
+        <stop offset="60%" stop-color="#0B204E" />
+        <stop offset="100%" stop-color="#040D1E" />
+      </linearGradient>
+
+      <!-- Polished Cartier Gold Gradient -->
+      <linearGradient id="cartierGold" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#FFF5CE" />
+        <stop offset="28%" stop-color="#E8C562" />
+        <stop offset="65%" stop-color="#C29629" />
+        <stop offset="85%" stop-color="#E8C562" />
+        <stop offset="100%" stop-color="#FFF5CE" />
+      </linearGradient>
+
+      <!-- Faraglioni Cerulean Iridescent Shimmer -->
+      <linearGradient id="azureShimmer" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.8" />
+        <stop offset="50%" stop-color="#0284C7" stop-opacity="0.5" />
+        <stop offset="100%" stop-color="#0369A1" stop-opacity="0" />
+      </linearGradient>
+
+      <!-- Dorsal Spine Gold Bead Gradient -->
+      <linearGradient id="dorsalGold" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#FFF5CE" />
+        <stop offset="50%" stop-color="#D4AF37" />
+        <stop offset="100%" stop-color="#FFF5CE" />
+      </linearGradient>
+
+      <!-- High-Jewelry Soft Glow & Drop Shadow -->
+      <filter id="cartierShadow" x="-30%" y="-20%" width="160%" height="150%">
+        <feDropShadow dx="-2" dy="5" stdDeviation="5.5" flood-color="#030A17" flood-opacity="0.55" />
+        <feDropShadow dx="0" dy="0" stdDeviation="1.8" flood-color="#D4AF37" flood-opacity="0.35" />
+      </filter>
+
+      <!-- Eye Luminescence -->
+      <filter id="gemGlow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="1.5" result="blur" />
+        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+      </filter>
+    </defs>
+
+    <g id="lizard-root" filter="url(#cartierShadow)">
+      
+      <!-- ================= 1. HIND LEGS ================= -->
+      <!-- Back Left Leg (Screen Left / Inner Side) -->
+      <g id="lizard-leg-bl" style="transform-origin: 55px 120px;">
+        <!-- Muscular Thigh -->
+        <path
+          d="M 55 120 C 38 112, 22 116, 18 128 C 16 135, 23 140, 30 134 C 38 126, 48 127, 55 120 Z"
+          fill="url(#lizardLimbNavy)"
+          stroke="url(#cartierGold)"
+          stroke-width="0.9"
+          stroke-linejoin="round"
+        />
+        <!-- Lower Leg & Ankle -->
+        <path
+          d="M 20 130 C 13 140, 9 152, 13 158 C 15 160, 20 157, 22 151 C 25 143, 27 135, 22 131 Z"
+          fill="url(#lizardLimbNavy)"
+          stroke="url(#cartierGold)"
+          stroke-width="0.8"
+        />
+        <!-- Sculpted Splayed Golden Claws -->
+        <path
+          d="M 13 158 Q 8 163, 5 166 
+             M 13 158 Q 9 167, 8 171 
+             M 14 158 Q 14 170, 13 175 
+             M 15 158 Q 18 169, 19 173 
+             M 16 157 Q 21 165, 24 167"
+          stroke="url(#cartierGold)"
+          stroke-width="1.1"
+          stroke-linecap="round"
+          fill="none"
+        />
+      </g>
+
+      <!-- Back Right Leg (Screen Right / Edge Side) -->
+      <g id="lizard-leg-br" style="transform-origin: 85px 120px;">
+        <!-- Muscular Thigh -->
+        <path
+          d="M 85 120 C 102 112, 118 116, 122 128 C 124 135, 117 140, 110 134 C 102 126, 92 127, 85 120 Z"
+          fill="url(#lizardLimbNavy)"
+          stroke="url(#cartierGold)"
+          stroke-width="0.9"
+          stroke-linejoin="round"
+        />
+        <!-- Lower Leg & Ankle -->
+        <path
+          d="M 120 130 C 127 140, 131 152, 127 158 C 125 160, 120 157, 118 151 C 115 143, 113 135, 118 131 Z"
+          fill="url(#lizardLimbNavy)"
+          stroke="url(#cartierGold)"
+          stroke-width="0.8"
+        />
+        <!-- Sculpted Splayed Golden Claws -->
+        <path
+          d="M 127 158 Q 132 163, 135 166 
+             M 127 158 Q 131 167, 132 171 
+             M 126 158 Q 126 170, 127 175 
+             M 125 158 Q 122 169, 121 173 
+             M 124 157 Q 119 165, 116 167"
+          stroke="url(#cartierGold)"
+          stroke-width="1.1"
+          stroke-linecap="round"
+          fill="none"
+        />
+      </g>
+
+      <!-- ================= 2. SINUOUS TAIL ================= -->
+      <g id="lizard-tail" style="transform-origin: 70px 112px;">
+        <path
+          d="M 70 112
+             C 70 96, 80 78, 77 56 
+             C 74 38, 59 26, 64 12 
+             C 65 8, 68 6, 68 4
+             C 66 6, 61 10, 59 16
+             C 55 30, 68 44, 71 60
+             C 74 76, 65 94, 65 112 Z"
+          fill="url(#lizardNavy)"
+          stroke="url(#cartierGold)"
+          stroke-width="0.9"
+        />
+        <!-- Dorsal gold beading line -->
+        <path
+          d="M 68 108 C 69 88, 75 70, 74 54 C 71 40, 63 28, 64 14"
+          fill="none"
+          stroke="url(#dorsalGold)"
+          stroke-width="0.95"
+          stroke-dasharray="2,4"
+          stroke-linecap="round"
+        />
+      </g>
+
+      <!-- ================= 3. TORSO & DORSAL JEWEL FACETS ================= -->
+      <g id="lizard-torso" style="transform-origin: 70px 150px;">
+        <!-- Main Body Contour -->
+        <path
+          d="M 65 112
+             C 53 116, 48 132, 51 150
+             C 53 162, 47 174, 53 188
+             C 58 193, 64 195, 70 195
+             C 76 195, 82 193, 87 188
+             C 93 174, 87 162, 89 150
+             C 92 132, 87 116, 75 112
+             Z"
+          fill="url(#lizardNavy)"
+          stroke="url(#cartierGold)"
+          stroke-width="1.2"
+          stroke-linejoin="round"
+        />
+
+        <!-- Iridescent Azure Shimmer Flanks -->
+        <path
+          d="M 53 125 C 50 142, 53 160, 56 175"
+          fill="none"
+          stroke="url(#azureShimmer)"
+          stroke-width="4.5"
+          stroke-linecap="round"
+          opacity="0.65"
+        />
+        <path
+          d="M 87 125 C 90 142, 87 160, 84 175"
+          fill="none"
+          stroke="url(#azureShimmer)"
+          stroke-width="4.5"
+          stroke-linecap="round"
+          opacity="0.65"
+        />
+
+        <!-- High-Jewelry Cartier Diamond Scale Plates Along Spine -->
+        <g stroke="url(#cartierGold)" stroke-width="0.85" fill="none">
+          <!-- Scale 1 (Pelvis) -->
+          <polygon points="70,120 74,126 70,132 66,126" fill="#0C2254" fill-opacity="0.9" />
+          <!-- Scale 2 (Mid-back) -->
+          <polygon points="70,135 75,142 70,149 65,142" fill="#0E2760" fill-opacity="0.9" />
+          <!-- Scale 3 (Upper-back) -->
+          <polygon points="70,152 76,160 70,168 64,160" fill="#112F72" fill-opacity="0.9" />
+          <!-- Scale 4 (Shoulders) -->
+          <polygon points="70,171 75,178 70,185 65,178" fill="#143680" fill-opacity="0.9" />
+
+          <!-- Chevron rib accents -->
+          <path d="M 66 130 L 57 136 M 74 130 L 83 136" stroke-linecap="round" />
+          <path d="M 65 146 L 55 153 M 75 146 L 85 153" stroke-linecap="round" />
+          <path d="M 64 164 L 54 171 M 76 164 L 86 171" stroke-linecap="round" />
+          <path d="M 65 182 L 58 188 M 75 182 L 82 188" stroke-linecap="round" />
+        </g>
+      </g>
+
+      <!-- ================= 4. FRONT LEGS ================= -->
+      <!-- Front Left Leg (Screen Left / Inner Side) -->
+      <g id="lizard-leg-fl" style="transform-origin: 53px 185px;">
+        <!-- Shoulder & Upper Arm -->
+        <path
+          d="M 53 185 C 37 178, 25 186, 20 197 C 18 203, 25 208, 30 202 C 37 194, 46 193, 53 185 Z"
+          fill="url(#lizardLimbNavy)"
+          stroke="url(#cartierGold)"
+          stroke-width="0.9"
+          stroke-linejoin="round"
+        />
+        <!-- Forearm & Wrist -->
+        <path
+          d="M 21 200 C 14 210, 10 222, 15 228 C 17 230, 22 227, 24 221 C 26 213, 27 206, 23 200 Z"
+          fill="url(#lizardLimbNavy)"
+          stroke="url(#cartierGold)"
+          stroke-width="0.8"
+        />
+        <!-- 5 Curved Claws -->
+        <path
+          d="M 15 228 Q 9 233, 6 236 
+             M 15 228 Q 11 238, 9 242 
+             M 16 228 Q 16 241, 15 246 
+             M 17 228 Q 21 239, 22 243 
+             M 18 227 Q 24 235, 27 237"
+          stroke="url(#cartierGold)"
+          stroke-width="1.1"
+          stroke-linecap="round"
+          fill="none"
+        />
+      </g>
+
+      <!-- Front Right Leg (Screen Right / Edge Side) -->
+      <g id="lizard-leg-fr" style="transform-origin: 87px 185px;">
+        <!-- Shoulder & Upper Arm -->
+        <path
+          d="M 87 185 C 103 178, 115 186, 120 197 C 122 203, 115 208, 110 202 C 103 194, 94 193, 87 185 Z"
+          fill="url(#lizardLimbNavy)"
+          stroke="url(#cartierGold)"
+          stroke-width="0.9"
+          stroke-linejoin="round"
+        />
+        <!-- Forearm & Wrist -->
+        <path
+          d="M 119 200 C 126 210, 130 222, 125 228 C 123 230, 118 227, 116 221 C 114 213, 113 206, 117 200 Z"
+          fill="url(#lizardLimbNavy)"
+          stroke="url(#cartierGold)"
+          stroke-width="0.8"
+        />
+        <!-- 5 Curved Claws -->
+        <path
+          d="M 125 228 Q 131 233, 134 236 
+             M 125 228 Q 129 238, 131 242 
+             M 124 228 Q 124 241, 125 246 
+             M 123 228 Q 119 239, 118 243 
+             M 122 227 Q 116 235, 113 237"
+          stroke="url(#cartierGold)"
+          stroke-width="1.1"
+          stroke-linecap="round"
+          fill="none"
+        />
+      </g>
+
+      <!-- ================= 5. HEAD & NECK ================= -->
+      <!-- Head pivots at neck center (70, 192). Points straight DOWN. -->
+      <g id="lizard-head" style="transform-origin: 70px 192px;">
+        <!-- Articulated Neck Band -->
+        <path
+          d="M 61 191 C 65 193, 75 193, 79 191 C 80 195, 80 199, 79 202 C 75 204, 65 204, 61 202 Z"
+          fill="url(#lizardNavy)"
+          stroke="url(#cartierGold)"
+          stroke-width="0.85"
+        />
+
+        <!-- Predatory High-Jewelry Diamond Head Silhouette -->
+        <path
+          d="M 61 198
+             C 51 206, 50 218, 54 231
+             C 58 239, 66 247, 70 250
+             C 74 247, 82 239, 86 231
+             C 90 218, 89 206, 79 198
+             Z"
+          fill="url(#lizardNavy)"
+          stroke="url(#cartierGold)"
+          stroke-width="1.25"
+          stroke-linejoin="round"
+        />
+
+        <!-- Parietal Crown Jewel Facets -->
+        <polygon points="70,202 75,209 70,216 65,209" fill="#0C2356" stroke="url(#cartierGold)" stroke-width="0.85" />
+        <polygon points="70,218 74,227 70,236 66,227" fill="#06163A" stroke="url(#cartierGold)" stroke-width="0.8" />
+        <line x1="70" y1="237" x2="70" y2="249" stroke="url(#cartierGold)" stroke-width="0.85" stroke-linecap="round" />
+
+        <!-- Gemstone Eyes (Faraglioni Cerulean with Gold Bezel) -->
+        <!-- Left Eye (Inner / Content side) -->
+        <g id="lizard-eye-l" style="transform-origin: 57px 219px;">
+          <ellipse cx="57" cy="219" rx="3.2" ry="5.2" transform="rotate(-15 57 219)" fill="#06163A" stroke="url(#cartierGold)" stroke-width="0.95" />
+          <ellipse cx="57" cy="219" rx="1.8" ry="3.4" transform="rotate(-15 57 219)" fill="#38BDF8" filter="url(#gemGlow)" />
+          <circle cx="57" cy="218" r="0.9" fill="#030A17" />
+          <circle cx="56.5" cy="217.5" r="0.45" fill="#FFF" />
+        </g>
+
+        <!-- Right Eye (Outer side) -->
+        <g id="lizard-eye-r" style="transform-origin: 83px 219px;">
+          <ellipse cx="83" cy="219" rx="3.2" ry="5.2" transform="rotate(15 83 219)" fill="#06163A" stroke="url(#cartierGold)" stroke-width="0.95" />
+          <ellipse cx="83" cy="219" rx="1.8" ry="3.4" transform="rotate(15 83 219)" fill="#38BDF8" filter="url(#gemGlow)" />
+          <circle cx="83" cy="218" r="0.9" fill="#030A17" />
+          <circle cx="82.5" cy="217.5" r="0.45" fill="#FFF" />
+        </g>
+
+        <!-- ================= 6. FORKED GOLD TONGUE ================= -->
+        <!-- Starts safely concealed inside snout (70, 246), shoots out when idle -->
+        <g id="lizard-tongue" style="transform-origin: 70px 248px; transform: scaleY(0) scaleX(0); opacity: 0;">
+          <!-- Main Shaft -->
+          <path d="M 70 248 L 70 268" stroke="url(#cartierGold)" stroke-width="1.3" stroke-linecap="round" />
+          <!-- Delicate Curved Tines -->
+          <path d="M 70 268 Q 67 274, 64 277" stroke="url(#cartierGold)" stroke-width="1.0" stroke-linecap="round" fill="none" />
+          <path d="M 70 268 Q 73 274, 76 277" stroke="url(#cartierGold)" stroke-width="1.0" stroke-linecap="round" fill="none" />
+        </g>
+
+      </g> <!-- end head -->
+
+    </g>
+  </svg>
+</div>
+
+<script is:inline>
+  (() => {
+    // Respect reduced motion preference
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
+    const container = document.getElementById("capri-lizard-container");
+    if (!container) return;
+
+    // DOM Nodes
+    const legFL = document.getElementById("lizard-leg-fl");
+    const legFR = document.getElementById("lizard-leg-fr");
+    const legBL = document.getElementById("lizard-leg-bl");
+    const legBR = document.getElementById("lizard-leg-br");
+    const tail = document.getElementById("lizard-tail");
+    const torso = document.getElementById("lizard-torso");
+    const head = document.getElementById("lizard-head");
+    const tongue = document.getElementById("lizard-tongue");
+    const eyeL = document.getElementById("lizard-eye-l");
+    const eyeR = document.getElementById("lizard-eye-r");
+
+    // Kinematics & State Variables
+    let scrollY = window.scrollY || 0;
+    let lastScrollY = scrollY;
+    let targetY = 100;
+    let currentY = 100;
+    let walkPhase = 0;
+    let isIdle = false;
+    let idleTimer = null;
+    let tongueTimeline = null;
+    let isInitialized = false;
+
+    // Calculate vertical travel bounds based on viewport
+    function getTravelBounds() {
+      const winHeight = window.innerHeight;
+      const lizardH = container.offsetHeight || 180;
+      const minY = 90; // Cleanly below the sticky navigation bar
+      const maxY = Math.max(minY + 60, winHeight - lizardH - 24);
+      return { minY, maxY };
+    }
+
+    function calculateTargetY() {
+      const docHeight = document.documentElement.scrollHeight;
+      const winHeight = window.innerHeight;
+      const maxScroll = Math.max(1, docHeight - winHeight);
+      const progress = Math.min(1, Math.max(0, scrollY / maxScroll));
+      const { minY, maxY } = getTravelBounds();
+      return minY + progress * (maxY - minY);
+    }
+
+    // Initialize position and fade in smoothly
+    function init() {
+      scrollY = window.scrollY || 0;
+      lastScrollY = scrollY;
+      currentY = calculateTargetY();
+      targetY = currentY;
+      container.style.transform = `translate3d(0, ${currentY}px, 0)`;
+      container.classList.remove("opacity-0");
+      container.classList.add("opacity-100");
+      isInitialized = true;
+      scheduleIdleCheck();
+    }
+
+    // Reset legs to neutral resting grip
+    function resetGaitToRest() {
+      if (typeof gsap !== "undefined") {
+        gsap.to([legFL, legFR, legBL, legBR, tail, torso], {
+          rotation: 0,
+          duration: 0.35,
+          ease: "power2.out",
+          overwrite: "auto"
+        });
+      } else {
+        legFL.style.transform = "rotate(0deg)";
+        legFR.style.transform = "rotate(0deg)";
+        legBL.style.transform = "rotate(0deg)";
+        legBR.style.transform = "rotate(0deg)";
+        tail.style.transform = "rotate(0deg)";
+        torso.style.transform = "rotate(0deg)";
+      }
+    }
+
+    // Enter Idle State: Turn head towards content (screen left), flick golden tongue
+    function triggerIdleState() {
+      isIdle = true;
+      resetGaitToRest();
+
+      if (typeof gsap !== "undefined") {
+        // Head tilts towards editorial content on the left (+22 deg clockwise around neck pivot 50% 0%)
+        gsap.to(head, {
+          rotation: 22,
+          transformOrigin: "50% 0%",
+          duration: 0.45,
+          ease: "back.out(1.5)",
+          overwrite: "auto"
+        });
+
+        // Gemstone eye luminescence glint
+        gsap.to([eyeL, eyeR], {
+          scale: 1.25,
+          transformOrigin: "center center",
+          duration: 0.16,
+          yoyo: true,
+          repeat: 1,
+          ease: "power1.inOut",
+          delay: 0.1
+        });
+
+        // Sibilant inquisitive tongue flick animation
+        if (tongueTimeline) tongueTimeline.kill();
+        tongueTimeline = gsap.timeline({ delay: 0.22 });
+
+        tongueTimeline
+          .set(tongue, { opacity: 1, scaleX: 1, scaleY: 0, transformOrigin: "50% 0%" })
+          // Quick dart out
+          .to(tongue, { scaleY: 1.15, duration: 0.09, ease: "power2.out" })
+          // Micro-flicker vibration
+          .to(tongue, { rotation: -3, duration: 0.04, yoyo: true, repeat: 3 })
+          // Inquisitive double flick
+          .to(tongue, { scaleY: 0.45, duration: 0.07 })
+          .to(tongue, { scaleY: 1.25, duration: 0.07 })
+          // Smooth retraction
+          .to(tongue, { scaleY: 0, duration: 0.11, ease: "power2.in" })
+          .set(tongue, { opacity: 0, scaleX: 0 });
+      } else {
+        // Vanilla CSS fallback
+        head.style.transition = "transform 0.4s ease-out";
+        head.style.transform = "rotate(22deg)";
+        setTimeout(() => {
+          if (!isIdle) return;
+          tongue.style.opacity = "1";
+          tongue.style.transform = "scaleY(1) scaleX(1)";
+          tongue.style.transition = "transform 0.1s ease-out";
+          setTimeout(() => {
+            tongue.style.transform = "scaleY(0) scaleX(0)";
+            tongue.style.opacity = "0";
+          }, 240);
+        }, 200);
+      }
+    }
+
+    // Exit Idle State: Realign head downwards and resume crawl
+    function exitIdleState() {
+      if (!isIdle) return;
+      isIdle = false;
+
+      // Immediately cancel any tongue timeline
+      if (tongueTimeline) {
+        tongueTimeline.kill();
+        tongueTimeline = null;
+      }
+
+      if (typeof gsap !== "undefined") {
+        gsap.set(tongue, { scaleY: 0, scaleX: 0, opacity: 0 });
+        // Smoothly realign head forward (downwards = 0 deg)
+        gsap.to(head, {
+          rotation: 0,
+          transformOrigin: "50% 0%",
+          duration: 0.22,
+          ease: "power2.out",
+          overwrite: "auto"
+        });
+      } else {
+        tongue.style.transform = "scaleY(0) scaleX(0)";
+        tongue.style.opacity = "0";
+        head.style.transition = "transform 0.2s ease-out";
+        head.style.transform = "rotate(0deg)";
+      }
+    }
+
+    // Debounce to detect when user stops scrolling (~450ms)
+    function scheduleIdleCheck() {
+      if (idleTimer) clearTimeout(idleTimer);
+      idleTimer = setTimeout(() => {
+        triggerIdleState();
+      }, 450);
+    }
+
+    // Scroll Event Listener (Passive & 60FPS)
+    window.addEventListener(
+      "scroll",
+      () => {
+        scrollY = window.scrollY || 0;
+        targetY = calculateTargetY();
+
+        if (isIdle) {
+          exitIdleState();
+        }
+
+        scheduleIdleCheck();
+      },
+      { passive: true }
+    );
+
+    // Resize Event Listener
+    window.addEventListener(
+      "resize",
+      () => {
+        targetY = calculateTargetY();
+      },
+      { passive: true }
+    );
+
+    // 60FPS RAF Engine
+    function renderLoop() {
+      if (isInitialized) {
+        // Vertical descent lerp damping (smooth luxury glide)
+        const diff = targetY - currentY;
+        currentY += diff * 0.12;
+
+        container.style.transform = `translate3d(0, ${currentY}px, 0)`;
+
+        // Update crawl gait if moving
+        const scrollDelta = Math.abs(scrollY - lastScrollY);
+        lastScrollY = scrollY;
+
+        if (!isIdle && (scrollDelta > 0.4 || Math.abs(diff) > 0.8)) {
+          walkPhase += Math.max(scrollDelta * 0.05, 0.08);
+
+          // Diagonal tetrapod crawl cycle (FL + BR vs FR + BL)
+          const flAngle = Math.sin(walkPhase) * 16;
+          const frAngle = Math.sin(walkPhase + Math.PI) * 16;
+          const blAngle = Math.sin(walkPhase + Math.PI) * 14;
+          const brAngle = Math.sin(walkPhase) * 14;
+          const spineSway = Math.sin(walkPhase) * 2.2;
+          const tailSway = Math.sin(walkPhase - 1.2) * 6;
+
+          legFL.style.transform = `rotate(${flAngle}deg)`;
+          legFR.style.transform = `rotate(${frAngle}deg)`;
+          legBL.style.transform = `rotate(${blAngle}deg)`;
+          legBR.style.transform = `rotate(${brAngle}deg)`;
+          torso.style.transform = `rotate(${spineSway}deg)`;
+          tail.style.transform = `rotate(${tailSway}deg)`;
+        }
+      }
+
+      requestAnimationFrame(renderLoop);
+    }
+
+    // Launch
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", () => {
+        init();
+        requestAnimationFrame(renderLoop);
+      });
+    } else {
+      init();
+      requestAnimationFrame(renderLoop);
+    }
+  })();
+</script>
