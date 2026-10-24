@@ -1,6 +1,6 @@
 ---
 // Capri DMC - Faraglioni Azure Lizard (Podarcis siculus coeruleus)
-// Ultra-HD Realistic Living Mascot & Cinematic Kinematics Engine
+// Ultra-HD Articulated Living Mascot with Distinct Crawling Kinematics & Delicate Sibilant Tongue
 ---
 
 <div
@@ -28,9 +28,42 @@
     const ctx = canvas.getContext("2d");
     const dpr = Math.min(window.devicePixelRatio || 2, 3);
 
-    // State Variables
-    let img = new Image();
-    let isImgLoaded = false;
+    // Anatomical Rig Specification (Derived from 478 x 1130 px HD render)
+    const rig = {
+      W: 478,
+      H: 1130,
+      fl: { x: 40, y: 840, w: 190, h: 195, pivotX: 140, pivotY: 85 },
+      fr: { x: 248, y: 840, w: 190, h: 195, pivotX: 50, pivotY: 85 },
+      rl: { x: 10, y: 510, w: 225, h: 225, pivotX: 175, pivotY: 140 },
+      rr: { x: 240, y: 510, w: 225, h: 225, pivotX: 50, pivotY: 140 },
+    };
+
+    // Component Images
+    const bodyImg = new Image();
+    const flImg = new Image();
+    const frImg = new Image();
+    const rlImg = new Image();
+    const rrImg = new Image();
+
+    let loadedCount = 0;
+    let isRigReady = false;
+
+    function onComponentLoad() {
+      loadedCount++;
+      if (loadedCount === 5) {
+        isRigReady = true;
+        resizeCanvas();
+        init();
+      }
+    }
+
+    bodyImg.onload = onComponentLoad; bodyImg.src = "/images/lizard-body.png";
+    flImg.onload = onComponentLoad;   flImg.src = "/images/lizard-leg-fl.png";
+    frImg.onload = onComponentLoad;   frImg.src = "/images/lizard-leg-fr.png";
+    rlImg.onload = onComponentLoad;   rlImg.src = "/images/lizard-leg-rl.png";
+    rrImg.onload = onComponentLoad;   rrImg.src = "/images/lizard-leg-rr.png";
+
+    // Dynamic State
     let cssW = 0;
     let cssH = 0;
 
@@ -41,6 +74,14 @@
 
     let walkPhase = 0;
     let walkSpeed = 0;
+    let currentSwing = 0;
+
+    // Joint rotation angles (radians)
+    let flAngle = 0;
+    let frAngle = 0;
+    let rlAngle = 0;
+    let rrAngle = 0;
+
     let headAngle = 0;
     let targetHeadAngle = 0;
     let tongueProgress = 0;
@@ -52,14 +93,6 @@
     let periodicIdleTimer = null;
     let isInitialized = false;
 
-    // Load HD photorealistic Capri blue lizard asset
-    img.src = "/images/capri-blue-lizard-hd.png";
-    img.onload = () => {
-      isImgLoaded = true;
-      resizeCanvas();
-      init();
-    };
-
     function resizeCanvas() {
       cssW = container.offsetWidth || 100;
       cssH = container.offsetHeight || 220;
@@ -70,11 +103,10 @@
       ctx.scale(dpr, dpr);
     }
 
-    // Vertical boundary calculation
     function getTravelBounds() {
       const winHeight = window.innerHeight;
       const lizardH = cssH || 200;
-      const minY = 90; // Cleanly below the sticky navigation bar
+      const minY = 90; // Below sticky navigation
       const maxY = Math.max(minY + 60, winHeight - lizardH - 24);
       return { minY, maxY };
     }
@@ -101,30 +133,28 @@
       requestAnimationFrame(renderLoop);
     }
 
-    // Idle State Choreography: Inquisitive Head Turn + Highly Visible Forked Tongue
+    // Idle State Choreography: Inquisitive Head Turn + Delicate, Fast Sibilant Tongue
     function triggerIdleState() {
       isIdle = true;
-      targetHeadAngle = -0.38; // Tilt head towards the page content on the left (~22deg)
+      targetHeadAngle = -0.42; // Incurvamento visibile del capo (~24°) verso i contenuti a sinistra
 
-      // Start tongue sequence after head has turned inquisitively
       if (tongueAnimTimer) clearTimeout(tongueAnimTimer);
       tongueAnimTimer = setTimeout(() => {
         if (!isIdle) return;
         animateTongueFlick();
-      }, 240);
+      }, 180);
 
-      // Schedule periodic air-tasting while staying idle
       if (periodicIdleTimer) clearInterval(periodicIdleTimer);
       periodicIdleTimer = setInterval(() => {
-        if (isIdle && Math.abs(headAngle - targetHeadAngle) < 0.05) {
+        if (isIdle) {
           animateTongueFlick();
         }
-      }, 4500);
+      }, 3800);
     }
 
     function animateTongueFlick() {
       const startTime = performance.now();
-      const duration = 750; // Extended duration for high visibility and authentic sibilance
+      const duration = 480; // Rapido, scattante e autentico sibilo da lucertola (3 micro-vibrazioni)
 
       function stepTongue(now) {
         if (!isIdle) {
@@ -135,17 +165,17 @@
         const elapsed = now - startTime;
         const t = Math.min(1, elapsed / duration);
 
-        if (t < 0.18) {
-          // Swift dart outward (0 to 1 in ~135ms)
-          tongueProgress = Math.sin((t / 0.18) * (Math.PI / 2));
-          tongueVibe = Math.sin(t * 60) * 0.08;
+        if (t < 0.20) {
+          // Scatto rapido verso l'esterno (~95ms)
+          tongueProgress = Math.sin((t / 0.20) * (Math.PI / 2));
+          tongueVibe = Math.sin(t * 80) * 0.06;
         } else if (t < 0.72) {
-          // Sibilant air-tasting vibration / 4 flutter cycles
-          const flutterT = (t - 0.18) / 0.54;
-          tongueProgress = 0.88 + Math.sin(flutterT * Math.PI * 8) * 0.14;
-          tongueVibe = Math.sin(flutterT * Math.PI * 12) * 0.15;
+          // 3 rapidi micro-tremolii di captazione olfattiva nell'aria
+          const flutterT = (t - 0.20) / 0.52;
+          tongueProgress = 0.88 + Math.sin(flutterT * Math.PI * 6) * 0.12;
+          tongueVibe = Math.sin(flutterT * Math.PI * 10) * 0.08;
         } else {
-          // Smooth retraction back into snout
+          // Rientro agile nel muso (~135ms)
           const retractT = (t - 0.72) / 0.28;
           tongueProgress = (1 - retractT) * 0.88;
           tongueVibe = 0;
@@ -164,7 +194,7 @@
     function exitIdleState() {
       if (!isIdle) return;
       isIdle = false;
-      targetHeadAngle = 0; // Realign head straight downwards
+      targetHeadAngle = 0; // Testa torna dritta verso il basso
       tongueProgress = 0;
       tongueVibe = 0;
 
@@ -176,10 +206,10 @@
       if (idleTimer) clearTimeout(idleTimer);
       idleTimer = setTimeout(() => {
         triggerIdleState();
-      }, 450); // 450ms debounce
+      }, 400); // 400ms debounce
     }
 
-    // Scroll Listener (Passive & 60FPS)
+    // Scroll Listener
     window.addEventListener(
       "scroll",
       () => {
@@ -187,7 +217,7 @@
         targetY = calculateTargetY();
 
         const delta = Math.abs(scrollY - lastScrollY);
-        walkSpeed = Math.min(delta * 0.08, 1.8);
+        walkSpeed = Math.min(delta * 0.12, 2.2);
 
         if (isIdle) {
           exitIdleState();
@@ -198,7 +228,6 @@
       { passive: true }
     );
 
-    // Resize Listener
     window.addEventListener(
       "resize",
       () => {
@@ -208,10 +237,10 @@
       { passive: true }
     );
 
-    // Main 60FPS Kinematics & Rendering Loop
+    // 60FPS Kinematics Loop
     function renderLoop() {
-      if (isInitialized && isImgLoaded) {
-        // 1. Smooth vertical travel lerp
+      if (isInitialized && isRigReady) {
+        // 1. Smooth vertical descent lerp
         const diff = targetY - currentY;
         currentY += diff * 0.12;
         container.style.transform = `translate3d(0, ${currentY}px, 0)`;
@@ -219,18 +248,38 @@
         // 2. Head angle lerp
         headAngle += (targetHeadAngle - headAngle) * 0.14;
 
-        // 3. Walk cycle & spine wave integration
+        // 3. Articulated Locomotion (Alternating Diagonal Trotting Gait)
         const scrollDelta = Math.abs(scrollY - lastScrollY);
         lastScrollY = scrollY;
 
-        if (!isIdle && (scrollDelta > 0.4 || Math.abs(diff) > 0.8)) {
-          walkPhase += Math.max(scrollDelta * 0.045, 0.08);
+        if (!isIdle && (scrollDelta > 0.3 || Math.abs(diff) > 0.6)) {
+          walkPhase += Math.max(scrollDelta * 0.055, 0.09);
+          // Target swing amplitude expands with speed (up to 26 degrees)
+          const targetSwing = Math.min(0.25 + walkSpeed * 0.15, 0.45);
+          currentSwing += (targetSwing - currentSwing) * 0.22;
+
+          // Distinct stepping: FL and RR are in sync, FR and RL are 180deg out of phase
+          const targetFl = Math.sin(walkPhase) * currentSwing;
+          const targetRr = Math.sin(walkPhase) * currentSwing;
+          const targetFr = Math.sin(walkPhase + Math.PI) * currentSwing;
+          const targetRl = Math.sin(walkPhase + Math.PI) * currentSwing;
+
+          flAngle += (targetFl - flAngle) * 0.28;
+          rrAngle += (targetRr - rrAngle) * 0.28;
+          frAngle += (targetFr - frAngle) * 0.28;
+          rlAngle += (targetRl - rlAngle) * 0.28;
         } else {
-          // Smoothly damp walkPhase to resting pose
+          // Smooth damping to elegant resting grip
           walkSpeed *= 0.85;
+          currentSwing *= 0.85;
+
+          flAngle += (0.04 - flAngle) * 0.12;
+          rrAngle += (-0.04 - rrAngle) * 0.12;
+          frAngle += (-0.04 - frAngle) * 0.12;
+          rlAngle += (0.04 - rlAngle) * 0.12;
         }
 
-        // 4. Draw realistic lizard frame
+        // 4. Render lizard frame
         drawLizardFrame();
       }
 
@@ -240,143 +289,146 @@
     function drawLizardFrame() {
       ctx.clearRect(0, 0, cssW, cssH);
 
-      const imgW = img.width;
-      const imgH = img.height;
-
-      // Fit lizard proportionally inside canvas with generous room for tongue extension
       const destH = cssH * 0.74;
-      const destW = destH * (imgW / imgH);
-      const startX = (cssW - destW) / 2;
-      const startY = 8;
+      const destW = destH * (rig.W / rig.H);
+      const scale = destH / rig.H;
+      const originX = cssW / 2;
+      const originY = 8;
 
       // 1. Natural Soft Drop Shadow
       ctx.save();
       ctx.translate(3, 7);
-      renderDeformedLizard(ctx, img, imgW, imgH, startX, startY, destW, destH, true);
+      ctx.globalAlpha = 0.28;
+      ctx.filter = "blur(5px) brightness(0)";
+      drawLizardLayers(originX, originY, destW, destH, scale, false);
       ctx.restore();
 
-      // 2. Soft Ambient Gold Rim Light
+      // 2. Main Realistic Articulated Lizard
       ctx.save();
-      ctx.shadowColor = "rgba(212, 175, 55, 0.4)";
-      ctx.shadowBlur = 6;
-      renderDeformedLizard(ctx, img, imgW, imgH, startX, startY, destW, destH, false, 0.35);
+      drawLizardLayers(originX, originY, destW, destH, scale, true);
       ctx.restore();
+    }
 
-      // 3. Main Realistic HD Body (Continuous Axial Undulation)
-      ctx.save();
-      renderDeformedLizard(ctx, img, imgW, imgH, startX, startY, destW, destH, false, 1.0);
-      ctx.restore();
+    function drawLizardLayers(originX, originY, destW, destH, scale, withTongue) {
+      // 1. Draw 4 articulated legs under the body
+      function drawLeg(img, bbox, angle) {
+        ctx.save();
+        const pivotGlobalX = originX + (bbox.x + bbox.pivotX - rig.W / 2) * scale;
+        const pivotGlobalY = originY + (bbox.y + bbox.pivotY) * scale;
 
-      // 4. Luminous Hissing Forked Tongue
-      if (tongueProgress > 0.03) {
-        renderForkedTongue(ctx, startX, startY, destW, destH);
+        ctx.translate(pivotGlobalX, pivotGlobalY);
+        ctx.rotate(angle);
+
+        // Step flexion & extension (reaches forward down, pushes back up)
+        const strideStretch = 1 + Math.sin(angle) * 0.12;
+        ctx.scale(scale, scale * strideStretch);
+
+        ctx.drawImage(img, -bbox.pivotX, -bbox.pivotY);
+        ctx.restore();
+      }
+
+      drawLeg(flImg, rig.fl, flAngle);
+      drawLeg(frImg, rig.fr, frAngle);
+      drawLeg(rlImg, rig.rl, rlAngle);
+      drawLeg(rrImg, rig.rr, rrAngle);
+
+      // 2. Draw central body on top (with spine/tail undulation & head turn)
+      renderDeformedBody(originX, originY, destW, destH, scale);
+
+      // 3. Delicate, Whisper-Thin Realistic Forked Tongue
+      if (withTongue && tongueProgress > 0.03) {
+        const headOffset = (headAngle !== 0) ? headAngle * 36 : 0;
+        const snoutX = originX + headOffset;
+        const snoutY = originY + destH - 1;
+        renderRealisticTongue(snoutX, snoutY);
       }
     }
 
-    function renderDeformedLizard(ctx, image, srcW, srcH, destX, destY, destW, destH, isShadow, opacity = 1.0) {
-      const numStrips = 120; // 120 horizontal strips for continuous, seamless curvature
-      const sliceH_src = srcH / numStrips;
+    function renderDeformedBody(originX, originY, destW, destH, scale) {
+      const numStrips = 80;
+      const sliceH_src = rig.H / numStrips;
       const sliceH_dest = destH / numStrips;
-
-      ctx.save();
-      if (isShadow) {
-        ctx.globalAlpha = 0.32;
-        ctx.filter = "blur(4px) brightness(0)";
-      } else if (opacity < 1.0) {
-        ctx.globalAlpha = opacity;
-      }
+      const startX = originX - destW / 2;
 
       for (let i = 0; i < numStrips; i++) {
         const normY = i / numStrips; // 0 (tail tip) to 1 (snout)
         const sy = i * sliceH_src;
-        const dy = destY + i * sliceH_dest;
+        const dy = originY + i * sliceH_dest;
 
-        // Herpetological S-curve undulation: tail lashes gracefully, chest sways with gait
+        // Spinal wave rhythmically synchronized with locomotion
         let wave = 0;
         if (!isIdle || walkSpeed > 0.05) {
-          const tailFactor = Math.pow(1 - normY, 1.35);
-          const chestFactor = Math.sin(normY * Math.PI) * 0.45;
-          const amplitude = (15 * tailFactor + 6 * chestFactor) * Math.min(1, (walkSpeed + 0.3));
-          wave = Math.sin(walkPhase + normY * 5.2) * amplitude;
+          wave = Math.sin(walkPhase + normY * 4.5) * (1 - normY) * 6 * Math.min(1, walkSpeed + 0.3);
         }
 
-        // Seamless anatomical head flexion (smooth cubic curve from neck normY=0.78 to snout normY=1.0)
+        // Head flexion towards left content on idle
         let headOffset = 0;
-        if (headAngle !== 0 && normY > 0.78) {
-          const headFactor = (normY - 0.78) / 0.22;
-          const smoothT = headFactor * headFactor * (3 - 2 * headFactor);
-          headOffset = headAngle * 34 * smoothT;
+        if (headAngle !== 0 && normY > 0.80) {
+          const t = (normY - 0.80) / 0.20;
+          headOffset = headAngle * 36 * t * t;
         }
 
-        const dx = destX + wave + headOffset;
+        const dx = startX + wave + headOffset;
 
         ctx.drawImage(
-          image,
-          0, sy, srcW, sliceH_src,
-          dx, dy, destW, sliceH_dest + 0.35 // Overlap avoids micro-seam aliasing
+          bodyImg,
+          0, sy, rig.W, sliceH_src,
+          dx, dy, destW, sliceH_dest + 0.35 // Overlap prevents sub-pixel aliasing
         );
       }
-
-      ctx.restore();
     }
 
-    function renderForkedTongue(ctx, destX, startY, destW, destH) {
-      // Snout tip anchor position
-      const headOffset = (headAngle !== 0) ? headAngle * 34 : 0;
-      const snoutX = destX + (destW / 2) + headOffset;
-      const snoutY = startY + destH - 4;
-
-      const reach = 54 * tongueProgress;
-      const spread = 15 * tongueProgress;
+    function renderRealisticTongue(snoutX, snoutY) {
+      // Proportional, slender & vivid: ~28px reach, delicate 1.6px shaft & 1.1px tines
+      const reach = 28 * tongueProgress;
+      const spread = 6.5 * tongueProgress;
 
       ctx.save();
       ctx.translate(snoutX, snoutY);
+      // Tangent to head curve points to the left (-headAngle is positive clockwise from down towards left)
+      ctx.rotate(-headAngle * 0.95 + tongueVibe);
 
-      // Align tongue with the head's rotation plus micro-vibrations
-      ctx.rotate(headAngle * 0.95 + tongueVibe);
-
-      // High-Contrast Luminous Carmine & Golden Gradient (Unmistakable on any background)
+      // Vivid luminous ruby & golden sheen (high-contrast on both dark and light backgrounds)
       const tongueGrad = ctx.createLinearGradient(0, 0, 0, reach);
-      tongueGrad.addColorStop(0, "#991B1B");    // Deep ruby red base
-      tongueGrad.addColorStop(0.35, "#DC2626"); // Vivid vermilion
-      tongueGrad.addColorStop(0.72, "#F59E0B"); // Luminous amber gold
-      tongueGrad.addColorStop(1, "#FFFBEB");    // Brilliant light-reflecting tips
+      tongueGrad.addColorStop(0, "#BE123C");    // Vivid ruby vermilion
+      tongueGrad.addColorStop(0.55, "#F43F5E"); // Luminous coral crimson
+      tongueGrad.addColorStop(0.85, "#FBBF24"); // Amber gold
+      tongueGrad.addColorStop(1, "#FFFFFF");    // Brilliant light-catching tip
 
-      // Luminous glow for maximum contrast
-      ctx.shadowColor = "#F59E0B";
-      ctx.shadowBlur = 12;
+      ctx.shadowColor = "#F43F5E";
+      ctx.shadowBlur = 4;
 
-      // 1. Main Tongue Shaft
+      // 1. Slender main shaft (1.6px)
       ctx.beginPath();
       ctx.moveTo(0, 0);
-      ctx.lineTo(0, reach * 0.68);
+      ctx.lineTo(0, reach * 0.65);
       ctx.strokeStyle = tongueGrad;
-      ctx.lineWidth = 3.2;
+      ctx.lineWidth = 1.6;
       ctx.lineCap = "round";
       ctx.stroke();
 
-      // 2. Left Forked Tine (sinuous, sharp curve)
+      // 2. Left tine (delicate, acute curve 1.1px)
       ctx.beginPath();
-      ctx.moveTo(0, reach * 0.68);
-      ctx.quadraticCurveTo(-spread * 0.35, reach * 0.84, -spread, reach);
+      ctx.moveTo(0, reach * 0.65);
+      ctx.quadraticCurveTo(-spread * 0.35, reach * 0.82, -spread, reach);
       ctx.strokeStyle = tongueGrad;
-      ctx.lineWidth = 2.2;
+      ctx.lineWidth = 1.1;
       ctx.lineCap = "round";
       ctx.stroke();
 
-      // 3. Right Forked Tine
+      // 3. Right tine
       ctx.beginPath();
-      ctx.moveTo(0, reach * 0.68);
-      ctx.quadraticCurveTo(spread * 0.35, reach * 0.84, spread, reach);
+      ctx.moveTo(0, reach * 0.65);
+      ctx.quadraticCurveTo(spread * 0.35, reach * 0.82, spread, reach);
       ctx.strokeStyle = tongueGrad;
-      ctx.lineWidth = 2.2;
+      ctx.lineWidth = 1.1;
       ctx.lineCap = "round";
       ctx.stroke();
 
-      // 4. Delicate brilliant jewel glint on tips
+      // 4. Subtle micro glint at tine tips
       ctx.beginPath();
-      ctx.arc(-spread, reach, 1.4, 0, Math.PI * 2);
-      ctx.arc(spread, reach, 1.4, 0, Math.PI * 2);
+      ctx.arc(-spread, reach, 0.7, 0, Math.PI * 2);
+      ctx.arc(spread, reach, 0.7, 0, Math.PI * 2);
       ctx.fillStyle = "#FFFFFF";
       ctx.fill();
 

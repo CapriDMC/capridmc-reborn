@@ -5,7 +5,7 @@ const screenshotDir = '/Users/pep/.gemini/antigravity/brain/6750deec-4231-4a2e-b
 fs.mkdirSync(screenshotDir, { recursive: true });
 
 async function testLizard() {
-  console.log("Launching Chrome for Ultra-HD Capri Lizard verification...");
+  console.log("Launching Chrome for Articulated Capri Lizard verification...");
   const browser = await chromium.launch({ channel: 'chrome' });
 
   // 1. Desktop Test
@@ -18,37 +18,38 @@ async function testLizard() {
   await lizard.waitFor({ state: 'visible' });
   console.log("Lizard container found and visible!");
 
-  // Screenshot 1: Desktop Initial Perch
+  // Screenshot 1: Resting stance
   await page.screenshot({ path: `${screenshotDir}/lizard-1-desktop-initial.png` });
   console.log("Saved: lizard-1-desktop-initial.png");
 
-  // 2. Scroll Down Simulation (Active Sinuous Crawl)
-  console.log("Scrolling down to trigger crawling gait...");
-  for (let i = 0; i < 15; i++) {
-    await page.evaluate(() => window.scrollBy(0, 120));
-    await page.waitForTimeout(50);
+  // 2. Active crawling scroll simulation
+  console.log("Scrolling to trigger active trotting gait...");
+  for (let i = 0; i < 10; i++) {
+    await page.evaluate(() => window.scrollBy(0, 100));
+    await page.waitForTimeout(40);
   }
+  // Capture stride A
+  await page.screenshot({ path: `${screenshotDir}/lizard-stride-a.png` });
+  console.log("Saved: lizard-stride-a.png");
 
-  // Screenshot 2: Mid-scroll Crawling
-  await page.screenshot({ path: `${screenshotDir}/lizard-2-crawling.png` });
-  console.log("Saved: lizard-2-crawling.png");
+  for (let i = 0; i < 5; i++) {
+    await page.evaluate(() => window.scrollBy(0, 80));
+    await page.waitForTimeout(40);
+  }
+  // Capture stride B
+  await page.screenshot({ path: `${screenshotDir}/lizard-stride-b.png` });
+  console.log("Saved: lizard-stride-b.png");
 
-  // Check transform position
-  const midY = await page.evaluate(() => {
-    const el = document.getElementById('capri-lizard-container');
-    return el.style.transform;
-  });
-  console.log(`Lizard vertical position mid-scroll: ${midY}`);
+  // 3. Stop scrolling & trigger Idle State (400ms debounce + 220ms delay + 120ms tongue flick)
+  console.log("Triggering final scroll stop to capture delicate sibilant tongue in idle state...");
+  await page.evaluate(() => window.scrollBy(0, 40)); // Final scroll nudge
+  await page.waitForTimeout(700); // Wait for debounce (400ms) + delay (220ms) + dart out (80ms)
 
-  // 3. Stop scrolling & wait for Idle State (450ms debounce + 240ms head turn + 200ms tongue reach)
-  console.log("Stopping scroll to trigger Idle State (head turn & hissing tongue flick)...");
-  await page.waitForTimeout(850);
-
-  // Close-up crop of lizard during idle tongue flick
+  // Close-up crop of lizard during delicate tongue flick
   await lizard.screenshot({ path: `${screenshotDir}/lizard-closeup-tongue.png` });
   console.log("Saved: lizard-closeup-tongue.png");
 
-  // Screenshot 3: Idle State (Head turned towards page content + visible tongue)
+  // Screenshot 3: Full Page Idle State
   await page.screenshot({ path: `${screenshotDir}/lizard-3-idle-look.png` });
   console.log("Saved: lizard-3-idle-look.png");
 
@@ -58,15 +59,14 @@ async function testLizard() {
   await mobilePage.goto('http://localhost:4321/', { waitUntil: 'networkidle' });
   await mobilePage.waitForTimeout(900);
 
-  // Screenshot 4: Mobile Perch
   await mobilePage.screenshot({ path: `${screenshotDir}/lizard-4-mobile.png` });
   console.log("Saved: lizard-4-mobile.png");
 
+  console.log("Articulated Capri Lizard verification completed successfully!");
   await browser.close();
-  console.log("Ultra-HD Capri Lizard test completed successfully!");
 }
 
-testLizard().catch(err => {
-  console.error("Test failed:", err);
+testLizard().catch(e => {
+  console.error("Test failed:", e);
   process.exit(1);
 });
