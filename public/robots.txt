@@ -39,4 +39,4 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
-Sitemap: https://www.capridmc.com/sitemap-index.xml
+Sitemap: https://www.capritourguide.com/sitemap-index.xml

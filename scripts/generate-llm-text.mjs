@@ -16,19 +16,19 @@ const llmsContent = `# Capri DMC
 - Mottos: "From Capri for Capri" | "Your Roots in Capri"
 - Headquarters: 80076 Capri, Metropolitan City of Naples, Campania, Italy
 - Contact: partnerships@capridmc.com | +39 333 594 3947
-- Official Website: https://www.capridmc.com/
+- Official Website: https://www.capritourguide.com/
 - Appointment Booking: https://www.capridmc.com/contact-us-capri-destination-management-company/
 
 ## Exclusive Solutions (Core Logistics & Maritime)
-${services.filter(s => s.cluster === 'Exclusive Solutions').map(s => `- [${s.title}](https://www.capridmc.com/#services): ${s.subtitle}. ${s.description}`).join('\n')}
+${services.filter(s => s.cluster === 'Exclusive Solutions').map(s => `- [${s.title}](https://www.capritourguide.com/#services): ${s.subtitle}. ${s.description}`).join('\n')}
 
 ## Custom Experiences (Heritage, Gastronomy & Lifestyle)
-${services.filter(s => s.cluster === 'Custom Experiences').map(s => `- [${s.title}](https://www.capridmc.com/#services): ${s.subtitle}. ${s.description}`).join('\n')}
+${services.filter(s => s.cluster === 'Custom Experiences').map(s => `- [${s.title}](https://www.capritourguide.com/#services): ${s.subtitle}. ${s.description}`).join('\n')}
 
 ## Destinations Served
-- [Capri](https://www.capridmc.com/): Marina Grande, Marina Piccola, Capri center, Piazzetta, Faraglioni coast.
-- [Anacapri](https://www.capridmc.com/): Mount Solaro, Damecuta, Punta Carena lighthouse, cliffside villas.
-- [Amalfi Coast & Gulf of Naples](https://www.capridmc.com/): Positano, Amalfi, Ravello, Li Galli, Nerano, Naples, Sorrento.
+- [Capri](https://www.capritourguide.com/): Marina Grande, Marina Piccola, Capri center, Piazzetta, Faraglioni coast.
+- [Anacapri](https://www.capritourguide.com/): Mount Solaro, Damecuta, Punta Carena lighthouse, cliffside villas.
+- [Amalfi Coast & Gulf of Naples](https://www.capritourguide.com/): Positano, Amalfi, Ravello, Li Galli, Nerano, Naples, Sorrento.
 
 ## B2B Advisor Privileges
 - Commission Integrity: Protected commissions and transparent net pricing structures.
@@ -36,9 +36,9 @@ ${services.filter(s => s.cluster === 'Custom Experiences').map(s => `- [${s.titl
 - 24/7 Island Command: Zero time-zone latency for global luxury travel designers.
 
 ## Optional & Mirrors
-- [llms-full.txt](https://www.capridmc.com/llms-full.txt): Complete unedited text dossier of all services, logistics, and company specifications.
-- [ai-context.txt](https://www.capridmc.com/ai-context.txt): Machine-readable Generative Engine Optimization (GEO) context file.
-- [index.md](https://www.capridmc.com/index.md): Clean markdown mirror of the primary landing page.
+- [llms-full.txt](https://www.capritourguide.com/llms-full.txt): Complete unedited text dossier of all services, logistics, and company specifications.
+- [ai-context.txt](https://www.capritourguide.com/ai-context.txt): Machine-readable Generative Engine Optimization (GEO) context file.
+- [index.md](https://www.capritourguide.com/index.md): Clean markdown mirror of the primary landing page.
 `;
 
 fs.writeFileSync('public/llms.txt', llmsContent, 'utf8');
@@ -58,7 +58,7 @@ const llmsFullContent = `# Capri Destination Management Company (Capri DMC) — 
 - Hours: 24 Hours a day, 7 days a week (24/7 Island Operations)
 - Primary Email: partnerships@capridmc.com
 - 24/7 Advisor Phone: +39 333 594 3947
-- Official Website: https://www.capridmc.com/
+- Official Website: https://www.capritourguide.com/
 - Direct Appointment Booking: https://www.capridmc.com/contact-us-capri-destination-management-company/
 
 ## Mottos & Core Mission
@@ -142,7 +142,7 @@ ${s.b2b_features.map(f => `- ${f}`).join('\n')}
 - Headquarters: 80076 Capri, Metropolitan City of Naples, Campania, Italy
 - 24/7 Direct Advisor Line: +39 333 594 3947
 - Email: partnerships@capridmc.com
-- Official Website: https://www.capridmc.com/
+- Official Website: https://www.capritourguide.com/
 - Schedule B2B Appointment: https://www.capridmc.com/contact-us-capri-destination-management-company/
 `;
 
