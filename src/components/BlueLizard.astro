@@ -1,0 +1,105 @@
+---
+/**
+ * BlueLizard.astro — Componente Overlay Finale per Podarcis siculus coeruleus
+ * Pronta per l'integrazione in Astro v5 con GSAP ScrollTrigger.
+ */
+interface Props {
+  scale?: number;
+  marginRight?: number;
+  marginTop?: number;
+  marginBottom?: number;
+  idleDelay?: number;
+}
+
+const {
+  scale = 1.15,
+  marginRight = 95,
+  marginTop = 95,
+  marginBottom = 115,
+  idleDelay = 0.55,
+} = Astro.props;
+---
+
+<canvas
+  id="coeruleus-canvas"
+  data-scale={scale}
+  data-margin-right={marginRight}
+  data-margin-top={marginTop}
+  data-margin-bottom={marginBottom}
+  data-idle-delay={idleDelay}
+  aria-hidden="true"
+></canvas>
+
+<style>
+  #coeruleus-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    display: block;
+  }
+</style>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import { CoeruleusLizard } from '../scripts/coeruleus-engine.js';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  let lizardInstance: CoeruleusLizard | null = null;
+  let scrollTriggerInstance: ScrollTrigger | null = null;
+
+  function cleanupLizard() {
+    if (scrollTriggerInstance) {
+      scrollTriggerInstance.kill();
+      scrollTriggerInstance = null;
+    }
+    if (lizardInstance) {
+      lizardInstance.destroy();
+      lizardInstance = null;
+    }
+  }
+
+  function initLizard() {
+    cleanupLizard();
+
+    const canvas = document.getElementById('coeruleus-canvas') as HTMLCanvasElement | null;
+    if (!canvas) return;
+
+    const scale = parseFloat(canvas.dataset.scale || '1.15');
+    const marginRight = parseFloat(canvas.dataset.marginRight || '95');
+    const marginTop = parseFloat(canvas.dataset.marginTop || '95');
+    const marginBottom = parseFloat(canvas.dataset.marginBottom || '115');
+    const idleDelay = parseFloat(canvas.dataset.idleDelay || '0.55');
+
+    lizardInstance = new CoeruleusLizard(canvas, {
+      scale,
+      marginRight,
+      marginTop,
+      marginBottom,
+      idleDelay,
+    });
+
+    scrollTriggerInstance = ScrollTrigger.create({
+      trigger: document.documentElement,
+      start: 'top top',
+      end: 'bottom bottom',
+      onUpdate: (self) => {
+        if (!lizardInstance) return;
+        lizardInstance.onScrollUpdate(
+          self.progress,
+          window.scrollY,
+          self.getVelocity()
+        );
+      },
+    });
+  }
+
+  initLizard();
+  document.addEventListener('astro:page-load', initLizard);
+  document.addEventListener('astro:before-swap', cleanupLizard);
+</script>
