@@ -12,8 +12,8 @@ interface Props {
 }
 
 const {
-  scale = 1.15,
-  marginRight = 95,
+  scale = 1.75,
+  marginRight = 135,
   marginTop = 95,
   marginBottom = 115,
   idleDelay = 0.55,
@@ -70,8 +70,8 @@ const {
     const canvas = document.getElementById('coeruleus-canvas') as HTMLCanvasElement | null;
     if (!canvas) return;
 
-    const scale = parseFloat(canvas.dataset.scale || '1.15');
-    const marginRight = parseFloat(canvas.dataset.marginRight || '95');
+    const scale = parseFloat(canvas.dataset.scale || '1.75');
+    const marginRight = parseFloat(canvas.dataset.marginRight || '135');
     const marginTop = parseFloat(canvas.dataset.marginTop || '95');
     const marginBottom = parseFloat(canvas.dataset.marginBottom || '115');
     const idleDelay = parseFloat(canvas.dataset.idleDelay || '0.55');
