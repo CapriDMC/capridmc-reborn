@@ -5,6 +5,9 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://www.capritourguide.com',
   trailingSlash: 'never',
+  build: {
+    format: 'file'
+  },
   devToolbar: {
     enabled: false
   },
