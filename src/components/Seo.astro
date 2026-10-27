@@ -1,5 +1,5 @@
 ---
-// Componente SEO tecnico unificato per gestione dell'<head>
+// Componente SEO tecnico unificato per gestione dell'<head> con ottimizzazione AI (GEO) e motori di ricerca
 interface Props {
   title?: string;
   description?: string;
@@ -11,7 +11,7 @@ interface Props {
 
 const {
   title = "Capri DMC | Luxury Destination Management Company & B2B Tour Operator",
-  description = "Capri Destination Management Company is the luxury B2B spin-off from Nesea Capri Tours & Events. Bespoke private boat tours, weddings, Bar Mitzvah, VIP logistics, and 24/7 on-island operations.",
+  description = "Capri Destination Management Company is the elite B2B spin-off from Nesea Capri Tours & Events. Bespoke private boat tours, weddings, Bar Mitzvah, VIP logistics, and 24/7 on-island operations.",
   ogImage = "https://www.capritourguide.com/images/capri/faraglioni-rocks-guided-tour-private-boat.jpg",
   ogImageAlt = "Capri Faraglioni Coastline and Mediterranean Sea",
   canonical,
@@ -41,12 +41,21 @@ const bingToken = import.meta.env.PUBLIC_BING_TOKEN;
 <!-- Canonical & Robots Directives -->
 <link rel="canonical" href={canonicalURL} />
 <meta name="robots" content={robotsContent} />
+<meta name="googlebot" content={robotsContent} />
+<meta name="bingbot" content={robotsContent} />
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 <meta name="author" content="Capri Destination Management Company" />
+<meta name="keywords" content="Capri DMC, Destination Management Company Capri, Capri tour guide, luxury travel advisor Capri, private boat tours Capri, Faraglioni yacht charter, Capri weddings, Bar Mitzvah Capri, VIP airport transfer Capri, Nesea Capri spin-off" />
+
+<!-- Local & Geographic SEO Directives -->
+<meta name="geo.region" content="IT-NA" />
+<meta name="geo.placename" content="Capri" />
+<meta name="geo.position" content="40.5507;14.2426" />
+<meta name="ICBM" content="40.5507, 14.2426" />
 
 <!-- Favicon & PWA App Manifest -->
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -55,6 +64,9 @@ const bingToken = import.meta.env.PUBLIC_BING_TOKEN;
 <link rel="manifest" href="/site.webmanifest" />
 <meta name="theme-color" content="#10285D" />
 <meta name="msapplication-TileColor" content="#10285D" />
+<meta name="apple-mobile-web-app-title" content="Capri DMC" />
+<meta name="application-name" content="Capri DMC" />
+<meta name="format-detection" content="telephone=yes" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
@@ -80,8 +92,10 @@ const bingToken = import.meta.env.PUBLIC_BING_TOKEN;
 {gscToken && <meta name="google-site-verification" content={gscToken} />}
 {bingToken && <meta name="msvalidate.01" content={bingToken} />}
 
-<!-- Discovery: Sitemap, AI Context & LLM Mirrors -->
+<!-- Discovery: Sitemap, AI Context & LLM Mirrors (GEO & Agent Retrieval) -->
 <link rel="sitemap" href="/sitemap-index.xml" />
-<link rel="ai-context" href="/ai-context.txt" title="AI Context Dossier" />
-<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Summary" />
+<link rel="ai-context" href="/ai-context.txt" title="AI Context Dossier (Plaintext)" />
+<link rel="alternate" type="text/html" href="/ai-context" title="AI Context Dossier (Interactive)" />
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Summary (llmstxt.org)" />
+<link rel="alternate" type="text/plain" href="/llms-full.txt" title="Full B2B Dossier" />
 <link rel="alternate" type="text/markdown" href="/index.md" title="Markdown Mirror" />

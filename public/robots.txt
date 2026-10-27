@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# --- AI search / assistant retrieval (necessari per citazioni) ---
+# --- AI Search Engines & Retrieval Agents (Crucial for Perplexity, ChatGPT, Claude, Apple Intelligence) ---
 User-agent: OAI-SearchBot
 Allow: /
 User-agent: ChatGPT-User
@@ -23,7 +23,7 @@ Allow: /
 User-agent: Googlebot
 Allow: /
 
-# --- Training / grounding crawlers (decisione di Pep; default: consentiti) ---
+# --- AI Grounding & LLM Web Crawlers ---
 User-agent: GPTBot
 Allow: /
 User-agent: ClaudeBot
@@ -39,4 +39,8 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
+# Canonical Sitemaps & AI Mirrors
 Sitemap: https://www.capritourguide.com/sitemap-index.xml
+# AI Context Dossier: https://www.capritourguide.com/ai-context.txt
+# LLM Context: https://www.capritourguide.com/llms.txt
+# Full Dossier: https://www.capritourguide.com/llms-full.txt

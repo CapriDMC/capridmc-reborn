@@ -58,6 +58,49 @@ const catalogItems = servicesData.map((s, index) => ({
   }
 }));
 
+const faqs = [
+  {
+    "@type": "Question",
+    "name": "What is Capri Destination Management Company (Capri DMC)?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Capri DMC is the elite B2B luxury destination management company and boutique tour operator based natively on the island of Capri, Italy. A direct spin-off from Nesea Capri Tours & Events (operating since 2010), it is a 100% women-owned enterprise providing private yacht charters, bespoke island tours, milestone celebrations, and round-the-clock VIP airport-to-suite transfers."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "How does the VIP Airport-to-Suite transfer work between Naples/Rome and Capri?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The turnkey transit includes tarmac VIP hostess meet & greet at aircraft gate at Naples (NAP) or Rome (FCO), luggage priority retrieval, private Mercedes-Maybach transfer, direct chartered Riva speedboat crossing to Capri, luggage porterage directly into 5-star hotel suites, and iconic open-top convertible island taxi coordination."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Can Capri DMC guarantee private boat tours during peak summer (July & August)?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Operating directly on Capri with native licensed skippers and municipal port permits, Capri DMC guarantees availability for traditional wooden Gozzo Caprese, Riva speedboats, and private catamarans, with early dawn access bypassing Blue Grotto queues."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Does Capri DMC produce destination weddings and Bar/Bat Mitzvahs on Capri?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Capri DMC coordinates private historic cliffside villa buyouts, luxury wedding ceremonies, and Jewish lifecycle events including scenic Mediterranean Torah readings, Shabbat dinners, and strictly supervised Kosher catering."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "How do travel advisors access wholesale net rates and white-label support?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Travel advisors and luxury concierges can contact the 24/7 on-island operations desk by phone or WhatsApp at +39 333 594 3947 or email partnerships@capridmc.com for protected commission structures and seamless white-label ground representation."
+    }
+  }
+];
+
 const schemaGraph = {
   "@context": "https://schema.org",
   "@graph": [
@@ -85,6 +128,10 @@ const schemaGraph = {
       "description": "Capri Destination Management Company is the elite B2B luxury spin-off from Nesea Capri Tours & Events, providing private yacht charters, bespoke island tours, milestone celebrations, and seamless VIP airport-to-suite transfers.",
       "email": "partnerships@capridmc.com",
       "telephone": "+39 333 594 3947",
+      "priceRange": "$$$$",
+      "currenciesAccepted": "EUR, USD, GBP",
+      "paymentAccepted": "Credit Card, Wire Transfer",
+      "slogan": "From Capri for Capri · Your Roots in Capri",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Isola di Capri",
@@ -171,6 +218,59 @@ const schemaGraph = {
       "isPartOf": { "@id": `${siteUrl}/#website` },
       "about": { "@id": `${siteUrl}/#organization` },
       "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${siteUrl}/#breadcrumbs`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": `${siteUrl}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "B2B Luxury Services",
+          "item": `${siteUrl}/#services`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Airport-to-Suite Logistics",
+          "item": `${siteUrl}/#logistics`
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "AI Context Dossier",
+          "item": `${siteUrl}/ai-context`
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${siteUrl}/#faq`,
+      "mainEntity": faqs
+    },
+    {
+      "@type": "TouristDestination",
+      "@id": `${siteUrl}/#capri-island`,
+      "name": "Capri",
+      "description": "Exclusive Mediterranean island in the Gulf of Naples, Campania, Italy.",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.5507,
+        "longitude": 14.2426
+      },
+      "containsPlace": [
+        { "@type": "TouristAttraction", "name": "Faraglioni Rocks" },
+        { "@type": "TouristAttraction", "name": "Grotta Azzurra (Blue Grotto)" },
+        { "@type": "TouristAttraction", "name": "Monte Solaro" },
+        { "@type": "TouristAttraction", "name": "Villa Jovis" },
+        { "@type": "TouristAttraction", "name": "Villa San Michele" }
+      ]
     }
   ]
 };

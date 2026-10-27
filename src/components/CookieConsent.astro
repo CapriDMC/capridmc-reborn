@@ -1,0 +1,371 @@
+---
+/**
+ * CookieConsent.astro — Conforme a GDPR (UE 2016/679), Direttiva ePrivacy e Linee Guida Garante Privacy 10/06/2021
+ * Include:
+ *  1. Banner informativo di primo livello (Informativa Breve con Accetta, Rifiuta, Personalizza, Chiudi X)
+ *  2. Finestra modale nativa <dialog> per la gestione granulare delle preferenze (Informativa Estesa)
+ *  3. Integrazione bidirezionale con Google Consent Mode v2
+ *  4. Pulsante persistente di richiamo ("Preferenze Cookie") per revoca o modifica del consenso in ogni momento
+ */
+---
+
+<!-- 1. Banner Informativa Breve Cookie (Visibile solo se consenso non ancora espresso) -->
+<aside
+  id="cookie-banner"
+  aria-label="Informativa sui cookie e gestione del consenso"
+  role="region"
+  class="fixed bottom-4 left-4 right-4 md:left-6 md:right-auto md:max-w-xl z-[9990] bg-[#0A192F]/95 backdrop-blur-md border border-brand-gold/30 rounded-xl shadow-2xl p-5 md:p-6 text-white transition-all duration-300 transform translate-y-8 opacity-0 pointer-events-none"
+>
+  <div class="flex items-start justify-between gap-4">
+    <div class="flex items-center gap-2.5">
+      <span class="w-2.5 h-2.5 rounded-full bg-brand-gold animate-pulse"></span>
+      <h3 class="font-serif text-lg font-medium text-brand-gold tracking-wide">
+        Informativa sui Cookie & Privacy
+      </h3>
+    </div>
+    <button
+      id="cookie-banner-close-x"
+      type="button"
+      aria-label="Chiudi banner e prosegui con soli cookie tecnici necessari"
+      title="Prosegui con impostazioni predefinite (soli cookie tecnici)"
+      class="text-white/60 hover:text-white transition-colors p-1 -mr-1 -mt-1 text-lg font-light leading-none focus:outline-none focus:ring-2 focus:ring-brand-gold/50 rounded"
+    >
+      &times;
+    </button>
+  </div>
+
+  <p class="text-xs text-white/80 font-light mt-3 leading-relaxed">
+    Questo sito utilizza <strong>cookie tecnici necessari</strong> per garantire la sicurezza e la corretta navigazione. Con il tuo consenso preventivo, utilizziamo anche <strong>cookie analitici anonimizzati</strong> (Google Analytics 4 con Google Consent Mode v2) per misurare l'interazione con i contenuti ed ottimizzare l'esperienza utente.
+  </p>
+
+  <div class="mt-4 pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs">
+    <div class="flex items-center gap-3">
+      <button
+        id="cookie-banner-open-modal"
+        type="button"
+        class="text-brand-gold hover:text-white underline underline-offset-4 transition-colors font-medium cursor-pointer"
+      >
+        Personalizza preferenze
+      </button>
+      <span class="text-white/20">|</span>
+      <a
+        href="#cookie-policy-details"
+        id="cookie-banner-read-policy"
+        class="text-white/60 hover:text-brand-gold transition-colors underline underline-offset-4"
+      >
+        Leggi informativa estesa
+      </a>
+    </div>
+
+    <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+      <button
+        id="cookie-banner-reject"
+        type="button"
+        class="px-3.5 py-2 rounded text-xs uppercase tracking-wider font-semibold border border-white/20 text-white/80 hover:bg-white/10 hover:text-white transition-all"
+      >
+        Solo Necessari
+      </button>
+      <button
+        id="cookie-banner-accept-all"
+        type="button"
+        class="px-4 py-2 rounded text-xs uppercase tracking-wider font-semibold bg-brand-gold text-brand-navy hover:bg-[#c5a059] transition-all shadow-md"
+      >
+        Accetta Tutti
+      </button>
+    </div>
+  </div>
+</aside>
+
+<!-- 2. Finestra Modale Preferenze & Informativa Estesa (<dialog> nativo accessibile) -->
+<dialog
+  id="cookie-preferences-dialog"
+  aria-labelledby="cookie-dialog-title"
+  class="m-auto p-0 rounded-2xl bg-[#0A192F] text-white border border-brand-gold/40 shadow-2xl max-w-2xl w-[92vw] backdrop:bg-black/70 backdrop:backdrop-blur-sm"
+>
+  <div class="p-6 md:p-8 space-y-6 max-h-[85vh] overflow-y-auto overscroll-contain">
+    <!-- Header Modale -->
+    <div class="flex items-start justify-between border-b border-white/10 pb-4">
+      <div>
+        <span class="text-[10px] uppercase tracking-[0.2em] text-brand-gold font-semibold block mb-1">
+          Capri Destination Management Company
+        </span>
+        <h2 id="cookie-dialog-title" class="font-serif text-2xl font-normal text-white">
+          Gestione del Consenso & Informativa Privacy
+        </h2>
+      </div>
+      <button
+        id="cookie-dialog-close"
+        type="button"
+        aria-label="Chiudi finestra preferenze"
+        class="text-white/60 hover:text-white transition-colors text-2xl font-light p-1 -mr-2 -mt-2 focus:outline-none focus:ring-2 focus:ring-brand-gold/50 rounded"
+      >
+        &times;
+      </button>
+    </div>
+
+    <!-- Introduzione Legale -->
+    <p class="text-xs text-white/80 leading-relaxed">
+      In conformità al Regolamento Generale sulla Protezione dei Dati (GDPR - UE 2016/679), alla Direttiva ePrivacy 2002/58/CE e alle Linee Guida del Garante Privacy italiano del 10 giugno 2021, puoi selezionare liberamente quali categorie di cookie desideri autorizzare. Puoi revocare o modificare la tua scelta in qualsiasi momento attraverso il pulsante dedicato.
+    </p>
+
+    <!-- Accordion Categorie Cookie -->
+    <div class="space-y-4">
+      <!-- Categoria 1: Necessari -->
+      <div class="p-4 rounded-lg bg-white/5 border border-white/10 space-y-2">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <h3 class="text-sm font-semibold text-white">1. Cookie Tecnici e di Sicurezza</h3>
+            <span class="text-[10px] uppercase tracking-wider bg-brand-gold/20 text-brand-gold px-2 py-0.5 rounded font-mono font-medium">
+              Sempre Attivi
+            </span>
+          </div>
+          <input
+            type="checkbox"
+            checked
+            disabled
+            aria-label="Cookie tecnici necessari (sempre attivi per legge)"
+            class="w-4 h-4 rounded text-brand-gold bg-white/20 border-white/30 cursor-not-allowed opacity-75"
+          />
+        </div>
+        <p class="text-xs text-white/70 leading-relaxed">
+          Strettamente necessari per consentire la navigazione del sito web, garantire la protezione contro attacchi DDoS e memorizzare la tua scelta sul consenso. Non richiedono il consenso preventivo ai sensi dell'art. 122 del Codice Privacy (D.Lgs. 196/2003).
+        </p>
+      </div>
+
+      <!-- Categoria 2: Analitici -->
+      <div class="p-4 rounded-lg bg-white/5 border border-white/10 space-y-2">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <h3 class="text-sm font-semibold text-white">2. Cookie Statistici & Misurazione del Traffico</h3>
+            <span class="text-[10px] uppercase tracking-wider bg-white/10 text-white/70 px-2 py-0.5 rounded font-mono">
+              Opzionali
+            </span>
+          </div>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input
+              id="cookie-toggle-analytics"
+              type="checkbox"
+              class="sr-only peer"
+            />
+            <div class="w-11 h-6 bg-white/20 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-brand-gold rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-brand-gold"></div>
+          </label>
+        </div>
+        <p class="text-xs text-white/70 leading-relaxed">
+          Forniti tramite Google Analytics 4 (Google Ireland Limited) configurato con mascheramento dell'indirizzo IP e supporto nativo a Google Consent Mode v2. Ci permettono di comprendere in forma aggregata e anonima come i visitatori interagiscono con il sito per ottimizzare l'architettura dei contenuti.
+        </p>
+      </div>
+    </div>
+
+    <!-- Sezione Dati Titolare & Diritti GDPR -->
+    <div id="cookie-policy-details" class="p-4 rounded-lg bg-brand-navy/60 border border-brand-gold/20 text-xs text-white/70 space-y-2">
+      <h4 class="font-semibold text-brand-gold text-xs uppercase tracking-wider">
+        Titolare del Trattamento & Diritti dell'Interessato
+      </h4>
+      <p>
+        <strong>Titolare:</strong> Capri Destination Management Company (spin-off da Nesea Capri Tours & Events) — Isola di Capri (NA), Campania, Italia.<br />
+        <strong>Contatto Privacy:</strong> <a href="mailto:partnerships@capridmc.com" class="text-brand-gold underline">partnerships@capridmc.com</a> | Tel: <a href="tel:+393335943947" class="text-brand-gold underline">+39 333 594 3947</a>.<br />
+        <strong>Diritti GDPR:</strong> Puoi esercitare in ogni momento i diritti di accesso, rettifica, cancellazione, limitazione e opposizione al trattamento (Artt. 15-22 GDPR) scrivendo al Titolare.
+      </p>
+    </div>
+
+    <!-- Footer Azioni Modale -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-4 border-t border-white/10">
+      <button
+        id="cookie-dialog-reject-all"
+        type="button"
+        class="w-full sm:w-auto px-4 py-2.5 rounded text-xs uppercase tracking-wider font-semibold border border-white/20 text-white/80 hover:bg-white/10 hover:text-white transition-all text-center"
+      >
+        Rifiuta Non Necessari
+      </button>
+
+      <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+        <button
+          id="cookie-dialog-save-preferences"
+          type="button"
+          class="w-full sm:w-auto px-4 py-2.5 rounded text-xs uppercase tracking-wider font-semibold border border-brand-gold/50 text-brand-gold hover:bg-brand-gold/10 transition-all text-center"
+        >
+          Salva Preferenze
+        </button>
+        <button
+          id="cookie-dialog-accept-all"
+          type="button"
+          class="w-full sm:w-auto px-5 py-2.5 rounded text-xs uppercase tracking-wider font-semibold bg-brand-gold text-brand-navy hover:bg-[#c5a059] transition-all shadow-md text-center"
+        >
+          Accetta Tutti
+        </button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<!-- 3. Pulsante Fluttuante di Riapertura Preferenze (Garante Privacy: sempre accessibile) -->
+<button
+  id="cookie-launcher-btn"
+  type="button"
+  aria-label="Gestisci o modifica le preferenze sui cookie"
+  title="Preferenze Cookie & Privacy"
+  class="fixed bottom-4 left-4 z-[9980] flex items-center gap-2 px-3 py-2 rounded-full bg-[#0A192F]/90 text-brand-gold border border-brand-gold/40 shadow-lg backdrop-blur-md hover:bg-brand-navy hover:scale-105 transition-all text-xs font-mono group"
+>
+  <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10c0-.55-.05-1.09-.14-1.62-.35.11-.72.17-1.11.17-2.07 0-3.75-1.68-3.75-3.75 0-.58.14-1.13.38-1.62-.64.14-1.31.22-2 .22-3.87 0-7-3.13-7-7 0-.69.08-1.36.22-2-.49.24-1.04.38-1.62.38C7.68 6.78 6 5.1 6 3.03c0-.39.06-.76.17-1.11C9.69 2.05 10.84 2 12 2zm-3.5 8c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5S7 12.33 7 11.5 7.67 10 8.5 10zm5 5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zm3-5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5z"/>
+  </svg>
+  <span class="hidden group-hover:inline-block font-sans text-[11px] font-medium text-white/90">
+    Preferenze Cookie
+  </span>
+</button>
+
+<style>
+  dialog:modal {
+    overscroll-behavior: contain;
+  }
+  dialog::backdrop {
+    overflow: hidden;
+  }
+</style>
+
+<!-- 4. Controller Logico del Consenso & Sincronizzazione con Google Consent Mode v2 -->
+<script is:inline>
+  (function() {
+    const STORAGE_KEY = 'capri_cookie_consent';
+    const CONSENT_VERSION = '1.0';
+
+    const banner = document.getElementById('cookie-banner');
+    const dialog = document.getElementById('cookie-preferences-dialog');
+    const launcher = document.getElementById('cookie-launcher-btn');
+    const analyticsToggle = document.getElementById('cookie-toggle-analytics');
+
+    function readConsent() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return null;
+        return JSON.parse(raw);
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function saveConsent(analyticsGranted) {
+      const payload = {
+        version: CONSENT_VERSION,
+        timestamp: Date.now(),
+        necessary: true,
+        analytics: Boolean(analyticsGranted)
+      };
+
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+        document.cookie = `cookie_consent=${analyticsGranted ? 'all' : 'necessary'}; path=/; max-age=31536000; SameSite=Lax; Secure`;
+      } catch (e) {}
+
+      // Aggiorna Google Consent Mode v2 in tempo reale
+      if (typeof window.gtag === 'function') {
+        window.gtag('consent', 'update', {
+          'analytics_storage': analyticsGranted ? 'granted' : 'denied',
+          'ad_storage': analyticsGranted ? 'granted' : 'denied',
+          'ad_user_data': analyticsGranted ? 'granted' : 'denied',
+          'ad_personalization': analyticsGranted ? 'granted' : 'denied'
+        });
+      }
+
+      hideBanner();
+    }
+
+    function showBanner() {
+      if (!banner) return;
+      banner.classList.remove('translate-y-8', 'opacity-0', 'pointer-events-none');
+      banner.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+    }
+
+    function hideBanner() {
+      if (!banner) return;
+      banner.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+      banner.classList.add('translate-y-8', 'opacity-0', 'pointer-events-none');
+    }
+
+    function openDialog() {
+      if (!dialog) return;
+      const consent = readConsent();
+      if (analyticsToggle) {
+        analyticsToggle.checked = consent ? consent.analytics === true : false;
+      }
+      dialog.showModal();
+    }
+
+    function closeDialog() {
+      if (!dialog) return;
+      dialog.close();
+    }
+
+    // Inizializzazione al caricamento
+    document.addEventListener('DOMContentLoaded', function() {
+      const currentConsent = readConsent();
+
+      if (!currentConsent) {
+        // Nessun consenso registrato: mostra banner
+        setTimeout(showBanner, 600);
+      } else {
+        // Consenso presente: sincronizza subito lo stato
+        if (typeof window.gtag === 'function') {
+          window.gtag('consent', 'update', {
+            'analytics_storage': currentConsent.analytics ? 'granted' : 'denied'
+          });
+        }
+      }
+
+      // Event Listeners Banner
+      document.getElementById('cookie-banner-accept-all')?.addEventListener('click', function() {
+        saveConsent(true);
+      });
+
+      document.getElementById('cookie-banner-reject')?.addEventListener('click', function() {
+        saveConsent(false);
+      });
+
+      document.getElementById('cookie-banner-close-x')?.addEventListener('click', function() {
+        // Chiudere la X equivale a rifiutare i non necessari (Garante Privacy)
+        saveConsent(false);
+      });
+
+      document.getElementById('cookie-banner-open-modal')?.addEventListener('click', function() {
+        openDialog();
+      });
+
+      document.getElementById('cookie-banner-read-policy')?.addEventListener('click', function(e) {
+        e.preventDefault();
+        openDialog();
+        const details = document.getElementById('cookie-policy-details');
+        if (details) details.scrollIntoView({ behavior: 'smooth' });
+      });
+
+      // Event Listeners Dialog Modale
+      document.getElementById('cookie-dialog-close')?.addEventListener('click', closeDialog);
+
+      document.getElementById('cookie-dialog-accept-all')?.addEventListener('click', function() {
+        saveConsent(true);
+        closeDialog();
+      });
+
+      document.getElementById('cookie-dialog-reject-all')?.addEventListener('click', function() {
+        saveConsent(false);
+        closeDialog();
+      });
+
+      document.getElementById('cookie-dialog-save-preferences')?.addEventListener('click', function() {
+        const isAnalyticsChecked = Boolean(analyticsToggle?.checked);
+        saveConsent(isAnalyticsChecked);
+        closeDialog();
+      });
+
+      // Riapertura da pulsante fluttuante
+      launcher?.addEventListener('click', openDialog);
+
+      // Riapertura da link del footer
+      document.querySelectorAll('[data-open-cookie-preferences]').forEach(function(el) {
+        el.addEventListener('click', function(e) {
+          e.preventDefault();
+          openDialog();
+        });
+      });
+    });
+  })();
+</script>

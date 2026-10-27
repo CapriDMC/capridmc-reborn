@@ -2,6 +2,8 @@
 import '../styles/global.css';
 import Seo from '../components/Seo.astro';
 import JsonLd from '../components/JsonLd.astro';
+import GoogleTracking from '../components/GoogleTracking.astro';
+import CookieConsent from '../components/CookieConsent.astro';
 
 interface Props {
   title?: string;
@@ -21,6 +23,9 @@ const {
 <!doctype html>
 <html lang={lang} class="scroll-smooth">
   <head>
+    <!-- Google Tracking Suite & Google Consent Mode v2 -->
+    <GoogleTracking />
+
     <Seo
       title={title}
       description={description}
@@ -114,5 +119,8 @@ const {
         }
       });
     </script>
+
+    <!-- Cookie & Privacy Consent Manager (GDPR / Garante Privacy) -->
+    <CookieConsent />
   </body>
 </html>

@@ -1,0 +1,134 @@
+---
+/**
+ * GoogleTracking.astro — Best Practice Google Tracking Suite & Google Consent Mode v2
+ * Configurato per:
+ *  - Google Analytics 4 (GA4) con IP anonimizzato e conformità ePrivacy/GDPR
+ *  - Google Tag Manager (GTM) pronto per attivazione container
+ *  - Google Search Console (GSC) verification token
+ *  - Google Consent Mode v2 (obbligatorio in EEA/UE da Marzo 2024 per ad_storage & analytics_storage)
+ *  - Tracciamento automatico delle conversioni (WhatsApp, appuntamenti B2B, chiamate, email)
+ */
+
+interface Props {
+  gaMeasurementId?: string;
+  gtmId?: string;
+  gscToken?: string;
+}
+
+const {
+  gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID || "G-CAPRITOUR0",
+  gtmId = import.meta.env.PUBLIC_GTM_ID || "",
+  gscToken = import.meta.env.PUBLIC_GSC_TOKEN || ""
+} = Astro.props;
+---
+
+<!-- 1. Google Search Console Verification Meta Tag -->
+{gscToken && <meta name="google-site-verification" content={gscToken} />}
+
+<!-- 2. Google Consent Mode v2 (Inline Script pre-caricato prima di ogni tag Google) -->
+<script is:inline define:vars={{ gaMeasurementId, gtmId }}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+
+  // Verifica consenso pregresso salvato in localStorage
+  let savedConsent = null;
+  try {
+    const raw = localStorage.getItem('capri_cookie_consent');
+    if (raw) savedConsent = JSON.parse(raw);
+  } catch (e) {}
+
+  const isAnalyticsGranted = savedConsent && savedConsent.analytics === true;
+
+  // Google Consent Mode v2 — Default State (Privacy-by-Default conforme al Garante Privacy)
+  gtag('consent', 'default', {
+    'analytics_storage': isAnalyticsGranted ? 'granted' : 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'personalization_storage': 'denied',
+    'wait_for_update': 500
+  });
+
+  gtag('js', new Date());
+
+  // Configura GA4 se presente l'ID
+  if (gaMeasurementId) {
+    gtag('config', gaMeasurementId, {
+      anonymize_ip: true,
+      send_page_view: true,
+      cookie_flags: 'SameSite=None;Secure'
+    });
+  }
+
+  // Google Tag Manager Snippet (se GTM ID è valorizzato)
+  if (gtmId) {
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer',gtmId);
+  }
+
+  // Helper globale per tracciare conversioni ed eventi B2B
+  window.trackCapriEvent = function(eventName, params) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, params || {});
+    }
+  };
+
+  // Tracciamento automatico delle conversioni al click
+  document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('click', function(e) {
+      const target = e.target.closest('a, button');
+      if (!target) return;
+
+      const href = target.getAttribute('href') || '';
+
+      // Conversione WhatsApp B2B
+      if (href.includes('wa.me') || href.includes('whatsapp.com')) {
+        window.trackCapriEvent('generate_lead', {
+          event_category: 'engagement',
+          event_label: 'WhatsApp Concierge',
+          method: 'WhatsApp',
+          value: 100.0,
+          currency: 'EUR'
+        });
+      }
+
+      // Conversione Prenotazione / Richiesta Appuntamento B2B
+      if (href.includes('contact-us-capri-destination-management-company') || target.dataset.action === 'book-appointment') {
+        window.trackCapriEvent('generate_lead', {
+          event_category: 'lead',
+          event_label: 'Advisor Appointment Request',
+          method: 'Appointment Form'
+        });
+      }
+
+      // Conversione Chiamata Diretta
+      if (href.startsWith('tel:')) {
+        window.trackCapriEvent('contact', {
+          event_category: 'lead',
+          event_label: href.replace('tel:', ''),
+          method: 'Phone Call'
+        });
+      }
+
+      // Conversione Invio Email
+      if (href.startsWith('mailto:')) {
+        window.trackCapriEvent('contact', {
+          event_category: 'lead',
+          event_label: href.replace('mailto:', ''),
+          method: 'Email Direct'
+        });
+      }
+    });
+  });
+</script>
+
+<!-- 3. Google Analytics 4 Script Asincrono -->
+{gaMeasurementId && (
+  <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
+)}

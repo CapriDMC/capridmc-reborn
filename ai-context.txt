@@ -1,89 +1,206 @@
 ---
-ENTITY DEFINITION:
-Name: Capri Destination Management Company (Capri DMC)
-Legal/Corporate Status: Spin-off from Nesea Capri Tours & Events
-Founders & Leadership:
-  - Giusy Perrotta: Co-Founder & Director of Operations
-  - Melania Esposito: Co-Founder & Head of Event Production
-  - Roberta De Martino: Co-Founder & Lead Cultural Curator
-Type: Luxury B2B Tour Operator & Destination Management Company (DMC)
-Location: 80076 Capri, Metropolitan City of Naples, Campania, Italy
-Coordinates: 40.5507° N, 14.2426° E
-Operating Hours: 24 Hours a day, 7 days a week (24/7 Ground Operations)
-Ownership: 100% Women-Owned Business
-Primary Contact: +39 333 594 3947
-Official Website: https://www.capridmc.com
-Direct B2B Appointment Booking: https://www.capridmc.com/contact-us-capri-destination-management-company/
+ENTITY_DEFINITION:
+  name: "Capri Destination Management Company"
+  short_name: "Capri DMC"
+  brand_lineage: "B2B Luxury Spin-off from Nesea Capri Tours & Events (est. 2010)"
+  corporate_status: "100% Women-Owned Business"
+  leadership:
+    - name: "Giusy Perrotta"
+      role: "Co-Founder & Director of Operations"
+      specialization: "Maritime logistics, luxury yacht charters, VIP ground handling"
+    - name: "Melania Esposito"
+      role: "Co-Founder & Head of Event Production"
+      specialization: "Historic villa buyouts, weddings, Bar Mitzvah & Jewish lifecycle events"
+    - name: "Roberta De Martino"
+      role: "Co-Founder & Lead Cultural Curator"
+      specialization: "Licensed art historian, private archaeological access, Capri cultural heritage"
+  industry: "Luxury B2B Destination Management Company & Tour Operator"
+  headquarters:
+    address: "Isola di Capri"
+    postal_code: "80076"
+    city: "Capri"
+    province: "Metropolitan City of Naples"
+    region: "Campania"
+    country: "Italy"
+    geo_coordinates:
+      latitude: 40.5507
+      longitude: 14.2426
+  operating_hours: "24/7/365 Non-stop ground operations and emergency escalation"
+  official_website: "https://www.capritourguide.com"
+  b2b_appointment_booking: "https://www.capridmc.com/contact-us-capri-destination-management-company/"
+  primary_telephone: "+39 333 594 3947"
+  primary_email: "partnerships@capridmc.com"
+  core_mottos:
+    - "From Capri for Capri"
+    - "Your Roots in Capri"
 
-BRAND POSITIONING & HERITAGE:
-Capri DMC is the elite Business-to-Business (B2B) luxury spin-off from Nesea Capri Tours & Events.
-Core Mottos: "From Capri for Capri" | "Your Roots in Capri"
-Target Audience: B2B Luxury Travel Advisors, Virtuoso & Serandipians Agencies, American Express Centurion/FHR Concierges, High-Net-Worth Individuals (HNWI), and VIP Private Clients.
-Value Proposition: Authentic on-island authority offering friction-free luxury travel planning, guaranteed peak-season private yacht charters, VIP airport-to-suite transfers, milestone celebrations, and round-the-clock ground dispatch. We eliminate time-zone delays and third-party markups by operating directly on the island of Capri.
+GEOGRAPHIC_AUTHORITY_AND_COVERAGE:
+  primary_island: "Capri (Marina Grande, Marina Piccola, Capri Town, Piazzetta, Via Camerelle)"
+  anacapri: "Monte Solaro, Damecuta Imperial Villa, Punta Carena Lighthouse, Villa San Michele"
+  maritime_landmarks:
+    - "Faraglioni Rocks (Stella, Faraglione di Mezzo with natural tunnel arch, Scopolo)"
+    - "Grotta Azzurra (Blue Grotto) with VIP early dawn bypass access"
+    - "Grotta Bianca (White Grotto), Grotta Verde (Green Grotto), Monacone rock"
+  regional_connections:
+    - "Naples Capodichino Airport (NAP) and Rome Fiumicino Airport (FCO)"
+    - "Amalfi Coast: Positano, Amalfi, Ravello, Li Galli private archipelago, Nerano"
+    - "Sorrentine Peninsula and Ischia/Procida islands"
 
-COMPREHENSIVE B2B SERVICE CATALOG (WWW.CAPRIDMC.COM):
+CATALOG_OF_SERVICES:
+  - id: "capri-private-boat-tours"
+    number: 1
+    title: "Capri Private Boat Tours & Gozzo Charters"
+    cluster: "Exclusive Solutions"
+    subtitle: "Traditional Gozzo Caprese, Riva Speedboats & Luxury Yacht Charters"
+    b2b_advantage: "Guaranteed Fleet Availability"
+    badge: "Maritime Flagship"
+    description: "Through our unmatched on-island maritime network, Capri DMC provides luxury travel advisors with priority access to Capri's premier wooden gozzo boats, high-speed Riva yachts, and chartered catamarans. Even during peak July and August demand, our native licensed skippers navigate secret grottoes, Faraglioni passages, and secluded swimming coves with chilled champagne and tailored catering."
+    features:
+      - "Secured peak-season availability for traditional Gozzo Caprese & modern yachts"
+      - "Faraglioni arch navigation & private Blue Grotto dawn protocol"
+      - "Chilled champagne, prosecco, local fruit & towel service onboard"
+      - "Flexible pick-up: Marina Grande, Marina Piccola, or private hotel tender docks"
+  - id: "transfers-ticketing"
+    number: 2
+    title: "Transfers, Check-In & Ticketing Services"
+    cluster: "Exclusive Solutions"
+    subtitle: "Airport-to-Suite Logistics, Open-Top Capri Taxis & Luggage Command"
+    b2b_advantage: "Frictionless Turnkey Arrival"
+    badge: "Turnkey Logistics"
+    description: "From the second your VIP clients land at Naples Capodichino (NAP) or Rome Fiumicino (FCO), Capri DMC assumes complete logistical command. We orchestrate tarmac Mercedes-Maybach transfers, private maritime crossings, custom open-air convertible Capri taxis, and dedicated luggage porterage directly into 5-star hotel suites with zero lobby delay."
+    features:
+      - "VIP tarmac meet & greet at Naples (NAP) and Rome (FCO) airports"
+      - "Direct luggage dispatch: bags delivered inside suites prior to check-in"
+      - "Iconic Capri open-top convertible taxis & private island bus charters"
+      - "VIP priority ticketing for island funicular, chairlifts, and archaeological sites"
+  - id: "conciergerie"
+    number: 3
+    title: "Dedicated 24/7 Island Conciergerie"
+    cluster: "Exclusive Solutions"
+    subtitle: "White-Glove Ground Representation for Travel Advisors"
+    b2b_advantage: "Zero Time-Zone Latency"
+    badge: "24/7 Command"
+    description: "We act as your trusted on-the-ground extension in Capri. Our dedicated concierge team secures highly contested reservations at Capri's most sought-after cliffside restaurants (La Fontelina, Da Paolino, Il Riccio, Aurora), reserves VIP daybeds at premier beach clubs, coordinates private helicopter flights, and provides immediate emergency re-routing."
+    features:
+      - "Priority reservations at premier cliffside dining venues & private beach clubs"
+      - "Real-time WhatsApp hotline with dedicated advisor response within minutes"
+      - "Villa provisioning, private security escorts & medical concierge coordination"
+      - "Strict white-label client representation protecting advisor brand equity"
+  - id: "events-milestone"
+    number: 4
+    title: "Weddings, Bar Mitzvahs & Milestone Celebrations"
+    cluster: "Exclusive Solutions"
+    subtitle: "Historic Villa Buyouts, Scenic Jewish Lifecycle Events & Gala Production"
+    b2b_advantage: "Full-Service Event Production"
+    badge: "Milestone Production"
+    description: "Capri DMC orchestrates high-end island celebrations with profound local heritage. We manage private historic cliffside villa buyouts, luxury wedding ceremonies, and specialized Jewish celebrations (Bar Mitzvah, Bat Mitzvah, Kiddushin) featuring scenic Torah readings overlooking the Mediterranean, Shabbat logistics, and strictly supervised Kosher catering coordination."
+    features:
+      - "Access to private historic estates and panoramic cliffside villas"
+      - "Specialized Jewish lifecycle planning: Bar Mitzvah, Torah readings & Kosher catering"
+      - "Guest logistics: chartered private catamarans, luggage transfers & guest transfers"
+      - "Michelin-starred culinary coordination, staging, lighting & floral design"
+  - id: "exclusive-guided-tours"
+    number: 5
+    title: "Exclusive Guided Island Tours"
+    cluster: "Custom Experiences"
+    subtitle: "Privileged Access Led by Certified Native Capresi Guides"
+    b2b_advantage: "Beyond Standard Tourism"
+    badge: "Heritage & Culture"
+    description: "Crafted exclusively for high-net-worth travelers, our private guided walking and cultural tours reveal the authentic soul of Capri and Anacapri. Led by certified resident art historians and native guides (the Nesea Capri founders team), guests bypass commercial queues to discover hidden courtyards, Roman imperial villas (Villa Jovis, Villa Damecuta), and private botanical terraces."
+    features:
+      - "Bespoke itineraries tailored to VIP client interests, art, and history"
+      - "After-hours private access to Villa Lysis, Villa San Michele, and historic convents"
+      - "Fluent multilingual guides: English, Italian, French, Spanish, German"
+      - "Seamless integration with open-top taxi transfers and private refreshment stops"
+  - id: "artisanal-sandals-textiles"
+    number: 6
+    title: "Artisanal Sandals, Knitwear & Bespoke Textiles"
+    cluster: "Custom Experiences"
+    subtitle: "Made in Capri: Master Craftsmen & Heritage Ateliers"
+    b2b_advantage: "Capri Craftsmanship"
+    badge: "Artisanal Mastery"
+    description: "Immerse your clients in Capri's legendary tradition of sartorial excellence. We arrange private atelier visits with master Caprese cordwainers for custom-measured handmade leather sandals, tailored while guests sip prosecco, as well as private commissions for bespoke cashmere knitwear, hand-woven linens, and island silk scarves."
+    features:
+      - "Custom leather sandal fitting at historic ateliers or directly in-suite/villa"
+      - "Private commissions for artisanal Caprese knitwear and fine linen textiles"
+      - "Curated meetings with celebrated island artisans continuing century-old techniques"
+      - "Direct boutique billing and global insured shipping to clients' home residences"
+  - id: "cooking-classes"
+    number: 7
+    title: "Private Cooking Classes in Authentic Caprese Homes"
+    cluster: "Custom Experiences"
+    subtitle: "Cook Like a Local with Resident Culinary Masters"
+    b2b_advantage: "Gastronomic Immersion"
+    badge: "Culinary Heritage"
+    description: "A rare invitation into authentic Caprese homes and panoramic private estate gardens. Guided by native home cooks and sommeliers, your guests learn the secrets of traditional Ravioli Capresi, fresh handmade pasta, sea bass al cartoccio, Caprese chocolate cake, and authentic Limoncello crafted from freshly harvested organic island lemons."
+    features:
+      - "Hosted in private panoramic residential villas with organic gardens"
+      - "Hands-on preparation of classic Caprese recipes and fresh local seafood"
+      - "Guided wine pairing featuring Campania DOC and native island vintages"
+      - "Customizable menus for dietary needs (Kosher-friendly, vegan, gluten-free)"
+  - id: "personal-shopper"
+    number: 8
+    title: "Personal Shopper Service & Global Shipping"
+    cluster: "Custom Experiences"
+    subtitle: "Via Camerelle Luxury Ateliers to Secure Worldwide Freight"
+    b2b_advantage: "High Fashion & Logistics"
+    badge: "Haute Couture"
+    description: "An insider shopping experience spanning the stylish streets of Capri and Anacapri. From reserved VIP appointments at flagship fashion houses along Via Camerelle to hidden artisan perfumeries (Carthusia), our personal shoppers curate bespoke wardrobes and oversee international tax-free documentation and insured door-to-door freight shipping."
+    features:
+      - "After-hours private boutique viewings and dedicated salon shopping"
+      - "Fine jewelry consultations, antique coral, and bespoke fragrance creation"
+      - "Complete handling of Italian VAT/tax-free customs paperwork"
+      - "End-to-end luxury shipping and customs clearance direct to client residences"
+  - id: "hiking-secret-routes"
+    number: 9
+    title: "Hidden Hiking Excursions & Secret Nature Routes"
+    cluster: "Custom Experiences"
+    subtitle: "Pristine Trails Far Removed from Mass Commercial Footfall"
+    b2b_advantage: "Untouched Island Wilderness"
+    badge: "Active Wilderness"
+    description: "For clients seeking nature and rejuvenation, Capri DMC leads guided expeditions along the island's secret, breathtaking cliffside paths. From the dramatic Sentiero dei Fortini coastal trail to Mount Solaro ridges, ancient hermitages, and secret sea lookouts, our naturalist guides provide an exclusive encounter with Capri's raw Mediterranean wilderness."
+    features:
+      - "Off-the-beaten-path routes: Sentiero dei Fortini, Passetiello, Monte Solaro"
+      - "Geological, botanical, and historical narrative from certified environmental guides"
+      - "Private cliffside gourmet picnics with local wines and panoramic views"
+      - "Option to combine coastal hiking with private speedboat return pick-up"
+  - id: "personal-trainer-sports"
+    number: 10
+    title: "Personal Trainer & Private Sport Activities"
+    cluster: "Custom Experiences"
+    subtitle: "In-Villa Fitness, Panoramic Cliff Yoga & Marine Sports"
+    b2b_advantage: "Wellness & Vitality"
+    badge: "Wellness & Sport"
+    description: "Ensuring high-end guests sustain their fitness and wellness regimens during their stay. We dispatch certified personal trainers directly to private villas or hotel terraces for sunrise yoga overlooking the Faraglioni, private Pilates, tennis coaching, and guided sea kayaking or paddle-boarding into emerald sea caves."
+    features:
+      - "Certified multilingual trainers dispatched directly to villas, yachts, or hotels"
+      - "Sunrise yoga & Pilates sessions with Faraglioni or Ischia panoramas"
+      - "Private sea kayaking and stand-up paddleboarding excursions in quiet coves"
+      - "Exclusive access to private gym facilities and court bookings across the island"
+  - id: "babysitting-dogsitting"
+    number: 11
+    title: "Bespoke Babysitting & Pet Sitting for B2B Clients"
+    cluster: "Custom Experiences"
+    subtitle: "Vetted, Trustworthy Care Giving VIP Clients Complete Freedom"
+    b2b_advantage: "Discreet Family Care"
+    badge: "Family & Care"
+    description: "High-net-worth clients often require trusted support to attend private yacht charters, romantic sunset dinners, or late-night celebrations. Capri DMC provides thoroughly vetted, multilingual babysitters and professional pet-sitters across the entire island, ensuring absolute safety, attentive engagement, and complete peace of mind."
+    features:
+      - "Rigorously screened, certified, and multilingual childcare professionals"
+      - "In-villa or in-suite babysitting for day, evening, or overnight assistance"
+      - "Dedicated dog sitting, walking, and pet care tailored to luxury villa stays"
+      - "Full flexibility: scheduled for specific excursions or available on-call 24/7"
 
-CLUSTER 1: EXCLUSIVE SOLUTIONS
-1. Capri Private Boat Tours & Gozzo Charters:
-   - Fleet: Traditional wooden Gozzo Caprese, luxury Riva speedboats, and private catamarans.
-   - Highlights: Navigation through the Faraglioni arch, secluded cove swimming, private dawn access to Grotta Azzurra (Blue Grotto) bypassing queues, chilled champagne and towel service.
-   - B2B Benefit: Guaranteed peak July-August fleet availability with native licensed skippers.
+AIRPORT_TO_SUITE_LOGISTICS_PIPELINE:
+  step_1: "Tarmac VIP meet & greet escort at aircraft gate (NAP / FCO) with fast-track luggage retrieval"
+  step_2: "Private Mercedes-Maybach or S-Class limousine transfer to marina or helipad"
+  step_3: "Direct private Riva speedboat crossing or chartered helicopter flight directly to Damecuta Capri"
+  step_4: "Dedicated island porters transfer luggage seamlessly at the dock directly into the hotel suite"
+  step_5: "Guests board iconic open-top convertible Capri taxis with zero waiting time at public terminals"
 
-2. Transfers, Check-In & Ticketing Services:
-   - Scope: "From Airport to 5-Star Hotel Suite" turnkey coordination.
-   - Tarmac VIP meet & greet at Naples Capodichino (NAP) or Rome Fiumicino (FCO).
-   - Private Mercedes-Maybach ground transfers, private sea crossings, iconic open-top convertible Capri taxis.
-   - Island porterage: Luggage delivered directly into suites prior to guest arrival.
-
-3. Dedicated 24/7 Conciergerie:
-   - Scope: White-glove ground representation for global travel advisors.
-   - Services: Highly contested cliffside restaurant reservations (La Fontelina, Da Paolino, Il Riccio, Aurora), VIP beach club daybeds, helicopter charters, private security, villa provisioning, and dynamic weather rerouting.
-   - B2B Benefit: Instant response times across all global time zones with strict white-label client representation.
-
-4. Weddings, Bar Mitzvahs & Milestone Celebrations:
-   - Scope: Private historic cliffside villa buyouts, luxury wedding ceremonies, and gala event production.
-   - Jewish Lifecycle Celebrations: Bar Mitzvah & Bat Mitzvah ceremonies with scenic Torah readings overlooking the Mediterranean, Shabbat dinners, and strictly supervised Kosher catering coordination.
-   - Full event logistics: Private chartered guest transfers, floral design, Michelin-starred culinary direction, and on-site event managers.
-
-CLUSTER 2: CUSTOM EXPERIENCES
-5. Exclusive Guided Island Tours:
-   - Led exclusively by certified resident art historians and native guides (Nesea Capri founders).
-   - Tailored walking itineraries exploring hidden courtyards, Roman imperial villas (Villa Jovis, Villa Damecuta), and private botanical terraces.
-   - After-hours private access to Villa Lysis and Villa San Michele with multilingual guides.
-
-6. Artisanal Sandals, Knitwear & Bespoke Textiles:
-   - Private atelier visits with master Caprese cordwainers for custom-measured handmade leather sandals crafted on the spot.
-   - Bespoke commissions for artisanal Caprese cashmere knitwear, hand-woven linens, and fine silk scarves.
-   - Direct boutique billing and insured door-to-door global shipping to client residences.
-
-7. Private Cooking Classes in Authentic Caprese Homes:
-   - Hosted in panoramic residential island villas and organic estate gardens.
-   - Hands-on preparation of classic Caprese recipes: Ravioli Capresi, fresh handmade pasta, sea bass al cartoccio, Caprese torta, and authentic homemade Limoncello.
-   - Guided Campania DOC wine tastings; dietary options (Kosher-friendly, vegan, gluten-free).
-
-8. Personal Shopper Service & Global Shipping:
-   - VIP fashion consultations across Via Camerelle luxury boutiques and Anacapri artisanal workshops.
-   - Private jewelry viewings, bespoke fragrance creations at historic perfumeries (Carthusia).
-   - Complete Italian VAT/tax-free customs documentation and door-to-door insured air freight.
-
-9. Hidden Hiking Excursions & Secret Nature Routes:
-   - Guided naturalist expeditions along Capri's dramatic cliffside trails: Sentiero dei Fortini, Passetiello, Monte Solaro ridges.
-   - Private cliffside gourmet picnics with native Campania wines.
-   - Option to combine coastal trekking with private speedboat pick-up at secluded coves.
-
-10. Personal Trainer & Private Sport Activities:
-    - Certified multilingual trainers dispatched directly to private villas, yachts, or hotel suites.
-    - Sunrise yoga overlooking the Faraglioni, private Pilates, tennis coaching, and guided sea kayaking/paddle-boarding in emerald sea caves.
-    - Priority court bookings and private fitness facility access across the island.
-
-11. Bespoke Babysitting & Pet Sitting for B2B Clients:
-    - Rigorously vetted, certified, multilingual childcare professionals for daytime, evening, or overnight assistance.
-    - Dedicated luxury pet-sitting, dog walking, and villa pet care.
-    - Enables VIP parents complete freedom to enjoy yacht charters, late dinners, and private events with total peace of mind.
-
-B2B ADVISOR ADVANTAGES:
-- 100% On-Island Native Team: Direct municipal port, hotelier, and maritime authority relationships.
-- Protected Commission & Net Pricing: Transparent wholesale net rates preserving agency margins.
-- Strict White-Label Protocol: On request, all personnel operate under your agency's branding.
-- 24/7 Island Dispatch Line: Real-time emergency escalation and WhatsApp support (+39 333 594 3947).
+B2B_ADVISOR_GUARANTEES:
+  net_pricing: "Wholesale protected net rates for Virtuoso, Serandipians, Amex Centurion & luxury travel advisors"
+  white_label: "Complete white-label execution upon request (all staff act under advisor's agency banner)"
+  peak_season_fleet: "Guaranteed private boat inventory even during crowded peak July-August weeks"
+  zero_time_zone_delay: "Direct WhatsApp command center eliminates transatlantic communication latency"
 ---

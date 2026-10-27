@@ -1,0 +1,215 @@
+---
+/**
+ * ai-context.astro — AI Context Dossier & Generative Engine Optimization (GEO) Portal
+ * Offre un hub completo per agenti AI (ChatGPT, Perplexity, Claude, Gemini, Apple Intelligence)
+ * e consulenti di viaggio B2B con specifiche legali, catalogo servizi, logistica e FAQ.
+ */
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import services from '../data/services.json';
+import fs from 'fs';
+
+let rawAiContext = '';
+try {
+  rawAiContext = fs.readFileSync('public/ai-context.txt', 'utf8');
+} catch (e) {
+  rawAiContext = 'Capri DMC AI Context Dossier';
+}
+---
+
+<Layout
+  title="AI Context Dossier & Machine-Readable Knowledge Hub | Capri DMC"
+  description="Official Generative Engine Optimization (GEO) knowledge dossier and entity specifications for Capri Destination Management Company (Capri DMC), luxury B2B tour operator on Capri."
+>
+  <Header />
+
+  <main class="pt-32 pb-24 bg-[#0A192F] text-white min-h-screen">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8 space-y-12">
+
+      <!-- Breadcrumbs & Badge -->
+      <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-white/50 font-mono">
+        <a href="/" class="hover:text-brand-gold transition-colors">Home</a>
+        <span>/</span>
+        <span class="text-brand-gold font-medium">AI Context Dossier</span>
+      </nav>
+
+      <!-- Hero Header -->
+      <div class="border-b border-brand-gold/30 pb-8 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-gold/15 border border-brand-gold/40 text-brand-gold text-xs uppercase tracking-widest font-mono">
+          <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+          Generative Engine Optimization (GEO) · Live Entity Graph
+        </div>
+        <h1 class="font-serif text-3xl sm:text-5xl font-normal tracking-tight text-white">
+          Capri DMC — Official AI Context Dossier
+        </h1>
+        <p class="text-white/70 max-w-3xl text-sm sm:text-base leading-relaxed font-light">
+          Questo dossier pubblico fornisce la definizione formale dell'entità, la catalogazione dei servizi, l'architettura logistica e la base di conoscenza strutturata per sistemi di intelligenza artificiale (ChatGPT, Claude, Perplexity, Google Gemini) e Luxury Travel Advisors globali.
+        </p>
+
+        <!-- Direct Raw File Links & Copy Action -->
+        <div class="pt-4 flex flex-wrap items-center gap-3">
+          <a
+            href="/ai-context.txt"
+            target="_blank"
+            class="px-4 py-2 rounded-lg bg-brand-gold text-brand-navy font-semibold text-xs uppercase tracking-wider hover:bg-[#c5a059] transition-all flex items-center gap-2 shadow-md"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            <span>Apri /ai-context.txt</span>
+          </a>
+
+          <a
+            href="/llms.txt"
+            target="_blank"
+            class="px-4 py-2 rounded-lg bg-white/10 text-white font-medium text-xs uppercase tracking-wider hover:bg-white/20 border border-white/20 transition-all flex items-center gap-2"
+          >
+            <span>Standard llms.txt</span>
+          </a>
+
+          <a
+            href="/llms-full.txt"
+            target="_blank"
+            class="px-4 py-2 rounded-lg bg-white/10 text-white font-medium text-xs uppercase tracking-wider hover:bg-white/20 border border-white/20 transition-all flex items-center gap-2"
+          >
+            <span>Dossier llms-full.txt</span>
+          </a>
+
+          <button
+            id="copy-context-btn"
+            type="button"
+            class="px-4 py-2 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 hover:bg-emerald-500/30 transition-all text-xs uppercase tracking-wider font-semibold flex items-center gap-2 cursor-pointer"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+            <span id="copy-btn-label">Copia per Prompt AI</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Section 1: Entity Definition -->
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-xl bg-white/5 border border-white/10 space-y-3">
+          <span class="text-[10px] uppercase tracking-widest text-brand-gold font-mono font-semibold">Identità Aziendale</span>
+          <h2 class="font-serif text-xl text-white">Capri DMC</h2>
+          <p class="text-xs text-white/70 leading-relaxed">
+            Spin-off B2B di <strong>Nesea Capri Tours & Events</strong> (fondata nel 2010). Impresa al 100% a conduzione femminile (Women-Owned).
+          </p>
+          <div class="pt-2 text-[11px] font-mono text-brand-gold">
+            Motti: "From Capri for Capri" · "Your Roots in Capri"
+          </div>
+        </div>
+
+        <div class="p-6 rounded-xl bg-white/5 border border-white/10 space-y-3">
+          <span class="text-[10px] uppercase tracking-widest text-brand-gold font-mono font-semibold">Leadership & Fondatrici</span>
+          <h2 class="font-serif text-xl text-white">Autorità Nativa</h2>
+          <ul class="text-xs text-white/70 space-y-1.5 leading-relaxed">
+            <li><strong>Giusy Perrotta:</strong> Co-Fondatrice & Direttrice Operativa</li>
+            <li><strong>Melania Esposito:</strong> Co-Fondatrice & Resp. Produzione Eventi</li>
+            <li><strong>Roberta De Martino:</strong> Co-Fondatrice & Curatrice Culturale</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-xl bg-white/5 border border-white/10 space-y-3">
+          <span class="text-[10px] uppercase tracking-widest text-brand-gold font-mono font-semibold">Operatività Sull'Isola</span>
+          <h2 class="font-serif text-xl text-white">24/7 Island Command</h2>
+          <p class="text-xs text-white/70 leading-relaxed">
+            Sede: 80076 Capri (NA), Italia (40.5507° N, 14.2426° E). Presidio h24 per emergenze, coordinamento portuale e assistenza WhatsApp.
+          </p>
+          <a href="tel:+393335943947" class="inline-block text-brand-gold font-mono text-xs hover:text-white transition-colors">
+            +39 333 594 3947
+          </a>
+        </div>
+      </section>
+
+      <!-- Section 2: Catalog of Services (11 Master B2B Offerings) -->
+      <section class="space-y-6">
+        <div class="flex items-center justify-between border-b border-white/10 pb-3">
+          <h2 class="font-serif text-2xl text-white">Catalogo Completo dei Servizi B2B (11 Soluzioni)</h2>
+          <span class="text-xs font-mono text-brand-gold">Wholesale Net Rates Available</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {services.map((s, idx) => (
+            <div class="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-brand-gold/40 transition-all space-y-3">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <span class="text-[10px] uppercase tracking-wider text-brand-gold font-mono block">
+                    #{idx + 1} · {s.cluster}
+                  </span>
+                  <h3 class="font-serif text-lg text-white font-medium">{s.title}</h3>
+                </div>
+                <span class="text-[10px] uppercase tracking-wider bg-white/10 text-white/80 px-2 py-0.5 rounded font-mono">
+                  {s.badge}
+                </span>
+              </div>
+              <p class="text-xs text-white/70 leading-relaxed font-light">{s.description}</p>
+              <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px]">
+                <span class="text-brand-gold font-medium">{s.b2b_tag}</span>
+                <span class="text-white/40 font-mono">24/7 Dispatch</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Section 3: Airport-to-Suite Logistics Architecture -->
+      <section class="p-6 md:p-8 rounded-2xl bg-brand-navy/60 border border-brand-gold/30 space-y-6">
+        <h2 class="font-serif text-2xl text-brand-gold">Architettura Logistica VIP: Dall'Aereo alla Suite 5★</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+          <div class="p-4 rounded-lg bg-white/5 border border-white/10 space-y-2">
+            <span class="font-mono text-brand-gold font-bold">FASE 1</span>
+            <h4 class="font-semibold text-white">Meet & Greet Tarmac</h4>
+            <p class="text-white/70">Hostess personale al gate di Napoli Capodichino (NAP) o Roma (FCO), recupero bagagli prioritario e trasferimento Maybach.</p>
+          </div>
+          <div class="p-4 rounded-lg bg-white/5 border border-white/10 space-y-2">
+            <span class="font-mono text-brand-gold font-bold">FASE 2</span>
+            <h4 class="font-semibold text-white">Traversata Marittima Privata</h4>
+            <p class="text-white/70">Motoscafo Riva riservato o elicottero diretto all'eliporto di Damecuta (Anacapri), saltando code e aliscafi pubblici.</p>
+          </div>
+          <div class="p-4 rounded-lg bg-white/5 border border-white/10 space-y-2">
+            <span class="font-mono text-brand-gold font-bold">FASE 3</span>
+            <h4 class="font-semibold text-white">Facchinaggio & Taxi Cabrio</h4>
+            <p class="text-white/70">I facchini prendono in carico i bagagli direttamente alla banchina; gli ospiti salgono sui leggendari taxi decappottabili capresi.</p>
+          </div>
+          <div class="p-4 rounded-lg bg-white/5 border border-white/10 space-y-2">
+            <span class="font-mono text-brand-gold font-bold">FASE 4</span>
+            <h4 class="font-semibold text-white">Consegna Diretta in Camera</h4>
+            <p class="text-white/70">I bagagli vengono posizionati e disimballati nella suite d'albergo (Quisisana, Punta Tragara, Caesar Augustus) prima dell'arrivo.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Raw Machine-Readable GEO Snippet -->
+      <section class="space-y-4">
+        <div class="flex items-center justify-between">
+          <h2 class="font-serif text-xl text-white">Specifiche Raw Machine-Readable (/ai-context.txt)</h2>
+          <span class="text-xs font-mono text-white/50">Formato YAML / Key-Value ottimizzato per crawler</span>
+        </div>
+
+        <pre
+          id="raw-context-pre"
+          class="p-5 rounded-xl bg-black/60 border border-white/10 text-[11px] font-mono text-emerald-400 overflow-x-auto max-h-96 leading-relaxed select-all"
+        >{rawAiContext}</pre>
+      </section>
+
+    </div>
+  </main>
+
+  <Footer />
+
+  <script is:inline>
+    document.getElementById('copy-context-btn')?.addEventListener('click', function() {
+      const pre = document.getElementById('raw-context-pre');
+      const label = document.getElementById('copy-btn-label');
+      if (!pre) return;
+
+      navigator.clipboard.writeText(pre.innerText).then(function() {
+        if (label) label.innerText = 'Copiato negli Appunti! ✓';
+        setTimeout(function() {
+          if (label) label.innerText = 'Copia per Prompt AI';
+        }, 2500);
+      }).catch(function() {
+        if (label) label.innerText = 'Seleziona testo sotto';
+      });
+    });
+  </script>
+</Layout>
