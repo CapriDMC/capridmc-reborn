@@ -1,6 +1,7 @@
 ---
 // "The Local Authority" Pinned Editorial Storytelling Section with Authentic Team & Lineage
-const contactUrl = "https://www.capridmc.com/contact-us-capri-destination-management-company/";
+const emailContact = "mailto:partnerships@capridmc.com?subject=Partnership%20Capri%20DMC";
+const phoneContact = "tel:+393335943947";
 
 const teamFounders = [
   { name: "Giusy Perrotta", role: "Co-Founder & Director of Operations", note: "Native Caprese with 15+ years orchestrating maritime logistics and VIP advisor relations." },
@@ -155,17 +156,24 @@ const teamFounders = [
       <p class="text-gray-600 leading-relaxed text-base font-light mb-8">
         Every luxury itinerary we execute is a direct reflection of your travel agency. We offer complete white-label service delivery, confidential client briefings, and zero-conflict commission protection.
       </p>
-      <a
-        href={contactUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-3 px-8 py-4 bg-brand-navy text-white text-xs uppercase tracking-[0.2em] font-semibold hover:bg-brand-gold hover:text-brand-navy transition-all duration-300 shadow-md"
-      >
-        <span>Partner With Capri DMC</span>
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-        </svg>
-      </a>
+      <div class="flex flex-wrap items-center gap-4">
+        <a
+          href={emailContact}
+          class="inline-flex items-center gap-3 px-8 py-4 bg-brand-navy text-white text-xs uppercase tracking-[0.2em] font-semibold hover:bg-brand-gold hover:text-brand-navy transition-all duration-300 shadow-md"
+        >
+          <span>Email: partnerships@capridmc.com</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </a>
+        <a
+          href={phoneContact}
+          class="inline-flex items-center gap-2 px-6 py-4 border border-brand-navy/30 text-brand-navy text-xs uppercase tracking-[0.2em] font-semibold hover:border-brand-gold hover:text-brand-gold transition-all duration-300 font-mono"
+        >
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>+39 333 594 3947</span>
+        </a>
+      </div>
     </div>
 
   </div>

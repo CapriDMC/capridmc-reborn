@@ -1,6 +1,15 @@
 ---
-// Custom Logistics Map Component - "From Airport to 5★ Suite"
-const contactUrl = "https://www.capridmc.com/contact-us-capri-destination-management-company/";
+/**
+ * LogisticsMap.astro — Mappamondo 3D Interattivo & Calcolo Distanze da Capri
+ * Sostituisce la precedente mappa stilizzata statica con un mappamondo ortografico 3D:
+ *  - Ruotabile con il cursore / drag touch con inerzia fluida a 60fps.
+ *  - Cliccando su una nazione (es. Russia), calcola la distanza in km tra la capitale (es. Mosca) e Capri.
+ *  - Traccia l'arco di rotta aerea ortodromica dorata in tempo reale.
+ *  - Mostra flag, capitale, distanza in km, tempo di volo stimato e canali diretti (solo mail e telefono).
+ */
+
+const emailContact = "mailto:partnerships@capridmc.com?subject=Richiesta%20Logistica%20VIP%20Capri%20DMC";
+const phoneContact = "tel:+393335943947";
 
 const logisticsSteps = [
   {
@@ -34,202 +43,716 @@ const logisticsSteps = [
 ];
 ---
 
-<section id="logistics" aria-label="From Airport to 5-Star Hotel Suite Logistics" class="py-28 lg:py-36 px-6 lg:px-12 bg-white text-brand-navy relative overflow-hidden border-b border-gray-100">
+<section id="logistics" aria-label="Global Logistics & Interactive 3D Capri Globe" class="py-24 lg:py-32 px-6 lg:px-12 bg-brand-dark text-white relative overflow-hidden border-b border-white/10">
   
-  <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
-    
-    <!-- Left Column: Narrative & Step Breakdown -->
-    <div class="lg:w-1/2 map-text gsap-reveal">
-      <div class="inline-flex items-center gap-2 mb-4">
+  <!-- Subtle Mediterranean Starfield / Horizon Glow Background -->
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-brand-navy/60 via-brand-dark to-black pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto relative z-10">
+
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16 map-header gsap-reveal">
+      <div class="inline-flex items-center gap-2 mb-3">
         <span class="w-2.5 h-[1px] bg-brand-gold"></span>
         <span class="text-brand-gold uppercase tracking-[0.3em] text-xs font-semibold">
-          Frictionless Transitions
+          Global Reach · Seamless Arrival
         </span>
+        <span class="w-2.5 h-[1px] bg-brand-gold"></span>
       </div>
-
-      <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-brand-navy font-normal mb-6 leading-[1.1]">
-        From the airport to your <br />
-        <span class="italic text-brand-gold">5★ Hotel suite.</span>
+      <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-normal mb-6">
+        From anywhere in the world to <br />
+        <span class="italic text-brand-gold">your 5★ Suite in Capri</span>
       </h2>
-
-      <p class="text-gray-600 font-light text-base lg:text-lg leading-relaxed mb-10">
-        The Mediterranean's most picturesque island presents formidable logistical obstacles — restricted pedestrian zones, steep cliffsides, and sea-crossing schedules. We turn those obstacles into seamless moments of effortless indulgence.
+      <p class="text-white/70 font-light text-base lg:text-lg leading-relaxed">
+        Ruota il mappamondo con il mouse e clicca su qualsiasi nazione: scopri la capitale, la rotta aerea e l'esatta distanza in chilometri dall'isola di Capri.
       </p>
-
-      <!-- Step Cards -->
-      <div class="space-y-6 mb-10">
-        {logisticsSteps.map((step) => (
-          <div class="flex items-start gap-4 p-4 rounded-sm bg-brand-offwhite border border-gray-200/70 hover:border-brand-gold/40 transition-colors duration-300">
-            <span class="font-serif text-2xl text-brand-gold font-light shrink-0 mt-0.5">
-              {step.step}
-            </span>
-            <div class="grow">
-              <div class="flex items-center justify-between gap-2 mb-1">
-                <h4 class="font-serif text-xl text-brand-navy font-medium">
-                  {step.title}
-                </h4>
-                <span class="text-[9px] uppercase tracking-wider text-brand-navy/60 font-semibold bg-white px-2 py-0.5 rounded border border-gray-200">
-                  {step.badge}
-                </span>
-              </div>
-              <p class="text-xs text-brand-gold font-semibold uppercase tracking-wider mb-1">
-                {step.location}
-              </p>
-              <p class="text-xs text-gray-500 font-light leading-relaxed">
-                {step.description}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <a
-        href={contactUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-3 px-8 py-4 bg-brand-navy text-white text-xs uppercase tracking-[0.2em] font-semibold hover:bg-brand-gold hover:text-brand-navy transition-all duration-300 shadow-lg"
-      >
-        <span>Request Bespoke Logistics Brief</span>
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-        </svg>
-      </a>
     </div>
 
-    <!-- Right Column: Animated Custom Vector Map -->
-    <div class="lg:w-1/2 w-full flex flex-col items-center">
-      <div class="w-full aspect-square max-w-[540px] bg-gradient-to-br from-brand-offwhite via-slate-50 to-amber-50/20 rounded-full relative border border-brand-navy/15 map-visual gsap-reveal flex items-center justify-center p-6 shadow-2xl overflow-hidden">
+    <!-- Main 2-Column Layout: Left Narrative/Steps + Right 3D Interactive Globe -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      
+      <!-- Left Column (5 cols): Steps & Direct Contact (No Form) -->
+      <div class="lg:col-span-5 space-y-8 map-text gsap-reveal">
         
-        <!-- Subtle Radar / Circular Navigation Lines -->
-        <div class="absolute inset-8 rounded-full border border-brand-navy/5 pointer-events-none"></div>
-        <div class="absolute inset-24 rounded-full border border-brand-navy/5 pointer-events-none"></div>
-        <div class="absolute inset-40 rounded-full border border-brand-navy/5 pointer-events-none"></div>
-
-        <!-- Compass Rose Accent -->
-        <div class="absolute top-8 right-12 text-brand-gold/60 font-serif text-sm tracking-widest pointer-events-none flex flex-col items-center">
-          <span>N</span>
-          <span class="w-[1px] h-4 bg-brand-gold/40 mt-1"></span>
+        <div class="space-y-4">
+          <h3 class="font-serif text-2xl lg:text-3xl text-white font-normal">
+            L'isola più esclusiva del Mediterraneo, resa accessibile.
+          </h3>
+          <p class="text-white/70 font-light text-sm leading-relaxed">
+            Eliminiamo ogni attrito logistico: dal gate aeroportuale internazionale fino al disimballaggio dei bagagli direttamente nella vostra suite caprese.
+          </p>
         </div>
 
-        <!-- SVG Map Container with Route Paths -->
-        <svg
-          role="img"
-          aria-label="Capri Transit Map: Naples Airport to Marina Grande and 5-Star Suites"
-          class="absolute inset-0 w-full h-full pointer-events-none"
-          viewBox="0 0 400 400"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <!-- Stylized Bay of Naples Coastline -->
-          <path
-            d="M80,60 Q180,40 280,70 T340,160 Q320,230 260,260 T180,310"
-            stroke="#10285D"
-            stroke-width="1.2"
-            stroke-opacity="0.12"
-            fill="none"
-          />
-
-          <!-- Sorrento Peninsula -->
-          <path
-            d="M260,260 C230,280 200,300 170,305"
-            stroke="#10285D"
-            stroke-width="1.5"
-            stroke-opacity="0.15"
-            fill="none"
-          />
-
-          <!-- Animated Golden Sea Route Line -->
-          <path
-            id="route-path"
-            d="M230,105 C180,160 160,240 130,295"
-            stroke="#D4AF37"
-            stroke-width="2.5"
-            stroke-dasharray="4 3"
-            class="path-line"
-          />
-        </svg>
-
-        <!-- Pin 1: Naples Capodichino & Port (Molo Beverello) -->
-        <div class="absolute top-[26%] left-[58%] -translate-x-1/2 -translate-y-1/2 pin-naples opacity-0 z-20 flex flex-col items-center">
-          <div class="w-4 h-4 bg-brand-navy rounded-full border-2 border-white shadow-lg relative flex items-center justify-center">
-            <span class="w-1.5 h-1.5 bg-brand-gold rounded-full"></span>
-          </div>
-          <div class="mt-2 text-center bg-white/95 backdrop-blur-md px-3 py-1.5 rounded shadow-lg border border-gray-200">
-            <span class="text-[9px] uppercase tracking-widest font-bold text-brand-navy block">Naples (NAP)</span>
-            <span class="text-[8px] text-gray-500 font-light">Tarmac & Yacht Harbor</span>
-          </div>
+        <!-- 4 Logistics Step Cards -->
+        <div class="space-y-3.5">
+          {logisticsSteps.map((step) => (
+            <div class="flex items-start gap-4 p-4 rounded-sm bg-white/5 border border-white/10 hover:border-brand-gold/40 transition-colors duration-300">
+              <span class="font-serif text-xl text-brand-gold font-light shrink-0 mt-0.5">
+                {step.step}
+              </span>
+              <div class="grow">
+                <div class="flex items-center justify-between gap-2 mb-1">
+                  <h4 class="font-serif text-lg text-white font-medium">
+                    {step.title}
+                  </h4>
+                  <span class="text-[9px] uppercase tracking-wider text-brand-gold font-semibold bg-brand-gold/10 px-2 py-0.5 rounded border border-brand-gold/30">
+                    {step.badge}
+                  </span>
+                </div>
+                <p class="text-[11px] text-brand-gold font-mono mb-1">
+                  {step.location}
+                </p>
+                <p class="text-xs text-white/60 font-light leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
 
-        <!-- Pin 2: Sorrento Coast Reference -->
-        <div class="absolute top-[68%] left-[58%] -translate-x-1/2 -translate-y-1/2 z-10 hidden sm:flex flex-col items-center opacity-60">
-          <div class="w-2 h-2 bg-brand-navy/40 rounded-full"></div>
-          <span class="text-[8px] uppercase tracking-widest text-brand-navy/60 mt-1 font-serif">Sorrento Coast</span>
-        </div>
+        <!-- Direct Contact Actions (No Form) -->
+        <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
+          <a
+            href={emailContact}
+            class="px-6 py-3.5 bg-brand-gold text-brand-navy hover:bg-white text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300 shadow-xl flex items-center justify-center gap-2"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span>Email Desk Logistica</span>
+          </a>
 
-        <!-- Pin 3: Capri Island & 5★ Grand Hotels -->
-        <div class="absolute bottom-[24%] left-[32%] -translate-x-1/2 translate-y-1/2 pin-capri opacity-0 z-20 flex flex-col items-center">
-          <!-- Radar Pulse Effect -->
-          <div class="relative w-6 h-6 flex items-center justify-center">
-            <span class="absolute inset-0 rounded-full bg-brand-gold/40 animate-ping"></span>
-            <span class="w-3.5 h-3.5 rounded-full bg-brand-gold border-2 border-white shadow-xl relative z-10"></span>
-          </div>
-          <div class="mt-2 text-center bg-brand-navy text-white px-3.5 py-1.5 rounded shadow-2xl border border-brand-gold/50">
-            <span class="font-serif italic text-lg text-brand-gold block leading-tight">Capri</span>
-            <span class="text-[8px] uppercase tracking-[0.2em] text-white/80 font-semibold block">Marina & 5★ Suites</span>
-          </div>
-        </div>
-
-        <!-- Maritime Transit Duration Pill -->
-        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full border border-gray-200 text-[10px] text-brand-navy font-semibold uppercase tracking-widest shadow-md">
-          Private Crossing: ~35-45 min
+          <a
+            href={phoneContact}
+            class="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white text-xs uppercase tracking-[0.2em] font-semibold border border-white/20 transition-all duration-300 flex items-center justify-center gap-2 font-mono"
+          >
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>+39 333 594 3947</span>
+          </a>
         </div>
 
       </div>
 
-      <!-- Quick Island Access Highlights -->
-      <div class="mt-8 flex flex-wrap items-center justify-center gap-6 text-xs text-gray-600 font-light">
-        <span class="flex items-center gap-2">
-          <span class="w-2 h-2 bg-brand-gold rounded-full"></span>
-          Helicopter Charters (~18 min)
-        </span>
-        <span class="flex items-center gap-2">
-          <span class="w-2 h-2 bg-brand-gold rounded-full"></span>
-          Custom Open-Top Taxis
-        </span>
-        <span class="flex items-center gap-2">
-          <span class="w-2 h-2 bg-brand-gold rounded-full"></span>
-          Suite-Direct Luggage
-        </span>
+      <!-- Right Column (7 cols): 3D Interactive Orthographic Globe Canvas -->
+      <div class="lg:col-span-7 flex flex-col items-center relative">
+        
+        <!-- Interactive Globe Container -->
+        <div class="w-full relative bg-gradient-to-b from-brand-navy/60 to-black/80 rounded-2xl border border-white/15 p-6 lg:p-8 shadow-2xl backdrop-blur-md overflow-hidden">
+          
+          <!-- Top Tool Bar: Country Search & Quick Controls -->
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-4 relative z-20">
+            <!-- Search / Select dropdown -->
+            <div class="relative grow max-w-xs">
+              <label for="globe-country-select" class="sr-only">Cerca una nazione</label>
+              <select
+                id="globe-country-select"
+                class="w-full bg-white/10 border border-white/20 rounded-lg px-3.5 py-2 text-xs text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold cursor-pointer"
+              >
+                <option value="" class="bg-brand-dark text-white">🌍 Seleziona o cerca nazione...</option>
+              </select>
+            </div>
+
+            <!-- Recenter on Capri Button -->
+            <div class="flex items-center gap-2">
+              <button
+                id="globe-recenter-btn"
+                type="button"
+                class="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-brand-gold hover:text-brand-navy border border-white/20 text-[11px] font-mono text-white/90 transition-colors flex items-center gap-1.5 cursor-pointer"
+                title="Centra la visuale su Capri e sul Mediterraneo"
+              >
+                <span>📍 Centra Capri</span>
+              </button>
+
+              <button
+                id="globe-spin-toggle"
+                type="button"
+                class="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-[11px] font-mono text-white/90 transition-colors flex items-center gap-1.5 cursor-pointer"
+                title="Pausa / Avvia rotazione automatica"
+              >
+                <span id="spin-icon">⏸️</span>
+                <span id="spin-label">Auto-rotazione</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Dynamic Distance & Capital HUD Display Card -->
+          <div
+            id="globe-hud"
+            class="mb-4 p-4 rounded-xl bg-white/10 border border-brand-gold/40 backdrop-blur-md transition-all duration-300 relative z-20"
+          >
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              
+              <!-- Country & Capital Details -->
+              <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                  <span id="hud-flag" class="text-2xl">🇷🇺</span>
+                  <h4 id="hud-country" class="font-serif text-2xl text-white font-medium">
+                    Russia
+                  </h4>
+                  <span id="hud-iso" class="text-[10px] font-mono bg-white/15 px-2 py-0.5 rounded text-brand-gold font-bold">
+                    RU
+                  </span>
+                </div>
+                <p class="text-xs text-white/80 font-light flex items-center gap-1.5">
+                  <span class="text-brand-gold">🏛️ Capitale:</span>
+                  <strong id="hud-capital" class="text-white font-medium">Mosca (Moscow)</strong>
+                </p>
+              </div>
+
+              <!-- Distance & Flight Metrics -->
+              <div class="flex items-center gap-6 border-t sm:border-t-0 sm:border-l border-white/15 pt-3 sm:pt-0 sm:pl-6">
+                <div>
+                  <span class="text-[9px] uppercase tracking-wider text-brand-gold font-mono block">Distanza da Capri</span>
+                  <div class="flex items-baseline gap-1.5">
+                    <span id="hud-dist-km" class="font-serif text-2xl lg:text-3xl font-bold text-white tracking-tight">2.398</span>
+                    <span class="text-xs text-white/60 font-mono">km</span>
+                  </div>
+                  <span id="hud-dist-mi" class="text-[10px] text-white/40 font-mono">~1.490 miglia</span>
+                </div>
+
+                <div>
+                  <span class="text-[9px] uppercase tracking-wider text-brand-gold font-mono block">Volo Stimato</span>
+                  <span id="hud-flight-time" class="font-mono text-sm text-emerald-400 font-semibold block mt-1">~3h 15m</span>
+                  <span class="text-[9px] text-white/50 block">Jet Privato Diretto</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Contextual Quick Email Dispatch Action -->
+            <div class="mt-3 pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs">
+              <span class="text-white/60 text-[11px] font-light">
+                Coordina l'arrivo a Napoli/Capri e il transfer in motoscafo Riva o elicottero:
+              </span>
+              <a
+                id="hud-email-cta"
+                href="mailto:partnerships@capridmc.com?subject=Richiesta%20Logistica%20VIP%20da%20Mosca%20(Russia)"
+                class="inline-flex items-center gap-1.5 text-brand-gold hover:text-white font-semibold transition-colors underline underline-offset-4"
+              >
+                <span>Richiedi assistenza transfer da questa nazione &rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 3D Canvas Element -->
+          <div class="relative w-full aspect-square max-w-[560px] mx-auto flex items-center justify-center cursor-grab active:cursor-grabbing select-none" id="globe-wrapper">
+            <canvas
+              id="globe-canvas"
+              class="w-full h-full block rounded-full shadow-inner"
+              width="560"
+              height="560"
+            ></canvas>
+            
+            <!-- Floating interactive hint on canvas -->
+            <div class="absolute bottom-3 left-1/2 -translate-x-1/2 pointer-events-none bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-[10px] text-white/60 font-mono flex items-center gap-1.5">
+              <span>👆 Trascina per esplorare · Clicca su qualsiasi nazione</span>
+            </div>
+          </div>
+
+          <!-- Footnote: Capri GPS Reference -->
+          <div class="mt-4 pt-3 border-t border-white/10 flex flex-wrap items-center justify-between text-[11px] text-white/50 font-mono">
+            <span>📍 Origine: Capri (40.5507° N, 14.2426° E)</span>
+            <span>Calcolo geodetico ortodromico WGS-84</span>
+          </div>
+
+        </div>
+
       </div>
+
     </div>
 
   </div>
+
 </section>
 
-<!-- Animated Route Line GSAP Script -->
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
-      const mapTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#logistics",
-          start: "top 70%"
+<!-- Client Script for Interactive 3D D3-Geo Globe -->
+<script>
+  import * as d3Geo from 'd3-geo';
+  import globeDataset from '../data/globe-countries.json';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const canvas = document.getElementById('globe-canvas');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const selectEl = document.getElementById('globe-country-select');
+    const recenterBtn = document.getElementById('globe-recenter-btn');
+    const spinToggleBtn = document.getElementById('globe-spin-toggle');
+    const spinIcon = document.getElementById('spin-icon');
+    const hudFlag = document.getElementById('hud-flag');
+    const hudCountry = document.getElementById('hud-country');
+    const hudCapital = document.getElementById('hud-capital');
+    const hudIso = document.getElementById('hud-iso');
+    const hudDistKm = document.getElementById('hud-dist-km');
+    const hudDistMi = document.getElementById('hud-dist-mi');
+    const hudFlightTime = document.getElementById('hud-flight-time');
+    const hudEmailCta = document.getElementById('hud-email-cta');
+
+    // Coordinate Capri: [lon, lat]
+    const CAPRI_COORDS = [14.2426, 40.5507];
+
+    // Dimensioni canvas e supporto schermi retina / HiDPI
+    let width = 560;
+    let height = 560;
+    let radius = width / 2 - 20;
+
+    function resizeCanvas() {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      width = rect.width || 560;
+      height = rect.width || 560;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      ctx.scale(dpr, dpr);
+      radius = (width / 2) - 15;
+      projection.scale(radius).translate([width / 2, height / 2]);
+    }
+
+    // Configurazione proiezione ortografica 3D (sfera terrestre nello spazio)
+    // Partiamo puntando su Capri & Mediterraneo [-14.24, -40.55]
+    let rotation = [-14.24, -40.55, 0];
+    let targetRotation = [-14.24, -40.55, 0];
+    let isAutoSpinning = true;
+    let isDragging = false;
+    let lastX = 0;
+    let lastY = 0;
+    let velX = 0;
+    let velY = 0;
+
+    const projection = d3Geo.geoOrthographic()
+      .scale(radius)
+      .translate([width / 2, height / 2])
+      .clipAngle(90)
+      .rotate(rotation);
+
+    const path = d3Geo.geoPath(projection, ctx);
+    const graticule = d3Geo.geoGraticule10();
+
+    // Paese attualmente selezionato (di default Russia per mostrare l'esempio di Mosca)
+    let selectedFeature = globeDataset.features.find(f => f.properties?.iso2 === 'RU') || globeDataset.features[0];
+
+    // Popola il selettore delle nazioni in ordine alfabetico italiano
+    if (selectEl) {
+      const sortedFeatures = [...globeDataset.features]
+        .filter(f => f.properties?.name && f.properties?.capital)
+        .sort((a, b) => (a.properties.name || '').localeCompare(b.properties.name || '', 'it'));
+
+      sortedFeatures.forEach(f => {
+        const opt = document.createElement('option');
+        opt.value = f.properties.id;
+        opt.textContent = `${f.properties.flag || '🌐'} ${f.properties.name} (${f.properties.capital})`;
+        if (selectedFeature && f.properties.id === selectedFeature.properties.id) {
+          opt.selected = true;
         }
+        selectEl.appendChild(opt);
       });
 
-      mapTl
-        .fromTo(".map-text",
-          { x: -40, autoAlpha: 0 },
-          { x: 0, autoAlpha: 1, duration: 1, ease: "power3.out" }
-        )
-        .fromTo(".map-visual",
-          { scale: 0.92, autoAlpha: 0 },
-          { scale: 1, autoAlpha: 1, duration: 1, ease: "power3.out" },
-          "-=0.6"
-        )
-        .to(".pin-naples", { autoAlpha: 1, y: 0, duration: 0.6 }, "-=0.2")
-        .to("#route-path", { strokeDashoffset: 0, duration: 1.8, ease: "power1.inOut" })
-        .to(".pin-capri", { autoAlpha: 1, y: 0, duration: 0.6 }, "-=0.4");
+      selectEl.addEventListener('change', (e) => {
+        const id = e.target.value;
+        const target = globeDataset.features.find(f => f.properties.id === id);
+        if (target) {
+          selectCountry(target, true);
+        }
+      });
     }
+
+    // Calcolo della distanza in km e miglia da Capri
+    function computeDistanceMetrics(capitalCoords) {
+      if (!capitalCoords || (capitalCoords[0] === 0 && capitalCoords[1] === 0)) {
+        return { km: 0, miles: 0, flightTime: 'N/D' };
+      }
+      const distRad = d3Geo.geoDistance(CAPRI_COORDS, capitalCoords);
+      const km = Math.round(distRad * 6371);
+      const miles = Math.round(km * 0.621371);
+
+      // Stima volo: 800 km/h velocità media crociera jet + 30 min rullaggio/decollo/atterraggio
+      const totalHours = (km / 800) + 0.5;
+      const h = Math.floor(totalHours);
+      const m = Math.round((totalHours - h) * 60);
+      const flightTime = h > 0 ? `~${h}h ${m < 10 ? '0' + m : m}m` : `~${m}m`;
+
+      return { km, miles, flightTime };
+    }
+
+    // Seleziona una nazione e aggiorna l'interfaccia
+    function selectCountry(feature, smoothRotate = true) {
+      selectedFeature = feature;
+      const p = feature.properties || {};
+
+      // Coordinate della capitale
+      const capitalCoords = [p.lon, p.lat];
+      const metrics = computeDistanceMetrics(capitalCoords);
+
+      // Aggiorna HUD
+      if (hudFlag) hudFlag.textContent = p.flag || '🌐';
+      if (hudCountry) hudCountry.textContent = p.name || 'Nazione';
+      if (hudIso) hudIso.textContent = p.iso2 || '';
+      if (hudCapital) hudCapital.textContent = p.capital ? `${p.capital} (${p.capital_en || ''})` : 'N/D';
+      if (hudDistKm) hudDistKm.textContent = metrics.km.toLocaleString('it-IT');
+      if (hudDistMi) hudDistMi.textContent = `~${metrics.miles.toLocaleString('it-IT')} miglia`;
+      if (hudFlightTime) hudFlightTime.textContent = metrics.flightTime;
+
+      // Aggiorna link email
+      if (hudEmailCta) {
+        const subj = encodeURIComponent(`Richiesta Logistica VIP da ${p.capital || p.name} (${p.name})`);
+        hudEmailCta.href = `mailto:partnerships@capridmc.com?subject=${subj}`;
+      }
+
+      // Sincronizza dropdown
+      if (selectEl && p.id) {
+        selectEl.value = p.id;
+      }
+
+      // Ruota la sfera per mostrare il punto intermedio tra Capri e la capitale
+      if (smoothRotate && capitalCoords[0] !== 0) {
+        // Centro sferico (midpoint) tra Capri e la destinazione
+        const interpolator = d3Geo.geoInterpolate(CAPRI_COORDS, capitalCoords);
+        const midPoint = interpolator(0.5);
+        targetRotation = [-midPoint[0], -midPoint[1], 0];
+        isAutoSpinning = false;
+        updateSpinButton(false);
+      }
+    }
+
+    // Aggiorna pulsante rotazione
+    function updateSpinButton(spinning) {
+      isAutoSpinning = spinning;
+      if (spinIcon) spinIcon.textContent = spinning ? '⏸️' : '▶️';
+    }
+
+    if (spinToggleBtn) {
+      spinToggleBtn.addEventListener('click', () => {
+        updateSpinButton(!isAutoSpinning);
+      });
+    }
+
+    if (recenterBtn) {
+      recenterBtn.addEventListener('click', () => {
+        targetRotation = [-CAPRI_COORDS[0], -CAPRI_COORDS[1], 0];
+        updateSpinButton(false);
+      });
+    }
+
+    // Inizializza con la Russia come richiesto dall'utente
+    selectCountry(selectedFeature, false);
+
+    // ==========================================
+    // Rendering Loop a 60 FPS
+    // ==========================================
+    let animFrameId;
+    let pulseT = 0;
+
+    function render() {
+      pulseT += 0.04;
+
+      // Movimento rotatorio: auto-rotazione morbida se attiva
+      if (isAutoSpinning && !isDragging) {
+        rotation[0] += 0.12;
+      } else if (!isDragging) {
+        // Inerzia verso targetRotation
+        rotation[0] += (targetRotation[0] - rotation[0]) * 0.07;
+        rotation[1] += (targetRotation[1] - rotation[1]) * 0.07;
+        rotation[2] += (targetRotation[2] - rotation[2]) * 0.07;
+
+        // Attrito per velocità da trascinamento
+        rotation[0] += velX;
+        rotation[1] += velY;
+        velX *= 0.92;
+        velY *= 0.92;
+      }
+
+      // Blocca latitudine tra -80 e +80 gradi per evitare capovolgimenti
+      rotation[1] = Math.max(-80, Math.min(80, rotation[1]));
+      projection.rotate(rotation);
+
+      // Pulisci Canvas
+      ctx.clearRect(0, 0, width, height);
+
+      // 1. Spazio esterno / Alone atmosferico luminoso attorno alla Terra
+      const centerX = width / 2;
+      const centerY = height / 2;
+
+      const atmosphereGrad = ctx.createRadialGradient(
+        centerX, centerY, radius * 0.85,
+        centerX, centerY, radius * 1.15
+      );
+      atmosphereGrad.addColorStop(0, 'rgba(212, 175, 55, 0.15)');
+      atmosphereGrad.addColorStop(0.5, 'rgba(16, 40, 93, 0.25)');
+      atmosphereGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+      ctx.fillStyle = atmosphereGrad;
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, radius * 1.15, 0, Math.PI * 2);
+      ctx.fill();
+
+      // 2. Oceano globale (Sfera di base)
+      const oceanGrad = ctx.createRadialGradient(
+        centerX - radius * 0.35, centerY - radius * 0.35, radius * 0.1,
+        centerX, centerY, radius
+      );
+      oceanGrad.addColorStop(0, '#162F69'); // Blu illuminato dal sole
+      oceanGrad.addColorStop(0.7, '#0C1A3A'); // Blu navy profondo
+      oceanGrad.addColorStop(1, '#050D1E');   // Ombra spaziale al bordo
+
+      ctx.fillStyle = oceanGrad;
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Bordo sfera dorato sottile
+      ctx.strokeStyle = 'rgba(212, 175, 55, 0.4)';
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+
+      // 3. Reticolato dei paralleli e meridiani (Graticule discreto)
+      ctx.beginPath();
+      path(graticule);
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+      ctx.lineWidth = 0.5;
+      ctx.stroke();
+
+      // 4. Disegno di tutte le terre emerse / nazioni
+      for (const feature of globeDataset.features) {
+        const isSelected = selectedFeature && feature.properties?.id === selectedFeature.properties?.id;
+
+        ctx.beginPath();
+        path(feature);
+
+        if (isSelected) {
+          // Nazione selezionata: oro brillante illuminato
+          ctx.fillStyle = 'rgba(229, 193, 88, 0.75)';
+          ctx.fill();
+          ctx.strokeStyle = '#FFFFFF';
+          ctx.lineWidth = 1.8;
+          ctx.stroke();
+        } else {
+          // Nazioni ordinarie: champagne/oro caldo raffinato
+          ctx.fillStyle = 'rgba(196, 164, 90, 0.32)';
+          ctx.fill();
+          ctx.strokeStyle = 'rgba(255, 255, 255, 0.18)';
+          ctx.lineWidth = 0.6;
+          ctx.stroke();
+        }
+      }
+
+      // 5. Tracciamento dell'Arco di Rotta Ortodromica (da Capri alla Capitale selezionata)
+      if (selectedFeature && selectedFeature.properties) {
+        const p = selectedFeature.properties;
+        const capCoords = [p.lon, p.lat];
+
+        if (capCoords[0] !== 0 && !(capCoords[0] === CAPRI_COORDS[0] && capCoords[1] === CAPRI_COORDS[1])) {
+          // Genera punti lungo il cerchio massimo
+          const interpolator = d3Geo.geoInterpolate(CAPRI_COORDS, capCoords);
+          const points = [];
+          const numSteps = 45;
+          for (let i = 0; i <= numSteps; i++) {
+            points.push(interpolator(i / numSteps));
+          }
+
+          // Disegna arco
+          const centerGeo = projection.invert([centerX, centerY]);
+          ctx.beginPath();
+          let drawing = false;
+
+          points.forEach(pt => {
+            // Verifica che il punto sia nell'emisfero visibile rivolto verso l'osservatore
+            const distFromCenter = d3Geo.geoDistance(centerGeo, pt);
+            if (distFromCenter < Math.PI / 2) {
+              const projected = projection(pt);
+              if (projected) {
+                if (!drawing) {
+                  ctx.moveTo(projected[0], projected[1]);
+                  drawing = true;
+                } else {
+                  ctx.lineTo(projected[0], projected[1]);
+                }
+              }
+            } else {
+              drawing = false;
+            }
+          });
+
+          // Linea di volo dorata tratteggiata
+          ctx.save();
+          ctx.strokeStyle = '#D4AF37';
+          ctx.lineWidth = 2.4;
+          ctx.setLineDash([5, 4]);
+          ctx.lineDashOffset = -pulseT * 8; // animazione flusso della rotta
+          ctx.stroke();
+          ctx.restore();
+
+          // Marker Capitale di destinazione (con pulsazione)
+          const destCenterDist = d3Geo.geoDistance(centerGeo, capCoords);
+          if (destCenterDist < Math.PI / 2) {
+            const destPt = projection(capCoords);
+            if (destPt) {
+              // Cerchio pulsante
+              const pulseR = 5 + Math.sin(pulseT * 2) * 2;
+              ctx.beginPath();
+              ctx.arc(destPt[0], destPt[1], pulseR + 3, 0, Math.PI * 2);
+              ctx.fillStyle = 'rgba(212, 175, 55, 0.35)';
+              ctx.fill();
+
+              ctx.beginPath();
+              ctx.arc(destPt[0], destPt[1], 4.5, 0, Math.PI * 2);
+              ctx.fillStyle = '#FFFFFF';
+              ctx.fill();
+              ctx.strokeStyle = '#D4AF37';
+              ctx.lineWidth = 1.5;
+              ctx.stroke();
+
+              // Etichetta Capitale
+              ctx.fillStyle = '#FFFFFF';
+              ctx.font = '600 11px system-ui, sans-serif';
+              ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+              ctx.shadowBlur = 4;
+              ctx.fillText(`${p.capital || ''}`, destPt[0] + 8, destPt[1] - 4);
+              ctx.shadowBlur = 0;
+            }
+          }
+        }
+      }
+
+      // 6. Marker Capri (Origine fissa con Stella & Pulse Dorato)
+      const centerGeo = projection.invert([centerX, centerY]);
+      const capriDistFromCenter = d3Geo.geoDistance(centerGeo, CAPRI_COORDS);
+      if (capriDistFromCenter < Math.PI / 2) {
+        const capriPt = projection(CAPRI_COORDS);
+        if (capriPt) {
+          // Radar pulse concentric rings
+          const pingR = 7 + (Math.sin(pulseT * 3) + 1) * 3;
+          ctx.beginPath();
+          ctx.arc(capriPt[0], capriPt[1], pingR, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(212, 175, 55, 0.4)';
+          ctx.fill();
+
+          ctx.beginPath();
+          ctx.arc(capriPt[0], capriPt[1], 4.5, 0, Math.PI * 2);
+          ctx.fillStyle = '#D4AF37';
+          ctx.fill();
+          ctx.strokeStyle = '#FFFFFF';
+          ctx.lineWidth = 1.8;
+          ctx.stroke();
+
+          // Testo Capri
+          ctx.fillStyle = '#D4AF37';
+          ctx.font = 'bold 12px serif';
+          ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+          ctx.shadowBlur = 5;
+          ctx.fillText('Capri 📍', capriPt[0] + 8, capriPt[1] + 4);
+          ctx.shadowBlur = 0;
+        }
+      }
+
+      animFrameId = requestAnimationFrame(render);
+    }
+
+    // ==========================================
+    // Gestione Drag & Rotazione con Mouse / Touch
+    // ==========================================
+    const wrapper = document.getElementById('globe-wrapper');
+
+    function onPointerDown(clientX, clientY) {
+      isDragging = true;
+      lastX = clientX;
+      lastY = clientY;
+      velX = 0;
+      velY = 0;
+      updateSpinButton(false);
+    }
+
+    function onPointerMove(clientX, clientY) {
+      if (!isDragging) return;
+      const dx = clientX - lastX;
+      const dy = clientY - lastY;
+      lastX = clientX;
+      lastY = clientY;
+
+      // Sensibilità rotazione proporzionale al raggio
+      const sens = 160 / radius;
+      rotation[0] += dx * sens;
+      rotation[1] -= dy * sens;
+
+      velX = dx * sens * 0.4;
+      velY = -dy * sens * 0.4;
+    }
+
+    function onPointerUp() {
+      isDragging = false;
+    }
+
+    // Eventi Mouse
+    if (wrapper) {
+      wrapper.addEventListener('mousedown', (e) => {
+        onPointerDown(e.clientX, e.clientY);
+      });
+      window.addEventListener('mousemove', (e) => {
+        onPointerMove(e.clientX, e.clientY);
+      });
+      window.addEventListener('mouseup', () => {
+        onPointerUp();
+      });
+
+      // Eventi Touch
+      wrapper.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) {
+          onPointerDown(e.touches[0].clientX, e.touches[0].clientY);
+        }
+      }, { passive: true });
+
+      window.addEventListener('touchmove', (e) => {
+        if (isDragging && e.touches.length === 1) {
+          onPointerMove(e.touches[0].clientX, e.touches[0].clientY);
+        }
+      }, { passive: true });
+
+      window.addEventListener('touchend', () => {
+        onPointerUp();
+      });
+
+      // Gestione Click per selezionare Nazione
+      wrapper.addEventListener('click', (e) => {
+        // Se c'è stato uno spostamento considerevole, era un drag, non un click
+        if (Math.abs(velX) > 0.8 || Math.abs(velY) > 0.8) return;
+
+        const rect = canvas.getBoundingClientRect();
+        const clickX = e.clientX - rect.left;
+        const clickY = e.clientY - rect.top;
+
+        // Verifica click dentro la sfera
+        const dx = clickX - width / 2;
+        const dy = clickY - height / 2;
+        if (Math.sqrt(dx * dx + dy * dy) > radius) {
+          return; // Fuori dalla sfera
+        }
+
+        // Inverti coordinate (x, y) a [lon, lat]
+        const clickedGeo = projection.invert([clickX, clickY]);
+        if (!clickedGeo) return;
+
+        // Cerca quale nazione contiene questo punto geografico
+        for (const feature of globeDataset.features) {
+          if (d3Geo.geoContains(feature, clickedGeo)) {
+            selectCountry(feature, true);
+            break;
+          }
+        }
+      });
+    }
+
+    // Gestione ridimensionamento responsive
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+    });
+
+    resizeCanvas();
+    render();
+
+    // Pulizia su smontaggio pagina
+    window.addEventListener('beforeunload', () => {
+      cancelAnimationFrame(animFrameId);
+    });
   });
 </script>

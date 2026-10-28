@@ -4,6 +4,7 @@ import Seo from '../components/Seo.astro';
 import JsonLd from '../components/JsonLd.astro';
 import GoogleTracking from '../components/GoogleTracking.astro';
 import CookieConsent from '../components/CookieConsent.astro';
+import AmbientAudio from '../components/AmbientAudio.astro';
 
 interface Props {
   title?: string;
@@ -119,6 +120,9 @@ const {
         }
       });
     </script>
+
+    <!-- Ambient Sea Waves Sound Controller -->
+    <AmbientAudio />
 
     <!-- Cookie & Privacy Consent Manager (GDPR / Garante Privacy) -->
     <CookieConsent />

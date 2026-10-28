@@ -7,7 +7,8 @@ const navLinks = [
   { name: "Advisor Perks", href: "#advisors" }
 ];
 
-const contactUrl = "https://www.capridmc.com/contact-us-capri-destination-management-company/";
+const emailContact = "mailto:partnerships@capridmc.com?subject=Richiesta%20Informazioni%20Capri%20DMC";
+const phoneContact = "tel:+393335943947";
 ---
 
 <header
@@ -64,13 +65,11 @@ const contactUrl = "https://www.capridmc.com/contact-us-capri-destination-manage
     </a>
 
     <a
-      href={contactUrl}
-      target="_blank"
-      rel="noopener noreferrer"
+      href={emailContact}
       class="relative group px-6 py-2.5 text-[11px] uppercase tracking-[0.2em] font-semibold text-brand-gold border border-brand-gold overflow-hidden transition-all duration-500 hover:text-brand-navy shadow-sm"
     >
       <span class="absolute inset-0 w-full h-full bg-brand-gold -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out -z-10"></span>
-      <span>B2B Appointment</span>
+      <span>Email Desk</span>
     </a>
   </div>
 
@@ -129,12 +128,18 @@ const contactUrl = "https://www.capridmc.com/contact-us-capri-destination-manage
         {link.name}
       </a>
     ))}
-    <div class="pt-4 border-t border-white/10">
+    <div class="pt-4 border-t border-white/10 flex flex-col gap-3">
       <a
-        href={contactUrl}
-        class="drawer-link block text-center bg-brand-gold text-brand-navy font-semibold uppercase tracking-[0.2em] text-xs py-4 hover:bg-white transition-colors duration-300"
+        href={emailContact}
+        class="drawer-link block text-center bg-brand-gold text-brand-navy font-semibold uppercase tracking-[0.2em] text-xs py-3.5 hover:bg-white transition-colors duration-300"
       >
-        Schedule B2B Appointment
+        Email: partnerships@capridmc.com
+      </a>
+      <a
+        href={phoneContact}
+        class="drawer-link block text-center border border-white/20 text-white font-semibold uppercase tracking-[0.2em] text-xs py-3 hover:border-brand-gold hover:text-brand-gold transition-colors duration-300 font-mono"
+      >
+        Tel: +39 333 594 3947
       </a>
     </div>
   </nav>

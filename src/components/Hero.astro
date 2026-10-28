@@ -1,6 +1,7 @@
 ---
 // Cinematic Sun-Drenched Editorial Hero Section with Authentic Capri Photography & Medallion Logo
-const contactUrl = "https://www.capridmc.com/contact-us-capri-destination-management-company/";
+const emailContact = "mailto:partnerships@capridmc.com?subject=Richiesta%20Servizi%20Capri%20DMC";
+const phoneContact = "tel:+393335943947";
 ---
 
 <section aria-label="Hero Introduction" class="relative min-h-screen flex items-center justify-center text-center overflow-hidden bg-brand-dark pt-28 pb-20">
@@ -66,25 +67,24 @@ const contactUrl = "https://www.capridmc.com/contact-us-capri-destination-manage
       The elite B2B spin-off from <strong class="text-white font-medium">Nesea Capri Tours & Events</strong>. Providing bespoke private yacht charters, high-end island celebrations, and seamless airport-to-suite logistics for global luxury travel advisors.
     </p>
 
-    <!-- Dual Luxury CTAs -->
+    <!-- Dual Luxury Direct CTAs (Email & Phone) -->
     <div class="hero-item gsap-reveal flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto">
       <a
-        href={contactUrl}
-        target="_blank"
-        rel="noopener noreferrer"
+        href={emailContact}
         class="w-full sm:w-auto px-9 py-4 bg-brand-gold text-brand-navy font-semibold text-xs uppercase tracking-[0.2em] shadow-xl hover:bg-white hover:shadow-brand-gold/20 transition-all duration-300 ease-out group flex items-center justify-center gap-2"
       >
-        <span>Schedule B2B Appointment</span>
+        <span>Contatta via Email</span>
         <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       </a>
 
       <a
-        href="#services"
-        class="w-full sm:w-auto px-9 py-4 bg-white/5 hover:bg-white/10 text-white font-medium text-xs uppercase tracking-[0.2em] border border-white/20 hover:border-brand-gold transition-all duration-300 backdrop-blur-sm"
+        href={phoneContact}
+        class="w-full sm:w-auto px-9 py-4 bg-white/5 hover:bg-white/10 text-white font-medium text-xs uppercase tracking-[0.2em] border border-white/20 hover:border-brand-gold transition-all duration-300 backdrop-blur-sm flex items-center justify-center gap-2 font-mono"
       >
-        Explore Island Portfolio
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>+39 333 594 3947</span>
       </a>
     </div>
 
