@@ -1,11 +1,8 @@
 ---
 /**
  * AmbientAudio.astro — Suono del mare in lontananza (Capri Mediterranean Sea Ambient)
- * Sintesi procedurale 100% nativa tramite Web Audio API:
- *  - Zero download di file pesanti (0 KB transfer).
- *  - Loop infinito senza interruzioni o scatti.
- *  - Conforme alle policy di autoplay dei browser moderni (si attiva al primo gesto o con toggle).
- *  - Design lussuoso con indicatore dorato a barre animate.
+ * Avvio 100% automatico al caricamento della pagina.
+ * Sintesi procedurale Web Audio API a 0 KB di consumo banda.
  */
 ---
 
@@ -23,7 +20,7 @@
     <div class="relative flex items-center justify-center w-5 h-5 text-brand-gold">
       <span class="sr-only">Stato audio</span>
       <!-- Barre animate quando in riproduzione -->
-      <div id="audio-eq-bars" class="flex items-end gap-[2px] h-3.5 opacity-60 group-hover:opacity-100 transition-opacity">
+      <div id="audio-eq-bars" class="flex items-end gap-[2px] h-3.5 opacity-80 group-hover:opacity-100 transition-opacity">
         <span class="eq-bar w-[2.5px] h-2 bg-brand-gold rounded-full"></span>
         <span class="eq-bar w-[2.5px] h-3.5 bg-brand-gold rounded-full"></span>
         <span class="eq-bar w-[2.5px] h-1.5 bg-brand-gold rounded-full"></span>
@@ -51,7 +48,6 @@
 </div>
 
 <style>
-  /* Animazione onde sonore */
   .eq-bar {
     transform-origin: bottom;
     animation: eqBounce 1.4s ease-in-out infinite alternate;
@@ -94,8 +90,6 @@
     let isPlaying = false;
     let isMutedByUser = false;
     let masterGain = null;
-    let waveLfo = null;
-    let noiseNodes = [];
 
     const toggleBtn = document.getElementById('ambient-audio-toggle');
     const eqBars = document.getElementById('audio-eq-bars');
@@ -103,7 +97,6 @@
     const statusLabel = document.getElementById('audio-status-label');
     const liveDot = document.getElementById('audio-live-dot');
 
-    // Crea il motore procedurale delle onde del mare (Web Audio API)
     function initSeaWavesSynth() {
       if (audioCtx) return;
 
@@ -113,8 +106,8 @@
 
         audioCtx = new AudioContextClass();
 
-        // 1. Buffer di rumore Browniano stereofonico (rumore sordo profondo dell'acqua marina)
-        const bufferSize = audioCtx.sampleRate * 6; // 6 secondi di ciclo base
+        // Buffer di rumore Browniano stereofonico (onde profonde del Mediterraneo)
+        const bufferSize = audioCtx.sampleRate * 6;
         const noiseBuffer = audioCtx.createBuffer(2, bufferSize, audioCtx.sampleRate);
 
         for (let channel = 0; channel < 2; channel++) {
@@ -122,41 +115,35 @@
           let lastOut = 0.0;
           for (let i = 0; i < bufferSize; i++) {
             const white = Math.random() * 2 - 1;
-            // Filtro browniano: integrazione con leak
             lastOut = (lastOut + (0.02 * white)) / 1.02;
             data[i] = lastOut * 3.8;
           }
         }
 
-        // Sorgente del rumore
         const noiseSource = audioCtx.createBufferSource();
         noiseSource.buffer = noiseBuffer;
         noiseSource.loop = true;
 
-        // 2. Filtro Passa-Basso per simulare la risacca e la schiuma dell'onda in lontananza
+        // Filtro passa-basso modulato (schiuma e frangiflutti delle onde)
         const filter = audioCtx.createBiquadFilter();
         filter.type = 'lowpass';
-        filter.frequency.value = 350; // Frequenza di base cupa del mare
-        filter.Q.value = 2.0;
+        filter.frequency.value = 380;
+        filter.Q.value = 2.2;
 
-        // 3. Filtro Passa-Alto per eliminare il ronzio sub-basso innaturale
         const highpass = audioCtx.createBiquadFilter();
         highpass.type = 'highpass';
         highpass.frequency.value = 55;
 
-        // 4. LFO (Low Frequency Oscillator) per simulare il moto periodico delle onde mediterranee
-        // Una risacca ogni ~7.5 secondi (0.13 Hz)
+        // LFO per il moto periodico delle onde (~8 secondi a onda)
         const lfo = audioCtx.createOscillator();
         lfo.type = 'sine';
-        lfo.frequency.value = 0.13;
+        lfo.frequency.value = 0.125;
 
-        // Modulazione della frequenza del filtro (l'onda si alza -> il suono diventa più chiaro e frusciante)
         const lfoFilterGain = audioCtx.createGain();
-        lfoFilterGain.gain.value = 320; // sposta il filtro da 200Hz a 550Hz
+        lfoFilterGain.gain.value = 340;
         lfo.connect(lfoFilterGain);
         lfoFilterGain.connect(filter.frequency);
 
-        // 5. Modulazione del volume dell'onda (la risacca sale e si allontana dolcemente)
         const waveGain = audioCtx.createGain();
         waveGain.gain.value = 0.45;
 
@@ -165,29 +152,24 @@
         lfo.connect(lfoAmpGain);
         lfoAmpGain.connect(waveGain.gain);
 
-        // 6. Master Gain con controllo volume confortevole (sottofondo rilassante)
         masterGain = audioCtx.createGain();
         masterGain.gain.setValueAtTime(0.001, audioCtx.currentTime);
 
-        // Catena audio: Noise -> Highpass -> Lowpass modulato -> WaveGain modulato -> MasterGain -> Destination
         noiseSource.connect(highpass);
         highpass.connect(filter);
         filter.connect(waveGain);
         waveGain.connect(masterGain);
         masterGain.connect(audioCtx.destination);
 
-        // Avvio dei generatori
         noiseSource.start(0);
         lfo.start(0);
-
-        waveLfo = lfo;
-        noiseNodes = [noiseSource, lfo];
       } catch (err) {
         console.warn('Web Audio Waves Synth non supportato:', err);
       }
     }
 
     function playSeaWaves() {
+      if (isMutedByUser) return;
       initSeaWavesSynth();
       if (!audioCtx) return;
 
@@ -195,11 +177,10 @@
         audioCtx.resume();
       }
 
-      // Dissolvenza dolce in ingresso di 2.5 secondi
       if (masterGain) {
         masterGain.gain.cancelScheduledValues(audioCtx.currentTime);
         masterGain.gain.setValueAtTime(masterGain.gain.value, audioCtx.currentTime);
-        masterGain.gain.linearRampToValueAtTime(0.12, audioCtx.currentTime + 2.5);
+        masterGain.gain.linearRampToValueAtTime(0.18, audioCtx.currentTime + 1.5);
       }
 
       isPlaying = true;
@@ -209,15 +190,14 @@
     function pauseSeaWaves() {
       if (!audioCtx || !masterGain) return;
 
-      // Dissolvenza dolce in uscita di 0.8 secondi
       masterGain.gain.cancelScheduledValues(audioCtx.currentTime);
       masterGain.gain.setValueAtTime(masterGain.gain.value, audioCtx.currentTime);
-      masterGain.gain.linearRampToValueAtTime(0.0001, audioCtx.currentTime + 0.8);
+      masterGain.gain.linearRampToValueAtTime(0.0001, audioCtx.currentTime + 0.6);
 
       setTimeout(() => {
         isPlaying = false;
         updateUiState(false);
-      }, 800);
+      }, 600);
     }
 
     function updateUiState(playing) {
@@ -242,7 +222,6 @@
       }
     }
 
-    // Gestione click sul pulsante
     if (toggleBtn) {
       toggleBtn.addEventListener('click', function(e) {
         e.stopPropagation();
@@ -252,37 +231,54 @@
           pauseSeaWaves();
         } else {
           isMutedByUser = false;
-          sessionStorage.setItem('capri_sea_sound', 'playing');
+          sessionStorage.removeItem('capri_sea_sound');
           playSeaWaves();
         }
       });
     }
 
-    // Attivazione automatica dolce al primo gesto dell'utente (scroll, click, touch)
-    const savedPref = sessionStorage.getItem('capri_sea_sound');
-    if (savedPref === 'muted') {
-      isMutedByUser = true;
-      updateUiState(false);
+    // AVVIO IMMEDIATO AL CARICAMENTO DELLA PAGINA
+    function startImmediatelyOnLoad() {
+      const savedPref = sessionStorage.getItem('capri_sea_sound');
+      if (savedPref === 'muted') {
+        isMutedByUser = true;
+        updateUiState(false);
+        return;
+      }
+      playSeaWaves();
     }
 
-    function handleFirstUserInteraction() {
+    // Tenta l'avvio immediato subito
+    startImmediatelyOnLoad();
+    window.addEventListener('load', startImmediatelyOnLoad);
+
+    // Se il browser sospende l'AudioContext per policy autoplay,
+    // al primo micro-movimento del mouse o tocco sblocca immediatamente senza richiedere click sul bottone
+    function unlockAudioContext() {
       if (isMutedByUser) return;
-      if (!isPlaying) {
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume().then(() => {
+          isPlaying = true;
+          updateUiState(true);
+        });
+      } else if (!isPlaying) {
         playSeaWaves();
       }
-      cleanupListeners();
+      cleanupUnlockers();
     }
 
-    function cleanupListeners() {
-      window.removeEventListener('scroll', handleFirstUserInteraction);
-      window.removeEventListener('click', handleFirstUserInteraction);
-      window.removeEventListener('touchstart', handleFirstUserInteraction);
-      window.removeEventListener('keydown', handleFirstUserInteraction);
+    function cleanupUnlockers() {
+      window.removeEventListener('pointerdown', unlockAudioContext);
+      window.removeEventListener('pointermove', unlockAudioContext);
+      window.removeEventListener('scroll', unlockAudioContext);
+      window.removeEventListener('touchstart', unlockAudioContext);
+      window.removeEventListener('keydown', unlockAudioContext);
     }
 
-    window.addEventListener('scroll', handleFirstUserInteraction, { once: true, passive: true });
-    window.addEventListener('click', handleFirstUserInteraction, { once: true });
-    window.addEventListener('touchstart', handleFirstUserInteraction, { once: true, passive: true });
-    window.addEventListener('keydown', handleFirstUserInteraction, { once: true });
+    window.addEventListener('pointerdown', unlockAudioContext, { passive: true });
+    window.addEventListener('pointermove', unlockAudioContext, { passive: true, once: true });
+    window.addEventListener('scroll', unlockAudioContext, { passive: true, once: true });
+    window.addEventListener('touchstart', unlockAudioContext, { passive: true });
+    window.addEventListener('keydown', unlockAudioContext, { passive: true });
   })();
 </script>

@@ -270,7 +270,7 @@ const logisticsSteps = [
   import * as d3Geo from 'd3-geo';
   import globeDataset from '../data/globe-countries.json';
 
-  document.addEventListener('DOMContentLoaded', () => {
+  function initGlobe() {
     const canvas = document.getElementById('globe-canvas');
     if (!canvas) return;
 
@@ -447,9 +447,9 @@ const logisticsSteps = [
     function render() {
       pulseT += 0.04;
 
-      // Movimento rotatorio: auto-rotazione morbida se attiva
+      // Movimento rotatorio: auto-rotazione dinamica e ben visibile all'apertura
       if (isAutoSpinning && !isDragging) {
-        rotation[0] += 0.12;
+        rotation[0] += 0.38;
       } else if (!isDragging) {
         // Inerzia verso targetRotation
         rotation[0] += (targetRotation[0] - rotation[0]) * 0.07;
@@ -754,5 +754,12 @@ const logisticsSteps = [
     window.addEventListener('beforeunload', () => {
       cancelAnimationFrame(animFrameId);
     });
-  });
+  }
+
+  // Avvio immediato se il DOM è già pronto, altrimenti al DOMContentLoaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGlobe);
+  } else {
+    initGlobe();
+  }
 </script>
