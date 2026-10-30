@@ -41,7 +41,7 @@ Dato che su `capritourguide.com` **non ci sono caselle email attive**, puoi comp
    - **TTL:** 1 ora (o Automatico)
    - Clicca su **Salva**.
 
-*(A questo punto `www.capritourguide.com` punta al nuovo sito con la lucertola!)*
+*(A questo punto `www.capritourguide.com` punta al nuovo sito!)*
 
 #### Step 2.2 — Scheda "Uso del dominio" (Inoltra `capritourguide.com` verso `www`)
 Chi digita l'indirizzo senza `www` deve atterrare su `www.capritourguide.com`:

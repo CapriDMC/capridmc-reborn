@@ -1,31 +1,37 @@
 ---
 /**
- * AmbientAudio.astro — Suono del mare in lontananza (Capri Mediterranean Sea Ambient)
- * Avvio 100% automatico al caricamento della pagina.
- * Sintesi procedurale Web Audio API a 0 KB di consumo banda.
+ * AmbientAudio.astro — Suono Naturale delle Onde del Mare (Capri Mediterranean Waves)
+ * Audio naturale delle onde del mare autentico, semplice e rilassante.
+ * Avvio automatico all'apertura della pagina con gestione conforme dell'autoplay policy dei browser.
  */
 ---
 
+<!-- Elemento Audio Nativo per Riproduzione Naturale in Loop -->
+<audio id="ambient-sea-audio" preload="auto" loop playsinline>
+  <source src="/audio/capri-sea-waves.m4a" type="audio/mp4" />
+  <source src="/audio/capri-sea-waves.mp3" type="audio/mpeg" />
+</audio>
+
 <div
   id="ambient-audio-container"
-  class="fixed bottom-6 left-6 z-50 flex items-center"
+  class="fixed bottom-5 right-5 md:bottom-6 md:right-6 z-40 flex items-center"
 >
   <button
     id="ambient-audio-toggle"
     type="button"
-    aria-label="Attiva o disattiva il suono delle onde del mare in lontananza"
-    class="group flex items-center gap-3 px-3.5 py-2 rounded-full bg-brand-navy/90 hover:bg-brand-navy border border-brand-gold/40 hover:border-brand-gold text-white shadow-2xl backdrop-blur-md transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-gold/50"
+    aria-label="Attiva o disattiva il suono naturale delle onde del mare di Capri"
+    class="group flex items-center gap-3 px-3.5 py-2 rounded-full bg-brand-navy/95 hover:bg-brand-navy border border-brand-gold/40 hover:border-brand-gold text-white shadow-2xl backdrop-blur-md transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-gold/50"
   >
     <!-- Icona Onde / Equalizzatore sonoro dorato -->
     <div class="relative flex items-center justify-center w-5 h-5 text-brand-gold">
       <span class="sr-only">Stato audio</span>
       <!-- Barre animate quando in riproduzione -->
-      <div id="audio-eq-bars" class="flex items-end gap-[2px] h-3.5 opacity-80 group-hover:opacity-100 transition-opacity">
+      <div id="audio-eq-bars" class="flex items-end gap-[2px] h-3.5 opacity-90 group-hover:opacity-100 transition-opacity">
         <span class="eq-bar w-[2.5px] h-2 bg-brand-gold rounded-full"></span>
         <span class="eq-bar w-[2.5px] h-3.5 bg-brand-gold rounded-full"></span>
         <span class="eq-bar w-[2.5px] h-1.5 bg-brand-gold rounded-full"></span>
       </div>
-      <!-- Icona Muto (quando disattivato) -->
+      <!-- Icona Muto (quando in pausa) -->
       <svg id="audio-mute-icon" class="w-4 h-4 hidden text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
@@ -42,7 +48,7 @@
       </span>
     </div>
 
-    <!-- Mini pulsante play/pausa discreto -->
+    <!-- Indicatore live -->
     <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-sm shadow-emerald-400/50" id="audio-live-dot"></div>
   </button>
 </div>
@@ -86,121 +92,28 @@
 
 <script is:inline>
   (function() {
-    let audioCtx = null;
-    let isPlaying = false;
-    let isMutedByUser = false;
-    let masterGain = null;
-
+    const TARGET_VOLUME = 0.32;
+    const audio = document.getElementById('ambient-sea-audio');
     const toggleBtn = document.getElementById('ambient-audio-toggle');
     const eqBars = document.getElementById('audio-eq-bars');
     const muteIcon = document.getElementById('audio-mute-icon');
     const statusLabel = document.getElementById('audio-status-label');
     const liveDot = document.getElementById('audio-live-dot');
 
-    function initSeaWavesSynth() {
-      if (audioCtx) return;
+    let isPlaying = false;
+    let isMutedByUser = false;
+    let fadeInterval = null;
 
-      try {
-        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-        if (!AudioContextClass) return;
-
-        audioCtx = new AudioContextClass();
-
-        // Buffer di rumore Browniano stereofonico (onde profonde del Mediterraneo)
-        const bufferSize = audioCtx.sampleRate * 6;
-        const noiseBuffer = audioCtx.createBuffer(2, bufferSize, audioCtx.sampleRate);
-
-        for (let channel = 0; channel < 2; channel++) {
-          const data = noiseBuffer.getChannelData(channel);
-          let lastOut = 0.0;
-          for (let i = 0; i < bufferSize; i++) {
-            const white = Math.random() * 2 - 1;
-            lastOut = (lastOut + (0.02 * white)) / 1.02;
-            data[i] = lastOut * 3.8;
-          }
-        }
-
-        const noiseSource = audioCtx.createBufferSource();
-        noiseSource.buffer = noiseBuffer;
-        noiseSource.loop = true;
-
-        // Filtro passa-basso modulato (schiuma e frangiflutti delle onde)
-        const filter = audioCtx.createBiquadFilter();
-        filter.type = 'lowpass';
-        filter.frequency.value = 380;
-        filter.Q.value = 2.2;
-
-        const highpass = audioCtx.createBiquadFilter();
-        highpass.type = 'highpass';
-        highpass.frequency.value = 55;
-
-        // LFO per il moto periodico delle onde (~8 secondi a onda)
-        const lfo = audioCtx.createOscillator();
-        lfo.type = 'sine';
-        lfo.frequency.value = 0.125;
-
-        const lfoFilterGain = audioCtx.createGain();
-        lfoFilterGain.gain.value = 340;
-        lfo.connect(lfoFilterGain);
-        lfoFilterGain.connect(filter.frequency);
-
-        const waveGain = audioCtx.createGain();
-        waveGain.gain.value = 0.45;
-
-        const lfoAmpGain = audioCtx.createGain();
-        lfoAmpGain.gain.value = 0.35;
-        lfo.connect(lfoAmpGain);
-        lfoAmpGain.connect(waveGain.gain);
-
-        masterGain = audioCtx.createGain();
-        masterGain.gain.setValueAtTime(0.001, audioCtx.currentTime);
-
-        noiseSource.connect(highpass);
-        highpass.connect(filter);
-        filter.connect(waveGain);
-        waveGain.connect(masterGain);
-        masterGain.connect(audioCtx.destination);
-
-        noiseSource.start(0);
-        lfo.start(0);
-      } catch (err) {
-        console.warn('Web Audio Waves Synth non supportato:', err);
+    // Controllo preferenza salvata
+    try {
+      const savedPref = sessionStorage.getItem('capri_sea_sound');
+      if (savedPref === 'muted') {
+        isMutedByUser = true;
       }
-    }
+    } catch (e) {}
 
-    function playSeaWaves() {
-      if (isMutedByUser) return;
-      initSeaWavesSynth();
-      if (!audioCtx) return;
-
-      if (audioCtx.state === 'suspended') {
-        audioCtx.resume();
-      }
-
-      if (masterGain) {
-        masterGain.gain.cancelScheduledValues(audioCtx.currentTime);
-        masterGain.gain.setValueAtTime(masterGain.gain.value, audioCtx.currentTime);
-        masterGain.gain.linearRampToValueAtTime(0.18, audioCtx.currentTime + 1.5);
-      }
-
-      isPlaying = true;
-      updateUiState(true);
-    }
-
-    function pauseSeaWaves() {
-      if (!audioCtx || !masterGain) return;
-
-      masterGain.gain.cancelScheduledValues(audioCtx.currentTime);
-      masterGain.gain.setValueAtTime(masterGain.gain.value, audioCtx.currentTime);
-      masterGain.gain.linearRampToValueAtTime(0.0001, audioCtx.currentTime + 0.6);
-
-      setTimeout(() => {
-        isPlaying = false;
-        updateUiState(false);
-      }, 600);
-    }
-
-    function updateUiState(playing) {
+    function updateUi(playing) {
+      isPlaying = playing;
       if (!toggleBtn) return;
 
       if (playing) {
@@ -222,63 +135,116 @@
       }
     }
 
+    function fadeInAudio() {
+      if (!audio) return;
+      if (fadeInterval) clearInterval(fadeInterval);
+      audio.volume = 0.02;
+      const step = 0.03;
+      fadeInterval = setInterval(() => {
+        if (!audio) return clearInterval(fadeInterval);
+        if (audio.volume + step < TARGET_VOLUME) {
+          audio.volume += step;
+        } else {
+          audio.volume = TARGET_VOLUME;
+          clearInterval(fadeInterval);
+        }
+      }, 80);
+    }
+
+    function fadeOutAudio(onComplete) {
+      if (!audio) return;
+      if (fadeInterval) clearInterval(fadeInterval);
+      const step = 0.05;
+      fadeInterval = setInterval(() => {
+        if (!audio) return clearInterval(fadeInterval);
+        if (audio.volume - step > 0.02) {
+          audio.volume -= step;
+        } else {
+          audio.volume = 0;
+          audio.pause();
+          clearInterval(fadeInterval);
+          if (onComplete) onComplete();
+        }
+      }, 50);
+    }
+
+    function playSeaWaves() {
+      if (!audio || isMutedByUser) return;
+      audio.volume = 0.02;
+      const promise = audio.play();
+
+      if (promise !== undefined) {
+        promise.then(() => {
+          updateUi(true);
+          fadeInAudio();
+          cleanupUnlockers();
+        }).catch((err) => {
+          // Autoplay bloccato dalla policy del browser: ascolta il primo micro-gesto per sbloccare
+          updateUi(false);
+          setupUnlockers();
+        });
+      }
+    }
+
+    function pauseSeaWaves() {
+      if (!audio) return;
+      fadeOutAudio(() => {
+        updateUi(false);
+      });
+    }
+
+    function unlockAudioOnGesture() {
+      if (isMutedByUser) return;
+      playSeaWaves();
+      cleanupUnlockers();
+    }
+
+    function setupUnlockers() {
+      const opts = { passive: true, once: true };
+      window.addEventListener('pointerdown', unlockAudioOnGesture, opts);
+      window.addEventListener('click', unlockAudioOnGesture, opts);
+      window.addEventListener('scroll', unlockAudioOnGesture, opts);
+      window.addEventListener('touchstart', unlockAudioOnGesture, opts);
+      window.addEventListener('keydown', unlockAudioOnGesture, opts);
+      window.addEventListener('wheel', unlockAudioOnGesture, opts);
+    }
+
+    function cleanupUnlockers() {
+      window.removeEventListener('pointerdown', unlockAudioOnGesture);
+      window.removeEventListener('click', unlockAudioOnGesture);
+      window.removeEventListener('scroll', unlockAudioOnGesture);
+      window.removeEventListener('touchstart', unlockAudioOnGesture);
+      window.removeEventListener('keydown', unlockAudioOnGesture);
+      window.removeEventListener('wheel', unlockAudioOnGesture);
+    }
+
+    // Toggle manuale utente
     if (toggleBtn) {
       toggleBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         if (isPlaying) {
           isMutedByUser = true;
-          sessionStorage.setItem('capri_sea_sound', 'muted');
+          try { sessionStorage.setItem('capri_sea_sound', 'muted'); } catch (e) {}
           pauseSeaWaves();
         } else {
           isMutedByUser = false;
-          sessionStorage.removeItem('capri_sea_sound');
+          try { sessionStorage.removeItem('capri_sea_sound'); } catch (e) {}
           playSeaWaves();
         }
       });
     }
 
-    // AVVIO IMMEDIATO AL CARICAMENTO DELLA PAGINA
-    function startImmediatelyOnLoad() {
-      const savedPref = sessionStorage.getItem('capri_sea_sound');
-      if (savedPref === 'muted') {
-        isMutedByUser = true;
-        updateUiState(false);
-        return;
-      }
-      playSeaWaves();
-    }
-
-    // Tenta l'avvio immediato subito
-    startImmediatelyOnLoad();
-    window.addEventListener('load', startImmediatelyOnLoad);
-
-    // Se il browser sospende l'AudioContext per policy autoplay,
-    // al primo micro-movimento del mouse o tocco sblocca immediatamente senza richiedere click sul bottone
-    function unlockAudioContext() {
-      if (isMutedByUser) return;
-      if (audioCtx && audioCtx.state === 'suspended') {
-        audioCtx.resume().then(() => {
-          isPlaying = true;
-          updateUiState(true);
-        });
-      } else if (!isPlaying) {
+    // AVVIO IMMEDIATO AUTOMATICO ALL'APERTURA
+    if (!isMutedByUser) {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', playSeaWaves);
+      } else {
         playSeaWaves();
       }
-      cleanupUnlockers();
+      window.addEventListener('load', playSeaWaves);
+      setupUnlockers();
+    } else {
+      updateUi(false);
     }
-
-    function cleanupUnlockers() {
-      window.removeEventListener('pointerdown', unlockAudioContext);
-      window.removeEventListener('pointermove', unlockAudioContext);
-      window.removeEventListener('scroll', unlockAudioContext);
-      window.removeEventListener('touchstart', unlockAudioContext);
-      window.removeEventListener('keydown', unlockAudioContext);
-    }
-
-    window.addEventListener('pointerdown', unlockAudioContext, { passive: true });
-    window.addEventListener('pointermove', unlockAudioContext, { passive: true, once: true });
-    window.addEventListener('scroll', unlockAudioContext, { passive: true, once: true });
-    window.addEventListener('touchstart', unlockAudioContext, { passive: true });
-    window.addEventListener('keydown', unlockAudioContext, { passive: true });
   })();
 </script>

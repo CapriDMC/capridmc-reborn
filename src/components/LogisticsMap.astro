@@ -3,7 +3,7 @@
  * LogisticsMap.astro — Mappamondo 3D Interattivo & Calcolo Distanze da Capri
  * Sostituisce la precedente mappa stilizzata statica con un mappamondo ortografico 3D:
  *  - Ruotabile con il cursore / drag touch con inerzia fluida a 60fps.
- *  - Cliccando su una nazione (es. Russia), calcola la distanza in km tra la capitale (es. Mosca) e Capri.
+ *  - Cliccando su una nazione (es. Stati Uniti), calcola la distanza in km tra la capitale (es. Washington) e Capri.
  *  - Traccia l'arco di rotta aerea ortodromica dorata in tempo reale.
  *  - Mostra flag, capitale, distanza in km, tempo di volo stimato e canali diretti (solo mail e telefono).
  */
@@ -185,17 +185,17 @@ const logisticsSteps = [
               <!-- Country & Capital Details -->
               <div class="space-y-1">
                 <div class="flex items-center gap-2">
-                  <span id="hud-flag" class="text-2xl">🇷🇺</span>
+                  <span id="hud-flag" class="text-2xl">🇺🇸</span>
                   <h4 id="hud-country" class="font-serif text-2xl text-white font-medium">
-                    Russia
+                    Stati Uniti D'America
                   </h4>
                   <span id="hud-iso" class="text-[10px] font-mono bg-white/15 px-2 py-0.5 rounded text-brand-gold font-bold">
-                    RU
+                    US
                   </span>
                 </div>
                 <p class="text-xs text-white/80 font-light flex items-center gap-1.5">
                   <span class="text-brand-gold">🏛️ Capitale:</span>
-                  <strong id="hud-capital" class="text-white font-medium">Mosca (Moscow)</strong>
+                  <strong id="hud-capital" class="text-white font-medium">Washington, D.C.</strong>
                 </p>
               </div>
 
@@ -204,15 +204,15 @@ const logisticsSteps = [
                 <div>
                   <span class="text-[9px] uppercase tracking-wider text-brand-gold font-mono block">Distanza da Capri</span>
                   <div class="flex items-baseline gap-1.5">
-                    <span id="hud-dist-km" class="font-serif text-2xl lg:text-3xl font-bold text-white tracking-tight">2.398</span>
+                    <span id="hud-dist-km" class="font-serif text-2xl lg:text-3xl font-bold text-white tracking-tight">7.421</span>
                     <span class="text-xs text-white/60 font-mono">km</span>
                   </div>
-                  <span id="hud-dist-mi" class="text-[10px] text-white/40 font-mono">~1.490 miglia</span>
+                  <span id="hud-dist-mi" class="text-[10px] text-white/40 font-mono">~4.611 miglia</span>
                 </div>
 
                 <div>
                   <span class="text-[9px] uppercase tracking-wider text-brand-gold font-mono block">Volo Stimato</span>
-                  <span id="hud-flight-time" class="font-mono text-sm text-emerald-400 font-semibold block mt-1">~3h 15m</span>
+                  <span id="hud-flight-time" class="font-mono text-sm text-emerald-400 font-semibold block mt-1">~9h 47m</span>
                   <span class="text-[9px] text-white/50 block">Jet Privato Diretto</span>
                 </div>
               </div>
@@ -226,7 +226,7 @@ const logisticsSteps = [
               </span>
               <a
                 id="hud-email-cta"
-                href="mailto:partnerships@capridmc.com?subject=Richiesta%20Logistica%20VIP%20da%20Mosca%20(Russia)"
+                href="mailto:partnerships@capridmc.com?subject=Richiesta%20Logistica%20VIP%20da%20Washington%2C%20D.C.%20(Stati%20Uniti%20D'America)"
                 class="inline-flex items-center gap-1.5 text-brand-gold hover:text-white font-semibold transition-colors underline underline-offset-4"
               >
                 <span>Richiedi assistenza transfer da questa nazione &rarr;</span>
@@ -330,8 +330,8 @@ const logisticsSteps = [
     const path = d3Geo.geoPath(projection, ctx);
     const graticule = d3Geo.geoGraticule10();
 
-    // Paese attualmente selezionato (di default Russia per mostrare l'esempio di Mosca)
-    let selectedFeature = globeDataset.features.find(f => f.properties?.iso2 === 'RU') || globeDataset.features[0];
+    // Paese attualmente selezionato (di default Stati Uniti con capitale Washington)
+    let selectedFeature = globeDataset.features.find(f => f.properties?.iso2 === 'US') || globeDataset.features[0];
 
     // Popola il selettore delle nazioni in ordine alfabetico italiano
     if (selectEl) {
@@ -435,7 +435,7 @@ const logisticsSteps = [
       });
     }
 
-    // Inizializza con la Russia come richiesto dall'utente
+    // Inizializza con gli Stati Uniti (Washington) come prima località indicata
     selectCountry(selectedFeature, false);
 
     // ==========================================
