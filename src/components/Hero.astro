@@ -6,18 +6,21 @@ const phoneContact = "tel:+393335943947";
 
 <section aria-label="Hero Introduction" class="relative min-h-screen flex items-center justify-center text-center overflow-hidden bg-brand-dark pt-28 pb-20">
   <!-- Authentic Capri Mediterranean Sea Horizon Background (from capridmc.com) -->
-  <div class="absolute inset-0 z-0">
-    <img
-      id="hero-bg"
-      src="/images/capri/capri-mediterranean-sea-horizon-hero.jpg"
-      alt="Capri Mediterranean Sea Horizon - Capri DMC Luxury Destination Management"
-      width="1620"
-      height="1080"
-      class="w-full h-full object-cover object-center opacity-65 scale-110 filter brightness-100"
-      loading="eager"
-      fetchpriority="high"
-      decoding="async"
-    />
+  <div class="absolute inset-0 z-0 overflow-hidden">
+    <picture class="w-full h-full">
+      <source srcset="/images/capri/capri-mediterranean-sea-horizon-hero.webp" type="image/webp" />
+      <img
+        id="hero-bg"
+        src="/images/capri/capri-mediterranean-sea-horizon-hero.jpg"
+        alt="Capri Mediterranean Sea Horizon - Capri DMC Luxury Destination Management"
+        width="1620"
+        height="1080"
+        class="w-full h-full object-cover object-center opacity-65 scale-110 filter brightness-100 will-change-transform"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </picture>
     <!-- Editorial Vignette & Gradient Overlays -->
     <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/50 to-brand-dark/75"></div>
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.12)_0%,transparent_75%)] pointer-events-none"></div>
@@ -29,15 +32,19 @@ const phoneContact = "tel:+393335943947";
     <!-- Official Medallion Logo in Hero Crest Presentation -->
     <div class="hero-item gsap-reveal mb-6 flex flex-col items-center">
       <div class="relative p-1 rounded-full bg-gradient-to-b from-brand-gold/60 to-brand-navy/40 shadow-2xl">
-        <img
-          src="/logo.png"
-          alt="Capri DMC Official Crest"
-          width="96"
-          height="96"
-          class="w-20 h-20 md:w-24 md:h-24 rounded-full object-contain shadow-2xl ring-2 ring-brand-gold/80"
-          loading="eager"
-          decoding="async"
-        />
+        <picture>
+          <source srcset="/logo.webp" type="image/webp" />
+          <img
+            src="/logo.png"
+            alt="Capri DMC Official Crest"
+            width="96"
+            height="96"
+            class="w-20 h-20 md:w-24 md:h-24 rounded-full object-contain shadow-2xl ring-2 ring-brand-gold/80"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
       </div>
     </div>
 
@@ -136,7 +143,8 @@ const phoneContact = "tel:+393335943947";
         .to("#hero-bg", {
           scale: 1,
           duration: 3.5,
-          ease: "power2.out"
+          ease: "power2.out",
+          force3D: true
         }, 0)
         .fromTo(".hero-item",
           { y: 35, autoAlpha: 0 },
@@ -145,7 +153,8 @@ const phoneContact = "tel:+393335943947";
             autoAlpha: 1,
             duration: 1.1,
             stagger: 0.12,
-            ease: "power3.out"
+            ease: "power3.out",
+            force3D: true
           },
           0.3
         );

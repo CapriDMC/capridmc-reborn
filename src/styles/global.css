@@ -34,14 +34,18 @@
 .img-zoom-container {
   overflow: hidden;
   position: relative;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .img-zoom-container img {
   transition: transform 1.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .img-zoom-container:hover img {
-  transform: scale(1.05);
+  transform: scale(1.05) translateZ(0);
 }
 
 /* Animated SVG route line for logistics */
@@ -50,10 +54,11 @@
   stroke-dashoffset: 1000;
 }
 
-/* GSAP Pre-reveal hide to prevent FOUC */
+/* GSAP Pre-reveal hide to prevent FOUC with hardware acceleration */
 .gsap-reveal {
   opacity: 0;
   visibility: hidden;
+  will-change: opacity, transform;
 }
 
 /* Custom scrollbar for high-end feel */

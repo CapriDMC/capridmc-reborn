@@ -420,6 +420,9 @@ const logisticsSteps = [
     function updateSpinButton(spinning) {
       isAutoSpinning = spinning;
       if (spinIcon) spinIcon.textContent = spinning ? '⏸️' : '▶️';
+      if (spinning && typeof startGlobeLoop === 'function') {
+        startGlobeLoop();
+      }
     }
 
     if (spinToggleBtn) {
@@ -439,12 +442,31 @@ const logisticsSteps = [
     selectCountry(selectedFeature, false);
 
     // ==========================================
-    // Rendering Loop a 60 FPS
+    // Rendering Loop a 60 FPS (Ottimizzato con IntersectionObserver)
     // ==========================================
-    let animFrameId;
+    let animFrameId = null;
+    let isGlobeVisible = false;
     let pulseT = 0;
 
-    function render() {
+    function startGlobeLoop() {
+      if (!animFrameId && isGlobeVisible) {
+        animFrameId = requestAnimationFrame(() => render());
+      }
+    }
+
+    function stopGlobeLoop() {
+      if (animFrameId) {
+        cancelAnimationFrame(animFrameId);
+        animFrameId = null;
+      }
+    }
+
+    function render(forceSingleFrame = false) {
+      if (!isGlobeVisible && !forceSingleFrame) {
+        animFrameId = null;
+        return;
+      }
+
       pulseT += 0.04;
 
       // Movimento rotatorio: auto-rotazione dinamica e ben visibile all'apertura
@@ -646,7 +668,11 @@ const logisticsSteps = [
         }
       }
 
-      animFrameId = requestAnimationFrame(render);
+      if (!forceSingleFrame && isGlobeVisible) {
+        animFrameId = requestAnimationFrame(() => render());
+      } else {
+        animFrameId = null;
+      }
     }
 
     // ==========================================
@@ -661,6 +687,7 @@ const logisticsSteps = [
       velX = 0;
       velY = 0;
       updateSpinButton(false);
+      startGlobeLoop();
     }
 
     function onPointerMove(clientX, clientY) {
@@ -742,17 +769,73 @@ const logisticsSteps = [
       });
     }
 
+    // IntersectionObserver: Disattiva il loop di calcolo a 60fps quando il mappamondo è fuori dal viewport
+    const logisticsSection = document.getElementById('logistics');
+    if ('IntersectionObserver' in window && logisticsSection) {
+      const globeObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const wasVisible = isGlobeVisible;
+          isGlobeVisible = entry.isIntersecting;
+          if (isGlobeVisible && !wasVisible) {
+            startGlobeLoop();
+          } else if (!isGlobeVisible && wasVisible) {
+            stopGlobeLoop();
+          }
+        });
+      }, { rootMargin: '250px' });
+      globeObserver.observe(logisticsSection);
+    } else {
+      isGlobeVisible = true;
+      startGlobeLoop();
+    }
+
+    // GSAP Staggered Reveal per la sezione logistica
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      gsap.fromTo('.map-header',
+        { y: 30, autoAlpha: 0 },
+        {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.8,
+          ease: 'power3.out',
+          force3D: true,
+          scrollTrigger: {
+            trigger: '#logistics',
+            start: 'top 80%',
+            once: true
+          }
+        }
+      );
+
+      gsap.fromTo('.map-text',
+        { y: 35, autoAlpha: 0 },
+        {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.8,
+          ease: 'power2.out',
+          force3D: true,
+          scrollTrigger: {
+            trigger: '#logistics',
+            start: 'top 75%',
+            once: true
+          }
+        }
+      );
+    }
+
     // Gestione ridimensionamento responsive
     window.addEventListener('resize', () => {
       resizeCanvas();
+      render(true);
     });
 
     resizeCanvas();
-    render();
+    render(true); // Disegna subito il primo frame statico
 
     // Pulizia su smontaggio pagina
     window.addEventListener('beforeunload', () => {
-      cancelAnimationFrame(animFrameId);
+      stopGlobeLoop();
     });
   }
 

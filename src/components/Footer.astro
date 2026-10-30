@@ -13,15 +13,18 @@ const phoneContact = "tel:+393335943947";
       <!-- Brand & Mission Column (Spans 2 cols) -->
       <div class="lg:col-span-2 space-y-6">
         <a href="#" class="flex items-center gap-4 focus:outline-none group" aria-label="Capri DMC Home">
-          <img
-            src="/logo.png"
-            alt="Capri DMC Logo"
-            width="64"
-            height="64"
-            class="h-16 w-16 rounded-full object-contain ring-1 ring-brand-gold/60 shadow-xl transition-transform duration-500 group-hover:scale-105"
-            loading="lazy"
-            decoding="async"
-          />
+          <picture>
+            <source srcset="/logo.webp" type="image/webp" />
+            <img
+              src="/logo.png"
+              alt="Capri DMC Logo"
+              width="64"
+              height="64"
+              class="h-16 w-16 rounded-full object-contain ring-1 ring-brand-gold/60 shadow-xl transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
           <div>
             <span class="font-serif text-2xl font-normal block leading-tight text-white">Capri DMC</span>
             <span class="text-[9px] uppercase tracking-[0.25em] text-brand-gold font-medium">Your Roots in Capri</span>

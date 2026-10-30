@@ -34,11 +34,12 @@ const {
       lang={lang}
     />
 
-    <!-- Preload LCP Hero Image for Core Web Vitals -->
+    <!-- Preload LCP Hero Image for Core Web Vitals (WebP 29KB) -->
     <link
       rel="preload"
       as="image"
-      href="/images/capri/faraglioni-rocks-guided-tour-private-boat.jpg"
+      href="/images/capri/capri-mediterranean-sea-horizon-hero.webp"
+      type="image/webp"
       fetchpriority="high"
     />
 
@@ -72,16 +73,24 @@ const {
             duration: 1
           });
 
-          // Navbar Scroll Effect
+          // Navbar Scroll Effect (Hardware-accelerated RAF throttle)
           const navbar = document.getElementById("navbar");
           if (navbar) {
+            let ticking = false;
             window.addEventListener("scroll", () => {
-              if (window.scrollY > 50) {
-                navbar.classList.add("bg-brand-navy/95", "backdrop-blur-md", "shadow-xl", "py-3");
-                navbar.classList.remove("py-5", "bg-brand-navy/60");
-              } else {
-                navbar.classList.remove("bg-brand-navy/95", "shadow-xl", "py-3");
-                navbar.classList.add("py-5", "bg-brand-navy/60");
+              if (!ticking) {
+                requestAnimationFrame(() => {
+                  const isScrolled = window.scrollY > 50;
+                  if (isScrolled) {
+                    navbar.classList.add("bg-brand-navy/95", "backdrop-blur-md", "shadow-xl", "py-3");
+                    navbar.classList.remove("py-5", "bg-brand-navy/60");
+                  } else {
+                    navbar.classList.remove("bg-brand-navy/95", "shadow-xl", "py-3");
+                    navbar.classList.add("py-5", "bg-brand-navy/60");
+                  }
+                  ticking = false;
+                });
+                ticking = true;
               }
             }, { passive: true });
           }
