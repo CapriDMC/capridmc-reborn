@@ -73,50 +73,44 @@ const {
             duration: 1
           });
 
-          // Navbar Scroll Effect (Hardware-accelerated RAF throttle)
+          // Smart Cartier-Style Auto-Hide / Auto-Reveal Navigation Bar
           const navbar = document.getElementById("navbar");
           if (navbar) {
+            let lastScrollY = window.scrollY;
+            let isNavHidden = false;
             let ticking = false;
+
             window.addEventListener("scroll", () => {
               if (!ticking) {
                 requestAnimationFrame(() => {
-                  const isScrolled = window.scrollY > 50;
-                  if (isScrolled) {
-                    navbar.classList.add("bg-brand-navy/95", "backdrop-blur-md", "shadow-xl", "py-3");
-                    navbar.classList.remove("py-5", "bg-brand-navy/60");
-                  } else {
-                    navbar.classList.remove("bg-brand-navy/95", "shadow-xl", "py-3");
-                    navbar.classList.add("py-5", "bg-brand-navy/60");
+                  const currentScrollY = window.scrollY;
+
+                  if (currentScrollY <= 40) {
+                    // Top of page
+                    navbar.classList.remove("-translate-y-full", "bg-[#07142E]/95", "backdrop-blur-md", "shadow-xl", "py-4");
+                    navbar.classList.add("bg-transparent", "py-5");
+                    isNavHidden = false;
+                  } else if (currentScrollY > lastScrollY && currentScrollY > 120) {
+                    // Scrolling DOWN -> Hide smoothly
+                    if (!isNavHidden) {
+                      navbar.classList.add("-translate-y-full");
+                      isNavHidden = true;
+                    }
+                  } else if (currentScrollY < lastScrollY) {
+                    // Scrolling UP -> Reveal smoothly with luxury frosted backdrop
+                    if (isNavHidden) {
+                      navbar.classList.remove("-translate-y-full", "bg-transparent", "py-5");
+                      navbar.classList.add("bg-[#07142E]/95", "backdrop-blur-md", "shadow-xl", "py-4");
+                      isNavHidden = false;
+                    }
                   }
+                  lastScrollY = currentScrollY;
                   ticking = false;
                 });
                 ticking = true;
               }
             }, { passive: true });
           }
-
-          // Mobile Navigation Menu Toggle
-          const menuBtn = document.getElementById("mobile-menu-btn");
-          const mobileDrawer = document.getElementById("mobile-drawer");
-          const closeDrawerBtn = document.getElementById("close-drawer-btn");
-          const drawerLinks = document.querySelectorAll(".drawer-link");
-
-          function toggleDrawer(open) {
-            if (!mobileDrawer) return;
-            if (open) {
-              mobileDrawer.classList.remove("pointer-events-none", "opacity-0");
-              mobileDrawer.classList.add("pointer-events-auto", "opacity-100");
-              document.body.classList.add("overflow-hidden");
-            } else {
-              mobileDrawer.classList.add("pointer-events-none", "opacity-0");
-              mobileDrawer.classList.remove("pointer-events-auto", "opacity-100");
-              document.body.classList.remove("overflow-hidden");
-            }
-          }
-
-          if (menuBtn) menuBtn.addEventListener("click", () => toggleDrawer(true));
-          if (closeDrawerBtn) closeDrawerBtn.addEventListener("click", () => toggleDrawer(false));
-          drawerLinks.forEach(link => link.addEventListener("click", () => toggleDrawer(false)));
 
           // Refresh triggers on window resize
           let resizeTimer;

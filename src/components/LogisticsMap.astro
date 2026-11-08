@@ -9,7 +9,6 @@
  */
 
 const emailContact = "mailto:partnerships@capridmc.com?subject=Richiesta%20Logistica%20VIP%20Capri%20DMC";
-const phoneContact = "tel:+393335943947";
 
 const logisticsSteps = [
   {
@@ -43,7 +42,7 @@ const logisticsSteps = [
 ];
 ---
 
-<section id="logistics" aria-label="Global Logistics & Interactive 3D Capri Globe" class="py-24 lg:py-32 px-6 lg:px-12 bg-brand-dark text-white relative overflow-hidden border-b border-white/10">
+<section id="logistics" aria-label="Global Logistics & Interactive 3D Capri Globe" class="cartier-layer-solid-dark py-24 lg:py-32 px-6 lg:px-12 bg-brand-dark text-white relative overflow-hidden border-b border-white/10">
   
   <!-- Subtle Mediterranean Starfield / Horizon Glow Background -->
   <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-brand-navy/60 via-brand-dark to-black pointer-events-none"></div>
@@ -110,24 +109,16 @@ const logisticsSteps = [
           ))}
         </div>
 
-        <!-- Direct Contact Actions (No Form) -->
-        <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
+        <!-- Direct Contact Action (No Form) -->
+        <div class="pt-2">
           <a
             href={emailContact}
-            class="px-6 py-3.5 bg-brand-gold text-brand-navy hover:bg-white text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300 shadow-xl flex items-center justify-center gap-2"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-brand-gold text-brand-navy hover:bg-white text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300 shadow-xl"
           >
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
             <span>Email Desk Logistica</span>
-          </a>
-
-          <a
-            href={phoneContact}
-            class="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white text-xs uppercase tracking-[0.2em] font-semibold border border-white/20 transition-all duration-300 flex items-center justify-center gap-2 font-mono"
-          >
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>+39 333 594 3947</span>
           </a>
         </div>
 

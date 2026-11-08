@@ -1,139 +1,147 @@
 ---
-// Cinematic Sun-Drenched Editorial Hero Section with Authentic Capri Photography & Medallion Logo
+// Cartier-Inspired Cinematic Above-the-Fold Hero Section with Full Parallax Window & Physical Layering
 const emailContact = "mailto:partnerships@capridmc.com?subject=Richiesta%20Servizi%20Capri%20DMC";
-const phoneContact = "tel:+393335943947";
 ---
 
-<section aria-label="Hero Introduction" class="relative min-h-screen flex items-center justify-center text-center overflow-hidden bg-brand-dark pt-28 pb-20">
-  <!-- Authentic Capri Mediterranean Sea Horizon Background (from capridmc.com) -->
-  <div class="absolute inset-0 z-0 overflow-hidden">
-    <picture class="w-full h-full">
-      <source srcset="/images/capri/capri-mediterranean-sea-horizon-hero.webp" type="image/webp" />
-      <img
-        id="hero-bg"
-        src="/images/capri/capri-mediterranean-sea-horizon-hero.jpg"
-        alt="Capri Mediterranean Sea Horizon - Capri DMC Luxury Destination Management"
-        width="1620"
-        height="1080"
-        class="w-full h-full object-cover object-center opacity-65 scale-110 filter brightness-100 will-change-transform"
-        loading="eager"
-        fetchpriority="high"
-        decoding="async"
-      />
-    </picture>
-    <!-- Editorial Vignette & Gradient Overlays -->
-    <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/50 to-brand-dark/75"></div>
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.12)_0%,transparent_75%)] pointer-events-none"></div>
-  </div>
+<section
+  id="hero-section"
+  aria-label="Hero Introduction"
+  class="cartier-parallax-window relative h-screen min-h-[680px] w-full flex flex-col justify-between items-center text-center pt-24 pb-8"
+>
+  <!-- Full-Bleed Fixed Parallax Mediterranean Sea Horizon Media -->
+  <picture>
+    <source srcset="/images/capri/capri-mediterranean-sea-horizon-hero.webp" type="image/webp" />
+    <img
+      id="hero-bg"
+      src="/images/capri/capri-mediterranean-sea-horizon-hero.jpg"
+      alt="Capri Mediterranean Sea Horizon - Capri DMC Luxury Destination Management"
+      class="cartier-parallax-bg scale-105 filter brightness-105 will-change-transform"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />
+  </picture>
+  
+  <!-- Cartier-Style Fixed Editorial Gradients (Clipped to Window) -->
+  <div class="fixed inset-0 bg-gradient-to-b from-[#07142E]/75 via-[#07142E]/30 to-[#07142E]/85 pointer-events-none z-[1]"></div>
+  <div class="fixed inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.08)_0%,transparent_70%)] pointer-events-none z-[1]"></div>
 
-  <!-- Content Container -->
-  <div class="relative z-10 max-w-5xl px-6 lg:px-12 flex flex-col items-center">
+  <!-- Top Spacer for Sticky Navbar -->
+  <div class="w-full h-12 relative z-10 pointer-events-none"></div>
+
+  <!-- Central Editorial Masterpiece (Cartier Structure) -->
+  <div id="hero-content" class="relative z-10 max-w-4xl px-6 lg:px-12 flex flex-col items-center my-auto will-change-transform">
     
-    <!-- Official Medallion Logo in Hero Crest Presentation -->
-    <div class="hero-item gsap-reveal mb-6 flex flex-col items-center">
-      <div class="relative p-1 rounded-full bg-gradient-to-b from-brand-gold/60 to-brand-navy/40 shadow-2xl">
-        <picture>
-          <source srcset="/logo.webp" type="image/webp" />
-          <img
-            src="/logo.png"
-            alt="Capri DMC Official Crest"
-            width="96"
-            height="96"
-            class="w-20 h-20 md:w-24 md:h-24 rounded-full object-contain shadow-2xl ring-2 ring-brand-gold/80"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-          />
-        </picture>
-      </div>
+    <!-- Official Medallion Logo as Luxury Hallmark Seal -->
+    <div class="hero-item gsap-reveal mb-5 flex flex-col items-center">
+      <picture>
+        <source srcset="/logo.webp" type="image/webp" />
+        <img
+          src="/logo.png"
+          alt="Capri DMC Official Crest Hallmark"
+          width="80"
+          height="80"
+          class="w-16 h-16 md:w-20 md:h-20 rounded-full object-contain ring-1 ring-brand-gold/70 p-1"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
     </div>
 
-    <!-- Top Pill Badge / Credentials -->
-    <div class="hero-item gsap-reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6 shadow-lg">
-      <span class="w-2 h-2 rounded-full bg-brand-gold"></span>
-      <span class="text-[10px] md:text-xs uppercase tracking-[0.3em] font-semibold text-white/90">
+    <!-- Editorial Tagline & Heritage Credentials -->
+    <div class="hero-item gsap-reveal mb-4 flex items-center justify-center gap-3">
+      <span class="w-6 h-[1px] bg-brand-gold/60"></span>
+      <span class="text-[10px] sm:text-xs uppercase tracking-[0.32em] font-medium text-brand-gold/90">
         Women-Owned · 24/7 Ground Dispatch · Capri, Italy
+      </span>
+      <span class="w-6 h-[1px] bg-brand-gold/60"></span>
+    </div>
+
+    <!-- Minimalist Title with Editorial Garamond Serif -->
+    <h1 class="hero-item gsap-reveal font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-light leading-[1.04] tracking-tight mb-4">
+      Your Destination <br />
+      <span class="italic text-brand-gold font-light">Management</span> Company
+    </h1>
+
+    <!-- Editorial Motto -->
+    <div class="hero-item gsap-reveal mb-6">
+      <span class="text-xs sm:text-sm uppercase tracking-[0.35em] text-white/90 font-light">
+        Your Roots in Capri
       </span>
     </div>
 
-    <!-- Editorial Motto -->
-    <span class="hero-item gsap-reveal text-brand-gold uppercase tracking-[0.35em] text-xs md:text-sm font-semibold mb-6 flex items-center gap-3">
-      <span class="w-8 h-[1px] bg-brand-gold/60 inline-block"></span>
-      Your Roots in Capri
-      <span class="w-8 h-[1px] bg-brand-gold/60 inline-block"></span>
-    </span>
-
-    <!-- Main Headline with Serif Typography -->
-    <h1 class="hero-item gsap-reveal font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-normal leading-[1.08] tracking-tight mb-8 drop-shadow-2xl">
-      Your Destination <br />
-      <span class="font-serif italic text-brand-gold font-normal">Management</span> Company
-    </h1>
-
-    <!-- Subtitle / Value Proposition for B2B Advisors & VIPs -->
-    <p class="hero-item gsap-reveal text-white/85 font-light max-w-2xl text-base sm:text-lg md:text-xl leading-relaxed mb-10">
+    <!-- Subtitle / Value Proposition for Global Luxury Advisors -->
+    <p class="hero-item gsap-reveal text-white/80 font-light max-w-2xl text-sm sm:text-base md:text-lg leading-relaxed mb-8">
       The elite B2B spin-off from <strong class="text-white font-medium">Nesea Capri Tours & Events</strong>. Providing bespoke private yacht charters, high-end island celebrations, and seamless airport-to-suite logistics for global luxury travel advisors.
     </p>
 
-    <!-- Dual Luxury Direct CTAs (Email & Phone) -->
-    <div class="hero-item gsap-reveal flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full sm:w-auto">
+    <!-- Clean, Flat Luxury Call to Action (Cartier Minimalist Buttons) -->
+    <div class="hero-item gsap-reveal flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto">
+      <a
+        href="#services"
+        class="w-full sm:w-auto px-9 py-3.5 border border-white/80 text-white text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-white hover:text-brand-navy transition-all duration-300 text-center"
+      >
+        Curated Services
+      </a>
+
       <a
         href={emailContact}
-        class="w-full sm:w-auto px-9 py-4 bg-brand-gold text-brand-navy font-semibold text-xs uppercase tracking-[0.2em] shadow-xl hover:bg-white hover:shadow-brand-gold/20 transition-all duration-300 ease-out group flex items-center justify-center gap-2"
+        class="w-full sm:w-auto px-9 py-3.5 bg-brand-gold text-brand-navy text-[11px] uppercase tracking-[0.25em] font-semibold hover:bg-white transition-all duration-300 text-center flex items-center justify-center gap-2"
       >
-        <span>Contatta via Email</span>
-        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        <span>Email Advisor Desk</span>
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
         </svg>
       </a>
-
-      <a
-        href={phoneContact}
-        class="w-full sm:w-auto px-9 py-4 bg-white/5 hover:bg-white/10 text-white font-medium text-xs uppercase tracking-[0.2em] border border-white/20 hover:border-brand-gold transition-all duration-300 backdrop-blur-sm flex items-center justify-center gap-2 font-mono"
-      >
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span>+39 333 594 3947</span>
-      </a>
-    </div>
-
-    <!-- Quick Mottos / Value Pillars Footer -->
-    <div class="hero-item gsap-reveal grid grid-cols-2 md:grid-cols-3 gap-6 pt-14 mt-8 border-t border-white/10 w-full max-w-3xl text-left text-white/70">
-      <div class="flex items-center gap-3">
-        <span class="text-brand-gold font-serif text-2xl font-light">01</span>
-        <div>
-          <h4 class="text-[11px] uppercase tracking-wider text-white font-semibold">From Capri for Capri</h4>
-          <p class="text-[10px] text-white/50">100% Native on-island team</p>
-        </div>
-      </div>
-      <div class="flex items-center gap-3">
-        <span class="text-brand-gold font-serif text-2xl font-light">02</span>
-        <div>
-          <h4 class="text-[11px] uppercase tracking-wider text-white font-semibold">24/7 Operational Command</h4>
-          <p class="text-[10px] text-white/50">Zero time-zone delay for advisors</p>
-        </div>
-      </div>
-      <div class="hidden md:flex items-center gap-3">
-        <span class="text-brand-gold font-serif text-2xl font-light">03</span>
-        <div>
-          <h4 class="text-[11px] uppercase tracking-wider text-white font-semibold">White-Label Representation</h4>
-          <p class="text-[10px] text-white/50">Discreet VIP service execution</p>
-        </div>
-      </div>
     </div>
 
   </div>
 
-  <!-- Scroll Down Indicator -->
-  <a
-    href="#story"
-    class="hero-item gsap-reveal absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50 hover:text-brand-gold transition-colors duration-300"
-    aria-label="Scroll to discover The Authority"
-  >
-    <span class="text-[9px] uppercase tracking-[0.3em] font-semibold">Scroll to Explore</span>
-    <div class="w-[1px] h-10 bg-gradient-to-b from-brand-gold to-transparent animate-pulse"></div>
-  </a>
+  <!-- Bottom: 3 Core Value Pillars & Subtle Scroll Cue -->
+  <div class="relative z-10 w-full max-w-5xl px-6 border-t border-white/10 pt-4 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/60 font-light">
+    
+    <!-- 3 Pillars (Clean, Flat, Rigorous Typography) -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 w-full md:w-auto text-left">
+      <div class="flex items-center gap-3">
+        <span class="font-serif text-lg text-brand-gold font-light">01</span>
+        <div>
+          <h4 class="text-[10px] uppercase tracking-wider text-white font-medium">From Capri for Capri</h4>
+          <p class="text-[9px] text-white/50">100% Native on-island team</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="font-serif text-lg text-brand-gold font-light">02</span>
+        <div>
+          <h4 class="text-[10px] uppercase tracking-wider text-white font-medium">24/7 Command</h4>
+          <p class="text-[9px] text-white/50">Zero time-zone delay</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="font-serif text-lg text-brand-gold font-light">03</span>
+        <div>
+          <h4 class="text-[10px] uppercase tracking-wider text-white font-medium">White-Label Mastery</h4>
+          <p class="text-[9px] text-white/50">Discreet VIP execution</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Cue -->
+    <a
+      href="#story"
+      class="hidden md:inline-flex items-center gap-2 text-[9px] uppercase tracking-[0.25em] text-white/50 hover:text-brand-gold transition-colors"
+      aria-label="Scroll to discover the Maison"
+    >
+      <span>Scroll</span>
+      <svg class="w-3.5 h-3.5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7 7m7 7V3" />
+      </svg>
+    </a>
+
+  </div>
 </section>
 
-<!-- Hero Section GSAP Animation Script -->
+<!-- GSAP Reveal Script for Hero & Parallax Scroll Departure -->
 <script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
     if (typeof gsap !== "undefined") {
@@ -142,22 +150,37 @@ const phoneContact = "tel:+393335943947";
       heroTl
         .to("#hero-bg", {
           scale: 1,
-          duration: 3.5,
+          duration: 3.2,
           ease: "power2.out",
           force3D: true
         }, 0)
         .fromTo(".hero-item",
-          { y: 35, autoAlpha: 0 },
+          { y: 30, autoAlpha: 0 },
           {
             y: 0,
             autoAlpha: 1,
-            duration: 1.1,
-            stagger: 0.12,
+            duration: 1,
+            stagger: 0.1,
             ease: "power3.out",
             force3D: true
           },
-          0.3
+          0.2
         );
+
+      // Parallax smooth departure on scroll: content fades and glides slightly down as the next section slides on top
+      if (typeof ScrollTrigger !== "undefined") {
+        gsap.to("#hero-content", {
+          y: 80,
+          opacity: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#hero-section",
+            start: "top top",
+            end: "bottom top",
+            scrub: 0.6
+          }
+        });
+      }
     }
   });
 </script>

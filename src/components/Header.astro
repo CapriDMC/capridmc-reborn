@@ -1,159 +1,344 @@
 ---
-// Luxury Floating Navigation Header with Official Capri DMC Medallion Logo
-const navLinks = [
-  { name: "The Authority", href: "#story" },
-  { name: "Curated Services", href: "#services" },
-  { name: "Logistics Map", href: "#logistics" },
-  { name: "Advisor Perks", href: "#advisors" }
-];
-
+// Cartier-Inspired Luxury Navigation Header & Off-Canvas Mega-Menu
 const emailContact = "mailto:partnerships@capridmc.com?subject=Richiesta%20Informazioni%20Capri%20DMC";
-const phoneContact = "tel:+393335943947";
 ---
 
+<!-- Sticky Auto-Hide / Auto-Reveal Navigation Bar -->
 <header
   id="navbar"
-  class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-brand-navy/80 backdrop-blur-md border-b border-white/10 px-6 lg:px-12 py-4 flex justify-between items-center"
+  class="fixed top-0 left-0 w-full z-40 transition-all duration-500 ease-in-out px-6 lg:px-16 py-5 flex items-center justify-between bg-transparent"
 >
-  <!-- Brand Logo & Identity -->
-  <a href="#" class="flex items-center gap-3.5 group focus:outline-none" aria-label="Capri DMC Home">
-    <div class="relative">
-      <picture>
-        <source srcset="/logo.webp" type="image/webp" />
-        <img
-          src="/logo.png"
-          alt="Capri DMC - Destination Management Company"
-          width="56"
-          height="56"
-          class="h-12 w-12 md:h-14 md:w-14 rounded-full object-contain shadow-md ring-1 ring-brand-gold/60 transition-transform duration-500 group-hover:scale-105 group-hover:ring-brand-gold"
-          loading="eager"
-          decoding="async"
-        />
-      </picture>
-      <span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-brand-navy rounded-full border border-brand-gold flex items-center justify-center">
-        <span class="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse"></span>
-      </span>
-    </div>
-    
-    <div class="flex flex-col text-left">
-      <div class="flex items-center gap-2">
-        <span class="font-serif text-xl md:text-2xl font-normal tracking-wide text-white leading-none">Capri DMC</span>
-        <span class="text-[9px] uppercase tracking-widest text-brand-gold font-semibold bg-brand-gold/15 px-1.5 py-0.5 rounded border border-brand-gold/30">B2B</span>
+  <!-- Left: Luxury Menu Trigger -->
+  <div class="flex items-center gap-4">
+    <button
+      id="open-mega-menu-btn"
+      class="group flex items-center gap-3 text-white/90 hover:text-brand-gold transition-colors focus:outline-none cursor-pointer"
+      aria-label="Apri Menu di Navigazione"
+    >
+      <div class="flex flex-col gap-1.5 w-6">
+        <span class="w-6 h-[1.5px] bg-current transition-all duration-300"></span>
+        <span class="w-4 h-[1.5px] bg-current transition-all duration-300 group-hover:w-6"></span>
       </div>
-      <span class="text-[8px] md:text-[9px] uppercase tracking-[0.25em] text-white/70 font-light mt-1">Your Roots in Capri</span>
-    </div>
-  </a>
+      <span class="text-[11px] uppercase tracking-[0.28em] font-medium hidden sm:inline-block">Menu</span>
+    </button>
+  </div>
 
-  <!-- Desktop Navigation -->
-  <nav aria-label="Main Navigation" class="hidden lg:flex items-center gap-8 xl:gap-10 text-[11px] uppercase tracking-[0.25em] font-medium text-white/90">
-    {navLinks.map((link) => (
-      <a
-        href={link.href}
-        class="relative py-1 hover:text-brand-gold transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-brand-gold after:transition-all after:duration-300 hover:after:w-full"
-      >
-        {link.name}
-      </a>
-    ))}
-  </nav>
-
-  <!-- CTA Action & Phone -->
-  <div class="hidden md:flex items-center gap-6">
-    <a
-      href="tel:+393335943947"
-      class="text-xs text-white/80 hover:text-brand-gold flex items-center gap-2 tracking-wider transition-colors duration-300"
-      title="24/7 Island Dispatch"
-    >
-      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-      <span class="font-mono text-[11px]">+39 333 594 3947</span>
-    </a>
-
-    <a
-      href={emailContact}
-      class="relative group px-6 py-2.5 text-[11px] uppercase tracking-[0.2em] font-semibold text-brand-gold border border-brand-gold overflow-hidden transition-all duration-500 hover:text-brand-navy shadow-sm"
-    >
-      <span class="absolute inset-0 w-full h-full bg-brand-gold -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out -z-10"></span>
-      <span>Email Desk</span>
+  <!-- Center: Cartier-Style Typographic Brand Hallmark -->
+  <div class="absolute left-1/2 -translate-x-1/2 text-center pointer-events-auto">
+    <a href="#" class="flex flex-col items-center group focus:outline-none" aria-label="Capri DMC Home">
+      <span class="font-serif text-xl sm:text-2xl lg:text-3xl font-light tracking-[0.22em] text-white uppercase leading-none transition-colors duration-300 group-hover:text-brand-gold">
+        Capri DMC
+      </span>
+      <span class="text-[8px] sm:text-[9px] uppercase tracking-[0.32em] text-brand-gold/90 font-light mt-1.5">
+        Your Roots in Capri
+      </span>
     </a>
   </div>
 
-  <!-- Mobile Hamburger Button -->
-  <button
-    id="mobile-menu-btn"
-    class="lg:hidden p-2 text-white/90 hover:text-brand-gold focus:outline-none"
-    aria-label="Open mobile menu"
-  >
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-    </svg>
-  </button>
+  <!-- Right: Direct Advisor Desk & Contact -->
+  <div class="flex items-center gap-6 sm:gap-8">
+    <a
+      href={emailContact}
+      class="text-[10px] sm:text-[11px] uppercase tracking-[0.25em] font-medium text-white/90 hover:text-brand-gold transition-colors pb-0.5 border-b border-white/30 hover:border-brand-gold"
+    >
+      Advisor Desk
+    </a>
+  </div>
 </header>
 
-<!-- Mobile Drawer Overlay -->
+<!-- Off-Canvas / Full-Screen Luxury Mega-Menu (Cartier Architecture) -->
 <div
-  id="mobile-drawer"
-  class="fixed inset-0 z-50 bg-brand-dark/95 backdrop-blur-xl opacity-0 pointer-events-none transition-opacity duration-300 flex flex-col justify-between p-8 text-white lg:hidden"
+  id="mega-menu"
+  class="fixed inset-0 z-50 bg-[#07142E] text-white opacity-0 pointer-events-none transition-opacity duration-500 overflow-y-auto"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Menu Principale Capri DMC"
 >
-  <div class="flex justify-between items-center border-b border-white/10 pb-6">
+  <!-- Top Bar inside Mega-Menu -->
+  <div class="sticky top-0 left-0 w-full px-6 lg:px-16 py-6 flex items-center justify-between border-b border-white/10 bg-[#07142E]/95 backdrop-blur-md z-10">
     <div class="flex items-center gap-3">
       <picture>
         <source srcset="/logo.webp" type="image/webp" />
         <img
           src="/logo.png"
-          alt="Capri DMC Logo"
-          width="48"
-          height="48"
-          class="h-12 w-12 rounded-full object-contain ring-1 ring-brand-gold/60"
-          loading="lazy"
-          decoding="async"
+          alt="Capri DMC Seal"
+          width="36"
+          height="36"
+          class="h-9 w-9 rounded-full object-contain ring-1 ring-brand-gold/40"
         />
       </picture>
-      <div>
-        <span class="font-serif text-xl block leading-none">Capri DMC</span>
-        <span class="text-[8px] uppercase tracking-widest text-brand-gold">Your Roots in Capri</span>
+      <div class="flex flex-col">
+        <span class="font-serif text-lg tracking-[0.2em] uppercase text-white leading-none">Capri DMC</span>
+        <span class="text-[8px] uppercase tracking-[0.25em] text-brand-gold mt-0.5">B2B Destination Management</span>
       </div>
     </div>
+
+    <!-- Close Button -->
     <button
-      id="close-drawer-btn"
-      class="p-2 text-white/70 hover:text-brand-gold focus:outline-none"
-      aria-label="Close mobile menu"
+      id="close-mega-menu-btn"
+      class="group flex items-center gap-2.5 text-[11px] uppercase tracking-[0.28em] text-white/70 hover:text-brand-gold transition-colors focus:outline-none cursor-pointer"
+      aria-label="Chiudi Menu"
     >
-      <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <span>Close</span>
+      <svg class="w-5 h-5 transition-transform duration-300 group-hover:rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
   </div>
 
-  <!-- Mobile Links -->
-  <nav aria-label="Mobile Navigation" class="flex flex-col gap-6 py-8">
-    <span class="text-[10px] uppercase tracking-[0.3em] text-brand-gold font-semibold">Navigation</span>
-    {navLinks.map((link) => (
-      <a
-        href={link.href}
-        class="drawer-link font-serif text-3xl hover:text-brand-gold transition-colors duration-200"
-      >
-        {link.name}
-      </a>
-    ))}
-    <div class="pt-4 border-t border-white/10 flex flex-col gap-3">
-      <a
-        href={emailContact}
-        class="drawer-link block text-center bg-brand-gold text-brand-navy font-semibold uppercase tracking-[0.2em] text-xs py-3.5 hover:bg-white transition-colors duration-300"
-      >
-        Email: partnerships@capridmc.com
-      </a>
-      <a
-        href={phoneContact}
-        class="drawer-link block text-center border border-white/20 text-white font-semibold uppercase tracking-[0.2em] text-xs py-3 hover:border-brand-gold hover:text-brand-gold transition-colors duration-300 font-mono"
-      >
-        Tel: +39 333 594 3947
-      </a>
+  <!-- Main Menu Body: 4 Clean Textual Columns with Abundant Whitespace -->
+  <div class="max-w-7xl mx-auto px-6 lg:px-16 py-16 lg:py-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+    
+    <!-- Colonna 1: Exclusive Solutions -->
+    <div class="space-y-6">
+      <div class="pb-3 border-b border-white/10">
+        <span class="text-brand-gold uppercase tracking-[0.3em] text-[10px] font-semibold block">
+          01 · Exclusive Solutions
+        </span>
+      </div>
+      <ul class="space-y-4">
+        <li>
+          <a href="#services-boats" class="menu-nav-link group block">
+            <span class="font-serif text-xl sm:text-2xl text-white group-hover:text-brand-gold transition-colors block">
+              Private Boat Tours & Gozzo
+            </span>
+            <span class="text-[10px] text-white/50 tracking-wider font-light block mt-0.5">
+              Riva speedboats, Faraglioni passages & private tenders
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#services-transfers" class="menu-nav-link group block">
+            <span class="font-serif text-xl sm:text-2xl text-white group-hover:text-brand-gold transition-colors block">
+              Transfers & Suite Check-In
+            </span>
+            <span class="text-[10px] text-white/50 tracking-wider font-light block mt-0.5">
+              Airport tarmac to 5★ suite room placement
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#services-concierge" class="menu-nav-link group block">
+            <span class="font-serif text-xl sm:text-2xl text-white group-hover:text-brand-gold transition-colors block">
+              24/7 Island Conciergerie
+            </span>
+            <span class="text-[10px] text-white/50 tracking-wider font-light block mt-0.5">
+              White-label client representation & cliffside dining
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#services-events" class="menu-nav-link group block">
+            <span class="font-serif text-xl sm:text-2xl text-white group-hover:text-brand-gold transition-colors block">
+              Weddings & Bar Mitzvahs
+            </span>
+            <span class="text-[10px] text-white/50 tracking-wider font-light block mt-0.5">
+              Historic villa buyouts, Torah readings & Kosher catering
+            </span>
+          </a>
+        </li>
+      </ul>
     </div>
-  </nav>
 
-  <!-- Mobile Footer / Operations -->
-  <div class="border-t border-white/10 pt-6 space-y-2 text-xs text-white/60 font-light">
-    <p class="text-brand-gold uppercase tracking-widest font-semibold text-[10px]">24/7 Operations · Capri, Italy</p>
-    <p>Direct B2B Hotline: <a href="tel:+393335943947" class="text-white hover:underline">+39 333 594 3947</a></p>
-    <p class="text-[10px] text-white/40">Women-owned · Spin-off from Nesea Capri Tours & Events</p>
+    <!-- Colonna 2: Custom Experiences -->
+    <div class="space-y-6">
+      <div class="pb-3 border-b border-white/10">
+        <span class="text-brand-gold uppercase tracking-[0.3em] text-[10px] font-semibold block">
+          02 · Custom Experiences
+        </span>
+      </div>
+      <ul class="space-y-3.5">
+        <li>
+          <a href="#experiences" class="menu-nav-link group block">
+            <span class="font-serif text-lg sm:text-xl text-white group-hover:text-brand-gold transition-colors block">
+              Exclusive Guided Island Tours
+            </span>
+            <span class="text-[10px] text-white/50 tracking-wider font-light">Certified native art historians</span>
+          </a>
+        </li>
+        <li>
+          <a href="#experiences" class="menu-nav-link group block">
+            <span class="font-serif text-lg sm:text-xl text-white group-hover:text-brand-gold transition-colors block">
+              Artisanal Sandals & Textiles
+            </span>
+            <span class="text-[10px] text-white/50 tracking-wider font-light">Heritage atelier commissions</span>
+          </a>
+        </li>
+        <li>
+          <a href="#experiences" class="menu-nav-link group block">
+            <span class="font-serif text-lg sm:text-xl text-white group-hover:text-brand-gold transition-colors block">
+              In-Villa Cooking Classes
+            </span>
+            <span class="text-[10px] text-white/50 tracking-wider font-light">Authentic Caprese culinary masters</span>
+          </a>
+        </li>
+        <li>
+          <a href="#experiences" class="menu-nav-link group block">
+            <span class="font-serif text-lg sm:text-xl text-white group-hover:text-brand-gold transition-colors block">
+              Personal Shopper & Shipping
+            </span>
+            <span class="text-[10px] text-white/50 tracking-wider font-light">Via Camerelle to door-to-door freight</span>
+          </a>
+        </li>
+        <li>
+          <a href="#experiences" class="menu-nav-link group block">
+            <span class="font-serif text-lg sm:text-xl text-white group-hover:text-brand-gold transition-colors block">
+              Hidden Hiking & Secret Routes
+            </span>
+            <span class="text-[10px] text-white/50 tracking-wider font-light">Sentiero dei Fortini & Monte Solaro</span>
+          </a>
+        </li>
+        <li>
+          <a href="#experiences" class="menu-nav-link group block">
+            <span class="font-serif text-lg sm:text-xl text-white group-hover:text-brand-gold transition-colors block">
+              Personal Trainer & Marine Sports
+            </span>
+            <span class="text-[10px] text-white/50 tracking-wider font-light">Sunrise yoga & private kayaking</span>
+          </a>
+        </li>
+        <li>
+          <a href="#experiences" class="menu-nav-link group block">
+            <span class="font-serif text-lg sm:text-xl text-white group-hover:text-brand-gold transition-colors block">
+              Bespoke Babysitting & Pet Care
+            </span>
+            <span class="text-[10px] text-white/50 tracking-wider font-light">Vetted multilingual family freedom</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Colonna 3: The Maison & Lineage -->
+    <div class="space-y-6">
+      <div class="pb-3 border-b border-white/10">
+        <span class="text-brand-gold uppercase tracking-[0.3em] text-[10px] font-semibold block">
+          03 · The Maison
+        </span>
+      </div>
+      <ul class="space-y-4">
+        <li>
+          <a href="#story" class="menu-nav-link group block">
+            <span class="font-serif text-xl sm:text-2xl text-white group-hover:text-brand-gold transition-colors block">
+              The Local Authority
+            </span>
+            <span class="text-[10px] text-white/50 tracking-wider font-light block mt-0.5">
+              Spin-off from Nesea Capri Tours & Events
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#story" class="menu-nav-link group block">
+            <span class="font-serif text-xl sm:text-2xl text-white group-hover:text-brand-gold transition-colors block">
+              Founding Leadership
+            </span>
+            <span class="text-[10px] text-white/50 tracking-wider font-light block mt-0.5">
+              Giusy Perrotta · Melania Esposito · Roberta De Martino
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#logistics" class="menu-nav-link group block">
+            <span class="font-serif text-xl sm:text-2xl text-white group-hover:text-brand-gold transition-colors block">
+              Interactive 3D Globe
+            </span>
+            <span class="text-[10px] text-white/50 tracking-wider font-light block mt-0.5">
+              Geodesic distances & private flight times to Capri
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#advisors" class="menu-nav-link group block">
+            <span class="font-serif text-xl sm:text-2xl text-white group-hover:text-brand-gold transition-colors block">
+              B2B Advisor Tariffs
+            </span>
+            <span class="text-[10px] text-white/50 tracking-wider font-light block mt-0.5">
+              Protected commission integrity & net tariff access
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Colonna 4: B2B Advisor Desk & Headquarters -->
+    <div class="space-y-6">
+      <div class="pb-3 border-b border-white/10">
+        <span class="text-brand-gold uppercase tracking-[0.3em] text-[10px] font-semibold block">
+          04 · B2B Command Desk
+        </span>
+      </div>
+      
+      <div class="space-y-4 text-xs font-light text-white/70">
+        <div>
+          <span class="text-[9px] uppercase tracking-[0.25em] text-brand-gold block mb-1">Direct Advisor Desk</span>
+          <a href={emailContact} class="text-white hover:text-brand-gold transition-colors font-mono text-xs break-all">
+            partnerships@capridmc.com
+          </a>
+        </div>
+
+        <div>
+          <span class="text-[9px] uppercase tracking-[0.25em] text-brand-gold block mb-1">Island Headquarters</span>
+          <p class="leading-relaxed text-white/60">
+            80076 Capri, Metropolitan City of Naples<br />
+            Campania, Italy
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-white/10 flex flex-col gap-2">
+          <a
+            href="/ai-context"
+            class="inline-flex items-center gap-1.5 text-xs text-white/70 hover:text-brand-gold transition-colors"
+          >
+            <span>AI Context Dossier</span>
+            <span class="text-[9px] bg-brand-gold/20 text-brand-gold px-1.5 py-0.5 rounded font-mono">GEO</span>
+          </a>
+          <a
+            href="/llms.txt"
+            target="_blank"
+            class="text-[11px] text-white/40 hover:text-white transition-colors"
+          >
+            llms.txt Specification &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Cartier-Style Editorial Signature -->
+  <div class="max-w-7xl mx-auto px-6 lg:px-16 pb-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-white/40 gap-4">
+    <p>A Women-Owned Enterprise · Spin-off from Nesea Capri Tours & Events</p>
+    <p class="font-serif italic text-brand-gold/80">"From Capri for Capri · Your Roots in Capri"</p>
   </div>
 </div>
+
+<!-- Mega-Menu Open / Close Script -->
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const openBtn = document.getElementById("open-mega-menu-btn");
+    const closeBtn = document.getElementById("close-mega-menu-btn");
+    const megaMenu = document.getElementById("mega-menu");
+    const menuLinks = document.querySelectorAll(".menu-nav-link");
+
+    function openMenu() {
+      if (!megaMenu) return;
+      megaMenu.classList.remove("opacity-0", "pointer-events-none");
+      megaMenu.classList.add("opacity-100", "pointer-events-auto");
+      document.body.classList.add("overflow-hidden");
+    }
+
+    function closeMenu() {
+      if (!megaMenu) return;
+      megaMenu.classList.add("opacity-0", "pointer-events-none");
+      megaMenu.classList.remove("opacity-100", "pointer-events-auto");
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    if (openBtn) openBtn.addEventListener("click", openMenu);
+    if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+    menuLinks.forEach((link) => link.addEventListener("click", closeMenu));
+
+    // Keyboard ESC support
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+  });
+</script>

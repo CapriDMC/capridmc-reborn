@@ -1,209 +1,213 @@
 ---
-// "The Local Authority" Pinned Editorial Storytelling Section with Authentic Team & Lineage
-const emailContact = "mailto:partnerships@capridmc.com?subject=Partnership%20Capri%20DMC";
-const phoneContact = "tel:+393335943947";
-
+// Cartier-Inspired Editorial Storytelling: The Maison & Lineage
 const teamFounders = [
-  { name: "Giusy Perrotta", role: "Co-Founder & Director of Operations", note: "Native Caprese with 15+ years orchestrating maritime logistics and VIP advisor relations." },
-  { name: "Melania Esposito", role: "Co-Founder & Head of Event Production", note: "Specialist in private historic villa buyouts, weddings, and Jewish milestone celebrations." },
-  { name: "Roberta De Martino", role: "Co-Founder & Lead Cultural Curator", note: "Licensed art historian leading exclusive cultural itineraries and high-level island protocol." }
+  {
+    name: "Giusy Perrotta",
+    role: "Co-Founder & Director of Operations",
+    note: "Native Caprese with 15+ years orchestrating maritime logistics and VIP advisor relations."
+  },
+  {
+    name: "Melania Esposito",
+    role: "Co-Founder & Head of Event Production",
+    note: "Specialist in private historic villa buyouts, weddings, and Jewish milestone celebrations."
+  },
+  {
+    name: "Roberta De Martino",
+    role: "Co-Founder & Lead Cultural Curator",
+    note: "Licensed art historian leading exclusive cultural itineraries and high-level island protocol."
+  }
 ];
+
+const emailContact = "mailto:partnerships@capridmc.com?subject=Partnership%20Capri%20DMC";
 ---
 
-<section id="story" class="relative bg-white text-brand-navy border-b border-gray-100 flex flex-col md:flex-row">
-  
-  <!-- Left Side: Pinned on Desktop via GSAP ScrollTrigger -->
-  <div
-    id="story-left"
-    class="md:w-5/12 lg:w-5/12 flex flex-col justify-between p-8 sm:p-12 lg:p-20 bg-brand-offwhite border-r border-gray-200/80 min-h-[50vh] md:min-h-screen"
-  >
-    <div class="story-left-content max-w-lg">
-      <div class="inline-flex items-center gap-2 mb-6">
-        <span class="w-2.5 h-[1px] bg-brand-gold"></span>
-        <span class="text-brand-gold uppercase tracking-[0.3em] text-[11px] font-semibold">
-          The Local Authority
+<section id="story" class="relative cartier-layer-solid-white text-brand-navy py-28 lg:py-36 px-6 lg:px-16 overflow-hidden">
+  <div class="max-w-7xl mx-auto space-y-28 lg:space-y-36">
+
+    <!-- Section Header (Cartier Minimalism & Negative Space) -->
+    <div class="max-w-3xl mx-auto text-center space-y-4 story-header gsap-reveal">
+      <div class="inline-flex items-center justify-center gap-3">
+        <span class="w-6 h-[1px] bg-brand-gold"></span>
+        <span class="text-brand-gold uppercase tracking-[0.32em] text-[10px] sm:text-xs font-semibold">
+          The Local Authority · Est. 2010
         </span>
+        <span class="w-6 h-[1px] bg-brand-gold"></span>
       </div>
 
-      <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.08] text-brand-navy font-normal mb-8">
+      <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-brand-navy font-light leading-[1.08]">
         Your Team in Capri. <br />
-        The best partner to plan <br />
-        <span class="italic text-brand-gold">your trip.</span>
+        <span class="italic text-brand-gold font-light">The best partner to plan your trip.</span>
       </h2>
 
-      <p class="text-gray-600 font-light text-base lg:text-lg leading-relaxed mb-8">
+      <p class="text-gray-600 font-light text-base lg:text-lg max-w-2xl mx-auto leading-relaxed pt-2">
         Since 2010, our founders have woven their lives into the island's fabric. We are the direct bridge between global luxury travel designers and the authentic heartbeat of Capri.
       </p>
 
-      <div class="pt-6 border-t border-gray-200/80 hidden lg:block">
-        <div class="flex items-center gap-4 text-xs tracking-wider text-brand-navy/80 uppercase font-semibold">
-          <span class="px-3 py-1 bg-brand-navy text-white text-[10px]">Spin-Off</span>
-          <span>From Nesea Capri Tours & Events</span>
-        </div>
+      <div class="pt-2">
+        <span class="inline-block px-3 py-1 bg-brand-navy/5 text-brand-navy text-[10px] uppercase tracking-[0.2em] font-medium border border-brand-navy/15">
+          Elite Spin-Off from Nesea Capri Tours & Events
+        </span>
       </div>
     </div>
 
-    <!-- Pinned Footer Signature -->
-    <div class="hidden md:flex items-center justify-between pt-12 border-t border-gray-200/60 text-xs text-gray-500 font-serif italic">
-      <span>Capri, 80076 (NA) · Italy</span>
-      <span class="text-brand-gold not-italic uppercase tracking-[0.2em] font-sans text-[10px] font-semibold">Women-Owned · Est. 2010</span>
-    </div>
-  </div>
-
-  <!-- Right Side: Narrative Editorial Scroll with Generous Whitespace -->
-  <div class="md:w-7/12 lg:w-7/12 p-8 sm:p-12 lg:p-20 space-y-24 lg:space-y-32">
-    
-    <!-- Item 1: The B2B Evolution & Founders -->
-    <div class="story-right-item gsap-reveal">
-      <span class="text-brand-gold font-serif text-3xl mb-4 block italic">01. The Lineage</span>
-      <h3 class="font-serif text-3xl lg:text-4xl text-brand-navy mb-6">
-        From Nesea Capri to Elite Destination Management
-      </h3>
-      <p class="text-lg lg:text-xl leading-relaxed font-light text-gray-700 mb-6">
-        Capri Destination Management Company is the dedicated Business-to-Business (B2B) spin-off from <strong class="text-brand-navy font-medium">Nesea Capri Tours & Events</strong>.
-      </p>
-      <p class="text-gray-500 leading-relaxed text-sm lg:text-base font-light mb-8">
-        While Nesea established an infallible standard for island excursions, Capri DMC was forged specifically to serve luxury travel agencies, Virtuoso advisors, corporate incentive planners, and high-net-worth VIPs who require seamless logistical execution without intermediaries.
-      </p>
-
-      <!-- Founders Trio Card -->
-      <div class="bg-brand-cream p-6 lg:p-8 rounded-sm border border-brand-gold/30">
-        <span class="text-[10px] uppercase tracking-[0.25em] text-brand-gold font-semibold block mb-2">Founding Leadership</span>
-        <h4 class="font-serif text-2xl text-brand-navy mb-4 font-normal">Giusy Perrotta · Melania Esposito · Roberta De Martino</h4>
-        <p class="text-gray-600 font-light text-xs sm:text-sm leading-relaxed mb-6">
-          A trio of vibrant, native Capresi whose intimate knowledge of every port, private villa, and cliffside trail on the island guarantees flawless, uncompromised execution for your travel clients.
-        </p>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-brand-navy/10 text-xs">
-          {teamFounders.map((f) => (
-            <div>
-              <span class="font-semibold text-brand-navy block text-[11px]">{f.name}</span>
-              <span class="text-brand-gold text-[9px] uppercase tracking-wider block mb-1">{f.role}</span>
-              <span class="text-gray-500 text-[10px] font-light leading-snug block">{f.note}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-
-    <!-- Item 2: Authentic Capri Lifestyle Photography (Faraglioni from Private Terraces) -->
-    <div class="story-right-item gsap-reveal img-zoom-container aspect-[4/5] bg-gray-100 w-full relative shadow-2xl overflow-hidden rounded-sm">
-      <picture class="w-full h-full block">
-        <source srcset="/images/capri/capri-faraglioni-rocks.webp" type="image/webp" />
-        <img
-          src="/images/capri/capri-faraglioni-rocks.jpg"
-          class="w-full h-full object-cover transition-all duration-1000"
-          alt="Authentic Capri Faraglioni and Mediterranean Sea"
-          width="1600"
-          height="1200"
-          loading="lazy"
-          decoding="async"
-        />
-      </picture>
-      <div class="absolute inset-0 border border-white/40 m-6 pointer-events-none z-10"></div>
-      <div class="absolute bottom-10 left-10 right-10 bg-brand-navy/90 backdrop-blur-md p-6 z-20 text-white">
-        <span class="text-[9px] uppercase tracking-[0.3em] text-brand-gold block mb-1 font-semibold">Editorial Note</span>
-        <p class="font-serif text-xl italic text-white/95">"Your Roots in Capri — We open doors closed to standard tourism."</p>
-      </div>
-    </div>
-
-    <!-- Item 3: Core Philosophy "From Capri for Capri" -->
-    <div class="story-right-item gsap-reveal">
-      <span class="text-brand-gold font-serif text-3xl mb-4 block italic">02. Authentic Heritage</span>
-      <h3 class="font-serif text-3xl lg:text-4xl text-brand-navy mb-6">
-        From Capri for Capri
-      </h3>
-      <p class="text-gray-600 leading-relaxed text-base lg:text-lg font-light mb-6">
-        We are a <strong>Women-Owned business</strong> deeply intertwined with Capri's maritime guilds, historic private estate custodians, and municipal transit dispatchers.
-      </p>
-      <p class="text-gray-500 leading-relaxed text-sm lg:text-base font-light mb-8">
-        We do not outsource to mainland operators or third-party call centers. When an advisor reaches out at 2:00 AM because a private jet arrived ahead of schedule in Naples, our island team is already dispatching private boat skippers and luxury Mercedes-Maybach chauffeurs directly on the ground.
-      </p>
+    <!-- 50/50 Alternating Row 1: The Lineage & Faraglioni Photography -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
       
-      <!-- Statistics Badges -->
-      <div class="grid grid-cols-2 gap-6 pt-6 border-t border-gray-200">
-        <div>
-          <span class="font-serif text-4xl text-brand-gold block font-normal">24/7</span>
-          <span class="text-xs uppercase tracking-wider text-gray-500 font-semibold">Island Command Operations</span>
+      <!-- Text Column (6 cols) -->
+      <div class="lg:col-span-6 space-y-6 story-reveal-item gsap-reveal">
+        <div class="space-y-2">
+          <span class="text-brand-gold font-serif text-2xl lg:text-3xl italic block">01 / The Lineage</span>
+          <h3 class="font-serif text-3xl sm:text-4xl text-brand-navy font-normal leading-tight">
+            From Nesea Capri to Elite Destination Management
+          </h3>
         </div>
-        <div>
-          <span class="font-serif text-4xl text-brand-navy block font-normal">100%</span>
-          <span class="text-xs uppercase tracking-wider text-gray-500 font-semibold">Capri Resident Team</span>
+
+        <p class="text-gray-700 font-light text-base lg:text-lg leading-relaxed">
+          Capri Destination Management Company is the dedicated Business-to-Business (B2B) spin-off from <strong class="text-brand-navy font-medium">Nesea Capri Tours & Events</strong>.
+        </p>
+
+        <p class="text-gray-500 font-light text-sm sm:text-base leading-relaxed">
+          While Nesea established an infallible standard for island excursions, Capri DMC was forged specifically to serve luxury travel agencies, Virtuoso advisors, corporate incentive planners, and high-net-worth VIPs who require seamless logistical execution without intermediaries.
+        </p>
+
+        <div class="pt-4 border-t border-gray-200">
+          <div class="grid grid-cols-2 gap-6">
+            <div>
+              <span class="font-serif text-3xl sm:text-4xl text-brand-gold block font-light">Est. 2010</span>
+              <span class="text-[10px] uppercase tracking-wider text-gray-500 font-medium">Island Lineage</span>
+            </div>
+            <div>
+              <span class="font-serif text-3xl sm:text-4xl text-brand-navy block font-light">100%</span>
+              <span class="text-[10px] uppercase tracking-wider text-gray-500 font-medium">Resident Capresi</span>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- Image Column (6 cols) -->
+      <div class="lg:col-span-6 story-reveal-item gsap-reveal">
+        <div class="img-zoom-container aspect-[4/3] w-full relative overflow-hidden">
+          <picture class="w-full h-full block">
+            <source srcset="/images/capri/capri-faraglioni-rocks.webp" type="image/webp" />
+            <img
+              src="/images/capri/capri-faraglioni-rocks.jpg"
+              alt="Authentic Capri Faraglioni and Mediterranean Sea"
+              width="1600"
+              height="1200"
+              class="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#07142E]/60 via-transparent to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6 text-white text-xs font-serif italic">
+            "Your Roots in Capri — We open doors closed to standard tourism."
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Item 4: Authentic Anacapri Faro Sunset Aperitivo -->
-    <div class="story-right-item gsap-reveal img-zoom-container aspect-[16/10] bg-gray-100 w-full relative shadow-xl overflow-hidden rounded-sm">
-      <picture class="w-full h-full block">
-        <source srcset="/images/capri/anacapri-faro-sunset-aperitivo.webp" type="image/webp" />
-        <img
-          src="/images/capri/anacapri-faro-sunset-aperitivo.jpg"
-          class="w-full h-full object-cover"
-          alt="Capri Faro Sunset Champagne Aperitivo"
-          width="1600"
-          height="1000"
-          loading="lazy"
-          decoding="async"
-        />
-      </picture>
-      <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/70 via-transparent to-transparent"></div>
-      <div class="absolute bottom-6 left-6 text-white text-xs tracking-widest uppercase font-semibold flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-brand-gold"></span>
-        Punta Carena Faro · Private Sunset Gastronomy
+    <!-- 50/50 Alternating Row 2: Faro Sunset Image (Left) & Founders Trio (Right) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+      
+      <!-- Image Column (6 cols, Inverted Left) -->
+      <div class="lg:col-span-6 order-2 lg:order-1 story-reveal-item gsap-reveal">
+        <div class="img-zoom-container aspect-[4/3] w-full relative overflow-hidden">
+          <picture class="w-full h-full block">
+            <source srcset="/images/capri/anacapri-faro-sunset-aperitivo.webp" type="image/webp" />
+            <img
+              src="/images/capri/anacapri-faro-sunset-aperitivo.jpg"
+              alt="Capri Faro Sunset Champagne Aperitivo"
+              width="1600"
+              height="1200"
+              class="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+          <div class="absolute inset-0 bg-gradient-to-t from-[#07142E]/60 via-transparent to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6 text-white text-[11px] uppercase tracking-widest font-medium">
+            Punta Carena Faro · Private Sunset Gastronomy
+          </div>
+        </div>
       </div>
-    </div>
 
-    <!-- Item 5: The B2B Advisor Guarantee -->
-    <div class="story-right-item gsap-reveal pb-16">
-      <span class="text-brand-gold font-serif text-3xl mb-4 block italic">03. Advisor Partnership</span>
-      <h3 class="font-serif text-3xl lg:text-4xl text-brand-navy mb-6">
-        Protecting Your Client Reputation
-      </h3>
-      <p class="text-gray-600 leading-relaxed text-base font-light mb-8">
-        Every luxury itinerary we execute is a direct reflection of your travel agency. We offer complete white-label service delivery, confidential client briefings, and zero-conflict commission protection.
-      </p>
-      <div class="flex flex-wrap items-center gap-4">
-        <a
-          href={emailContact}
-          class="inline-flex items-center gap-3 px-8 py-4 bg-brand-navy text-white text-xs uppercase tracking-[0.2em] font-semibold hover:bg-brand-gold hover:text-brand-navy transition-all duration-300 shadow-md"
-        >
-          <span>Email: partnerships@capridmc.com</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-          </svg>
-        </a>
-        <a
-          href={phoneContact}
-          class="inline-flex items-center gap-2 px-6 py-4 border border-brand-navy/30 text-brand-navy text-xs uppercase tracking-[0.2em] font-semibold hover:border-brand-gold hover:text-brand-gold transition-all duration-300 font-mono"
-        >
-          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span>+39 333 594 3947</span>
-        </a>
+      <!-- Text Column (6 cols, Inverted Right) -->
+      <div class="lg:col-span-6 order-1 lg:order-2 space-y-6 story-reveal-item gsap-reveal">
+        <div class="space-y-2">
+          <span class="text-brand-gold font-serif text-2xl lg:text-3xl italic block">02 / The Leadership</span>
+          <h3 class="font-serif text-3xl sm:text-4xl text-brand-navy font-normal leading-tight">
+            From Capri for Capri
+          </h3>
+        </div>
+
+        <p class="text-gray-600 font-light text-base leading-relaxed">
+          We are a <strong>Women-Owned business</strong> deeply intertwined with Capri's maritime guilds, historic private estate custodians, and municipal transit dispatchers.
+        </p>
+
+        <!-- Founders Trio Grid (Clean, Flat, Minimalist) -->
+        <div class="pt-4 border-t border-gray-200 space-y-4">
+          <span class="text-[10px] uppercase tracking-[0.25em] text-brand-gold font-semibold block">
+            Founding Leadership
+          </span>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {teamFounders.map((founder) => (
+              <div class="space-y-1">
+                <span class="font-serif text-lg text-brand-navy block leading-snug">
+                  {founder.name}
+                </span>
+                <span class="text-[9px] uppercase tracking-wider text-brand-gold font-medium block">
+                  {founder.role}
+                </span>
+                <p class="text-[11px] text-gray-500 font-light leading-relaxed">
+                  {founder.note}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="pt-4">
+          <a
+            href={emailContact}
+            class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-semibold text-brand-navy hover:text-brand-gold transition-colors pb-1 border-b border-brand-navy/30 hover:border-brand-gold"
+          >
+            <span>Inquire Advisor Partnership</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
       </div>
+
     </div>
 
   </div>
 </section>
 
-<!-- Pinned Story Scroll GSAP Script -->
+<!-- GSAP ScrollTrigger for The Authority -->
 <script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
     if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
-      const mm = gsap.matchMedia();
+      gsap.fromTo(".story-header",
+        { y: 30, autoAlpha: 0 },
+        {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.9,
+          ease: "power3.out",
+          force3D: true,
+          scrollTrigger: {
+            trigger: ".story-header",
+            start: "top 85%",
+            once: true
+          }
+        }
+      );
 
-      mm.add("(min-width: 768px)", () => {
-        ScrollTrigger.create({
-          trigger: "#story",
-          start: "top top",
-          end: "bottom bottom",
-          pin: "#story-left",
-          pinSpacing: false
-        });
-      });
-
-      gsap.utils.toArray(".story-right-item").forEach((item) => {
-        gsap.fromTo(
-          item,
+      gsap.utils.toArray(".story-reveal-item").forEach((el) => {
+        gsap.fromTo(el,
           { y: 35, autoAlpha: 0 },
           {
             y: 0,
@@ -212,8 +216,8 @@ const teamFounders = [
             ease: "power2.out",
             force3D: true,
             scrollTrigger: {
-              trigger: item,
-              start: "top 85%",
+              trigger: el,
+              start: "top 80%",
               once: true
             }
           }

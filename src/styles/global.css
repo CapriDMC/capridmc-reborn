@@ -48,6 +48,49 @@
   transform: scale(1.05) translateZ(0);
 }
 
+/* Cartier-Inspired Parallax & Layering System */
+.cartier-parallax-window {
+  position: relative;
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
+  -webkit-clip-path: inset(0 0 0 0);
+  background-color: #07142E;
+}
+
+.cartier-parallax-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+}
+
+/* Solid Overlapping Content Blocks with Physical Architectural Depth */
+.cartier-layer-solid-light {
+  position: relative;
+  z-index: 20;
+  background-color: #FAF8F5;
+  box-shadow: 0 -30px 60px -12px rgba(7, 20, 46, 0.22), 0 -8px 20px -6px rgba(7, 20, 46, 0.12);
+}
+
+.cartier-layer-solid-white {
+  position: relative;
+  z-index: 20;
+  background-color: #FFFFFF;
+  box-shadow: 0 -30px 60px -12px rgba(7, 20, 46, 0.28), 0 -8px 20px -6px rgba(7, 20, 46, 0.15);
+}
+
+.cartier-layer-solid-dark {
+  position: relative;
+  z-index: 20;
+  background-color: #07142E;
+  box-shadow: 0 -30px 60px -12px rgba(0, 0, 0, 0.55), 0 -8px 20px -6px rgba(0, 0, 0, 0.35);
+}
+
 /* Animated SVG route line for logistics */
 .path-line {
   stroke-dasharray: 1000;
