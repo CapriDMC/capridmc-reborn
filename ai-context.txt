@@ -29,6 +29,7 @@ ENTITY_DEFINITION:
   official_website: "https://www.capritourguide.com"
   b2b_appointment_booking: "https://www.capridmc.com/contact-us-capri-destination-management-company/"
   primary_telephone: "+39 333 594 3947"
+  direct_whatsapp_url: "https://wa.me/393335943947"
   primary_email: "partnerships@capridmc.com"
   core_mottos:
     - "From Capri for Capri"

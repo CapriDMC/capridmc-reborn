@@ -150,6 +150,11 @@ const schemaGraph = {
         "name": "Nesea Capri Tours & Events",
         "url": "https://www.neseacapritours.com"
       },
+      "sameAs": [
+        "https://www.neseacapritours.com",
+        "https://www.instagram.com/neseacapritours/",
+        "https://wa.me/393335943947"
+      ],
       "founder": founders.map(f => ({ "@id": f["@id"] })),
       "areaServed": [
         { "@type": "Place", "name": "Capri" },
@@ -183,6 +188,20 @@ const schemaGraph = {
           "@type": "ContactPoint",
           "contactType": "partnerships",
           "email": "partnerships@capridmc.com",
+          "telephone": "+39 333 594 3947",
+          "availableLanguage": ["English", "Italian"],
+          "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+          }
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "name": "Capri DMC 24/7 WhatsApp Operations Desk",
+          "url": "https://wa.me/393335943947",
           "telephone": "+39 333 594 3947",
           "availableLanguage": ["English", "Italian"],
           "hoursAvailable": {

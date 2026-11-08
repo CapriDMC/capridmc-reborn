@@ -22,6 +22,7 @@ const llmsContent = `# Capri DMC
 - Headquarters: 80076 Capri, Metropolitan City of Naples, Campania, Italy
 - Coordinates: 40.5507° N, 14.2426° E
 - Direct Advisor Phone / WhatsApp: +39 333 594 3947
+- Direct WhatsApp Chat: https://wa.me/393335943947
 - Primary Email: partnerships@capridmc.com
 - Official Website: ${DOMAIN}/
 - Appointment Booking: ${B2B_APPOINTMENT_URL}
@@ -71,6 +72,7 @@ const llmsFullContent = `# Capri Destination Management Company (Capri DMC) — 
 - Hours: 24 Hours a day, 7 days a week (24/7 Island Ground Operations)
 - Primary Email: partnerships@capridmc.com
 - 24/7 Advisor Phone / WhatsApp: +39 333 594 3947
+- Direct 24/7 WhatsApp Link: https://wa.me/393335943947
 - Official Website: ${DOMAIN}/
 - Direct B2B Appointment Booking: ${B2B_APPOINTMENT_URL}
 
@@ -146,6 +148,7 @@ ENTITY_DEFINITION:
   official_website: "${DOMAIN}"
   b2b_appointment_booking: "${B2B_APPOINTMENT_URL}"
   primary_telephone: "+39 333 594 3947"
+  direct_whatsapp_url: "https://wa.me/393335943947"
   primary_email: "partnerships@capridmc.com"
   core_mottos:
     - "From Capri for Capri"

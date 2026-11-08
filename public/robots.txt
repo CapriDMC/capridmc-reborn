@@ -10,9 +10,13 @@ User-agent: Claude-SearchBot
 Allow: /
 User-agent: Claude-User
 Allow: /
+User-agent: Claude-Web
+Allow: /
 User-agent: PerplexityBot
 Allow: /
 User-agent: Perplexity-User
+Allow: /
+User-agent: DeepSeekBot
 Allow: /
 User-agent: DuckAssistBot
 Allow: /
@@ -34,9 +38,17 @@ User-agent: Applebot-Extended
 Allow: /
 User-agent: Meta-ExternalAgent
 Allow: /
+User-agent: Meta-ExternalFetcher
+Allow: /
+User-agent: Bytespider
+Allow: /
 User-agent: CCBot
 Allow: /
 User-agent: Amazonbot
+Allow: /
+User-agent: cohere-ai
+Allow: /
+User-agent: Diffbot
 Allow: /
 
 # Canonical Sitemaps & AI Mirrors
@@ -44,3 +56,4 @@ Sitemap: https://www.capritourguide.com/sitemap-index.xml
 # AI Context Dossier: https://www.capritourguide.com/ai-context.txt
 # LLM Context: https://www.capritourguide.com/llms.txt
 # Full Dossier: https://www.capritourguide.com/llms-full.txt
+# Markdown Mirror: https://www.capritourguide.com/index.md

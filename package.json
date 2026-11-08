@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "build:llm": "node scripts/generate-llm-text.mjs",
-    "build": "node scripts/generate-llm-text.mjs && astro build",
+    "build:favicons": "node scripts/generate-favicons.mjs",
+    "build": "node scripts/generate-favicons.mjs && node scripts/generate-llm-text.mjs && astro build",
     "preview": "astro preview"
   },
   "dependencies": {
