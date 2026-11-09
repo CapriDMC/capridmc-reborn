@@ -12,14 +12,14 @@ interface Props {
 const {
   title = "Capri DMC | Luxury Destination Management Company & B2B Tour Operator",
   description = "Capri Destination Management Company is the elite B2B spin-off from Nesea Capri Tours & Events. Bespoke private boat tours, weddings, Bar Mitzvah, VIP logistics, and 24/7 on-island operations.",
-  ogImage = "https://www.capritourguide.com/images/capri/faraglioni-rocks-guided-tour-private-boat.jpg",
+  ogImage = "https://www.capridmc.com/images/capri/faraglioni-rocks-guided-tour-private-boat.jpg",
   ogImageAlt = "Capri Faraglioni Coastline and Mediterranean Sea",
   canonical,
   lang = "en"
 } = Astro.props;
 
 // Determine production canonical
-const siteUrl = "https://www.capritourguide.com";
+const siteUrl = "https://www.capridmc.com";
 const canonicalURL = canonical || new URL(Astro.url.pathname.replace(/\/$/, ""), siteUrl).href || siteUrl;
 
 // Preview environment check: workers.dev or explicit preview env must remain noindex

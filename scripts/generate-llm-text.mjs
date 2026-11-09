@@ -3,7 +3,7 @@ import path from 'path';
 
 const services = JSON.parse(fs.readFileSync('src/data/services.json', 'utf8'));
 
-const DOMAIN = 'https://www.capritourguide.com';
+const DOMAIN = 'https://www.capridmc.com';
 const B2B_APPOINTMENT_URL = 'https://www.capridmc.com/contact-us-capri-destination-management-company/';
 
 // ==============================================================================

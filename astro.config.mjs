@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://www.capritourguide.com',
+  site: 'https://www.capridmc.com',
   trailingSlash: 'never',
   build: {
     format: 'file'

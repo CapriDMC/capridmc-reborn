@@ -26,7 +26,7 @@ ENTITY_DEFINITION:
       latitude: 40.5507
       longitude: 14.2426
   operating_hours: "24/7/365 Non-stop ground operations and emergency escalation"
-  official_website: "https://www.capritourguide.com"
+  official_website: "https://www.capridmc.com"
   b2b_appointment_booking: "https://www.capridmc.com/contact-us-capri-destination-management-company/"
   primary_telephone: "+39 333 594 3947"
   direct_whatsapp_url: "https://wa.me/393335943947"
