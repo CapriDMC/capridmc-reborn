@@ -103,6 +103,7 @@
     let isPlaying = false;
     let isMutedByUser = false;
     let fadeInterval = null;
+    let playPromise = null;
 
     // Controllo preferenza salvata
     try {
@@ -138,8 +139,7 @@
     function fadeInAudio() {
       if (!audio) return;
       if (fadeInterval) clearInterval(fadeInterval);
-      audio.volume = 0.02;
-      const step = 0.03;
+      const step = 0.04;
       fadeInterval = setInterval(() => {
         if (!audio) return clearInterval(fadeInterval);
         if (audio.volume + step < TARGET_VOLUME) {
@@ -148,49 +148,60 @@
           audio.volume = TARGET_VOLUME;
           clearInterval(fadeInterval);
         }
-      }, 80);
-    }
-
-    function fadeOutAudio(onComplete) {
-      if (!audio) return;
-      if (fadeInterval) clearInterval(fadeInterval);
-      const step = 0.05;
-      fadeInterval = setInterval(() => {
-        if (!audio) return clearInterval(fadeInterval);
-        if (audio.volume - step > 0.02) {
-          audio.volume -= step;
-        } else {
-          audio.volume = 0;
-          audio.pause();
-          clearInterval(fadeInterval);
-          if (onComplete) onComplete();
-        }
-      }, 50);
+      }, 60);
     }
 
     function playSeaWaves() {
       if (!audio || isMutedByUser) return;
-      audio.volume = 0.02;
-      const promise = audio.play();
+      if (fadeInterval) clearInterval(fadeInterval);
+      audio.volume = 0.05;
 
-      if (promise !== undefined) {
-        promise.then(() => {
-          updateUi(true);
-          fadeInAudio();
-          cleanupUnlockers();
-        }).catch((err) => {
-          // Autoplay bloccato dalla policy del browser: ascolta il primo micro-gesto per sbloccare
-          updateUi(false);
-          setupUnlockers();
-        });
+      try {
+        playPromise = audio.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            playPromise = null;
+            if (isMutedByUser) {
+              audio.pause();
+              audio.volume = 0;
+              updateUi(false);
+              return;
+            }
+            updateUi(true);
+            fadeInAudio();
+            cleanupUnlockers();
+          }).catch((err) => {
+            playPromise = null;
+            updateUi(false);
+            if (!isMutedByUser) {
+              setupUnlockers();
+            }
+          });
+        }
+      } catch (e) {
+        updateUi(false);
       }
     }
 
     function pauseSeaWaves() {
       if (!audio) return;
-      fadeOutAudio(() => {
-        updateUi(false);
-      });
+      if (fadeInterval) clearInterval(fadeInterval);
+      updateUi(false);
+
+      if (playPromise !== null && playPromise !== undefined) {
+        playPromise.then(() => {
+          audio.pause();
+          audio.volume = 0;
+          playPromise = null;
+        }).catch(() => {
+          audio.pause();
+          audio.volume = 0;
+          playPromise = null;
+        });
+      } else {
+        audio.pause();
+        audio.volume = 0;
+      }
     }
 
     function unlockAudioOnGesture() {
@@ -218,13 +229,24 @@
       window.removeEventListener('wheel', unlockAudioOnGesture);
     }
 
-    // Toggle manuale utente
+    // Toggle manuale utente: stop immediato al clic senza attese o fade ritardati
     if (toggleBtn) {
-      toggleBtn.addEventListener('click', function(e) {
+      // Blocca la propagazione di pointerdown e touchstart per non scatenare gli unlockers globali
+      toggleBtn.addEventListener('pointerdown', function(e) {
         e.stopPropagation();
+      });
+      toggleBtn.addEventListener('touchstart', function(e) {
+        e.stopPropagation();
+      }, { passive: true });
+
+      toggleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
         if (isPlaying) {
           isMutedByUser = true;
           try { sessionStorage.setItem('capri_sea_sound', 'muted'); } catch (e) {}
+          cleanupUnlockers();
           pauseSeaWaves();
         } else {
           isMutedByUser = false;
@@ -234,7 +256,7 @@
       });
     }
 
-    // AVVIO IMMEDIATO AUTOMATICO ALL'APERTURA
+    // AVVIO AUTOMATICO ALL'APERTURA (se non precedentemente silenziato dall'utente)
     if (!isMutedByUser) {
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', playSeaWaves);
