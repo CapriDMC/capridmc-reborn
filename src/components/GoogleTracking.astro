@@ -1,12 +1,10 @@
 ---
 /**
  * GoogleTracking.astro — Best Practice Google Tracking Suite & Google Consent Mode v2
- * Configurato per:
- *  - Google Analytics 4 (GA4) con IP anonimizzato e conformità ePrivacy/GDPR
- *  - Google Tag Manager (GTM) pronto per attivazione container
- *  - Google Search Console (GSC) verification token
- *  - Google Consent Mode v2 (obbligatorio in EEA/UE da Marzo 2024 per ad_storage & analytics_storage)
- *  - Tracciamento automatico delle conversioni (WhatsApp, appuntamenti B2B, chiamate, email)
+ * Configurato con routing dinamico del Measurement ID per dominio:
+ *  - www.capridmc.com / capridmc.com -> GA4: G-E0ZLGSFCC4 | GTM: GTM-NGPT29NB
+ *  - www.capritourguide.com / capritourguide.com -> GA4: G-LLBY49LNLC
+ * Rendicontazione e dati 100% separati e distinti per ciascun sito.
  */
 
 interface Props {
@@ -16,8 +14,6 @@ interface Props {
 }
 
 const {
-  gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID || "G-LLBY49LNLC",
-  gtmId = import.meta.env.PUBLIC_GTM_ID || "",
   gscToken = import.meta.env.PUBLIC_GSC_TOKEN || ""
 } = Astro.props;
 ---
@@ -25,8 +21,8 @@ const {
 <!-- 1. Google Search Console Verification Meta Tag -->
 {gscToken && <meta name="google-site-verification" content={gscToken} />}
 
-<!-- 2. Google Consent Mode v2 (Inline Script pre-caricato prima di ogni tag Google) -->
-<script is:inline define:vars={{ gaMeasurementId, gtmId }}>
+<!-- 2. Google Consent Mode v2 & Routing Dinamico GA4 / GTM per Dominio -->
+<script is:inline>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   window.gtag = gtag;
@@ -54,22 +50,38 @@ const {
 
   gtag('js', new Date());
 
-  // Configura GA4 se presente l'ID
-  if (gaMeasurementId) {
-    gtag('config', gaMeasurementId, {
+  // Riconoscimento dinamico del dominio per separazione totale dei dati (Rendicontazione Distinta)
+  const hostname = window.location.hostname.toLowerCase();
+  const isCapriDmc = hostname.includes('capridmc.com');
+
+  // Mappatura ID:
+  // - Capri DMC: GA4 G-E0ZLGSFCC4 | GTM GTM-NGPT29NB
+  // - Capri Tour Guide: GA4 G-LLBY49LNLC
+  const activeGaId = isCapriDmc ? 'G-E0ZLGSFCC4' : 'G-LLBY49LNLC';
+  const activeGtmId = isCapriDmc ? 'GTM-NGPT29NB' : '';
+
+  // Configura la proprietà GA4 specifica del dominio
+  if (activeGaId) {
+    gtag('config', activeGaId, {
       anonymize_ip: true,
       send_page_view: true,
       cookie_flags: 'SameSite=None;Secure'
     });
+
+    // Iniezione asincrona dello script gtag.js specifico per la proprietà
+    const gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + activeGaId;
+    document.head.appendChild(gaScript);
   }
 
-  // Google Tag Manager Snippet (se GTM ID è valorizzato)
-  if (gtmId) {
+  // Google Tag Manager Snippet (se presente per il dominio attivo)
+  if (activeGtmId) {
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer',gtmId);
+    })(window,document,'script','dataLayer',activeGtmId);
   }
 
   // Helper globale per tracciare conversioni ed eventi B2B
@@ -127,8 +139,3 @@ const {
     });
   });
 </script>
-
-<!-- 3. Google Analytics 4 Script Asincrono -->
-{gaMeasurementId && (
-  <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
-)}
