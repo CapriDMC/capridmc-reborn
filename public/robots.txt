@@ -52,8 +52,10 @@ User-agent: Diffbot
 Allow: /
 
 # Canonical Sitemaps & AI Mirrors
+Sitemap: https://www.capridmc.com/sitemap-index.xml
 Sitemap: https://www.capritourguide.com/sitemap-index.xml
-# AI Context Dossier: https://www.capritourguide.com/ai-context.txt
+# AI Context Dossier: https://www.capridmc.com/ai-context.txt
+# LLM Context: https://www.capridmc.com/llms.txt
 # LLM Context: https://www.capritourguide.com/llms.txt
 # Full Dossier: https://www.capritourguide.com/llms-full.txt
 # Markdown Mirror: https://www.capritourguide.com/index.md
