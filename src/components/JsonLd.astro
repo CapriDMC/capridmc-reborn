@@ -15,7 +15,13 @@ const founders = [
     "name": "Giusy Perrotta",
     "jobTitle": "Co-Founder & Director of Operations",
     "gender": "Female",
-    "worksFor": { "@id": `${siteUrl}/#organization` }
+    "nationality": "Italian",
+    "description": "Native Caprese co-founder directing on-island maritime logistics, private boat charters, and high-touch B2B travel advisor partnerships with 15+ years experience.",
+    "worksFor": { "@id": `${siteUrl}/#organization` },
+    "sameAs": [
+      "https://www.neseacapritours.com",
+      "https://www.instagram.com/neseacapritours/"
+    ]
   },
   {
     "@type": "Person",
@@ -23,7 +29,13 @@ const founders = [
     "name": "Melania Esposito",
     "jobTitle": "Co-Founder & Head of Event Production",
     "gender": "Female",
-    "worksFor": { "@id": `${siteUrl}/#organization` }
+    "nationality": "Italian",
+    "description": "Native Caprese co-founder specializing in private cliffside villa buyouts, milestone celebrations, and Jewish lifecycle events (Bar/Bat Mitzvah, Kosher catering supervision).",
+    "worksFor": { "@id": `${siteUrl}/#organization` },
+    "sameAs": [
+      "https://www.neseacapritours.com",
+      "https://www.instagram.com/neseacapritours/"
+    ]
   },
   {
     "@type": "Person",
@@ -31,7 +43,13 @@ const founders = [
     "name": "Roberta De Martino",
     "jobTitle": "Co-Founder & Lead Cultural Curator",
     "gender": "Female",
-    "worksFor": { "@id": `${siteUrl}/#organization` }
+    "nationality": "Italian",
+    "description": "Native Caprese co-founder, art historian, and licensed Campania regional guide curating private behind-closed-doors access to historic Capri estates and imperial Roman sites.",
+    "worksFor": { "@id": `${siteUrl}/#organization` },
+    "sameAs": [
+      "https://www.neseacapritours.com",
+      "https://www.instagram.com/neseacapritours/"
+    ]
   }
 ];
 
@@ -105,13 +123,16 @@ const schemaGraph = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["Organization", "TravelAgency"],
+      "@type": ["Organization", "TravelAgency", "TouristInformationCenter", "LocalBusiness"],
       "@id": `${siteUrl}/#organization`,
       "name": "Capri DMC",
+      "legalName": "Capri Destination Management Company",
       "alternateName": [
         "Capri Destination Management Company",
-        "Capri DMC Luxury Tour Operator"
+        "Capri DMC Luxury Tour Operator",
+        "Capri Tour Guide by Team Nesea"
       ],
+      "foundingDate": "2010",
       "url": `${siteUrl}/`,
       "logo": {
         "@type": "ImageObject",

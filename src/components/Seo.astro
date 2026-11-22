@@ -18,9 +18,11 @@ const {
   lang = "en"
 } = Astro.props;
 
-// Determine production canonical
+// Determine production canonical (always clean URL: no /index.html and no .html extensions)
 const siteUrl = "https://www.capridmc.com";
-const canonicalURL = canonical || new URL(Astro.url.pathname.replace(/\/$/, ""), siteUrl).href || siteUrl;
+let cleanPath = Astro.url.pathname.replace(/\/index(\.html)?$/, "").replace(/\.html$/, "").replace(/\/$/, "");
+if (!cleanPath) cleanPath = "/";
+const canonicalURL = canonical || `${siteUrl}${cleanPath === "/" ? "/" : cleanPath}`;
 
 // Preview environment check: workers.dev or explicit preview env must remain noindex
 const isPreview = import.meta.env.PUBLIC_ENV === 'preview' || Astro.url.hostname.includes('workers.dev');
@@ -28,9 +30,9 @@ const robotsContent = isPreview
   ? "noindex, nofollow"
   : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
 
-// Verification tokens from env
-const gscToken = import.meta.env.PUBLIC_GSC_TOKEN;
-const bingToken = import.meta.env.PUBLIC_BING_TOKEN;
+// Verification tokens (with robust fallbacks to ensure search engines are always verified)
+const gscToken = import.meta.env.PUBLIC_GSC_TOKEN || "google48e0b430f78fcbf6";
+const bingToken = import.meta.env.PUBLIC_BING_TOKEN || "f63b28b7e08240409741a4a0342ebcb3";
 ---
 
 <!-- Essential Encoding & Viewport -->
