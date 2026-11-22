@@ -54,16 +54,16 @@ const logisticsSteps = [
       <div class="inline-flex items-center gap-2 mb-3">
         <span class="w-2.5 h-[1px] bg-brand-gold"></span>
         <span class="text-brand-gold uppercase tracking-[0.3em] text-xs font-semibold">
-          Global Reach · Seamless Arrival
+          Interactive Geodesic Calculator
         </span>
         <span class="w-2.5 h-[1px] bg-brand-gold"></span>
       </div>
       <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-normal mb-6">
-        From anywhere in the world to <br />
-        <span class="italic text-brand-gold">your accommodation in Capri</span>
+        How Far Are You <br />
+        <span class="italic text-brand-gold">from the Island of Capri?</span>
       </h2>
       <p class="text-white/70 font-light text-base lg:text-lg leading-relaxed">
-        Rotate the 3D globe and click on any country: explore direct geodesic distances, capital flight paths, and seamless arrival logistics to the island of Capri.
+        Rotate the 3D globe and select any country to calculate the exact geodesic distance and estimated flight hours from your capital to Capri.
       </p>
     </div>
 
@@ -75,10 +75,10 @@ const logisticsSteps = [
         
         <div class="space-y-4">
           <h3 class="font-serif text-2xl lg:text-3xl text-white font-normal">
-            The Mediterranean's Most Exclusive Island, Made Seamless.
+            Capri on the World Stage
           </h3>
           <p class="text-white/70 font-light text-sm leading-relaxed">
-            We eliminate every logistical friction: from arrival in Naples to bespoke island transit and dedicated luggage delivery directly to your Capri villa or suite.
+            Discover how close you are to our island. When your journey brings you to Italy, our resident on-island team coordinates your reception in Naples and across Capri.
           </p>
         </div>
 
@@ -213,14 +213,14 @@ const logisticsSteps = [
             <!-- Contextual Quick Email Dispatch Action -->
             <div class="mt-3 pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs">
               <span class="text-white/60 text-[11px] font-light">
-                Coordinate arrival in Naples and private transfer to Capri:
+                Planning your journey to Capri? Our native on-island team is ready to assist:
               </span>
               <a
                 id="hud-email-cta"
-                href="mailto:partnerships@capridmc.com?subject=VIP%20Logistics%20Inquiry%20from%20Washington%2C%20DC%20(United%20States)"
+                href="mailto:partnerships@capridmc.com?subject=Inquiry%20from%20United%20States%20-%20Capri%20DMC"
                 class="inline-flex items-center gap-1.5 text-brand-gold hover:text-white font-semibold transition-colors underline underline-offset-4"
               >
-                <span>Request transfer assistance from this country &rarr;</span>
+                <span>Contact Us &rarr;</span>
               </a>
             </div>
           </div>
@@ -390,7 +390,7 @@ const logisticsSteps = [
 
       // Update email link
       if (hudEmailCta) {
-        const subj = encodeURIComponent(`VIP Logistics Inquiry from ${capitalName} (${countryName})`);
+        const subj = encodeURIComponent(`Inquiry from ${countryName} - Capri DMC`);
         hudEmailCta.href = `mailto:partnerships@capridmc.com?subject=${subj}`;
       }
 

@@ -23,7 +23,19 @@ Capri DMC was engineered specifically to solve friction and operational challeng
 
 ## Comprehensive Service Catalog (11 Master B2B Offerings)
 
-### 1. Capri Private Boat Services & Gozzo Charters
+### 1. Exclusive Guided Island Tours
+- Cluster: Exclusive Solutions
+- Subtitle: Privileged Cultural Access Led by Certified Native Capresi Guides
+- Category Badge: Guided Tours
+- B2B Advisor Advantage: Guided Island Tours
+- Detailed Description: Crafted exclusively for discerning travelers, our private guided walking and cultural tours reveal the authentic soul of Capri and Anacapri. Led by certified resident art historians and native guides from Team Nesea, guests discover hidden courtyards, Roman imperial villas (Villa Jovis, Villa Damecuta), and private botanical terraces with uncompromised local depth.
+- Key B2B Operational Features:
+  * Bespoke itineraries tailored to VIP client interests, art, architecture, and history
+  * Private cultural access to Villa Lysis, Villa San Michele, and historic convents
+  * Fluent multilingual guides: English, Italian, French, Spanish, German
+  * Seamless coordination with open-top taxi transfers and private refreshment stops
+
+### 2. Capri Private Boat Services & Gozzo Charters
 - Cluster: Exclusive Solutions
 - Subtitle: Traditional Gozzo Caprese, Speedboats & Luxury Yacht Charters
 - Category Badge: Boat Services
@@ -35,7 +47,7 @@ Capri DMC was engineered specifically to solve friction and operational challeng
   * Chilled champagne, prosecco, fresh seasonal fruit & tailored catering onboard
   * Flexible embarkation from Marina Grande or Marina Piccola
 
-### 2. Private and Exclusive Transfer Services
+### 3. Private and Exclusive Transfer Services
 - Cluster: Exclusive Solutions
 - Subtitle: Naples-to-Capri Chauffeured Logistics & Island Luggage Coordination
 - Category Badge: Private Transfers
@@ -47,7 +59,7 @@ Capri DMC was engineered specifically to solve friction and operational challeng
   * Dedicated luggage transport delivered to villas or hotel accommodations following guest arrival
   * Iconic open-top convertible taxis on request through our network, and private luxury vans
 
-### 3. White-Label On-Island Service
+### 4. White-Label On-Island Service
 - Cluster: Exclusive Solutions
 - Subtitle: Discreet Ground Representation Elevating Your Brand Reputation
 - Category Badge: White-Label Service
@@ -59,8 +71,8 @@ Capri DMC was engineered specifically to solve friction and operational challeng
   * Priority assistance for reservations, villa provisioning, and bespoke commissions
   * Direct on-ground dispatch with real-time updates for partner agencies
 
-### 4. Weddings, Bar Mitzvahs & Milestone Celebrations
-- Cluster: Exclusive Solutions
+### 5. Weddings, Bar Mitzvahs & Milestone Celebrations
+- Cluster: Custom Experiences
 - Subtitle: Historic Villa Buyouts, Scenic Jewish Lifecycle Events & Gala Production
 - Category Badge: Milestone Production
 - B2B Advisor Advantage: Full-Service Event Production
@@ -70,18 +82,6 @@ Capri DMC was engineered specifically to solve friction and operational challeng
   * Specialized Jewish lifecycle planning: Bar Mitzvah, Torah readings & Kosher catering
   * Guest logistics: chartered private speedboats, luggage transfers & guest transfers
   * Michelin-starred culinary coordination, staging, lighting & floral design
-
-### 5. Exclusive Guided Island Tours
-- Cluster: Custom Experiences
-- Subtitle: Privileged Access Led by Certified Native Capresi Guides
-- Category Badge: Guided Tours
-- B2B Advisor Advantage: Heritage & Culture
-- Detailed Description: Crafted exclusively for discerning travelers, our private guided walking and cultural tours reveal the authentic soul of Capri and Anacapri. Led by certified resident art historians and native guides from Team Nesea, guests bypass commercial queues to discover hidden courtyards, Roman imperial villas (Villa Jovis, Villa Damecuta), and private botanical terraces.
-- Key B2B Operational Features:
-  * Bespoke itineraries tailored to VIP client interests, art, and history
-  * After-hours private access to Villa Lysis, Villa San Michele, and historic convents
-  * Fluent multilingual guides: English, Italian, French, Spanish, German
-  * Seamless integration with open-top taxi transfers and private refreshment stops
 
 ### 6. Artisanal Sandals, Knitwear & Bespoke Textiles
 - Cluster: Custom Experiences

@@ -18,6 +18,14 @@ Since 2010, our founders have woven their lives into the island's fabric. We are
 ## Curated B2B Service Catalog
 
 ### Exclusive Solutions
+#### Exclusive Guided Island Tours
+*Privileged Cultural Access Led by Certified Native Capresi Guides* — **Guided Island Tours**
+Crafted exclusively for discerning travelers, our private guided walking and cultural tours reveal the authentic soul of Capri and Anacapri. Led by certified resident art historians and native guides from Team Nesea, guests discover hidden courtyards, Roman imperial villas (Villa Jovis, Villa Damecuta), and private botanical terraces with uncompromised local depth.
+- Bespoke itineraries tailored to VIP client interests, art, architecture, and history
+- Private cultural access to Villa Lysis, Villa San Michele, and historic convents
+- Fluent multilingual guides: English, Italian, French, Spanish, German
+- Seamless coordination with open-top taxi transfers and private refreshment stops
+
 #### Capri Private Boat Services & Gozzo Charters
 *Traditional Gozzo Caprese, Speedboats & Luxury Yacht Charters* — **Curated Boat Services**
 Through our trusted on-island maritime network, Capri DMC offers luxury travel advisors access to Capri's traditional wooden gozzo boats, speedboats, and private yacht charters. Our licensed native skippers navigate coastal waters and scenic coves, complemented by chilled champagne and tailored luxury catering onboard.
@@ -42,6 +50,8 @@ We act as your professional, discreet on-island extension in Capri, operating un
 - Priority assistance for reservations, villa provisioning, and bespoke commissions
 - Direct on-ground dispatch with real-time updates for partner agencies
 
+
+### Custom Experiences
 #### Weddings, Bar Mitzvahs & Milestone Celebrations
 *Historic Villa Buyouts, Scenic Jewish Lifecycle Events & Gala Production* — **Full-Service Event Production**
 Capri DMC orchestrates high-end island celebrations with profound local heritage. We manage private historic cliffside villa buyouts, luxury wedding ceremonies, and specialized Jewish celebrations (Bar Mitzvah, Bat Mitzvah, Kiddushin) featuring scenic Torah readings overlooking the Mediterranean, Shabbat logistics, and strictly supervised Kosher catering coordination.
@@ -49,16 +59,6 @@ Capri DMC orchestrates high-end island celebrations with profound local heritage
 - Specialized Jewish lifecycle planning: Bar Mitzvah, Torah readings & Kosher catering
 - Guest logistics: chartered private speedboats, luggage transfers & guest transfers
 - Michelin-starred culinary coordination, staging, lighting & floral design
-
-
-### Custom Experiences
-#### Exclusive Guided Island Tours
-*Privileged Access Led by Certified Native Capresi Guides* — **Heritage & Culture**
-Crafted exclusively for discerning travelers, our private guided walking and cultural tours reveal the authentic soul of Capri and Anacapri. Led by certified resident art historians and native guides from Team Nesea, guests bypass commercial queues to discover hidden courtyards, Roman imperial villas (Villa Jovis, Villa Damecuta), and private botanical terraces.
-- Bespoke itineraries tailored to VIP client interests, art, and history
-- After-hours private access to Villa Lysis, Villa San Michele, and historic convents
-- Fluent multilingual guides: English, Italian, French, Spanish, German
-- Seamless integration with open-top taxi transfers and private refreshment stops
 
 #### Artisanal Sandals, Knitwear & Bespoke Textiles
 *Made in Capri: Master Craftsmen & Heritage Ateliers* — **Capri Craftsmanship**

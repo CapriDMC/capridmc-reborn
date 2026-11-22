@@ -38,8 +38,8 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
         </p>
       </div>
 
-      <!-- 50/50 Row 1: Capri Private Boat Services (Image Left | Text Right) -->
-      <div id="services-boats" class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+      <!-- 50/50 Row 1: Guided Island Tours (Image Left | Text Right) -->
+      <div id="services-guided-tours" class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
         <!-- Image Column (6 cols) -->
         <div class="lg:col-span-6 service-fade-item gsap-reveal">
           <div class="img-zoom-container aspect-[4/3] w-full relative overflow-hidden bg-gray-200">
@@ -61,7 +61,7 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
         <!-- Text Column (6 cols) -->
         <div class="lg:col-span-6 space-y-6 service-fade-item gsap-reveal">
           <div class="space-y-2">
-            <span class="text-brand-gold font-serif text-2xl lg:text-3xl italic block">01 / Boat Services</span>
+            <span class="text-brand-gold font-serif text-2xl lg:text-3xl italic block">01 / Guided Island Tours</span>
             <h3 class="font-serif text-3xl sm:text-4xl text-brand-navy font-normal leading-tight">
               {exclusiveSolutions[0].title}
             </h3>
@@ -97,12 +97,12 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
         </div>
       </div>
 
-      <!-- 50/50 Row 2: Transfers & Suite Check-In (Text Left | Image Right) - INVERTED -->
-      <div id="services-transfers" class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+      <!-- 50/50 Row 2: Boat Services (Text Left | Image Right) - INVERTED -->
+      <div id="services-boats" class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
         <!-- Text Column (6 cols, Inverted Left) -->
         <div class="lg:col-span-6 order-2 lg:order-1 space-y-6 service-fade-item gsap-reveal">
           <div class="space-y-2">
-            <span class="text-brand-gold font-serif text-2xl lg:text-3xl italic block">02 / Private & Exclusive Transfer Services</span>
+            <span class="text-brand-gold font-serif text-2xl lg:text-3xl italic block">02 / Boat Services</span>
             <h3 class="font-serif text-3xl sm:text-4xl text-brand-navy font-normal leading-tight">
               {exclusiveSolutions[1].title}
             </h3>
@@ -124,16 +124,7 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
             ))}
           </ul>
 
-          <div class="pt-2 flex flex-wrap items-center gap-6">
-            <a
-              href="#logistics"
-              class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-semibold text-brand-navy hover:text-brand-gold transition-colors pb-1 border-b border-brand-navy/30 hover:border-brand-gold"
-            >
-              <span>Explore 3D Logistics Globe</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
+          <div class="pt-2">
             <a
               href={emailContact}
               class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-semibold text-brand-navy hover:text-brand-gold transition-colors pb-1 border-b border-brand-navy/30 hover:border-brand-gold"
@@ -188,7 +179,7 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
     <!-- Centered Editorial Typography Overlay -->
     <div class="relative z-10 max-w-4xl mx-auto space-y-6 text-white parallax-quote gsap-reveal">
       <span class="text-brand-gold uppercase tracking-[0.35em] text-xs font-semibold block">
-        Direct Island Knowledge · Est. 2010
+        Direct Island Knowledge · Since 2010
       </span>
       <h3 class="font-serif text-3xl sm:text-5xl lg:text-6xl text-white font-light leading-tight italic">
         "Seamless logistical execution, authentic on-ground dispatch, and discreet island expertise."
@@ -200,13 +191,13 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
   </div>
 
   <!-- =============================================================== -->
-  <!-- LAYER 2 (SOLID NAVY): EXCLUSIVE SOLUTIONS PART 2 (CONCIERGE & WEDDINGS) -->
+  <!-- LAYER 2 (SOLID NAVY): EXCLUSIVE SOLUTIONS PART 2 (TRANSFERS & WHITE-LABEL) -->
   <!-- =============================================================== -->
   <div class="cartier-layer-solid-dark py-28 lg:py-36 px-6 lg:px-16 text-white">
     <div class="max-w-7xl mx-auto space-y-24 lg:space-y-32">
 
-      <!-- 50/50 Row 3: Dedicated White-Label On-Island Service (Image Left | Text Right) -->
-      <div id="services-concierge" class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+      <!-- 50/50 Row 3: Private and Exclusive Transfer Services (Image Left | Text Right) -->
+      <div id="services-transfers" class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
         <!-- Image Column (6 cols) -->
         <div class="lg:col-span-6 service-fade-item gsap-reveal">
           <div class="img-zoom-container aspect-[4/3] w-full relative overflow-hidden bg-black/40">
@@ -228,7 +219,7 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
         <!-- Text Column (6 cols) -->
         <div class="lg:col-span-6 space-y-6 service-fade-item gsap-reveal">
           <div class="space-y-2">
-            <span class="text-brand-gold font-serif text-2xl lg:text-3xl italic block">03 / White-Label Service</span>
+            <span class="text-brand-gold font-serif text-2xl lg:text-3xl italic block">03 / Private & Exclusive Transfer Services</span>
             <h3 class="font-serif text-3xl sm:text-4xl text-white font-normal leading-tight">
               {exclusiveSolutions[2].title}
             </h3>
@@ -252,6 +243,15 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
 
           <div class="pt-2 flex flex-wrap items-center gap-6">
             <a
+              href="#logistics"
+              class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-semibold text-white hover:text-brand-gold transition-colors pb-1 border-b border-white/30 hover:border-brand-gold"
+            >
+              <span>Explore 3D Logistics Globe</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+            <a
               href={emailContact}
               class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-semibold text-brand-gold hover:text-white transition-colors pb-1 border-b border-brand-gold/40 hover:border-white"
             >
@@ -264,12 +264,12 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
         </div>
       </div>
 
-      <!-- 50/50 Row 4: Weddings & Celebrations (Text Left | Image Right) - INVERTED -->
-      <div id="services-events" class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+      <!-- 50/50 Row 4: Dedicated White-Label On-Island Service (Text Left | Image Right) - INVERTED -->
+      <div id="services-concierge" class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
         <!-- Text Column (6 cols, Inverted Left) -->
         <div class="lg:col-span-6 order-2 lg:order-1 space-y-6 service-fade-item gsap-reveal">
           <div class="space-y-2">
-            <span class="text-brand-gold font-serif text-2xl lg:text-3xl italic block">04 / Milestone Celebrations</span>
+            <span class="text-brand-gold font-serif text-2xl lg:text-3xl italic block">04 / White-Label Service</span>
             <h3 class="font-serif text-3xl sm:text-4xl text-white font-normal leading-tight">
               {exclusiveSolutions[3].title}
             </h3>
@@ -398,17 +398,12 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
                   decoding="async"
                 />
               </picture>
-              <div class="absolute top-4 left-4">
-                <span class="text-[9px] uppercase tracking-[0.2em] text-white bg-[#07142E]/80 backdrop-blur-md px-2.5 py-0.5 font-medium border border-white/10">
-                  {service.badge}
-                </span>
-              </div>
             </div>
 
             <!-- Content -->
             <div class="space-y-2">
               <span class="text-[9px] uppercase tracking-[0.25em] text-brand-gold font-semibold block">
-                0{idx + 5} · {service.b2b_tag}
+                {String(idx + 5).padStart(2, '0')} · {service.b2b_tag}
               </span>
               <h4 class="font-serif text-2xl text-brand-navy font-normal group-hover:text-brand-gold transition-colors">
                 {service.title}

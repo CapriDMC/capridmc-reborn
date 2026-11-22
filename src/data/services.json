@@ -1,5 +1,23 @@
 [
   {
+    "id": "exclusive-guided-tours",
+    "slug": "exclusive-guided-tours-with-capri-destination-management-company",
+    "cluster": "Exclusive Solutions",
+    "title": "Exclusive Guided Island Tours",
+    "subtitle": "Privileged Cultural Access Led by Certified Native Capresi Guides",
+    "b2b_tag": "Guided Island Tours",
+    "description": "Crafted exclusively for discerning travelers, our private guided walking and cultural tours reveal the authentic soul of Capri and Anacapri. Led by certified resident art historians and native guides from Team Nesea, guests discover hidden courtyards, Roman imperial villas (Villa Jovis, Villa Damecuta), and private botanical terraces with uncompromised local depth.",
+    "b2b_features": [
+      "Bespoke itineraries tailored to VIP client interests, art, architecture, and history",
+      "Private cultural access to Villa Lysis, Villa San Michele, and historic convents",
+      "Fluent multilingual guides: English, Italian, French, Spanish, German",
+      "Seamless coordination with open-top taxi transfers and private refreshment stops"
+    ],
+    "image": "/images/capri/capri-private-guided-tours.jpg",
+    "badge": "Guided Tours",
+    "featured": true
+  },
+  {
     "id": "capri-private-boat-tours",
     "slug": "capri-private-boat-tours-capri-destination-management-company",
     "cluster": "Exclusive Solutions",
@@ -56,7 +74,7 @@
   {
     "id": "events-milestone",
     "slug": "events-capri-destination-management-company",
-    "cluster": "Exclusive Solutions",
+    "cluster": "Custom Experiences",
     "title": "Weddings, Bar Mitzvahs & Milestone Celebrations",
     "subtitle": "Historic Villa Buyouts, Scenic Jewish Lifecycle Events & Gala Production",
     "b2b_tag": "Full-Service Event Production",
@@ -69,24 +87,6 @@
     ],
     "image": "/images/capri/capri-luxury-wedding-celebration.jpg",
     "badge": "Milestone Production",
-    "featured": true
-  },
-  {
-    "id": "exclusive-guided-tours",
-    "slug": "exclusive-guided-tours-with-capri-destination-management-company",
-    "cluster": "Custom Experiences",
-    "title": "Exclusive Guided Island Tours",
-    "subtitle": "Privileged Access Led by Certified Native Capresi Guides",
-    "b2b_tag": "Heritage & Culture",
-    "description": "Crafted exclusively for discerning travelers, our private guided walking and cultural tours reveal the authentic soul of Capri and Anacapri. Led by certified resident art historians and native guides from Team Nesea, guests bypass commercial queues to discover hidden courtyards, Roman imperial villas (Villa Jovis, Villa Damecuta), and private botanical terraces.",
-    "b2b_features": [
-      "Bespoke itineraries tailored to VIP client interests, art, and history",
-      "After-hours private access to Villa Lysis, Villa San Michele, and historic convents",
-      "Fluent multilingual guides: English, Italian, French, Spanish, German",
-      "Seamless integration with open-top taxi transfers and private refreshment stops"
-    ],
-    "image": "/images/capri/capri-faraglioni-rocks.jpg",
-    "badge": "Guided Tours",
     "featured": false
   },
   {
