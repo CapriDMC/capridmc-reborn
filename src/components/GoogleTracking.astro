@@ -1,10 +1,8 @@
 ---
 /**
  * GoogleTracking.astro — Best Practice Google Tracking Suite & Google Consent Mode v2
- * Configurato con routing dinamico del Measurement ID per dominio:
+ * Configurato per Capri DMC:
  *  - www.capridmc.com / capridmc.com -> GA4: G-E0ZLGSFCC4 | GTM: GTM-NGPT29NB
- *  - www.capritourguide.com / capritourguide.com -> GA4: G-LLBY49LNLC
- * Rendicontazione e dati 100% separati e distinti per ciascun sito.
  */
 
 interface Props {
@@ -21,7 +19,7 @@ const {
 <!-- 1. Google Search Console Verification Meta Tag -->
 {gscToken && <meta name="google-site-verification" content={gscToken} />}
 
-<!-- 2. Google Consent Mode v2 & Routing Dinamico GA4 / GTM per Dominio -->
+<!-- 2. Google Consent Mode v2 & GA4 / GTM Setup -->
 <script is:inline>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -50,15 +48,9 @@ const {
 
   gtag('js', new Date());
 
-  // Riconoscimento dinamico del dominio per separazione totale dei dati (Rendicontazione Distinta)
-  const hostname = window.location.hostname.toLowerCase();
-  const isCapriDmc = hostname.includes('capridmc.com');
-
-  // Mappatura ID:
-  // - Capri DMC: GA4 G-E0ZLGSFCC4 | GTM GTM-NGPT29NB
-  // - Capri Tour Guide: GA4 G-LLBY49LNLC
-  const activeGaId = isCapriDmc ? 'G-E0ZLGSFCC4' : 'G-LLBY49LNLC';
-  const activeGtmId = isCapriDmc ? 'GTM-NGPT29NB' : '';
+  // Mappatura ID Capri DMC
+  const activeGaId = 'G-E0ZLGSFCC4';
+  const activeGtmId = 'GTM-NGPT29NB';
 
   // Configura la proprietà GA4 specifica del dominio
   if (activeGaId) {
