@@ -3,54 +3,54 @@
     "id": "capri-private-boat-tours",
     "slug": "capri-private-boat-tours-capri-destination-management-company",
     "cluster": "Exclusive Solutions",
-    "title": "Capri Private Boat Tours & Gozzo Charters",
-    "subtitle": "Traditional Gozzo Caprese, Riva Speedboats & Luxury Yacht Charters",
-    "b2b_tag": "Guaranteed Fleet Availability",
-    "description": "Through our unmatched on-island maritime network, Capri DMC provides luxury travel advisors with priority access to Capri's premier wooden gozzo boats, high-speed Riva yachts, and chartered catamarans. Even during peak July and August demand, our native licensed skippers navigate secret grottoes, Faraglioni passages, and secluded swimming coves with chilled champagne and tailored catering.",
+    "title": "Capri Private Boat Services & Gozzo Charters",
+    "subtitle": "Traditional Gozzo Caprese, Speedboats & Luxury Yacht Charters",
+    "b2b_tag": "Curated Boat Services",
+    "description": "Through our trusted on-island maritime network, Capri DMC offers luxury travel advisors access to Capri's traditional wooden gozzo boats, speedboats, and private yacht charters. Our licensed native skippers navigate coastal waters and scenic coves, complemented by chilled champagne and tailored luxury catering onboard.",
     "b2b_features": [
-      "Secured peak-season availability for traditional Gozzo Caprese & modern yachts",
-      "Faraglioni arch navigation & private Blue Grotto dawn protocol",
-      "Chilled champagne, prosecco, local fruit & towel service onboard",
-      "Flexible pick-up: Marina Grande, Marina Piccola, or private hotel tender docks"
+      "Access to traditional Gozzo Caprese, speedboats, and private yacht charters upon request",
+      "Scenic Faraglioni dawn protocol & private coastal itineraries",
+      "Chilled champagne, prosecco, fresh seasonal fruit & tailored catering onboard",
+      "Flexible embarkation from Marina Grande or Marina Piccola"
     ],
     "image": "/images/capri/faraglioni-rocks-guided-tour-private-boat.jpg",
-    "badge": "Maritime Flagship",
+    "badge": "Boat Services",
     "featured": true
   },
   {
     "id": "transfers-ticketing",
     "slug": "transfers-check-in-and-ticketing-services",
     "cluster": "Exclusive Solutions",
-    "title": "Transfers, Check-In & Ticketing Services",
-    "subtitle": "Airport-to-Suite Logistics, Open-Top Capri Taxis & Luggage Command",
-    "b2b_tag": "Frictionless Turnkey Arrival",
-    "description": "From the second your VIP clients land at Naples Capodichino (NAP) or Rome Fiumicino (FCO), Capri DMC assumes complete logistical command. We orchestrate tarmac Mercedes-Maybach transfers, private maritime crossings, custom open-air convertible Capri taxis, and dedicated luggage porterage directly into 5-star hotel suites with zero lobby delay.",
+    "title": "Private and Exclusive Transfer Services",
+    "subtitle": "Naples-to-Capri Chauffeured Logistics & Island Luggage Coordination",
+    "b2b_tag": "Seamless On-Ground Logistics",
+    "description": "From arrival at Naples Capodichino (NAP) airport or rail hub, Capri DMC coordinates private transfers with luxury chauffeured cars or vans (NCC) and maritime crossings. Upon arrival on the island, iconic open-top convertible taxis are arranged on request through our trusted network, with dedicated luggage transport coordinated to deliver bags safely to private villas or hotel rooms following guest arrival.",
     "b2b_features": [
-      "VIP tarmac meet & greet at Naples (NAP) and Rome (FCO) airports",
-      "Direct luggage dispatch: bags delivered inside suites prior to check-in",
-      "Iconic Capri open-top convertible taxis & private island bus charters",
-      "VIP priority ticketing for island funicular, chairlifts, and archaeological sites"
+      "Personal meet & greet with private chauffeured car or luxury van (NCC) from Naples (NAP)",
+      "Coordinated maritime crossing to Capri with island greeting at Marina Grande",
+      "Dedicated luggage transport delivered to villas or hotel accommodations following guest arrival",
+      "Iconic open-top convertible taxis on request through our network, and private luxury vans"
     ],
     "image": "/images/capri/exclusive-boat-tours-with-local-guide.jpg",
-    "badge": "Turnkey Logistics",
+    "badge": "Private Transfers",
     "featured": true
   },
   {
     "id": "conciergerie",
     "slug": "conciergerie-capri-destination-management-company",
     "cluster": "Exclusive Solutions",
-    "title": "Dedicated 24/7 Island Conciergerie",
-    "subtitle": "White-Glove Ground Representation for Travel Advisors",
-    "b2b_tag": "Zero Time-Zone Latency",
-    "description": "We act as your trusted on-the-ground extension in Capri. Our dedicated concierge team secures highly contested reservations at Capri's most sought-after cliffside restaurants (La Fontelina, Da Paolino, Il Riccio, Aurora), reserves VIP daybeds at premier beach clubs, coordinates private helicopter flights, and provides immediate emergency re-routing.",
+    "title": "White-Label On-Island Service",
+    "subtitle": "Discreet Ground Representation Elevating Your Brand Reputation",
+    "b2b_tag": "White-Label Service",
+    "description": "We act as your professional, discreet on-island extension in Capri, operating under strict white-label protocols to protect and elevate your agency's reputation. Because our team lives on Capri year-round, we ensure constant presence and exceptional resilience during adverse weather events or unexpected schedule changes: we live here, ensuring immediate, reliable ground coordination.",
     "b2b_features": [
-      "Priority reservations at premier cliffside dining venues & private beach clubs",
-      "Real-time WhatsApp hotline with dedicated advisor response within minutes",
-      "Villa provisioning, private security escorts & medical concierge coordination",
-      "Strict white-label client representation protecting advisor brand equity"
+      "Strict white-label client representation elevating the advisor's brand prestige",
+      "Constant on-island presence and proven resilience during adverse weather events",
+      "Priority assistance for reservations, villa provisioning, and bespoke commissions",
+      "Direct on-ground dispatch with real-time updates for partner agencies"
     ],
     "image": "/images/capri/capri-concierge-service.jpg",
-    "badge": "24/7 Command",
+    "badge": "White-Label Service",
     "featured": true
   },
   {
@@ -64,7 +64,7 @@
     "b2b_features": [
       "Access to private historic estates and panoramic cliffside villas",
       "Specialized Jewish lifecycle planning: Bar Mitzvah, Torah readings & Kosher catering",
-      "Guest logistics: chartered private catamarans, luggage transfers & guest transfers",
+      "Guest logistics: chartered private speedboats, luggage transfers & guest transfers",
       "Michelin-starred culinary coordination, staging, lighting & floral design"
     ],
     "image": "/images/capri/capri-luxury-wedding-celebration.jpg",
@@ -77,8 +77,8 @@
     "cluster": "Custom Experiences",
     "title": "Exclusive Guided Island Tours",
     "subtitle": "Privileged Access Led by Certified Native Capresi Guides",
-    "b2b_tag": "Beyond Standard Tourism",
-    "description": "Crafted exclusively for high-net-worth travelers, our private guided walking and cultural tours reveal the authentic soul of Capri and Anacapri. Led by certified resident art historians and native guides (the Nesea Capri founders team), guests bypass commercial queues to discover hidden courtyards, Roman imperial villas (Villa Jovis, Villa Damecuta), and private botanical terraces.",
+    "b2b_tag": "Heritage & Culture",
+    "description": "Crafted exclusively for discerning travelers, our private guided walking and cultural tours reveal the authentic soul of Capri and Anacapri. Led by certified resident art historians and native guides from Team Nesea, guests bypass commercial queues to discover hidden courtyards, Roman imperial villas (Villa Jovis, Villa Damecuta), and private botanical terraces.",
     "b2b_features": [
       "Bespoke itineraries tailored to VIP client interests, art, and history",
       "After-hours private access to Villa Lysis, Villa San Michele, and historic convents",
@@ -86,7 +86,7 @@
       "Seamless integration with open-top taxi transfers and private refreshment stops"
     ],
     "image": "/images/capri/capri-faraglioni-rocks.jpg",
-    "badge": "Heritage & Culture",
+    "badge": "Guided Tours",
     "featured": false
   },
   {
@@ -104,7 +104,7 @@
       "Direct boutique billing and global insured shipping to clients' home residences"
     ],
     "image": "/images/capri/capri-artisanal-sandals-shopper.jpg",
-    "badge": "Artisanal Mastery",
+    "badge": "Artisanal Craft",
     "featured": false
   },
   {
@@ -131,16 +131,16 @@
     "cluster": "Custom Experiences",
     "title": "Personal Shopper Service & Global Shipping",
     "subtitle": "Via Camerelle Luxury Ateliers to Secure Worldwide Freight",
-    "b2b_tag": "High Fashion & Logistics",
-    "description": "An insider shopping experience spanning the stylish streets of Capri and Anacapri. From reserved VIP appointments at flagship fashion houses along Via Camerelle to hidden artisan perfumeries (Carthusia), our personal shoppers curate bespoke wardrobes and oversee international tax-free documentation and insured door-to-door freight shipping.",
+    "b2b_tag": "Fashion & Logistics",
+    "description": "An insider shopping experience spanning the stylish streets of Capri and Anacapri. From reserved appointments at premier ateliers along Via Camerelle to hidden artisan perfumeries, our personal shoppers curate bespoke wardrobes and oversee international tax-free documentation and insured door-to-door freight shipping.",
     "b2b_features": [
-      "After-hours private boutique viewings and dedicated salon shopping",
+      "Private boutique viewings and dedicated salon shopping",
       "Fine jewelry consultations, antique coral, and bespoke fragrance creation",
       "Complete handling of Italian VAT/tax-free customs paperwork",
       "End-to-end luxury shipping and customs clearance direct to client residences"
     ],
     "image": "/images/capri/capri-villa-lysis-private-tour.jpg",
-    "badge": "Haute Couture",
+    "badge": "Personal Shopper",
     "featured": false
   },
   {
@@ -149,7 +149,7 @@
     "cluster": "Custom Experiences",
     "title": "Hidden Hiking Excursions & Secret Nature Routes",
     "subtitle": "Pristine Trails Far Removed from Mass Commercial Footfall",
-    "b2b_tag": "Untouched Island Wilderness",
+    "b2b_tag": "Untouched Nature",
     "description": "For clients seeking nature and rejuvenation, Capri DMC leads guided expeditions along the island's secret, breathtaking cliffside paths. From the dramatic Sentiero dei Fortini coastal trail to Mount Solaro ridges, ancient hermitages, and secret sea lookouts, our naturalist guides provide an exclusive encounter with Capri's raw Mediterranean wilderness.",
     "b2b_features": [
       "Off-the-beaten-path routes: Sentiero dei Fortini, Passetiello, Monte Solaro",
@@ -158,7 +158,7 @@
       "Option to combine coastal hiking with private speedboat return pick-up"
     ],
     "image": "/images/capri/capri-mount-solaro-hiking.jpg",
-    "badge": "Active Wilderness",
+    "badge": "Active Nature",
     "featured": false
   },
   {
@@ -185,16 +185,16 @@
     "cluster": "Custom Experiences",
     "title": "Bespoke Babysitting & Pet Sitting for B2B Clients",
     "subtitle": "Vetted, Trustworthy Care Giving VIP Clients Complete Freedom",
-    "b2b_tag": "Discreet Family Care",
+    "b2b_tag": "Family & Pet Care",
     "description": "High-net-worth clients often require trusted support to attend private yacht charters, romantic sunset dinners, or late-night celebrations. Capri DMC provides thoroughly vetted, multilingual babysitters and professional pet-sitters across the entire island, ensuring absolute safety, attentive engagement, and complete peace of mind.",
     "b2b_features": [
       "Rigorously screened, certified, and multilingual childcare professionals",
       "In-villa or in-suite babysitting for day, evening, or overnight assistance",
       "Dedicated dog sitting, walking, and pet care tailored to luxury villa stays",
-      "Full flexibility: scheduled for specific excursions or available on-call 24/7"
+      "Full flexibility: scheduled for specific excursions or available on-call with on-ground dispatch"
     ],
     "image": "/images/capri/capri-family-concierge-care.jpg",
-    "badge": "Family & Care",
+    "badge": "Family Care",
     "featured": false
   }
 ]

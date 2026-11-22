@@ -34,11 +34,11 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
           Our Curated B2B Services
         </h2>
         <p class="text-gray-600 font-light text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
-          Every offering presented across <strong class="text-brand-navy font-medium">Capri DMC</strong> is engineered exclusively for luxury travel agencies, Virtuoso advisors, and discerning VIP clients.
+          Every offering presented across <strong class="text-brand-navy font-medium">Capri DMC</strong> is engineered exclusively for luxury travel agencies, bespoke advisors, and discerning VIP clients.
         </p>
       </div>
 
-      <!-- 50/50 Row 1: Capri Private Boat Tours (Image Left | Text Right) -->
+      <!-- 50/50 Row 1: Capri Private Boat Services (Image Left | Text Right) -->
       <div id="services-boats" class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
         <!-- Image Column (6 cols) -->
         <div class="lg:col-span-6 service-fade-item gsap-reveal">
@@ -55,18 +55,13 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
                 decoding="async"
               />
             </picture>
-            <div class="absolute top-6 left-6">
-              <span class="text-[9px] uppercase tracking-[0.25em] text-white bg-[#07142E]/80 backdrop-blur-md px-3 py-1 font-medium border border-white/15">
-                {exclusiveSolutions[0].badge}
-              </span>
-            </div>
           </div>
         </div>
 
         <!-- Text Column (6 cols) -->
         <div class="lg:col-span-6 space-y-6 service-fade-item gsap-reveal">
           <div class="space-y-2">
-            <span class="text-brand-gold font-serif text-2xl lg:text-3xl italic block">01 / Maritime Fleet</span>
+            <span class="text-brand-gold font-serif text-2xl lg:text-3xl italic block">01 / Boat Services</span>
             <h3 class="font-serif text-3xl sm:text-4xl text-brand-navy font-normal leading-tight">
               {exclusiveSolutions[0].title}
             </h3>
@@ -93,7 +88,7 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
               href={emailContact}
               class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-semibold text-brand-navy hover:text-brand-gold transition-colors pb-1 border-b border-brand-navy/30 hover:border-brand-gold"
             >
-              <span>Reserve Private Vessel</span>
+              <span>Contact Us</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
@@ -107,7 +102,7 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
         <!-- Text Column (6 cols, Inverted Left) -->
         <div class="lg:col-span-6 order-2 lg:order-1 space-y-6 service-fade-item gsap-reveal">
           <div class="space-y-2">
-            <span class="text-brand-gold font-serif text-2xl lg:text-3xl italic block">02 / Seamless Passage</span>
+            <span class="text-brand-gold font-serif text-2xl lg:text-3xl italic block">02 / Private & Exclusive Transfer Services</span>
             <h3 class="font-serif text-3xl sm:text-4xl text-brand-navy font-normal leading-tight">
               {exclusiveSolutions[1].title}
             </h3>
@@ -139,6 +134,15 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </a>
+            <a
+              href={emailContact}
+              class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-semibold text-brand-navy hover:text-brand-gold transition-colors pb-1 border-b border-brand-navy/30 hover:border-brand-gold"
+            >
+              <span>Contact Us</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
           </div>
         </div>
 
@@ -157,11 +161,6 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
                 decoding="async"
               />
             </picture>
-            <div class="absolute top-6 left-6">
-              <span class="text-[9px] uppercase tracking-[0.25em] text-white bg-[#07142E]/80 backdrop-blur-md px-3 py-1 font-medium border border-white/15">
-                {exclusiveSolutions[1].badge}
-              </span>
-            </div>
           </div>
         </div>
       </div>
@@ -189,13 +188,13 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
     <!-- Centered Editorial Typography Overlay -->
     <div class="relative z-10 max-w-4xl mx-auto space-y-6 text-white parallax-quote gsap-reveal">
       <span class="text-brand-gold uppercase tracking-[0.35em] text-xs font-semibold block">
-        Capri Island Command · Est. 2010
+        Direct Island Knowledge · Est. 2010
       </span>
       <h3 class="font-serif text-3xl sm:text-5xl lg:text-6xl text-white font-light leading-tight italic">
-        "Uncompromised logistical execution, guaranteed peak-season private fleet access, and round-the-clock ground dispatch."
+        "Seamless logistical execution, authentic on-ground dispatch, and discreet island expertise."
       </h3>
       <p class="text-white/70 font-light text-xs sm:text-sm uppercase tracking-[0.25em]">
-        From Capri for Capri · Direct Native Bridge
+        Proudly Owned by Caprese People
       </p>
     </div>
   </div>
@@ -206,7 +205,7 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
   <div class="cartier-layer-solid-dark py-28 lg:py-36 px-6 lg:px-16 text-white">
     <div class="max-w-7xl mx-auto space-y-24 lg:space-y-32">
 
-      <!-- 50/50 Row 3: Dedicated 24/7 Island Conciergerie (Image Left | Text Right) -->
+      <!-- 50/50 Row 3: Dedicated White-Label On-Island Service (Image Left | Text Right) -->
       <div id="services-concierge" class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
         <!-- Image Column (6 cols) -->
         <div class="lg:col-span-6 service-fade-item gsap-reveal">
@@ -223,18 +222,13 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
                 decoding="async"
               />
             </picture>
-            <div class="absolute top-6 left-6">
-              <span class="text-[9px] uppercase tracking-[0.25em] text-brand-gold bg-[#07142E]/90 backdrop-blur-md px-3 py-1 font-medium border border-brand-gold/30">
-                {exclusiveSolutions[2].badge}
-              </span>
-            </div>
           </div>
         </div>
 
         <!-- Text Column (6 cols) -->
         <div class="lg:col-span-6 space-y-6 service-fade-item gsap-reveal">
           <div class="space-y-2">
-            <span class="text-brand-gold font-serif text-2xl lg:text-3xl italic block">03 / On-Island Command</span>
+            <span class="text-brand-gold font-serif text-2xl lg:text-3xl italic block">03 / White-Label Service</span>
             <h3 class="font-serif text-3xl sm:text-4xl text-white font-normal leading-tight">
               {exclusiveSolutions[2].title}
             </h3>
@@ -261,7 +255,7 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
               href={emailContact}
               class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-semibold text-brand-gold hover:text-white transition-colors pb-1 border-b border-brand-gold/40 hover:border-white"
             >
-              <span>Inquire Conciergerie Desk</span>
+              <span>Contact Us</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
@@ -270,7 +264,7 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
         </div>
       </div>
 
-      <!-- 50/50 Row 4: Weddings & Bar Mitzvahs (Text Left | Image Right) - INVERTED -->
+      <!-- 50/50 Row 4: Weddings & Celebrations (Text Left | Image Right) - INVERTED -->
       <div id="services-events" class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
         <!-- Text Column (6 cols, Inverted Left) -->
         <div class="lg:col-span-6 order-2 lg:order-1 space-y-6 service-fade-item gsap-reveal">
@@ -302,7 +296,7 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
               href={emailContact}
               class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-semibold text-brand-gold hover:text-white transition-colors pb-1 border-b border-brand-gold/40 hover:border-white"
             >
-              <span>Coordinate Milestone Event</span>
+              <span>Contact Us</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
@@ -325,11 +319,6 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
                 decoding="async"
               />
             </picture>
-            <div class="absolute top-6 left-6">
-              <span class="text-[9px] uppercase tracking-[0.25em] text-brand-gold bg-[#07142E]/90 backdrop-blur-md px-3 py-1 font-medium border border-brand-gold/30">
-                {exclusiveSolutions[3].badge}
-              </span>
-            </div>
           </div>
         </div>
       </div>
@@ -360,7 +349,7 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
         Maison Philosophy
       </span>
       <h3 class="font-serif text-3xl sm:text-5xl lg:text-6xl text-white font-light leading-tight italic">
-        "Every offering presented across Capri DMC is engineered exclusively for luxury travel agencies, Virtuoso advisors, and discerning VIP clients."
+        "Every offering presented across Capri DMC is engineered exclusively for luxury travel agencies, bespoke advisors, and discerning VIP clients."
       </h3>
       <p class="text-white/70 font-light text-xs sm:text-sm uppercase tracking-[0.25em]">
         Verified On-Island Mastery · Zero Intermediaries
@@ -444,7 +433,7 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
                 href={emailContact}
                 class="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] font-semibold text-brand-navy hover:text-brand-gold transition-colors pb-0.5 border-b border-brand-navy/20 hover:border-brand-gold"
               >
-                <span>Inquire Experience</span>
+                <span>Contact Us</span>
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
@@ -460,14 +449,14 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
           <div class="inline-flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
             <span class="text-brand-gold uppercase tracking-[0.25em] text-[10px] font-semibold">
-              24/7 Dedicated Ground Dispatch
+              Dedicated On-Ground Dispatch
             </span>
           </div>
           <h3 class="font-serif text-3xl sm:text-4xl text-brand-navy font-normal">
             Your On-Island Eyes and Ears Across All Offerings
           </h3>
           <p class="text-gray-600 font-light text-sm sm:text-base leading-relaxed max-w-2xl">
-            From last-minute yacht charters and VIP luggage porterage to private in-villa cooking classes and trusted childcare, our native Capri dispatchers coordinate every detail with zero time-zone delay.
+            From boat services and private transfers with luggage porterage to private in-villa culinary experiences, our resident Capri team coordinates every detail with authentic local presence.
           </p>
         </div>
 
@@ -476,7 +465,7 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
             href={emailContact}
             class="w-full sm:w-auto px-8 py-3.5 bg-brand-gold text-brand-navy text-[11px] uppercase tracking-[0.2em] font-semibold hover:bg-brand-navy hover:text-white transition-all text-center"
           >
-            Email Dispatch Desk
+            Contact Us
           </a>
         </div>
       </div>

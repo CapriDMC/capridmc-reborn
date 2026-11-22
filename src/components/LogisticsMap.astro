@@ -13,31 +13,31 @@ const emailContact = "mailto:partnerships@capridmc.com?subject=Richiesta%20Logis
 const logisticsSteps = [
   {
     step: "01",
-    title: "Tarmac VIP Meet & Greet",
-    location: "Naples Capodichino (NAP) or Rome (FCO)",
-    description: "Personal hostess waits at the aircraft gate. Fast-track baggage retrieval and direct escort to a private Mercedes-Maybach limousine.",
+    title: "Airport Meet & Greet",
+    location: "Naples International Airport (NAP)",
+    description: "Personal greeting upon arrival. Fast-track baggage retrieval and direct chauffeured transfer in an NCC executive car or van to the port.",
     badge: "Air-to-Ground"
   },
   {
     step: "02",
     title: "Private Maritime Crossing",
-    location: "Molo Beverello / Mergellina or Helipad",
-    description: "Skip public hydrofoil queues. Board a private Riva yacht or helicopter directly to Capri, enjoying chilled Prosecco and Mediterranean breezes.",
-    badge: "Sea or Air Passage"
+    location: "Port of Naples / Mergellina",
+    description: "Skip public hydrofoils with a private speedboat or gozzo crossing across the Gulf of Naples, enjoying chilled champagne and refreshments on board.",
+    badge: "Sea Passage"
   },
   {
     step: "03",
-    title: "Luggage Porterage & Island Taxi",
+    title: "Open-Top Taxi & Island Van",
     location: "Marina Grande, Capri",
-    description: "Dedicated porters take charge of all luggage at the dock. Guests are escorted into an iconic open-top Capri convertible taxi.",
+    description: "On arrival, guests are welcomed and transferred via open-top convertible island taxis (available on request through our network) or private vans to their destination.",
     badge: "Capri Heritage"
   },
   {
     step: "04",
-    title: "Direct-to-Suite Room Placement",
-    location: "5★ Grand Hotel Suite (Quisisana, Punta Tragara, Caesar Augustus)",
-    description: "Luggage arrives in the suite prior to or immediately alongside guest check-in. Zero waiting in hotel lobbies.",
-    badge: "Turnkey Luxury"
+    title: "Dedicated Luggage Delivery",
+    location: "Private Villa or Hotel Suite",
+    description: "Dedicated island porterage safely transports all luggage from the dock, arriving comfortably following guest arrival at their suite or private villa.",
+    badge: "Luggage Service"
   }
 ];
 ---
@@ -60,10 +60,10 @@ const logisticsSteps = [
       </div>
       <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-normal mb-6">
         From anywhere in the world to <br />
-        <span class="italic text-brand-gold">your 5★ Suite in Capri</span>
+        <span class="italic text-brand-gold">your accommodation in Capri</span>
       </h2>
       <p class="text-white/70 font-light text-base lg:text-lg leading-relaxed">
-        Ruota il mappamondo con il mouse e clicca su qualsiasi nazione: scopri la capitale, la rotta aerea e l'esatta distanza in chilometri dall'isola di Capri.
+        Rotate the 3D globe and click on any country: explore direct geodesic distances, capital flight paths, and seamless arrival logistics to the island of Capri.
       </p>
     </div>
 
@@ -75,10 +75,10 @@ const logisticsSteps = [
         
         <div class="space-y-4">
           <h3 class="font-serif text-2xl lg:text-3xl text-white font-normal">
-            L'isola più esclusiva del Mediterraneo, resa accessibile.
+            The Mediterranean's Most Exclusive Island, Made Seamless.
           </h3>
           <p class="text-white/70 font-light text-sm leading-relaxed">
-            Eliminiamo ogni attrito logistico: dal gate aeroportuale internazionale fino al disimballaggio dei bagagli direttamente nella vostra suite caprese.
+            We eliminate every logistical friction: from arrival in Naples to bespoke island transit and dedicated luggage delivery directly to your Capri villa or suite.
           </p>
         </div>
 
@@ -118,7 +118,7 @@ const logisticsSteps = [
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
-            <span>Email Desk Logistica</span>
+            <span>Contact Us</span>
           </a>
         </div>
 
@@ -134,12 +134,12 @@ const logisticsSteps = [
           <div class="flex flex-wrap items-center justify-between gap-3 mb-4 relative z-20">
             <!-- Search / Select dropdown -->
             <div class="relative grow max-w-xs">
-              <label for="globe-country-select" class="sr-only">Cerca una nazione</label>
+              <label for="globe-country-select" class="sr-only">Search country</label>
               <select
                 id="globe-country-select"
                 class="w-full bg-white/10 border border-white/20 rounded-lg px-3.5 py-2 text-xs text-white focus:outline-none focus:border-brand-gold focus:ring-1 focus:ring-brand-gold cursor-pointer"
               >
-                <option value="" class="bg-brand-dark text-white">🌍 Seleziona o cerca nazione...</option>
+                <option value="" class="bg-brand-dark text-white">🌍 Select or search country...</option>
               </select>
             </div>
 
@@ -149,19 +149,19 @@ const logisticsSteps = [
                 id="globe-recenter-btn"
                 type="button"
                 class="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-brand-gold hover:text-brand-navy border border-white/20 text-[11px] font-mono text-white/90 transition-colors flex items-center gap-1.5 cursor-pointer"
-                title="Centra la visuale su Capri e sul Mediterraneo"
+                title="Center view on Capri and the Mediterranean"
               >
-                <span>📍 Centra Capri</span>
+                <span>📍 Center Capri</span>
               </button>
 
               <button
                 id="globe-spin-toggle"
                 type="button"
                 class="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-[11px] font-mono text-white/90 transition-colors flex items-center gap-1.5 cursor-pointer"
-                title="Pausa / Avvia rotazione automatica"
+                title="Pause / Resume auto-rotation"
               >
                 <span id="spin-icon">⏸️</span>
-                <span id="spin-label">Auto-rotazione</span>
+                <span id="spin-label">Auto-Rotate</span>
               </button>
             </div>
           </div>
@@ -178,33 +178,33 @@ const logisticsSteps = [
                 <div class="flex items-center gap-2">
                   <span id="hud-flag" class="text-2xl">🇺🇸</span>
                   <h4 id="hud-country" class="font-serif text-2xl text-white font-medium">
-                    Stati Uniti D'America
+                    United States
                   </h4>
                   <span id="hud-iso" class="text-[10px] font-mono bg-white/15 px-2 py-0.5 rounded text-brand-gold font-bold">
                     US
                   </span>
                 </div>
                 <p class="text-xs text-white/80 font-light flex items-center gap-1.5">
-                  <span class="text-brand-gold">🏛️ Capitale:</span>
-                  <strong id="hud-capital" class="text-white font-medium">Washington, D.C.</strong>
+                  <span class="text-brand-gold">🏛️ Capital:</span>
+                  <strong id="hud-capital" class="text-white font-medium">Washington, DC</strong>
                 </p>
               </div>
 
               <!-- Distance & Flight Metrics -->
               <div class="flex items-center gap-6 border-t sm:border-t-0 sm:border-l border-white/15 pt-3 sm:pt-0 sm:pl-6">
                 <div>
-                  <span class="text-[9px] uppercase tracking-wider text-brand-gold font-mono block">Distanza da Capri</span>
+                  <span class="text-[9px] uppercase tracking-wider text-brand-gold font-mono block">Distance from Capri</span>
                   <div class="flex items-baseline gap-1.5">
-                    <span id="hud-dist-km" class="font-serif text-2xl lg:text-3xl font-bold text-white tracking-tight">7.421</span>
+                    <span id="hud-dist-km" class="font-serif text-2xl lg:text-3xl font-bold text-white tracking-tight">7,421</span>
                     <span class="text-xs text-white/60 font-mono">km</span>
                   </div>
-                  <span id="hud-dist-mi" class="text-[10px] text-white/40 font-mono">~4.611 miglia</span>
+                  <span id="hud-dist-mi" class="text-[10px] text-white/40 font-mono">~4,611 miles</span>
                 </div>
 
                 <div>
-                  <span class="text-[9px] uppercase tracking-wider text-brand-gold font-mono block">Volo Stimato</span>
+                  <span class="text-[9px] uppercase tracking-wider text-brand-gold font-mono block">Estimated Flight</span>
                   <span id="hud-flight-time" class="font-mono text-sm text-emerald-400 font-semibold block mt-1">~9h 47m</span>
-                  <span class="text-[9px] text-white/50 block">Jet Privato Diretto</span>
+                  <span class="text-[9px] text-white/50 block">Direct Flight / Private Jet</span>
                 </div>
               </div>
 
@@ -213,14 +213,14 @@ const logisticsSteps = [
             <!-- Contextual Quick Email Dispatch Action -->
             <div class="mt-3 pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs">
               <span class="text-white/60 text-[11px] font-light">
-                Coordina l'arrivo a Napoli/Capri e il transfer in motoscafo Riva o elicottero:
+                Coordinate arrival in Naples and private transfer to Capri:
               </span>
               <a
                 id="hud-email-cta"
-                href="mailto:partnerships@capridmc.com?subject=Richiesta%20Logistica%20VIP%20da%20Washington%2C%20D.C.%20(Stati%20Uniti%20D'America)"
+                href="mailto:partnerships@capridmc.com?subject=VIP%20Logistics%20Inquiry%20from%20Washington%2C%20DC%20(United%20States)"
                 class="inline-flex items-center gap-1.5 text-brand-gold hover:text-white font-semibold transition-colors underline underline-offset-4"
               >
-                <span>Richiedi assistenza transfer da questa nazione &rarr;</span>
+                <span>Request transfer assistance from this country &rarr;</span>
               </a>
             </div>
           </div>
@@ -236,14 +236,14 @@ const logisticsSteps = [
             
             <!-- Floating interactive hint on canvas -->
             <div class="absolute bottom-3 left-1/2 -translate-x-1/2 pointer-events-none bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-[10px] text-white/60 font-mono flex items-center gap-1.5">
-              <span>👆 Trascina per esplorare · Clicca su qualsiasi nazione</span>
+              <span>👆 Drag to rotate · Click any country</span>
             </div>
           </div>
 
           <!-- Footnote: Capri GPS Reference -->
           <div class="mt-4 pt-3 border-t border-white/10 flex flex-wrap items-center justify-between text-[11px] text-white/50 font-mono">
-            <span>📍 Origine: Capri (40.5507° N, 14.2426° E)</span>
-            <span>Calcolo geodetico ortodromico WGS-84</span>
+            <span>📍 Origin: Capri, Italy (40.5507° N, 14.2426° E)</span>
+            <span>WGS-84 Great-Circle Geodesic Calculation</span>
           </div>
 
         </div>
@@ -324,16 +324,18 @@ const logisticsSteps = [
     // Paese attualmente selezionato (di default Stati Uniti con capitale Washington)
     let selectedFeature = globeDataset.features.find(f => f.properties?.iso2 === 'US') || globeDataset.features[0];
 
-    // Popola il selettore delle nazioni in ordine alfabetico italiano
+    // Populate country selector in alphabetical order (English)
     if (selectEl) {
       const sortedFeatures = [...globeDataset.features]
-        .filter(f => f.properties?.name && f.properties?.capital)
-        .sort((a, b) => (a.properties.name || '').localeCompare(b.properties.name || '', 'it'));
+        .filter(f => (f.properties?.name_en || f.properties?.name) && (f.properties?.capital_en || f.properties?.capital))
+        .sort((a, b) => ((a.properties.name_en || a.properties.name) || '').localeCompare((b.properties.name_en || b.properties.name) || '', 'en'));
 
       sortedFeatures.forEach(f => {
         const opt = document.createElement('option');
         opt.value = f.properties.id;
-        opt.textContent = `${f.properties.flag || '🌐'} ${f.properties.name} (${f.properties.capital})`;
+        const countryLabel = f.properties.name_en || f.properties.name;
+        const capitalLabel = f.properties.capital_en || f.properties.capital;
+        opt.textContent = `${f.properties.flag || '🌐'} ${countryLabel} (${capitalLabel})`;
         if (selectedFeature && f.properties.id === selectedFeature.properties.id) {
           opt.selected = true;
         }
@@ -349,16 +351,16 @@ const logisticsSteps = [
       });
     }
 
-    // Calcolo della distanza in km e miglia da Capri
+    // Distance in km and miles from Capri
     function computeDistanceMetrics(capitalCoords) {
       if (!capitalCoords || (capitalCoords[0] === 0 && capitalCoords[1] === 0)) {
-        return { km: 0, miles: 0, flightTime: 'N/D' };
+        return { km: 0, miles: 0, flightTime: 'N/A' };
       }
       const distRad = d3Geo.geoDistance(CAPRI_COORDS, capitalCoords);
       const km = Math.round(distRad * 6371);
       const miles = Math.round(km * 0.621371);
 
-      // Stima volo: 800 km/h velocità media crociera jet + 30 min rullaggio/decollo/atterraggio
+      // Flight estimate: 800 km/h average cruise speed + 30 min ground/takeoff/landing
       const totalHours = (km / 800) + 0.5;
       const h = Math.floor(totalHours);
       const m = Math.round((totalHours - h) * 60);
@@ -367,27 +369,28 @@ const logisticsSteps = [
       return { km, miles, flightTime };
     }
 
-    // Seleziona una nazione e aggiorna l'interfaccia
+    // Select country and update HUD
     function selectCountry(feature, smoothRotate = true) {
       selectedFeature = feature;
       const p = feature.properties || {};
 
-      // Coordinate della capitale
       const capitalCoords = [p.lon, p.lat];
       const metrics = computeDistanceMetrics(capitalCoords);
+      const countryName = p.name_en || p.name || 'Country';
+      const capitalName = p.capital_en || p.capital || 'N/A';
 
-      // Aggiorna HUD
+      // Update HUD
       if (hudFlag) hudFlag.textContent = p.flag || '🌐';
-      if (hudCountry) hudCountry.textContent = p.name || 'Nazione';
+      if (hudCountry) hudCountry.textContent = countryName;
       if (hudIso) hudIso.textContent = p.iso2 || '';
-      if (hudCapital) hudCapital.textContent = p.capital ? `${p.capital} (${p.capital_en || ''})` : 'N/D';
-      if (hudDistKm) hudDistKm.textContent = metrics.km.toLocaleString('it-IT');
-      if (hudDistMi) hudDistMi.textContent = `~${metrics.miles.toLocaleString('it-IT')} miglia`;
+      if (hudCapital) hudCapital.textContent = capitalName;
+      if (hudDistKm) hudDistKm.textContent = metrics.km.toLocaleString('en-US');
+      if (hudDistMi) hudDistMi.textContent = `~${metrics.miles.toLocaleString('en-US')} miles`;
       if (hudFlightTime) hudFlightTime.textContent = metrics.flightTime;
 
-      // Aggiorna link email
+      // Update email link
       if (hudEmailCta) {
-        const subj = encodeURIComponent(`Richiesta Logistica VIP da ${p.capital || p.name} (${p.name})`);
+        const subj = encodeURIComponent(`VIP Logistics Inquiry from ${capitalName} (${countryName})`);
         hudEmailCta.href = `mailto:partnerships@capridmc.com?subject=${subj}`;
       }
 

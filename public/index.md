@@ -1,11 +1,11 @@
 # Capri Destination Management Company (Capri DMC)
 
-**Your Roots in Capri — From Capri for Capri**  
-*A Women-Owned Enterprise · Spin-off from Nesea Capri Tours & Events · 24/7 Ground Dispatch*
+**Proudly Owned by Caprese People**  
+*A Women-Owned Enterprise · Curated by Team Nesea · On-Ground Dispatch*
 
 ---
 
-## The Local Authority
+## Your Local Team in Capri
 Since 2010, our founders have woven their lives into the island's fabric. We are the direct bridge between global luxury travel designers and the authentic heartbeat of Capri.
 
 ### Founding Leadership
@@ -18,43 +18,43 @@ Since 2010, our founders have woven their lives into the island's fabric. We are
 ## Curated B2B Service Catalog
 
 ### Exclusive Solutions
-#### Capri Private Boat Tours & Gozzo Charters
-*Traditional Gozzo Caprese, Riva Speedboats & Luxury Yacht Charters* — **Guaranteed Fleet Availability**
-Through our unmatched on-island maritime network, Capri DMC provides luxury travel advisors with priority access to Capri's premier wooden gozzo boats, high-speed Riva yachts, and chartered catamarans. Even during peak July and August demand, our native licensed skippers navigate secret grottoes, Faraglioni passages, and secluded swimming coves with chilled champagne and tailored catering.
-- Secured peak-season availability for traditional Gozzo Caprese & modern yachts
-- Faraglioni arch navigation & private Blue Grotto dawn protocol
-- Chilled champagne, prosecco, local fruit & towel service onboard
-- Flexible pick-up: Marina Grande, Marina Piccola, or private hotel tender docks
+#### Capri Private Boat Services & Gozzo Charters
+*Traditional Gozzo Caprese, Speedboats & Luxury Yacht Charters* — **Curated Boat Services**
+Through our trusted on-island maritime network, Capri DMC offers luxury travel advisors access to Capri's traditional wooden gozzo boats, speedboats, and private yacht charters. Our licensed native skippers navigate coastal waters and scenic coves, complemented by chilled champagne and tailored luxury catering onboard.
+- Access to traditional Gozzo Caprese, speedboats, and private yacht charters upon request
+- Scenic Faraglioni dawn protocol & private coastal itineraries
+- Chilled champagne, prosecco, fresh seasonal fruit & tailored catering onboard
+- Flexible embarkation from Marina Grande or Marina Piccola
 
-#### Transfers, Check-In & Ticketing Services
-*Airport-to-Suite Logistics, Open-Top Capri Taxis & Luggage Command* — **Frictionless Turnkey Arrival**
-From the second your VIP clients land at Naples Capodichino (NAP) or Rome Fiumicino (FCO), Capri DMC assumes complete logistical command. We orchestrate tarmac Mercedes-Maybach transfers, private maritime crossings, custom open-air convertible Capri taxis, and dedicated luggage porterage directly into 5-star hotel suites with zero lobby delay.
-- VIP tarmac meet & greet at Naples (NAP) and Rome (FCO) airports
-- Direct luggage dispatch: bags delivered inside suites prior to check-in
-- Iconic Capri open-top convertible taxis & private island bus charters
-- VIP priority ticketing for island funicular, chairlifts, and archaeological sites
+#### Private and Exclusive Transfer Services
+*Naples-to-Capri Chauffeured Logistics & Island Luggage Coordination* — **Seamless On-Ground Logistics**
+From arrival at Naples Capodichino (NAP) airport or rail hub, Capri DMC coordinates private transfers with luxury chauffeured cars or vans (NCC) and maritime crossings. Upon arrival on the island, iconic open-top convertible taxis are arranged on request through our trusted network, with dedicated luggage transport coordinated to deliver bags safely to private villas or hotel rooms following guest arrival.
+- Personal meet & greet with private chauffeured car or luxury van (NCC) from Naples (NAP)
+- Coordinated maritime crossing to Capri with island greeting at Marina Grande
+- Dedicated luggage transport delivered to villas or hotel accommodations following guest arrival
+- Iconic open-top convertible taxis on request through our network, and private luxury vans
 
-#### Dedicated 24/7 Island Conciergerie
-*White-Glove Ground Representation for Travel Advisors* — **Zero Time-Zone Latency**
-We act as your trusted on-the-ground extension in Capri. Our dedicated concierge team secures highly contested reservations at Capri's most sought-after cliffside restaurants (La Fontelina, Da Paolino, Il Riccio, Aurora), reserves VIP daybeds at premier beach clubs, coordinates private helicopter flights, and provides immediate emergency re-routing.
-- Priority reservations at premier cliffside dining venues & private beach clubs
-- Real-time WhatsApp hotline with dedicated advisor response within minutes
-- Villa provisioning, private security escorts & medical concierge coordination
-- Strict white-label client representation protecting advisor brand equity
+#### White-Label On-Island Service
+*Discreet Ground Representation Elevating Your Brand Reputation* — **White-Label Service**
+We act as your professional, discreet on-island extension in Capri, operating under strict white-label protocols to protect and elevate your agency's reputation. Because our team lives on Capri year-round, we ensure constant presence and exceptional resilience during adverse weather events or unexpected schedule changes: we live here, ensuring immediate, reliable ground coordination.
+- Strict white-label client representation elevating the advisor's brand prestige
+- Constant on-island presence and proven resilience during adverse weather events
+- Priority assistance for reservations, villa provisioning, and bespoke commissions
+- Direct on-ground dispatch with real-time updates for partner agencies
 
 #### Weddings, Bar Mitzvahs & Milestone Celebrations
 *Historic Villa Buyouts, Scenic Jewish Lifecycle Events & Gala Production* — **Full-Service Event Production**
 Capri DMC orchestrates high-end island celebrations with profound local heritage. We manage private historic cliffside villa buyouts, luxury wedding ceremonies, and specialized Jewish celebrations (Bar Mitzvah, Bat Mitzvah, Kiddushin) featuring scenic Torah readings overlooking the Mediterranean, Shabbat logistics, and strictly supervised Kosher catering coordination.
 - Access to private historic estates and panoramic cliffside villas
 - Specialized Jewish lifecycle planning: Bar Mitzvah, Torah readings & Kosher catering
-- Guest logistics: chartered private catamarans, luggage transfers & guest transfers
+- Guest logistics: chartered private speedboats, luggage transfers & guest transfers
 - Michelin-starred culinary coordination, staging, lighting & floral design
 
 
 ### Custom Experiences
 #### Exclusive Guided Island Tours
-*Privileged Access Led by Certified Native Capresi Guides* — **Beyond Standard Tourism**
-Crafted exclusively for high-net-worth travelers, our private guided walking and cultural tours reveal the authentic soul of Capri and Anacapri. Led by certified resident art historians and native guides (the Nesea Capri founders team), guests bypass commercial queues to discover hidden courtyards, Roman imperial villas (Villa Jovis, Villa Damecuta), and private botanical terraces.
+*Privileged Access Led by Certified Native Capresi Guides* — **Heritage & Culture**
+Crafted exclusively for discerning travelers, our private guided walking and cultural tours reveal the authentic soul of Capri and Anacapri. Led by certified resident art historians and native guides from Team Nesea, guests bypass commercial queues to discover hidden courtyards, Roman imperial villas (Villa Jovis, Villa Damecuta), and private botanical terraces.
 - Bespoke itineraries tailored to VIP client interests, art, and history
 - After-hours private access to Villa Lysis, Villa San Michele, and historic convents
 - Fluent multilingual guides: English, Italian, French, Spanish, German
@@ -77,15 +77,15 @@ A rare invitation into authentic Caprese homes and panoramic private estate gard
 - Customizable menus for dietary needs (Kosher-friendly, vegan, gluten-free)
 
 #### Personal Shopper Service & Global Shipping
-*Via Camerelle Luxury Ateliers to Secure Worldwide Freight* — **High Fashion & Logistics**
-An insider shopping experience spanning the stylish streets of Capri and Anacapri. From reserved VIP appointments at flagship fashion houses along Via Camerelle to hidden artisan perfumeries (Carthusia), our personal shoppers curate bespoke wardrobes and oversee international tax-free documentation and insured door-to-door freight shipping.
-- After-hours private boutique viewings and dedicated salon shopping
+*Via Camerelle Luxury Ateliers to Secure Worldwide Freight* — **Fashion & Logistics**
+An insider shopping experience spanning the stylish streets of Capri and Anacapri. From reserved appointments at premier ateliers along Via Camerelle to hidden artisan perfumeries, our personal shoppers curate bespoke wardrobes and oversee international tax-free documentation and insured door-to-door freight shipping.
+- Private boutique viewings and dedicated salon shopping
 - Fine jewelry consultations, antique coral, and bespoke fragrance creation
 - Complete handling of Italian VAT/tax-free customs paperwork
 - End-to-end luxury shipping and customs clearance direct to client residences
 
 #### Hidden Hiking Excursions & Secret Nature Routes
-*Pristine Trails Far Removed from Mass Commercial Footfall* — **Untouched Island Wilderness**
+*Pristine Trails Far Removed from Mass Commercial Footfall* — **Untouched Nature**
 For clients seeking nature and rejuvenation, Capri DMC leads guided expeditions along the island's secret, breathtaking cliffside paths. From the dramatic Sentiero dei Fortini coastal trail to Mount Solaro ridges, ancient hermitages, and secret sea lookouts, our naturalist guides provide an exclusive encounter with Capri's raw Mediterranean wilderness.
 - Off-the-beaten-path routes: Sentiero dei Fortini, Passetiello, Monte Solaro
 - Geological, botanical, and historical narrative from certified environmental guides
@@ -101,27 +101,27 @@ Ensuring high-end guests sustain their fitness and wellness regimens during thei
 - Exclusive access to private gym facilities and court bookings across the island
 
 #### Bespoke Babysitting & Pet Sitting for B2B Clients
-*Vetted, Trustworthy Care Giving VIP Clients Complete Freedom* — **Discreet Family Care**
+*Vetted, Trustworthy Care Giving VIP Clients Complete Freedom* — **Family & Pet Care**
 High-net-worth clients often require trusted support to attend private yacht charters, romantic sunset dinners, or late-night celebrations. Capri DMC provides thoroughly vetted, multilingual babysitters and professional pet-sitters across the entire island, ensuring absolute safety, attentive engagement, and complete peace of mind.
 - Rigorously screened, certified, and multilingual childcare professionals
 - In-villa or in-suite babysitting for day, evening, or overnight assistance
 - Dedicated dog sitting, walking, and pet care tailored to luxury villa stays
-- Full flexibility: scheduled for specific excursions or available on-call 24/7
+- Full flexibility: scheduled for specific excursions or available on-call with on-ground dispatch
 
 
 ---
 
-## Airport-to-Suite Logistics
-1. **Tarmac VIP Meet & Greet** (Naples Capodichino / Rome FCO)
-2. **Private Maritime Crossing** (Private Riva speedboats or helicopter to Damecuta)
-3. **Luggage Porterage & Open-Top Taxi** (Marina Grande direct transfer)
-4. **Direct-to-Suite Room Placement** (5-star hotels: Quisisana, Punta Tragara, Caesar Augustus)
+## Private & Exclusive Transfer Services
+1. **Airport Meet & Greet** (Naples International Airport NAP with chauffeured NCC car or van)
+2. **Private Maritime Crossing** (Private speedboat or gozzo crossing across the Gulf of Naples)
+3. **Open-Top Taxi & Island Van** (Marina Grande direct transfer)
+4. **Dedicated Luggage Delivery** (Luggage delivered to villa or suite, arriving following guests)
 
 ---
 
 ## Contact & Operations
 - Headquarters: 80076 Capri, Metropolitan City of Naples, Campania, Italy
-- 24/7 Direct Advisor Line: +39 333 594 3947
+- On-Ground Dispatch & WhatsApp Line: +39 333 594 3947
 - Email: partnerships@capridmc.com
 - Official Website: https://www.capridmc.com/
 - Schedule B2B Appointment: https://www.capridmc.com/contact-us-capri-destination-management-company/
