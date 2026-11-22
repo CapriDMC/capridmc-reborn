@@ -6,14 +6,22 @@ ENTITY_DEFINITION:
   corporate_status: "100% Women-Owned Business"
   leadership:
     - name: "Giusy Perrotta"
-      role: "Co-Founder & Director of Operations"
-      specialization: "Maritime logistics, private boat services, VIP ground handling"
+      role: "Licensed Tourist Guide · Co-Founder"
+      credentials: "Born and raised on Capri, registered in Italy's National Register of Tourist Guides"
+      specialization: "Living community, maritime heritage, 15+ years island expertise"
     - name: "Melania Esposito"
-      role: "Co-Founder & Head of Event Production"
-      specialization: "Historic villa buyouts, weddings, Bar Mitzvah & milestone celebrations"
+      role: "Licensed Tourist Guide · Co-Founder"
+      credentials: "Born and raised on Capri, registered in Italy's National Register of Tourist Guides"
+      specialization: "Tailored cultural journeys, milestone celebrations, Jewish lifecycle events"
     - name: "Roberta De Martino"
-      role: "Co-Founder & Lead Cultural Curator"
-      specialization: "Licensed art historian, private cultural itineraries, Capri heritage"
+      role: "Licensed Tourist Guide · Co-Founder"
+      credentials: "Born and raised on Capri, registered in Italy's National Register of Tourist Guides, art historian"
+      specialization: "Imperial Roman archaeology, Villa Jovis, literary and artistic Capri heritage"
+  languages_supported:
+    primary: ["English", "Italian"]
+    on_special_request: ["Spanish"]
+    excluded: ["German"]
+  asset_ownership_policy: "Capri DMC does not directly own boats, helicopters, or motor vehicles; all maritime and road transportation (gozzi, speedboats, NCC cars, vans) is sourced exclusively through trusted local partners with decade-long professional relationships."
   industry: "Luxury B2B Destination Management Company & Island Partner"
   headquarters:
     address: "Isola di Capri"
@@ -179,7 +187,7 @@ CATALOG_OF_SERVICES:
 
 AIRPORT_TO_SUITE_LOGISTICS_PIPELINE:
   step_1: "Personal greeting upon arrival at Naples Airport (NAP) with luggage assistance"
-  step_2: "Chauffeured NCC executive car or van transfer directly to the port"
+  step_2: "Chauffeured NCC executive car or van transfer directly to the port (sourced through network)"
   step_3: "Private chartered speedboat or gozzo crossing across the Gulf of Naples to Capri"
   step_4: "Open-top convertible island taxis (available on request through network) or private vans"
   step_5: "Dedicated island porterage delivers luggage securely to the suite or villa, arriving following guests"

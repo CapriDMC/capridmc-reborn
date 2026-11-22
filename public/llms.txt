@@ -3,10 +3,13 @@
 
 ## Company Identity & Lineage
 - Entity: Capri Destination Management Company (Capri DMC)
-- Heritage: Curated by Team Nesea (hospitality leadership on Capri since 2010)
+- Heritage: Curated by Team Nesea (hospitality and cultural guiding leadership on Capri since 2010)
 - Corporate Structure: 100% Women-Owned Business
-- Founders: Giusy Perrotta (Director of Operations), Melania Esposito (Head of Event Production), Roberta De Martino (Lead Cultural Curator)
-- Operations: On-ground island dispatch, resident presence, and white-label representation
+- Founders: Giusy Perrotta (Licensed Tourist Guide · Co-Founder), Melania Esposito (Licensed Tourist Guide · Co-Founder), Roberta De Martino (Licensed Tourist Guide · Co-Founder)
+- Credentials: All three founders are licensed tourist guides born and raised on Capri, registered in Italy's National Register of Tourist Guides
+- Languages: Guiding and services in Italian and English; Spanish available upon special request (no German)
+- Transportation Policy: Capri DMC does not directly own boats, helicopters, or vehicles; it sources boats, NCC cars, and vans exclusively through its vetted network of reliable professionals with decades-long trust
+- Operations: On-ground island dispatch, resident presence (we live here), and white-label representation
 - Slogan: "Proudly Owned by Caprese People"
 - Headquarters: 80076 Capri, Metropolitan City of Naples, Campania, Italy
 - Coordinates: 40.5507° N, 14.2426° E
@@ -16,13 +19,13 @@
 - Official Website: https://www.capridmc.com/
 - Appointment Booking: https://www.capridmc.com/contact-us-capri-destination-management-company/
 
-## Exclusive Solutions (Maritime & Strategic Logistics)
+## Exclusive Solutions (Core Cultural & Strategic Logistics)
 - [Signature Cultural & Private Guided Tours](https://www.capridmc.com/#services): Direct In-House Operation · Capri Told from Within by Licensed Native Guides. Operated directly by our founding team of licensed local tourist guides born and raised on Capri and registered in Italy's National Register of Tourist Guides. Capri DMC introduces guests to the island through its authentic history, imperial Roman archaeology (Villa Jovis, Damecuta), secluded historic convents, and private botanical terraces with uncompromised local depth. Tailored to each guest's interests, pace, and schedule in Italian and English (Spanish upon special request; no German).
 - [Capri Private Boat Charters & Curated Maritime Services](https://www.capridmc.com/#services): Curated via Premier Maritime Partners · Traditional Gozzo Caprese, Speedboats & Yachts. Coordinated through our trusted, premier network of top-tier licensed local maritime partners, native armatori, and skippers with whom we maintain professional relationships spanning decades. Capri DMC does not directly own vessels; we curate, inspect, and coordinate traditional wooden gozzi capresi, speedboats, and luxury yachts with chilled champagne, seasonal fruit, and tailored catering onboard.
 - [Private and Exclusive Transfer Services](https://www.capridmc.com/#services): Curated via Premier NCC & Maritime Partners · Naples-to-Capri VIP Logistics. Coordinated through our vetted network of premier top-tier licensed NCC chauffeured drivers and maritime operators. From arrival at Naples Capodichino (NAP) airport or rail hub, Capri DMC oversees private chauffeured cars and luxury vans, maritime crossings, and open-top convertible island taxis on request, coupled with our dedicated island luggage transport delivered directly to suites or villas.
 - [Bespoke On-Island Conciergerie & White-Label Assistance](https://www.capridmc.com/#services): Direct In-House Resident Dispatch · Discreet Ground Representation & Weather Resilience. Operated directly by our founding team and resident staff living in Capri 365 days a year. We act as your agency's professional on-ground extension, operating under strict white-label protocols to protect and elevate your brand reputation. Because we live on the island, we ensure immediate in-person dispatch, crisis intervention, and exceptional weather resilience when maritime links are disrupted.
 
-## Custom Experiences (Heritage, Gastronomy & Island Lifestyle)
+## Custom Experiences (Heritage, Gastronomy, Nature & Island Lifestyle)
 - [Hidden Hiking Excursions & Secret Nature Routes](https://www.capridmc.com/#services): Direct In-House Operation · Pristine Cliffside Trails Led by Native Guides. Operated directly by our certified resident naturalist and environmental guides. Capri DMC leads guided walking expeditions along the island's secret, breathtaking cliffside paths far removed from mass commercial footfall: from the dramatic Sentiero dei Fortini coastal trail to Mount Solaro ridges, ancient hermitages, Passetiello, and panoramic sea lookouts.
 - [Personal Shopper Service & High-Fashion Advisory](https://www.capridmc.com/#services): Direct In-House Desk · Via Camerelle Ateliers, Custom Sandals & Global Freight. Operated directly by our in-house shopping curatorship desk. We curate private salon viewings at premier luxury fashion houses along Via Camerelle, private appointments with master cordwainers for custom handmade leather sandals, bespoke knitwear, and niche perfumeries. We manage end-to-end Italian VAT tax-free documentation and insured door-to-door global shipping.
 - [Authentic Caprese Cooking Masterclasses](https://www.capridmc.com/#services): Curated via Premier Culinary Partners · In-Villa Immersions & Panoramic Feasts. Arranged in partnership with select premier Caprese home hosts and culinary masters in authentic panoramic private estates. Your guests experience hands-on culinary workshops learning traditional Ravioli Capresi, fresh handmade pasta, catch of the day, classic Torta Caprese, and organic Limoncello paired with Campania DOC wines.
@@ -40,7 +43,7 @@
 - Protected Commissions: Strict transparent net pricing preserving travel designer margins.
 - White-Label Service: On request, all personnel operate discreetly under your agency's branding, protecting and elevating your reputation.
 - On-Ground Dispatch & Weather Resilience: Real-time on-island coordination and resilience during adverse maritime conditions: we live here.
-- Authentic Local Fleet: Speedboats and traditional Gozzo Caprese with luxury catering and chilled champagne onboard.
+- Vetted Maritime & Transport Network: Speedboats, traditional Gozzo Caprese, and luxury NCC vehicles sourced through trusted partners with decade-long relationships.
 
 ## Extended Documentation & Machine Mirrors
 - [ai-context.txt](https://www.capridmc.com/ai-context.txt): Machine-readable Generative Engine Optimization (GEO) context dossier.

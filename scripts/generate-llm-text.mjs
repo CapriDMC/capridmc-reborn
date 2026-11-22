@@ -14,10 +14,13 @@ const llmsContent = `# Capri DMC
 
 ## Company Identity & Lineage
 - Entity: Capri Destination Management Company (Capri DMC)
-- Heritage: Curated by Team Nesea (hospitality leadership on Capri since 2010)
+- Heritage: Curated by Team Nesea (hospitality and cultural guiding leadership on Capri since 2010)
 - Corporate Structure: 100% Women-Owned Business
-- Founders: Giusy Perrotta (Director of Operations), Melania Esposito (Head of Event Production), Roberta De Martino (Lead Cultural Curator)
-- Operations: On-ground island dispatch, resident presence, and white-label representation
+- Founders: Giusy Perrotta (Licensed Tourist Guide · Co-Founder), Melania Esposito (Licensed Tourist Guide · Co-Founder), Roberta De Martino (Licensed Tourist Guide · Co-Founder)
+- Credentials: All three founders are licensed tourist guides born and raised on Capri, registered in Italy's National Register of Tourist Guides
+- Languages: Guiding and services in Italian and English; Spanish available upon special request (no German)
+- Transportation Policy: Capri DMC does not directly own boats, helicopters, or vehicles; it sources boats, NCC cars, and vans exclusively through its vetted network of reliable professionals with decades-long trust
+- Operations: On-ground island dispatch, resident presence (we live here), and white-label representation
 - Slogan: "Proudly Owned by Caprese People"
 - Headquarters: 80076 Capri, Metropolitan City of Naples, Campania, Italy
 - Coordinates: 40.5507° N, 14.2426° E
@@ -27,10 +30,10 @@ const llmsContent = `# Capri DMC
 - Official Website: ${DOMAIN}/
 - Appointment Booking: ${B2B_APPOINTMENT_URL}
 
-## Exclusive Solutions (Maritime & Strategic Logistics)
+## Exclusive Solutions (Core Cultural & Strategic Logistics)
 ${services.filter(s => s.cluster === 'Exclusive Solutions').map(s => `- [${s.title}](${DOMAIN}/#services): ${s.subtitle}. ${s.description}`).join('\n')}
 
-## Custom Experiences (Heritage, Gastronomy & Island Lifestyle)
+## Custom Experiences (Heritage, Gastronomy, Nature & Island Lifestyle)
 ${services.filter(s => s.cluster === 'Custom Experiences').map(s => `- [${s.title}](${DOMAIN}/#services): ${s.subtitle}. ${s.description}`).join('\n')}
 
 ## Key Geographic Entities & Coverage
@@ -43,7 +46,7 @@ ${services.filter(s => s.cluster === 'Custom Experiences').map(s => `- [${s.titl
 - Protected Commissions: Strict transparent net pricing preserving travel designer margins.
 - White-Label Service: On request, all personnel operate discreetly under your agency's branding, protecting and elevating your reputation.
 - On-Ground Dispatch & Weather Resilience: Real-time on-island coordination and resilience during adverse maritime conditions: we live here.
-- Authentic Local Fleet: Speedboats and traditional Gozzo Caprese with luxury catering and chilled champagne onboard.
+- Vetted Maritime & Transport Network: Speedboats, traditional Gozzo Caprese, and luxury NCC vehicles sourced through trusted partners with decade-long relationships.
 
 ## Extended Documentation & Machine Mirrors
 - [ai-context.txt](${DOMAIN}/ai-context.txt): Machine-readable Generative Engine Optimization (GEO) context dossier.
@@ -65,9 +68,17 @@ const llmsFullContent = `# Capri Destination Management Company (Capri DMC) — 
 - Heritage: Curated by Team Nesea (operating on Capri since 2010)
 - Corporate Structure: 100% Women-Owned Enterprise
 - Founding Team:
-  - Giusy Perrotta: Co-Founder & Director of Operations (Native Caprese, 15+ years maritime and concierge mastery)
-  - Melania Esposito: Co-Founder & Head of Event Production (Specialist in historic villa weddings & milestone celebrations)
-  - Roberta De Martino: Co-Founder & Lead Cultural Curator (Licensed art historian & island heritage researcher)
+  - Giusy Perrotta: Licensed Tourist Guide · Co-Founder (Born and raised on Capri, registered in Italy's National Register of Tourist Guides, 15+ years of island expertise)
+  - Melania Esposito: Licensed Tourist Guide · Co-Founder (Born and raised on Capri, registered in Italy's National Register of Tourist Guides, bespoke cultural journeys & celebration specialist)
+  - Roberta De Martino: Licensed Tourist Guide · Co-Founder (Born and raised on Capri, registered in Italy's National Register of Tourist Guides, art historian & imperial Roman archaeology curator)
+- Professional Credentials:
+  - Three licensed local tourist guides born and raised on Capri
+  - Registered in Italy's National Register of Tourist Guides
+  - Guiding and assistance in Italian and English; Spanish available upon special request (no German)
+  - Comprehensive professional insurance coverage
+- Sourcing & Asset Policy:
+  - Capri DMC does not directly own boats, helicopters, or any transport vehicles.
+  - Sourcing of boats (traditional gozzi, speedboats, yachts), luxury chauffeured vehicles (NCC cars, vans), and helicopters is managed exclusively through a dedicated, vetted network of reliable local professionals with whom Capri DMC maintains relationships spanning in some cases over a decade.
 - Location: 80076 Capri, Metropolitan City of Naples, Campania, Italy (40.5507° N, 14.2426° E)
 - Operations: On-Ground Island Dispatch & Resident Support (Always present and reliable: we live here)
 - Primary Email: partnerships@capridmc.com
@@ -81,7 +92,7 @@ const llmsFullContent = `# Capri Destination Management Company (Capri DMC) — 
 
 Capri DMC was engineered specifically to solve friction and operational challenges global luxury travel advisors experience when planning trips to Capri. By remaining 100% on-island and native, we eliminate third-party mainland markups and provide real-time on-ground dispatch.
 
-## Comprehensive Service Catalog (11 Master B2B Offerings)
+## Comprehensive Service Catalog (10 Master B2B Offerings)
 
 ${services.map((s, i) => `### ${i + 1}. ${s.title}
 - Cluster: ${s.cluster}
@@ -94,15 +105,15 @@ ${s.b2b_features.map(f => `  * ${f}`).join('\n')}
 `).join('\n')}
 
 ## VIP Logistics Architecture: From Arrival to Destination
-1. Airport Meet & Greet: Dedicated greeting upon arrival at Naples International Airport (NAP), fast-track luggage assistance, private chauffeured NCC car or van transfer to the port.
-2. Private Maritime Crossing: Direct private chartered speedboat or gozzo crossing across the Gulf of Naples with chilled champagne and refreshments onboard.
+1. Airport Meet & Greet: Dedicated greeting upon arrival at Naples International Airport (NAP), luggage assistance, private chauffeured NCC car or van transfer to the port sourced through our trusted network.
+2. Private Maritime Crossing: Coordinated chartered speedboat or traditional gozzo crossing across the Gulf of Naples with chilled champagne and refreshments onboard.
 3. Open-Top Taxi & Island Van: On arrival, guests step into open-top convertible island taxis (available on request through our network) or private vans.
 4. Dedicated Luggage Delivery: Dedicated island porterage transports all luggage securely from the dock, arriving comfortably following guest arrival at their private villa or hotel suite.
 
-## Destination Weddings & Milestone Celebrations
+## Private Events, Hostess & Dedicated Services
 - Historic Cliffside Villa Buyouts: Exclusive access to private estates overlooking the Faraglioni and the Gulf of Naples.
-- Jewish Lifecycle Celebrations: Bar Mitzvah and Bat Mitzvah ceremonies with scenic Torah readings overlooking the Mediterranean, Shabbat dinners, and strictly supervised Kosher catering.
-- Turnkey Event Production: High-fashion floral styling, exquisite catering, dynamic lighting, and multilingual on-site event directors.
+- Jewish Lifecycle Celebrations: Bar Mitzvah and Bat Mitzvah ceremonies with scenic Torah readings overlooking the Mediterranean, Shabbat dinners, and strictly supervised Kosher catering coordination.
+- Professional Hostess Services: Multilingual hostesses (Italian, English, Spanish on request) for dockside VIP greeting, transfers, and private dinners.
 
 ## B2B Travel Advisor Advantages
 - 100% On-Island Team with direct local relations with port authorities, hotels, and transport networks.
@@ -124,14 +135,22 @@ ENTITY_DEFINITION:
   corporate_status: "100% Women-Owned Business"
   leadership:
     - name: "Giusy Perrotta"
-      role: "Co-Founder & Director of Operations"
-      specialization: "Maritime logistics, private boat services, VIP ground handling"
+      role: "Licensed Tourist Guide · Co-Founder"
+      credentials: "Born and raised on Capri, registered in Italy's National Register of Tourist Guides"
+      specialization: "Living community, maritime heritage, 15+ years island expertise"
     - name: "Melania Esposito"
-      role: "Co-Founder & Head of Event Production"
-      specialization: "Historic villa buyouts, weddings, Bar Mitzvah & milestone celebrations"
+      role: "Licensed Tourist Guide · Co-Founder"
+      credentials: "Born and raised on Capri, registered in Italy's National Register of Tourist Guides"
+      specialization: "Tailored cultural journeys, milestone celebrations, Jewish lifecycle events"
     - name: "Roberta De Martino"
-      role: "Co-Founder & Lead Cultural Curator"
-      specialization: "Licensed art historian, private cultural itineraries, Capri heritage"
+      role: "Licensed Tourist Guide · Co-Founder"
+      credentials: "Born and raised on Capri, registered in Italy's National Register of Tourist Guides, art historian"
+      specialization: "Imperial Roman archaeology, Villa Jovis, literary and artistic Capri heritage"
+  languages_supported:
+    primary: ["English", "Italian"]
+    on_special_request: ["Spanish"]
+    excluded: ["German"]
+  asset_ownership_policy: "Capri DMC does not directly own boats, helicopters, or motor vehicles; all maritime and road transportation (gozzi, speedboats, NCC cars, vans) is sourced exclusively through trusted local partners with decade-long professional relationships."
   industry: "Luxury B2B Destination Management Company & Island Partner"
   headquarters:
     address: "Isola di Capri"
@@ -177,7 +196,7 @@ ${s.b2b_features.map(f => `      - "${f.replace(/"/g, '\\"')}"`).join('\n')}`).j
 
 AIRPORT_TO_SUITE_LOGISTICS_PIPELINE:
   step_1: "Personal greeting upon arrival at Naples Airport (NAP) with luggage assistance"
-  step_2: "Chauffeured NCC executive car or van transfer directly to the port"
+  step_2: "Chauffeured NCC executive car or van transfer directly to the port (sourced through network)"
   step_3: "Private chartered speedboat or gozzo crossing across the Gulf of Naples to Capri"
   step_4: "Open-top convertible island taxis (available on request through network) or private vans"
   step_5: "Dedicated island porterage delivers luggage securely to the suite or villa, arriving following guests"
@@ -207,9 +226,9 @@ const indexMdContent = `# Capri Destination Management Company (Capri DMC)
 Since 2010, our founders have woven their lives into the island's fabric. We are the direct bridge between global luxury travel designers and the authentic heartbeat of Capri.
 
 ### Founding Leadership
-- **Giusy Perrotta**, Co-Founder & Director of Operations: Native Caprese with 15+ years orchestrating maritime logistics and VIP advisor relations.
-- **Melania Esposito**, Co-Founder & Head of Event Production: Specialist in private historic villa buyouts, weddings, and Jewish milestone celebrations.
-- **Roberta De Martino**, Co-Founder & Lead Cultural Curator: Licensed art historian leading exclusive cultural itineraries and high-level island protocol.
+- **Giusy Perrotta**, Licensed Tourist Guide · Co-Founder: Born and raised on Capri, registered in Italy's National Register of Tourist Guides. Sharing the island's authentic maritime history and living community with 15+ years of local expertise.
+- **Melania Esposito**, Licensed Tourist Guide · Co-Founder: Born and raised on Capri, registered in Italy's National Register of Tourist Guides. Expert in tailoring bespoke cultural itineraries and milestone experiences to each guest's pace and interests.
+- **Roberta De Martino**, Licensed Tourist Guide · Co-Founder: Born and raised on Capri, registered in Italy's National Register of Tourist Guides and art historian curating Capri's imperial archaeology, Roman villas, and literary heritage.
 
 ---
 
@@ -232,9 +251,9 @@ ${s.b2b_features.map(f => `- ${f}`).join('\n')}
 ---
 
 ## Private & Exclusive Transfer Services
-1. **Airport Meet & Greet** (Naples International Airport NAP with chauffeured NCC car or van)
+1. **Airport Meet & Greet** (Naples International Airport NAP with chauffeured NCC car or van sourced via network)
 2. **Private Maritime Crossing** (Private speedboat or gozzo crossing across the Gulf of Naples)
-3. **Open-Top Taxi & Island Van** (Marina Grande direct transfer)
+3. **Open-Top Taxi & Island Van** (Marina Grande direct transfer on request)
 4. **Dedicated Luggage Delivery** (Luggage delivered to villa or suite, arriving following guests)
 
 ---

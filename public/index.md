@@ -9,9 +9,9 @@
 Since 2010, our founders have woven their lives into the island's fabric. We are the direct bridge between global luxury travel designers and the authentic heartbeat of Capri.
 
 ### Founding Leadership
-- **Giusy Perrotta**, Co-Founder & Director of Operations: Native Caprese with 15+ years orchestrating maritime logistics and VIP advisor relations.
-- **Melania Esposito**, Co-Founder & Head of Event Production: Specialist in private historic villa buyouts, weddings, and Jewish milestone celebrations.
-- **Roberta De Martino**, Co-Founder & Lead Cultural Curator: Licensed art historian leading exclusive cultural itineraries and high-level island protocol.
+- **Giusy Perrotta**, Licensed Tourist Guide · Co-Founder: Born and raised on Capri, registered in Italy's National Register of Tourist Guides. Sharing the island's authentic maritime history and living community with 15+ years of local expertise.
+- **Melania Esposito**, Licensed Tourist Guide · Co-Founder: Born and raised on Capri, registered in Italy's National Register of Tourist Guides. Expert in tailoring bespoke cultural itineraries and milestone experiences to each guest's pace and interests.
+- **Roberta De Martino**, Licensed Tourist Guide · Co-Founder: Born and raised on Capri, registered in Italy's National Register of Tourist Guides and art historian curating Capri's imperial archaeology, Roman villas, and literary heritage.
 
 ---
 
@@ -104,9 +104,9 @@ From intimate milestone anniversaries and historic cliffside villa buyouts to sp
 ---
 
 ## Private & Exclusive Transfer Services
-1. **Airport Meet & Greet** (Naples International Airport NAP with chauffeured NCC car or van)
+1. **Airport Meet & Greet** (Naples International Airport NAP with chauffeured NCC car or van sourced via network)
 2. **Private Maritime Crossing** (Private speedboat or gozzo crossing across the Gulf of Naples)
-3. **Open-Top Taxi & Island Van** (Marina Grande direct transfer)
+3. **Open-Top Taxi & Island Van** (Marina Grande direct transfer on request)
 4. **Dedicated Luggage Delivery** (Luggage delivered to villa or suite, arriving following guests)
 
 ---
