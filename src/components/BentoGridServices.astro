@@ -61,7 +61,12 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
         <!-- Text Column (6 cols) -->
         <div class="lg:col-span-6 space-y-6 service-fade-item gsap-reveal">
           <div class="space-y-2">
-            <span class="text-brand-gold font-serif text-2xl lg:text-3xl italic block">01 / Guided Island Tours</span>
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="text-brand-gold font-serif text-2xl lg:text-3xl italic block">01 / Private Tours</span>
+              <span class="text-[9px] uppercase tracking-[0.22em] px-2.5 py-0.5 rounded-full border border-brand-gold/40 text-brand-gold bg-brand-gold/5 font-medium">
+                Direct In-House
+              </span>
+            </div>
             <h3 class="font-serif text-3xl sm:text-4xl text-brand-navy font-normal leading-tight">
               {exclusiveSolutions[0].title}
             </h3>
@@ -102,7 +107,12 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
         <!-- Text Column (6 cols, Inverted Left) -->
         <div class="lg:col-span-6 order-2 lg:order-1 space-y-6 service-fade-item gsap-reveal">
           <div class="space-y-2">
-            <span class="text-brand-gold font-serif text-2xl lg:text-3xl italic block">02 / Boat Services</span>
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="text-brand-gold font-serif text-2xl lg:text-3xl italic block">02 / Boat Charters</span>
+              <span class="text-[9px] uppercase tracking-[0.22em] px-2.5 py-0.5 rounded-full border border-brand-navy/20 text-brand-navy/70 bg-brand-navy/5 font-medium">
+                Top-Tier Partners
+              </span>
+            </div>
             <h3 class="font-serif text-3xl sm:text-4xl text-brand-navy font-normal leading-tight">
               {exclusiveSolutions[1].title}
             </h3>
@@ -219,7 +229,12 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
         <!-- Text Column (6 cols) -->
         <div class="lg:col-span-6 space-y-6 service-fade-item gsap-reveal">
           <div class="space-y-2">
-            <span class="text-brand-gold font-serif text-2xl lg:text-3xl italic block">03 / Private & Exclusive Transfer Services</span>
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="text-brand-gold font-serif text-2xl lg:text-3xl italic block">03 / Private Transfers</span>
+              <span class="text-[9px] uppercase tracking-[0.22em] px-2.5 py-0.5 rounded-full border border-white/20 text-white/80 bg-white/5 font-medium">
+                Top-Tier Partners
+              </span>
+            </div>
             <h3 class="font-serif text-3xl sm:text-4xl text-white font-normal leading-tight">
               {exclusiveSolutions[2].title}
             </h3>
@@ -269,7 +284,12 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
         <!-- Text Column (6 cols, Inverted Left) -->
         <div class="lg:col-span-6 order-2 lg:order-1 space-y-6 service-fade-item gsap-reveal">
           <div class="space-y-2">
-            <span class="text-brand-gold font-serif text-2xl lg:text-3xl italic block">04 / White-Label Service</span>
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="text-brand-gold font-serif text-2xl lg:text-3xl italic block">04 / Conciergerie</span>
+              <span class="text-[9px] uppercase tracking-[0.22em] px-2.5 py-0.5 rounded-full border border-brand-gold/40 text-brand-gold bg-brand-gold/10 font-medium">
+                Direct In-House
+              </span>
+            </div>
             <h3 class="font-serif text-3xl sm:text-4xl text-white font-normal leading-tight">
               {exclusiveSolutions[3].title}
             </h3>
@@ -376,7 +396,7 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
           Unpublished Island Privileges
         </h2>
         <p class="text-gray-600 font-light text-base lg:text-lg max-w-2xl mx-auto leading-relaxed">
-          Tailored to VIP personal tastes, culinary immersions, sartorial commissions, and secret nature expeditions far removed from standard tourism.
+          Tailored to VIP personal tastes, culinary immersions, secret nature expeditions, wellness, and dedicated hostesses far removed from standard tourism.
         </p>
       </div>
 
@@ -402,9 +422,18 @@ const customExperiences = servicesData.filter(s => s.cluster === "Custom Experie
 
             <!-- Content -->
             <div class="space-y-2">
-              <span class="text-[9px] uppercase tracking-[0.25em] text-brand-gold font-semibold block">
-                {String(idx + 5).padStart(2, '0')} · {service.b2b_tag}
-              </span>
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="text-[9px] uppercase tracking-[0.25em] text-brand-gold font-semibold block">
+                  {String(idx + 5).padStart(2, '0')} · {service.b2b_tag}
+                </span>
+                <span class={`text-[8px] uppercase tracking-[0.2em] px-2 py-0.5 rounded-full font-medium ${
+                  service.delivery_model === 'Direct In-House'
+                    ? 'border border-brand-gold/40 text-brand-gold bg-brand-gold/5'
+                    : 'border border-gray-300 text-gray-600 bg-gray-50'
+                }`}>
+                  {service.delivery_model === 'Direct In-House' ? 'Direct In-House' : 'Premier Partners'}
+                </span>
+              </div>
               <h4 class="font-serif text-2xl text-brand-navy font-normal group-hover:text-brand-gold transition-colors">
                 {service.title}
               </h4>
