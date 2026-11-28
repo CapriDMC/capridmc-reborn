@@ -2,7 +2,8 @@ const host = 'www.capridmc.com';
 const key = 'f63b28b7e08240409741a4a0342ebcb3';
 const keyLocation = `https://${host}/${key}.txt`;
 const urlList = [
-  `https://${host}/`
+  `https://${host}/`,
+  `https://${host}/ai-context`
 ];
 
 async function submitIndexNow() {

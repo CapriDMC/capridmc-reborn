@@ -43,12 +43,12 @@ Coordinated through our vetted network of premier top-tier licensed NCC chauffeu
 - Dedicated luggage transport delivered safely to villas or hotel accommodations following guest arrival
 
 #### Bespoke On-Island Conciergerie & White-Label Assistance
-*Direct In-House Resident Dispatch · Discreet Ground Representation & Weather Resilience* — **Direct In-House · 24/7 Island Command Desk**
+*Direct In-House Resident Dispatch · Discreet Ground Representation & Weather Resilience* — **Direct In-House · On-Island Command Desk**
 Operated directly by our founding team and resident staff living in Capri 365 days a year. We act as your agency's professional on-ground extension, operating under strict white-label protocols to protect and elevate your brand reputation. Because we live on the island, we ensure immediate in-person dispatch, crisis intervention, and exceptional weather resilience when maritime links are disrupted.
 - Operated directly in-house by resident Capresi under strict white-label protocols
 - Constant on-island presence and immediate resilience during adverse weather events (we live here)
 - Direct priority coordination for dining reservations, beach clubs, and private villa provisioning
-- Direct WhatsApp operations desk and real-time on-ground dispatch in Italian and English
+- Direct WhatsApp operations desk and real-time on-ground dispatch in Italian and English (Spanish on request; no German)
 
 
 ### Custom Experiences

@@ -12,7 +12,7 @@
 <!-- 1. Banner Informativa Breve Cookie (Visibile solo se consenso non ancora espresso) -->
 <aside
   id="cookie-banner"
-  aria-label="Informativa sui cookie e gestione del consenso"
+  aria-label="Cookie notice and consent preferences"
   role="region"
   class="fixed bottom-4 left-4 right-4 md:left-6 md:right-auto md:max-w-xl z-[9990] bg-[#0A192F]/95 backdrop-blur-md border border-brand-gold/30 rounded-xl shadow-2xl p-5 md:p-6 text-white transition-all duration-300 transform translate-y-8 opacity-0 pointer-events-none"
 >
@@ -20,14 +20,14 @@
     <div class="flex items-center gap-2.5">
       <span class="w-2.5 h-2.5 rounded-full bg-brand-gold animate-pulse"></span>
       <h3 class="font-serif text-lg font-medium text-brand-gold tracking-wide">
-        Informativa sui Cookie & Privacy
+        Cookie &amp; Privacy Notice
       </h3>
     </div>
     <button
       id="cookie-banner-close-x"
       type="button"
-      aria-label="Chiudi banner e prosegui con soli cookie tecnici necessari"
-      title="Prosegui con impostazioni predefinite (soli cookie tecnici)"
+      aria-label="Close banner and continue with strictly necessary cookies only"
+      title="Continue with default settings (strictly necessary cookies only)"
       class="text-white/60 hover:text-white transition-colors p-1 -mr-1 -mt-1 text-lg font-light leading-none focus:outline-none focus:ring-2 focus:ring-brand-gold/50 rounded"
     >
       &times;
@@ -35,7 +35,7 @@
   </div>
 
   <p class="text-xs text-white/80 font-light mt-3 leading-relaxed">
-    Questo sito utilizza <strong>cookie tecnici necessari</strong> per garantire la sicurezza e la corretta navigazione. Con il tuo consenso preventivo, utilizziamo anche <strong>cookie analitici anonimizzati</strong> (Google Analytics 4 con Google Consent Mode v2) per misurare l'interazione con i contenuti ed ottimizzare l'esperienza utente.
+    This website uses <strong>strictly necessary technical cookies</strong> to ensure security and proper navigation. With your prior consent, we also use <strong>anonymized analytics cookies</strong> (Google Analytics 4 with Google Consent Mode v2) to measure content engagement and optimize user experience.
   </p>
 
   <div class="mt-4 pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs">
@@ -45,7 +45,7 @@
         type="button"
         class="text-brand-gold hover:text-white underline underline-offset-4 transition-colors font-medium cursor-pointer"
       >
-        Personalizza preferenze
+        Customize preferences
       </button>
       <span class="text-white/20">|</span>
       <a
@@ -53,7 +53,7 @@
         id="cookie-banner-read-policy"
         class="text-white/60 hover:text-brand-gold transition-colors underline underline-offset-4"
       >
-        Leggi informativa estesa
+        Read full privacy policy
       </a>
     </div>
 
@@ -63,14 +63,14 @@
         type="button"
         class="px-3.5 py-2 rounded text-xs uppercase tracking-wider font-semibold border border-white/20 text-white/80 hover:bg-white/10 hover:text-white transition-all"
       >
-        Solo Necessari
+        Essential Only
       </button>
       <button
         id="cookie-banner-accept-all"
         type="button"
         class="px-4 py-2 rounded text-xs uppercase tracking-wider font-semibold bg-brand-gold text-brand-navy hover:bg-[#c5a059] transition-all shadow-md"
       >
-        Accetta Tutti
+        Accept All
       </button>
     </div>
   </div>
@@ -90,13 +90,13 @@
           Capri Destination Management Company
         </span>
         <h2 id="cookie-dialog-title" class="font-serif text-2xl font-normal text-white">
-          Gestione del Consenso & Informativa Privacy
+          Consent Management &amp; Privacy Policy
         </h2>
       </div>
       <button
         id="cookie-dialog-close"
         type="button"
-        aria-label="Chiudi finestra preferenze"
+        aria-label="Close preferences dialog"
         class="text-white/60 hover:text-white transition-colors text-2xl font-light p-1 -mr-2 -mt-2 focus:outline-none focus:ring-2 focus:ring-brand-gold/50 rounded"
       >
         &times;
@@ -105,7 +105,7 @@
 
     <!-- Introduzione Legale -->
     <p class="text-xs text-white/80 leading-relaxed">
-      In conformità al Regolamento Generale sulla Protezione dei Dati (GDPR - UE 2016/679), alla Direttiva ePrivacy 2002/58/CE e alle Linee Guida del Garante Privacy italiano del 10 giugno 2021, puoi selezionare liberamente quali categorie di cookie desideri autorizzare. Puoi revocare o modificare la tua scelta in qualsiasi momento attraverso il pulsante dedicato.
+      In compliance with the General Data Protection Regulation (GDPR - EU 2016/679), the ePrivacy Directive 2002/58/EC, and the Italian Data Protection Authority (Garante Privacy) Guidelines of June 10, 2021, you may freely choose which cookie categories to authorize. You can withdraw or update your choice at any time using the dedicated button.
     </p>
 
     <!-- Accordion Categorie Cookie -->
@@ -114,21 +114,21 @@
       <div class="p-4 rounded-lg bg-white/5 border border-white/10 space-y-2">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-2">
-            <h3 class="text-sm font-semibold text-white">1. Cookie Tecnici e di Sicurezza</h3>
+            <h3 class="text-sm font-semibold text-white">1. Technical &amp; Security Cookies</h3>
             <span class="text-[10px] uppercase tracking-wider bg-brand-gold/20 text-brand-gold px-2 py-0.5 rounded font-mono font-medium">
-              Sempre Attivi
+              Always Active
             </span>
           </div>
           <input
             type="checkbox"
             checked
             disabled
-            aria-label="Cookie tecnici necessari (sempre attivi per legge)"
+            aria-label="Strictly necessary technical cookies (always active by law)"
             class="w-4 h-4 rounded text-brand-gold bg-white/20 border-white/30 cursor-not-allowed opacity-75"
           />
         </div>
         <p class="text-xs text-white/70 leading-relaxed">
-          Strettamente necessari per consentire la navigazione del sito web, garantire la protezione contro attacchi DDoS e memorizzare la tua scelta sul consenso. Non richiedono il consenso preventivo ai sensi dell'art. 122 del Codice Privacy (D.Lgs. 196/2003).
+          Strictly necessary to enable website navigation, ensure DDoS protection, and store your consent choice. These cookies do not require prior consent pursuant to Art. 122 of the Italian Privacy Code (Legislative Decree 196/2003).
         </p>
       </div>
 
@@ -136,9 +136,9 @@
       <div class="p-4 rounded-lg bg-white/5 border border-white/10 space-y-2">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-2">
-            <h3 class="text-sm font-semibold text-white">2. Cookie Statistici & Misurazione del Traffico</h3>
+            <h3 class="text-sm font-semibold text-white">2. Statistical &amp; Traffic Measurement Cookies</h3>
             <span class="text-[10px] uppercase tracking-wider bg-white/10 text-white/70 px-2 py-0.5 rounded font-mono">
-              Opzionali
+              Optional
             </span>
           </div>
           <label class="relative inline-flex items-center cursor-pointer">
@@ -151,7 +151,7 @@
           </label>
         </div>
         <p class="text-xs text-white/70 leading-relaxed">
-          Forniti tramite Google Analytics 4 (Google Ireland Limited) configurato con mascheramento dell'indirizzo IP e supporto nativo a Google Consent Mode v2. Ci permettono di comprendere in forma aggregata e anonima come i visitatori interagiscono con il sito per ottimizzare l'architettura dei contenuti.
+          Provided via Google Analytics 4 (Google Ireland Limited) configured with IP anonymization and native Google Consent Mode v2 support. These cookies help us understand in aggregate, anonymous form how visitors interact with the website to optimize our content architecture.
         </p>
       </div>
     </div>
@@ -159,12 +159,12 @@
     <!-- Sezione Dati Titolare & Diritti GDPR -->
     <div id="cookie-policy-details" class="p-4 rounded-lg bg-brand-navy/60 border border-brand-gold/20 text-xs text-white/70 space-y-2">
       <h4 class="font-semibold text-brand-gold text-xs uppercase tracking-wider">
-        Titolare del Trattamento & Diritti dell'Interessato
+        Data Controller &amp; Data Subject Rights
       </h4>
       <p>
-        <strong>Titolare:</strong> Capri Destination Management Company (curato dal Team Nesea) — Isola di Capri (NA), Campania, Italia.<br />
-        <strong>Contatto Privacy:</strong> <a href="mailto:partnerships@capridmc.com" class="text-brand-gold underline">partnerships@capridmc.com</a>.<br />
-        <strong>Diritti GDPR:</strong> Puoi esercitare in ogni momento i diritti di accesso, rettifica, cancellazione, limitazione e opposizione al trattamento (Artt. 15-22 GDPR) scrivendo al Titolare.
+        <strong>Data Controller:</strong> Capri Destination Management Company (curated by Team Nesea) — Island of Capri (NA), Campania, Italy.<br />
+        <strong>Privacy Contact:</strong> <a href="mailto:partnerships@capridmc.com" class="text-brand-gold underline">partnerships@capridmc.com</a>.<br />
+        <strong>GDPR Rights:</strong> You may exercise at any time your rights of access, rectification, erasure, restriction, and objection to processing (Arts. 15–22 GDPR) by writing to the Data Controller.
       </p>
     </div>
 
@@ -175,7 +175,7 @@
         type="button"
         class="w-full sm:w-auto px-4 py-2.5 rounded text-xs uppercase tracking-wider font-semibold border border-white/20 text-white/80 hover:bg-white/10 hover:text-white transition-all text-center"
       >
-        Rifiuta Non Necessari
+        Reject Non-Essential
       </button>
 
       <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
@@ -184,14 +184,14 @@
           type="button"
           class="w-full sm:w-auto px-4 py-2.5 rounded text-xs uppercase tracking-wider font-semibold border border-brand-gold/50 text-brand-gold hover:bg-brand-gold/10 transition-all text-center"
         >
-          Salva Preferenze
+          Save Preferences
         </button>
         <button
           id="cookie-dialog-accept-all"
           type="button"
           class="w-full sm:w-auto px-5 py-2.5 rounded text-xs uppercase tracking-wider font-semibold bg-brand-gold text-brand-navy hover:bg-[#c5a059] transition-all shadow-md text-center"
         >
-          Accetta Tutti
+          Accept All
         </button>
       </div>
     </div>
@@ -202,15 +202,15 @@
 <button
   id="cookie-launcher-btn"
   type="button"
-  aria-label="Gestisci o modifica le preferenze sui cookie"
-  title="Preferenze Cookie & Privacy"
+  aria-label="Manage or update cookie preferences"
+  title="Cookie & Privacy Preferences"
   class="fixed bottom-4 left-4 z-[9980] flex items-center gap-2 px-3 py-2 rounded-full bg-[#0A192F]/90 text-brand-gold border border-brand-gold/40 shadow-lg backdrop-blur-md hover:bg-brand-navy hover:scale-105 transition-all text-xs font-mono group"
 >
   <svg class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="currentColor">
     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10c0-.55-.05-1.09-.14-1.62-.35.11-.72.17-1.11.17-2.07 0-3.75-1.68-3.75-3.75 0-.58.14-1.13.38-1.62-.64.14-1.31.22-2 .22-3.87 0-7-3.13-7-7 0-.69.08-1.36.22-2-.49.24-1.04.38-1.62.38C7.68 6.78 6 5.1 6 3.03c0-.39.06-.76.17-1.11C9.69 2.05 10.84 2 12 2zm-3.5 8c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5S7 12.33 7 11.5 7.67 10 8.5 10zm5 5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zm3-5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5z"/>
   </svg>
   <span class="hidden group-hover:inline-block font-sans text-[11px] font-medium text-white/90">
-    Preferenze Cookie
+    Cookie Preferences
   </span>
 </button>
 

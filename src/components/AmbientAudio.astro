@@ -19,12 +19,12 @@
   <button
     id="ambient-audio-toggle"
     type="button"
-    aria-label="Attiva o disattiva il suono naturale delle onde del mare di Capri"
+    aria-label="Toggle natural Capri sea waves sound"
     class="group flex items-center gap-3 px-3.5 py-2 rounded-full bg-brand-navy/95 hover:bg-brand-navy border border-brand-gold/40 hover:border-brand-gold text-white shadow-2xl backdrop-blur-md transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-gold/50"
   >
     <!-- Icona Onde / Equalizzatore sonoro dorato -->
     <div class="relative flex items-center justify-center w-5 h-5 text-brand-gold">
-      <span class="sr-only">Stato audio</span>
+      <span class="sr-only">Audio status</span>
       <!-- Barre animate quando in riproduzione -->
       <div id="audio-eq-bars" class="flex items-end gap-[2px] h-3.5 opacity-90 group-hover:opacity-100 transition-opacity">
         <span class="eq-bar w-[2.5px] h-2 bg-brand-gold rounded-full"></span>
@@ -41,10 +41,10 @@
     <!-- Etichetta descrittiva -->
     <div class="flex flex-col text-left">
       <span class="text-[9px] uppercase tracking-[0.2em] text-brand-gold font-mono font-semibold leading-tight">
-        Onde del Mare
+        Sea Waves
       </span>
       <span id="audio-status-label" class="text-[10px] text-white/70 font-light leading-tight">
-        In ascolto
+        Listening
       </span>
     </div>
 
@@ -121,7 +121,7 @@
         toggleBtn.classList.remove('audio-paused');
         if (eqBars) eqBars.classList.remove('hidden');
         if (muteIcon) muteIcon.classList.add('hidden');
-        if (statusLabel) statusLabel.textContent = 'In ascolto';
+        if (statusLabel) statusLabel.textContent = 'Listening';
         if (liveDot) {
           liveDot.className = 'w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-sm shadow-emerald-400/50';
         }
@@ -129,7 +129,7 @@
         toggleBtn.classList.add('audio-paused');
         if (eqBars) eqBars.classList.add('hidden');
         if (muteIcon) muteIcon.classList.remove('hidden');
-        if (statusLabel) statusLabel.textContent = 'In pausa';
+        if (statusLabel) statusLabel.textContent = 'Paused';
         if (liveDot) {
           liveDot.className = 'w-2 h-2 rounded-full bg-white/30';
         }
