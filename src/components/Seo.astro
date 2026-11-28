@@ -40,8 +40,12 @@ const bingToken = import.meta.env.PUBLIC_BING_TOKEN || "f63b28b7e08240409741a4a0
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-<!-- Canonical & Robots Directives -->
+<!-- Canonical, Hreflang & Robots Directives -->
 <link rel="canonical" href={canonicalURL} />
+<link rel="alternate" hreflang="en-us" href={canonicalURL} />
+<link rel="alternate" hreflang="en-gb" href={canonicalURL} />
+<link rel="alternate" hreflang="en" href={canonicalURL} />
+<link rel="alternate" hreflang="x-default" href={canonicalURL} />
 <meta name="robots" content={robotsContent} />
 <meta name="googlebot" content={robotsContent} />
 <meta name="bingbot" content={robotsContent} />
